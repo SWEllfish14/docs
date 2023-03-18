@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{SWE}
+\begin{document}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Swellfish_logo_png.png}
+\end{figure}
+\author{Andrea Veronese, Claudio Giaretta, Elena Marchioro,\\
+Davide Porporati, Francesco Naletto, Jude Vensil Barceros \\ \\
+ \href{swellfish14@gmail.com}{} \\
+} 
+\date{Marzo 2023}
+
+
+
+\maketitle
+
+\section{Valutazione capitolati}
+Il secondo lotto di Ingegneria del Software è stato caratterizzato da una ridotta disponibilità di capitolati, pertanto tutti i progetti sono stati valutati attentamente, studiando per intero le specifiche richieste e le modalità di svolgimento.
+Dato l'interesse del gruppo per due capitolati specifici, Lumos Minima e Trustify, con le rispettive aziende è stato richiesto un colloquio per discutere apertamente le specifiche e valutare le tecnologie da utilizzare.
+Per il restante capitolato, Personal Identity Wallet, il team ha concordato di non fissare un incontro con il proponente, ma ha comunque valutato per intero la proposta.
+\subsection{Capitolato 2 - Lumos Minima (Proponente: Imola Informatica s.p.a.)}
+    Il progetto richiede la realizzazione di un applicazione web che permetta di gestire da remoto un sistema di illuminazione tramite l'intervento di operatori specializzati. L' hardware menzionato nel capitolato non è disponibile per questioni di scarsità di materiale, e viene sostituito da un simulatore python controllato tramite API rest.
+    Il capitolato richiede di poter gestire l'illuminazione in maniera automatica e manuale, permettendo di localizzare eventuali guasti e di intervenire tempestivamente per risolverli tramite l'intervento di operatori specializzati.
+    Le tecnologie richieste per questo capitolato sono a scelta libera, lasciando agli sviluppatori il massimo grado di libertà, purchè si implementino tecnologie open-source che non richiedano il pagamento di canoni "mensili" agli utilizzatori di tale sistema.
+    La nostra scelta è ricaduta su questo capitolato:
+    \begin{itemize}
+        \item in quanto non ci sono vincoli che riguardano le tecnologie da utilizzare, se non per la comunicazione con l'attrezzatura.
+        \item Abbiamo ritenuto l'integrazione con sistemi hardware(anche se non disponibili attualmente) di particolare interesse e un valore aggiunto rispetto gli altri capitolati.
+    \end{itemize}
+    
+     
+\subsection{Capitolato 3 - Digital Wallet (Proponente: InfoCert s.p.a.)}
+    Il capitolato propone di creare un'identita virtuale utilizzabile in tutta l'Unione Europea, valida anche per fini legali. Lo scopo del progetto è quello di unire la comodità di un Single Sign On, come quello fornito da UNIPD con la necessità che tale identità sia verificata, servizio offerto da SPID.
+    Personal Identity Wallet si propone come soluzione semplice che rappresenti il perfetto connubio fra le due necessità presentate in precedenza.
+    Il proponente richiede che la struttura del Wallet sia fruibile tramite formati ben noti, come JSON e richiede l'utilizzo del protocollo OpenID4VC per la verifica, oltre a elevati standard di sicurezza che impediscano il furto di identità.
+    Il gruppo ha valutato a fondo il capitolato, ma non vi è stato particolare interesse per il progetto, pertanto è stato scartato.
+
+\subsection{Capitolato 7 - Trustify (Proponente: Sync Lab S.r.l.)}
+    Il proponente richiede lo sviluppo di una web app che permetta di rilasciare delle recensioni verificate mediante smart contract. Il progetto nasce dalla necessità di avere recensioni veritiere e legate ad una transazione realmente avvenuta, e il suo scopo è quello di contrastare recensioni fasulle e di evitare la censura da parte dell'azienda venditrice.
+    Per realizzare quanto richiesto, è necessario implementare una blockchain,i smart contract e effettuare le operazioni tramite api rest.
+    Il gruppo ha concordato un colloquio con Synclab (FINIRE)
+    Il gruppo ha preferito un altro capitolato rispetto a questo, in quanto non tutti i componenti trovano la tecnologia blockchain interessante.
+
+\end{document}
+
