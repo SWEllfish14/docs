@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{ {images/} }
+\begin{document}
+\begin{header}
+\title{SwellFish}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Swellfish_logo_png.png}
+\end{figure}
+\author{Andrea Veronese, Claudio Giaretta, Elena Marchioro,\\
+Davide Porporati, Francesco Naletto, Jude Vensil Barceros \\ \\
+ \href{swellfish14@gmail.com}{} \\
+} 
+\date{Marzo 2023}
+\end{header}
+
+
+\maketitle
+\section{Riunione del 14/03/2023 - Incontro con Imola Informatica}
+In questa data il gruppo ha fissato un incontro con il proponente Imola Informatica per il progetto Lumos Minima.
+In questa riunione sono stati chiariti dettagli tecnici non riportati nel capitolato e sono state fatte delle domande da parte dei componenti del gruppo su vari aspetti del progetto.
+In particolare abbiamo discusso i seguenti punti:
+\begin{itemize}
+    \item teconologie da utilizzare: come da capitolato non ci sono vincoli particolari su cosa utilizzare per la realizzazione. E' stato ribadito che la pagina web deve essere responsive e di non usare framework poco conosciuti per non complicare il processo di revisione e di preferire standard open-source che non necessitino pagamenti di licenze. E' stato inoltre suggerito un sistema di ticketing utilizzabile dagli operatori per aprire una segnalazione di guasto.
+    \item ruoli degli utilizzatori: abbiamo concordato la presenza di un solo amministratore di sistema che può gestire per intero le zone di illuminazione e i controlli sulla luminosità, mentre gli altri utilizzatori avranno ruoli con funzionalità limitate.
+    \item implementazione hardware: come per i gruppi del primo lotto anche in questo caso è stata ribadita la difficoltà nel reperire sensori di luminosità e raspberry pi necessari per comandare fisicamente la lampadina, pertanto questa parte verrà emulata con un simulatore python tramite api rest.
+    \item testing: Imola Informatica mette a disposizione una macchina virtuale accessibile tramite VPN
+    \item Richiesta bonus: se avanza tempo al termine dello sviluppo delle funzionalità preventivate, l'azienda ha richiesto di implementare anche un sistema di registrazione al sistema per i nuovi operatori addetti alla manutenzione e/o gestione del sistema.
+\end{itemize}
+\end{document}
