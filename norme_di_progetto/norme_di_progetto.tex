@@ -1,20 +1,22 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx} % Required for inserting images
-\usepackage{makeidx}
-\usepackage{hyperref}
-\usepackage{makecell}
+\graphicspath{ {images/} }
 \begin{document}
+\begin{header}
+\title{SwellFish}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Swellfish_logo_png.png}
+\end{figure}
+\author{Andrea Veronese, Claudio Giaretta, Elena Marchioro,\\
+Davide Porporati, Francesco Naletto, Jude Vensil Barceros \\ \\
+ \href{swellfish14@gmail.com}{} \\
+} 
+\date{Marzo 2023}
+\end{header}
 
 
-\graphicspath{ {../templates/img/} }
-\input{../templates/first_page.tex}
-
-\title{Valutazione Capitolati}
-
-\firstPage
 \maketitle
-
-
 \begin{center}
     \begin{tabular}{r | l}
 		\multicolumn{2}{c}{\textit{Informazioni}}\\
@@ -22,16 +24,15 @@
 		
 			\textit{Redattori} &
 			[Andrea Veronese]\makecell{}\\
-		
+
 			\textit{Revisori} &
 			[Davide Porporati]\makecell{}\\
 			\textit{Responsabili} &
-			[Francesco Naletto]\makecell{}\\
+			[Elena Marchioro]\makecell{}\\
 		      \textit{Uso} & 
-                [Esterno]\makecell{}\\
-\end{tabular}
+                [Interno]\makecell{}\\
+    \end{tabular}
 \end{center}
-
 
 \tableofcontents
 \printindex 
@@ -41,7 +42,8 @@ Questo documento conterrà tutte le comvenzioni da utilizzare per lo sviluppo de
 
 
 \section{Processi Primari}
-\subsection{Sviluppo}
+\subsection{Fornitura}
+\subsection{Repository GitHub}
 Data la necessità di effettuare un lavoro sostanzioso e condiviso, come tutti gli sviluppatori software, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
 E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno sono state create delle specifiche repository:
 
@@ -50,6 +52,16 @@ E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno son
     \item Documentazione: questa repo contiene tutti i documenti utilizzabili sia dagli sviluppatori che dai committenti per avere una visione chiara delle modifiche apportate al progetto.
     \item dev: repo utilizzata dal team per scrivere le bozze dei documenti
 \end{itemize}
+
+\subsection{Contatti con il committente/proponente}
+Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con il Professore Vardenega, è stata creata una mail, \href{swellfish14@gmail.com}{} utilizzabile da tutti i componenti del gruppo.
+L'uso di questa casella è stato regolamentato con un insieme di regole condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
+Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce 
+I colloqui vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato dell'azienda proponente.
+
+
+
+
 \section{Ruoli}
 Vista l'adozione del framework scrum il gruppo ha deciso di far ruotare i ruoli dei vari componenti del gruppo in corrispondenza della fine dello sprint, seguendo un ordine di tipo alfabetico.
 \section{Scrum}
@@ -68,19 +80,6 @@ Ogni sprint avrà le seguenti caratteristiche:
     
 \end{itemize}
 
-
-\subsection{Contatti con il committente/proponente}
-Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con il Professore Vardenega, è stata creata una mail, \href{swellfish14@gmail.com}{} utilizzabile da tutti i componenti del gruppo.
-L'uso di questa casella è stato regolamentato con un insieme di regole condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
-Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce 
-I colloqui vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato dell'azienda proponente.
-
-\section{Organizzazione dei File}
-Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
-I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. I verbali infine sono contenuti in Documentazione/esterni/verbali.
-
-
-
 \section{Processi di supporto}
 \subsection{Organizzazione delle task}
 Per organizzare meglio il lavoro e avere una panoramica chiara dello svolgimento delle attività e dello stato di avanzamento, il gruppo ha concordato l'uso della Project Board fornita da GitHub.
@@ -96,11 +95,15 @@ Fasi:
     \item Revisione: il revisore incaricato si occupa di rileggerlo e correggere eventuali errori e/o imprecisioni, controllando che siano state rispettate le convenzioni stabilite in questo documento.
     \item Approvazione: il responsabile designato controlla che il documento sia corretto e coerente.
 \end{itemize}
-\subsection{Struttura di un verbale}
-
-
-Per facilitare la produzione di documentazione e ridurre i tempi necessari per la redazione, è stato ideato un template generico da utilizzare.
-Questo documento ha una struttura ben specifica:
+\section{Organizzazione dei File}
+Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
+I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. I verbali infine sono contenuti in Documentazione/esterni/verbali.
+\subsection{Strumenti impiegati}
+Per la redazione della documentazione il team ha concordato l'uso del linguaggio Latex.
+Per facilitare la produzione di documenti e ridurre i tempi necessari per la redazione, è stato ideato un template generico da utilizzare.
+Tale template è reperibile in "$docs/tree/dev/templates$"
+\subsection{Struttura di un documento}
+Ogni documento che non sia un verbale ha una struttura ben specifica:
 \begin{itemize}
     \item Nome del gruppo
     \item Logo 
@@ -109,7 +112,7 @@ Questo documento ha una struttura ben specifica:
     \item Tabella con ruoli dei componenti del gruppo e finalità d'uso del documento
     \item Indice
 \end{itemize}
-\subsection{Struttura di un documento}
+\subsection{Struttura di un verbale}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
 \begin{itemize}
     \item Data
@@ -128,7 +131,6 @@ Come prassi per la nomenclatura dei file il gruppo ha concordato la seguente str
 \begin{itemize}
     \item nome file: tutto in minuscolo, con le parole separate dall'underscore
     \item numero versione
-    \item esempio: analisi_requisiti_v1.0.tex
 \end{itemize}
 
 Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la seguente prassi:
@@ -145,11 +147,16 @@ Sono state inoltre utilizzate delle etichette e sono state create delle mileston
 \begin{itemize}
     \item bug
     \item help
-
-    
 \end{itemize}
+
 \subsection{Versionamento dei verbali}
-Sono state applicate delle specifiche regole da adottare per la nomenclatura dei verbali e ogni documento dovrà rispettare la seguente struttura: verbale_data_azienda/nome_docente/attività svolta.
+Sono state applicate delle specifiche regole da adottare per la nomenclatura dei verbali e ogni documento dovrà rispettare la seguente struttura:
+\begin{itemize}
+    \item verbale
+    \item data
+    \item nome azienda/docente/attività svolta
+\end{itemize}
+
 \subsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
 \begin{itemize}
