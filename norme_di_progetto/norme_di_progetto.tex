@@ -1,22 +1,20 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx} % Required for inserting images
-\graphicspath{ {images/} }
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
 \begin{document}
-\begin{header}
-\title{SwellFish}
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{Swellfish_logo_png.png}
-\end{figure}
-\author{Andrea Veronese, Claudio Giaretta, Elena Marchioro,\\
-Davide Porporati, Francesco Naletto, Jude Vensil Barceros \\ \\
- \href{swellfish14@gmail.com}{} \\
-} 
-\date{Marzo 2023}
-\end{header}
 
+\graphicspath{ {../templates/img/} }
+\input{../templates/first_page.tex}
+
+\title{Norme di progetto}
+
+\firstPage
 
 \maketitle
+
 \begin{center}
     \begin{tabular}{r | l}
 		\multicolumn{2}{c}{\textit{Informazioni}}\\
@@ -33,8 +31,11 @@ Davide Porporati, Francesco Naletto, Jude Vensil Barceros \\ \\
                 [Interno]\makecell{}\\
     \end{tabular}
 \end{center}
+\pagebreak
 
 \tableofcontents
+\pagebreak
+
 \printindex 
 \section{Introduzione}
 Lo scopo del documento è quello di fornire un insieme di regole, strumenti e stadard di qualità necessari per creare un Way of Working condiviso e efficacemente impiegabile da tutti i membri del gruppo.
@@ -167,6 +168,7 @@ La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usa
     \item Patch Z: un aumento del valore della "Z" indica che sono state introdotte delle modifiche al testo da parte del redattore
     \item Minor Y: l'aumento della 'Y' indica una modifica testuale che è stata approvata dal verificatore
     \item Major X: l'incremento della 'X' si ha se è stata pubblicata dal responsabile una modifica non compatibile con le versioni precedenti del documento
+\end{itemize}
 
 \subsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
