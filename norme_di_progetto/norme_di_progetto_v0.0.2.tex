@@ -4,10 +4,11 @@
 \usepackage{makecell}
 \usepackage{makeidx}
 \usepackage{eurosym}
+\input{../templates/first_page.tex}
+\input{../templates/tabella_versioni.tex}
 \begin{document}
 
 \graphicspath{ {../templates/img/} }
-\input{../templates/first_page.tex}
 
 \title{Norme di progetto}
 
@@ -43,15 +44,20 @@
 \pagebreak
 
 \printindex 
+
+\addversione{0.0.0}{22/03/2023}{Andrea Veronese}{Davide Porporati}{Versione preliminare con convenzioni di base}
+\addversione{0.0.1}{19/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunta convenzioni adottate per lo sviluppo}
+\addversione{0.0.2}{23/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunte sezioni verifica e scrum}
+\makeversioni
 \section{Introduzione}
 Lo scopo del documento è quello di fornire un insieme di regole, strumenti e stadard di qualità necessari per creare un Way of Working condiviso e efficacemente impiegabile da tutti i membri del gruppo.
-Questo documento conterrà tutte le comvenzioni da utilizzare per lo sviluppo del progetto e verrà aggiornato in maniera incrementale durante tutte le fasi dello sviluppo, pertanto è da considerarsi come work-in-progress.
+Questo documento conterrà tutte le convenzioni da utilizzare per lo sviluppo del progetto e verrà aggiornato in maniera incrementale durante tutte le fasi dello sviluppo, pertanto è da considerarsi come work-in-progress.
 
 
 \section{Processi Primari}
 \subsection{Fornitura}
 \subsection{Repository GitHub}
-Data la necessità di effettuare un lavoro sostanzioso e condiviso, come tutti gli sviluppatori software, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
+Data la necessità di effettuare un lavoro sostanzioso e condiviso, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
 E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno sono state create delle specifiche repository:
 
 \begin{itemize}
@@ -61,16 +67,15 @@ E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno son
 \end{itemize}
 
 \subsection{Contatti con il committente/proponente}
-Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con il Professore Vardenega, è stata creata una mail, \href{swellfish14@gmail.com}{} utilizzabile da tutti i componenti del gruppo.
-L'uso di questa casella è stato regolamentato con un insieme di regole condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
-Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce 
-I colloqui vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato dell'azienda proponente.
+Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con i Professori Vardenega e Cardin, è stata creata una mail, swellfish14@gmail.com, utilizzabile da tutti i componenti del gruppo.
+L'uso di questa casella è stato regolamentato con un insieme di norme condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
+Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce.
+I colloqui vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato di Imola Informatica.
 
 
 
 
-\section{Ruoli}
-Vista l'adozione del framework scrum il gruppo ha deciso di far ruotare i ruoli dei vari componenti del gruppo in corrispondenza della fine dello sprint, seguendo un ordine di tipo alfabetico.
+
 \section{Scrum}
 Il team ha deciso di utilizzare questo framework per gestire le varie fasi di sviluppo del progetto.
 \subsection{Organizzazione degli Sprint}
@@ -84,18 +89,23 @@ Ogni sprint avrà le seguenti caratteristiche:
         \item Analisi e resoconto delle ore e dei costi sostenuti
         \item Pianificazione data inizio prossimo sprint e obiettivi da fissare
     \end{itemize}
-    
 \end{itemize}
+Gli obiettivi pianificati per lo sprint sucessivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
+    
+
+\section{Rotazione dei ruoli}
+Vista l'adozione del framework scrum il team ha deciso di far ruotare i ruoli dei vari componenti in corrispondenza della fine dello sprint, seguendo un ordine di tipo alfabetico.
 
 \section{Processi di supporto}
 \subsection{Organizzazione delle task}
-Per organizzare meglio il lavoro e avere una panoramica chiara dello svolgimento delle attività e dello stato di avanzamento, il gruppo ha concordato l'uso della Project Board fornita da GitHub.
-Le task riguardanti la documentazione e lo svolgimento del progetto vengo assegnate ai componenti dall'amministratore e si occupa inoltre di chiuderle o modificarle in base alle esigenze.
-Per agevolare l'attività di documentazione è stata creata una board su GitHub denominata "To-Do Documenti", dove di settimana in settimana vengono aggiunte nuove issue riguardanti la creazione o la modifica dei documenti da affrontare nel prossimo sprint.
+Per organizzare meglio il lavoro e avere una panoramica chiara dello svolgimento delle attività e dello stato di avanzamento, è stato concordato l'uso della Project Board fornita da GitHub.
+Le task riguardanti la documentazione e lo svolgimento del progetto vengo assegnate ai componenti dall'amministratore ed egli si occupa inoltre di chiuderle o modificarle in base alle esigenze.
+Per agevolare l'attività di documentazione è stata creata una board denominata "To-Do Documenti", dove di settimana in settimana vengono aggiunte nuove issue riguardanti la creazione o la modifica dei documenti da affrontare nel prossimo sprint.
+Per gestire le attività di sviluppo verrà utilizzata un ulteriore board chiamata "SwellFish", al cui interno verranno inserite le task da completare in un dato sprint.
 Queste board sono raggiungibili tramite l'apposita sezione "Projects" all'interno dell'organizzazione SwellFish.
 
 \subsection{Documentazione}
-Ogni documento che verrà redatto attraverserà diversi processi, ogniuno dei quali vedrà impegnati uno o più componenti del gruppo.
+Ogni documento che verrà redatto attraverserà diversi processi, ognuno dei quali vedrà impegnati uno o più componenti del gruppo.
 
 Fasi:
 \begin{itemize}
@@ -106,11 +116,12 @@ Fasi:
 \end{itemize}
 \section{Organizzazione dei File}
 Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
-I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. I verbali infine sono contenuti in Documentazione/esterni/verbali.
+I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. 
+I verbali infine sono contenuti in Documentazione/esterni/verbali.
 \subsection{Strumenti impiegati}
 Per la redazione della documentazione il team ha concordato l'uso del linguaggio Latex.
-Per facilitare la produzione di documenti e ridurre i tempi necessari per la redazione, è stato ideato un template generico da utilizzare.
-Tale template è reperibile in "$docs/tree/dev/templates$"
+Per facilitare la produzione di documenti e ridurre i tempi necessari per la redazione, sono stati ideati dei template generici da utilizzare.
+Tali templates sono reperibili in "$docs/tree/dev/templates$"
 \subsection{Struttura di un documento}
 Ogni documento che non sia un verbale ha una struttura ben specifica:
 \begin{itemize}
@@ -134,7 +145,7 @@ La struttura di un verbale utilizza la struttura di base del template impiegato 
 \section{Versionamento}
 Il VCS scelto dal gruppo per facilitare la gestione delle modifiche è Git, mediante l'utilizzo di GitHub.
 A questo scopo è stata creata un'organizzazione denominata "SwellFish", al cui interno sono state create le opportune repository in base alle necessità del progetto.
-Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : https://github.com/orgs/SWEllfish14/repositories.
+Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : "$https://github.com/orgs/SWEllfish14/repositories$".
 \subsection{Regole per il versionamento}
 Come prassi per la nomenclatura dei file il gruppo ha concordato la seguente struttura condivisa:
 \begin{itemize}
@@ -151,15 +162,8 @@ Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la s
     \item Pull request sul branch dev
     \item Rilascio sul branch master
 \end{itemize}
-
-Sono state inoltre utilizzate delle etichette e sono state create delle milestone che coincidono con le date di scadenza delle varie fasi del progetto
-\begin{itemize}
-    \item bug
-    \item help
-\end{itemize}
-
 \subsection{Versionamento dei verbali}
-Sono state applicate delle specifiche regole da adottare per la nomenclatura dei verbali e ogni documento dovrà rispettare la seguente struttura:
+Sono state applicate delle specifiche regole da adottare per la nomenclatura dei verbali e ogni il nome del documento dovrà rispettare la seguente struttura:
 \begin{itemize}
     \item verbale
     \item data
@@ -186,6 +190,14 @@ I comandi più frequentemente utilizzati sono riassunti in seguito:
     \item Creazione del commit con le modifiche: git commit;
     \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
     \item Push su un branch già esistente: git push
+\end{itemize}
+\subsection{Regole per la verifica dei documenti}
+Il verificatore incaricato utilizzerà la seguente procedura per valutare l'idoneità di un documento:
+\begin{itemize}
+    \item Controllo della pull request da parte degli altri membri del gruppo
+    \item Viene verificato che il documento prodotto si attenga alle linee guida presenti in questo documento
+    \item Viene verificata la qualità del contenuto 
+    \item Se i precedenti punti sono soddisfatti viene effettuato il merge nel main branch della repo Documentazione
 \end{itemize}
 
 \end{document}
