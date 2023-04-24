@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\input{../templates/first_page.tex}
+\input{../templates/tabella_versioni.tex}
+\begin{document}
+
+\graphicspath{ {../templates/img/} }
+
+\title{Norme di progetto}
+
+\firstPage
+
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[]\makecell{}\\
+
+			\textit{Revisori} &
+			[]\makecell{}\\
+			\textit{Responsabili} &
+			[Andrea Veronese]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+    File contenente l'analisi dei requisiti necessaria per la realizzazione del progetto.
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\printindex 
+
+\addversione{0.0.0}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
+\addversione{0.0.1}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunti casi d'uso di base}
+\makeversioni
+
+\section{Introduzione}
+Lo scopo di questo documento è quello di raccogliere i risultati dell'attività di analisi dei requisti, includendo la descrizione dei casi d'uso del software e i requisiti necessari per la sua realizzazione.
+Questa analisi nasce dalla necessità di dimostrare di aver capito a fondo i requisiti del problema e le aspettative della soluzione che il nostro gruppo andrà a proporre.
+
+\subsection{Riferimenti}
+Questo documento contiene un analisi tecnica dei requisiti necessari allo sviluppo del software per il capitolato C2 di Imola Informatica, Lumos Minima.
+
+\section{Descrizione del prodotto}
+L'azienda Imola Informatica propone lo sviluppo di una "$webapp$" che consenta la gestione automatica o manuale degli impianti di illuminazione pubblica "$smart$", ovvero dotati di sensori in grado di rilevare la presenza di persone o veicoli in transito.
+Lo scopo del progetto è quello di fornire una piattaforma che grazie all'automazione permetta di ridurre i consumi elettrici e al contempo aumentare la sicurezza stradale dei luoghi in cui sarà installata.
+Il funzionamento di tale sistema avviene secondo delle fasi ben precise:
+\begin{itemize}
+	\item l'illuminazione viene impostata ad un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
+	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona ad un livello prefissato
+	\item Viene fatto trascorrere un intervallo temporale predefinito, nell'ordine di alcuni minuti
+	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata nuovamente al livello pre-rilevamento.
+\end{itemize}
+Oltre al funzionamento automatico il capitolato prevede la possibilità di un funzionamento manuale, ovvero deve permettere al gestore del sistema di aumentare o ridurre a piacimento la luminosità in una data area, senza che ci sia un effettivo rilevamento.
+
+\subsection{Parti del prodotto}
+Il sistema software sarà composto dalle seguenti unità:
+\begin{itemize}
+	\item webapp, ovvero la dashboard che permette di gestire la aree illuminate
+	\item interfacciamento con i lampioni e con i sensori, che avverrà tramite chiamate api-rest
+	\item schermata di login/logout, per consentire l'accesso al sistema solamente ai soggetti autorizzati
+	\item tracciamento dei guasti
+	\item schermata per aggiungere lampioni/sensori o intere aree illuminate.
+\end{itemize}
+\subesction{Caratteristiche degli utenti}
+
+\subsection{Vincoli e preferenze}
+L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggerimenti da considerare:
+\begin{itemize}
+	\item Utilizzare framework open-source e ben noti, che non comportino il pagamento di canoni mensili o di licenze
+	\item L'interfacciamento con i sensori o con i lampioni potrà avvenire tramite api-rest oppure tramite un broker mqtt come "$Mosquito$"
+\end{itemize}
+
+\section{Casi d'uso}
+\subsection{Attori}
+\begin{itemize}
+	\item Amministratore di sistema: persona con apposite credenziali e permessi che può gestire per intero il sistema di illuminazione. Può aggiungere, modificare o eliminare aree di illuminazione
+	\item Sensore: dispositivo IoT che rileva la presenza in una determinata area
+	\item Lampione: fonte luminosa comandata dal sensore o dall'amministratore in modalità manuale
+	\item webapp: dashboard che permette di controllare la luminosità del sistema e di ottenere informazioni sul suo stato.
+\end{itemize}
+\subsection{User Case 1 - Consultazione manuale Lumos Minima}
+\begin{itemize}
+	\item Attori primari: Amministratore di sistema
+	\item Precondizioni: il gestore dell'illuminazione usa il sistema e l'amministratore vorrebbe avere una panoramica dettagliata sul suo funzionamento.
+	\item Postcondizioni: l'amministratore consulta il manuale d'uso di Lumos Minima
+	\item Scenario Principale: Al gestore dell'impianto di illuminaizone viene fornito il software con il manuale d'uso e l'amministratore è libero di consultarlo.
+\end{itemize}
+
+\subsection{User Case 2 - Accesso al sistema}
+\begin{itemize}
+	\item Attori primari: Nuovi amministratori di sistema
+	\item Attori secondari: Imola Informatica
+	\item Precondizioni: i nuovi amministratori vorrebbero poter accedere al sistema, ma non sono autorizzati
+	\item Postcondizioni: Imola Informatica, dopo essere stata contattata dagli amministratori interessati, fornisce le credenziali per l'accesso al sistema
+	\item Scenario Principale: gli amministratori non ancora abilitati all'accesso richiedono le credenziali ad Imola Informatica
+\end{itemize}
+
+\subsection{User Case 3 - Visualizzazione stato sistema}
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono avere una panoramica sulla luminosità del sistema e sullo stato operativo delle aree gestite
+	\item Postcondizioni: la webapp fornisce queste informazioni
+	\item Scenario Principale: gli amministratori vogliono verificare se i sistemi operano correttamente
+\end{itemize}
+
+\subsection{User Case 4 - Aumento luminosità automatico}
+\begin{itemize}
+	\item Attori secondari: sensori
+	\item Precondizioni: uno o più sensori rilevano la presenza di pedoni o veicoli
+	\item Postcondizioni: la luminosità dell'area in cui si trova il sensore viene incrementata
+	\item Scenario Principale: uno o più sensori rilevano la presenza e aumentano la luminosità dell'area per un periodo di tempo prefissato
+\end{itemize}
+
+\subsection{User Case 5 - Aumento luminosità manuale}
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: lampioni
+	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di una zona
+	\item Postcondizioni: tutti i lampioni della zona vedono un incremento della luminosità
+	\item Scenario Principale: gli amministratori vogliono aumentare la luminosità di una zona in maniera manuale, senza che ci sia un riscontro di presenza effettivo.
+\end{itemize}
+
+
+\end{document}
