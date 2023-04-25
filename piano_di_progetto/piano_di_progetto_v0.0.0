@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\input{../templates/first_page.tex}
+\input{../templates/tabella_versioni.tex}
+\begin{document}
+
+\graphicspath{ {../templates/img/} }
+
+\title{Piano di progetto}
+
+\firstPage
+
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[]\makecell{}\\
+
+			\textit{Revisori} &
+			[]\makecell{}\\
+			\textit{Responsabili} &
+			[Andrea Veronese]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+    File contenente il piano di progetto per la valutazione dei costi e del raggiungimento delgi obiettivi.
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\printindex 
+
+\addversione{0.0.0}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
+
+\makeversioni
+
+\section{Introduzione}
+Lo scopo di questo documento è quello di fornire un riepilogo del lavoro svolto, del tempo impiegato e dei costi sostenuti, stilato ad intervalli regolari.
+Questo documento conterrà una sintesi degli sprint effettuati, con le relative tabelle del costo orario e monetario sostenuto.
+
+\section{Pianificazione Generale}
+\subsection{Diagramma di Gantt}
+Qui andrà inserito il diagramma di Gantt, contenente la percentuale di completamento delle varie attività svolte al momento delle redazione.
+\subsection{Preventivo ore finale}
+In questa sezione viene riportato il preventivo orario stimato all'inizio delle attività del progetto. Al termine delle attività verrà valutato se tale preventivo è stato rispettato o meno, fornendo un'analisi dettagliata delle motivazioni che hanno portato all'eventuale superamento delle stime.
+\begin{center}  
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Ruolo} & \textbf{Costo orario} & \textbf{Ore Preventivate} & \textbf{Costo totale}\\
+        \hline
+        Responsabile & 30 & 63 & 1890\euro  \\ 
+        \hline
+        Amministratore & 20 & 65 & 1300\euro \\
+        \hline
+        Analista & 25 & 88 & 2200\euro \\
+        \hline
+        Progettista & 25 & 120 & 3000\euro \\
+        \hline
+        Programmatore & 15 & 135 & 2025\euro \\
+        \hline
+        Verificatore & 15 & 99 & 1485\euro \\
+        \hline
+        \textbf{Totale} &  & \textbf{570} & \textbf{11900\euro} \\
+        \hline
+    \end{tabular}
+\end{center}
+\subsection{Preventivo a finire}
+\subsection{Stato d'avanzamento corrente}
+Attualmente il gruppo sta effettuando attività di analisi dei requisiti e di consolidamento del way of working. La documentazione viene aggiornata di pari passo con i progressi effettuati, come testimoniato dalle sottoversioni e dalla tabella delle modifiche effettuate.
+\section{Metodo di Lavoro}
+Il gruppo ha concordato l'utilizzo del framework Scrum come metodo di lavoro agile. 
+Riportiamo per intero le caratteristiche di ogni "$sprint$": 
+\begin{itemize}
+    \item Durata sprint: una settimana. L'inizo dello sprint è stato concordato al venerdì, mentre il venerdì successivo verrà effettuata una riunone per capire quali obbiettivi siano stati completati e in che metodo.
+    \item Ruoli: i ruoli dei membri vengono fatti ruotare settimanalmente, così da garantire un continuo cambiamento di responsabilità.
+    \item Obiettivi da completare: vengono decisi prima dell'inizio dello sprint e vengono riportati nella board "$SwellFish$".
+E' stato previsto che alcuni sprint non vadano a buon fine a causa di difficoltà varie, pertanto non avendo centrato tutti gli obiettivi si valuterà lo stato di avanzamento di quelli iniziati ma non completati.
+
+\section{Sprint Scrum}
+\section{Sprint 0}
+Qui vengono riportate le informazioni relative al primo sprint del gruppo. Questo primo ciclo è caratterizzato dallo svolgimento di attività prettamente documentali e di analisi dei requisiti, pertanto come concordato tra i membri del team i ruoli di analista e programmatore non sono stati impiegati.
+
+Caratteristiche:
+\begin{itemize}
+    \item Data inizio: 21/04/2023
+    \item Data fine preventivata: 28/04/2023
+    \item Data fine effettiva:
+\end{itemize}
+\subsection{Pianificazione}
+\subsection{Preventivo Costi/Ore}
+\subsection{Problematiche riscontrate}
+\subsection{Resoconto}
+
+\end{document}
