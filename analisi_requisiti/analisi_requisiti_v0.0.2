@@ -47,6 +47,7 @@
 
 \addversione{0.0.0}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.1}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunti casi d'uso di base}
+\addversione{0.0.2}{26/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
 \makeversioni
 
 \section{Introduzione}
@@ -95,14 +96,18 @@ L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggeri
 	\item webapp: dashboard che permette di controllare la luminosità del sistema e di ottenere informazioni sul suo stato.
 \end{itemize}
 \subsection{User Case 1 - Consultazione manuale Lumos Minima}
+Tipologia: obbligatorio
 \begin{itemize}
 	\item Attori primari: Amministratore di sistema
 	\item Precondizioni: il gestore dell'illuminazione usa il sistema e l'amministratore vorrebbe avere una panoramica dettagliata sul suo funzionamento.
 	\item Postcondizioni: l'amministratore consulta il manuale d'uso di Lumos Minima
 	\item Scenario Principale: Al gestore dell'impianto di illuminaizone viene fornito il software con il manuale d'uso e l'amministratore è libero di consultarlo.
 \end{itemize}
-
+\begin{center}
+\includegraphics[width=0.7\textwidth]{UC1}
+\end{center}
 \subsection{User Case 2 - Accesso al sistema}
+Tipologia: obbligatorio
 \begin{itemize}
 	\item Attori primari: Nuovi amministratori di sistema
 	\item Attori secondari: Imola Informatica
@@ -112,6 +117,7 @@ L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggeri
 \end{itemize}
 
 \subsection{User Case 3 - Visualizzazione stato sistema}
+Tipologia: obbligatorio
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
 	\item Attori secondari: webapp
@@ -121,14 +127,16 @@ L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggeri
 \end{itemize}
 
 \subsection{User Case 4 - Aumento luminosità automatico}
+Tipologia: obbligatorio
 \begin{itemize}
 	\item Attori secondari: sensori
-	\item Precondizioni: uno o più sensori rilevano la presenza di pedoni o veicoli
+	\item Precondizioni: uno o più sensori rilevano la presenza di pedoni o veicoli all'interno del loro raggio d'azione e il sistema riceve una segnalazione in modalita "$push$".
 	\item Postcondizioni: la luminosità dell'area in cui si trova il sensore viene incrementata
 	\item Scenario Principale: uno o più sensori rilevano la presenza e aumentano la luminosità dell'area per un periodo di tempo prefissato
 \end{itemize}
 
 \subsection{User Case 5 - Aumento luminosità manuale}
+Tipologia: obbligatorio
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
 	\item Attori secondari: lampioni
@@ -137,5 +145,60 @@ L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggeri
 	\item Scenario Principale: gli amministratori vogliono aumentare la luminosità di una zona in maniera manuale, senza che ci sia un riscontro di presenza effettivo.
 \end{itemize}
 
+\subsection{User Case 6 - Inserimento nuova area illuminata}
+Tipologia: obbligatorio
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono aggiungere una nuova zona illuminata da gestire tramite la webapp
+	\item Postcondizioni: viene aggiunta la nuova zona alla lista di quelle già presenti a sistema ed è possibile effettuare le operazioni consentite dal software.
+	\item Scenario Principale: gli amministratori vogliono inserire una nuova zona dotata di lampioni controllati da sensori smart 
+\end{itemize}
 
+\subsection{User Case 7 - Rimozione area illuminata}
+Tipologia: obbligatorio
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono rimuovere una  zona illuminata dalla lista di quelle a sistema
+	\item Postcondizioni: viene rimossa la zona dalla lista di quelle già presenti a sistema e non sarà più possibile eseguire le operazioni permesse dal software.
+	\item Scenario Principale: gli amministratori vogliono rimuovere una nuova zona già presente a sistema.
+\end{itemize}
+\subsection{User Case 8 - Modifica informazioni area illuminata}
+Tipologia: obbligatorio
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
+	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
+	\item Scenario Principale: gli amministratori vogliono modificare le informazioni relative ad una zona dotata di lampioni controllati da sensori smart.
+\end{itemize}
+
+\subsection{User Case 9 - Inserimento nuovo sensore}
+Tipologia: obbligatorio
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono inserire un nuovo sensore a sistema per rilevare la presenza in una zona prestabilita. Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
+	\begin{itemize}
+		\item Tipo di itnterazione con il sensore: Push o Pull
+		\item indirizzo IP
+		\item polling time
+		\item coordinate geografiche del sensore
+		\item raggio d'azione del dispositivo
+	\end{itemize}
+	\item Postcondizioni: se l'utente ha le credenziali corrette, il sistema accetta l'inserimento di un nuovo dispositivo IoT
+	\item Scenario Principale: gli amministratori vogliono inserire uno o più sensori per zona illuminata tramite la webapp. 
+	Al termine dell'inserimento il sistema darà un feedback positivo se il sensore è stato inserito senza problemi o un feedback negativo in caso contrario.
+\end{itemize}
+
+\subsection{User Case 8 - Rilevamento malfunzionamenti}
+Tipologia: opzionale
+\begin{itemize}
+	\item Attori primari: sensori
+	\item Attori secondari: amministratore di sistema
+	\item Precondizioni: un sensore rileva una discrepanza tra intensità luminosa impostata e quella rilevata in una zona qualsiasi.
+	\item Postcondizioni: l'amministratore segnala la zona di illuminazione come guasta e la inserisce in un apposito elenco e la rimuove da questo elenco solamente quando il malfunzionamento è stato risolto
+	\item Scenario Principale: i sensori rilevano un guasto in una zona illuminata e l'amministratore interviene inserendola nell'elenco delle zone con malfunzionamenti, salvo poi rimuoverle quando il problema verrà risolto.
+\end{itemize}
 \end{document}
