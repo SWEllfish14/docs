@@ -22,10 +22,10 @@
 		\hline
 		
 			\textit{Redattori} &
-			[]\makecell{}\\
+			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
 
 			\textit{Revisori} &
-			[]\makecell{}\\
+			[Jude Vensil Barceros]\makecell{}\\
 			\textit{Responsabili} &
 			[Andrea Veronese]\makecell{}\\
 		      \textit{Uso} & 
@@ -46,16 +46,13 @@
 \printindex 
 
 \addversione{0.0.0}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
-
+\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Creata struttura di base del documento}
 \makeversioni
 
 \section{Introduzione}
 Lo scopo di questo documento è quello di fornire un inieme di strumenti atti a verificare se accettare o meno un prodotto, sia esso software o documentale.
 \section{Analisi d'insieme}
 \subsection{Qualità di prodotto}
-\subsection{Qualità di processo}
-
-\section{Qualità di prodotto}
 \subsection{Documentazione}
 Per valutare la documentazione è stato concordato l'utilizzo dell'indice di Gulapease, che permette di valutare la leggibilità di un testo, tarando l'indice sulla lingua italiana.
 \[ \text{Indice di Gulpease} = 89 + \frac{300*\text{\#frasi} - 10*\text{\#lettere}}{\text{\#parole}} \]
@@ -79,7 +76,32 @@ Per valutare la documentazione è stato concordato l'utilizzo dell'indice di Gul
 	\mbox{}\\
 \end{center}
 \subsection{Software}
+\subsubsection{Copertura statement}
+Per valutare la copertuta degli statement verrà utilizzata una metrica basata sullo statement coverage. Con questa metrica tutti gli statement del codice sorgente verranno eseguiti almeno una volta.
+\subparagraph{Prodotti coinvolti:}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 80\%                     & $>$ 95\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Copertura branch}
+Un altra metrica che verrà utilizzata sarà quella del Branch coverage, con la quale si verificherà se tutti i branch del codice sono coperti da test.
+Una copertura bassa andrà ad indicare che ci sono degli scenari dell'applicazione che mancano di test a sufficienza.
 
-\section{Qualità di processo}
-
+\subparagraph{Prodotti coinvolti:}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 80\%                     & $>$ 95\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
 \end{document}
