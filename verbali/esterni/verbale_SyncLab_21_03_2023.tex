@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+
+\begin{document}
+\graphicspath{ {../../templates/img/} }
+\input{../templates/first_page.tex}
+\title{verbale 21-03-2023}
+
+\firstPage
+
+\maketitle
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Andrea Veronese]\makecell{}\\
+		
+			\textit{Revisori} &
+			[l]\makecell{}\\
+			\textit{Responsabili} &
+			[l]\makecell{}\\
+		      \textit{Uso} & 
+                [l]\makecell{}\\
+\end{tabular}
+\end{center}
+
+
+\tableofcontents
+\printindex 
+\section{Riunione del 21/03/2023 - Incontro con SyncLab}
+In questa data il gruppo ha concordato un incontro con l'azienda SyncLab per discutere meglio alcuni aspetti del capitolato riguardante il progetto Trustify.
+In questa riunione l'azienda ha presentato per intero il capitolato, spiegando nel dettaglio le necessità e le tecnologie da utilizzare per realizzare l'applicativo.
+In particolare abbiamo disusso le seguenti tematiche:
+\begin{itemize}
+    \item Uso delle blockchain: il proponente ci ha spiegato perchè l'uso di questa tecnologia è vincolante per il progetto. E' l'unica soluzione in grado di fornire uno smart contract generico che viene implementato per ogni transazione.
+    \item Necessità che il progetto sia agnostico: è richiesto che il progetto sia applicabile a qualsiasi tipo di azeinda che svolge operazioni di e-commerce.
+    \item Immutabilit\'{a} di una recensione inserita a sistema: quando una recensione è inserita e di conseguenza verificata, il cliente deve poter avere la possibilità di modificarla, mentre l'azienda venditrice non può in alcun modo cancellarla, al massimo può limitarsi a nasconderla.
+\end{itemize}
+Questo incontro è durato circa 45 minuti, durante i quali sono stati chiariti i punti precedenti e le motivazioni specifiche che hanno portato il proponente ad inserire queste richieste. Oltre a ciò è stata offerta dall'azienda una panoramica di sintesi sui requisiti funzionali del progetto.
+\end{document}
