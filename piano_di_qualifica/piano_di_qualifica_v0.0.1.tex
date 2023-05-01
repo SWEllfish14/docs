@@ -4,6 +4,7 @@
 \usepackage{makecell}
 \usepackage{makeidx}
 \usepackage{eurosym}
+\usepackage{amsmath}
 \input{../templates/first_page.tex}
 \input{../templates/tabella_versioni.tex}
 \begin{document}
@@ -25,7 +26,7 @@
 			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
 
 			\textit{Revisori} &
-			[Jude Vensil Barceros]\makecell{}\\
+			[Jude Vensil Braceros]\makecell{}\\
 			\textit{Responsabili} &
 			[Andrea Veronese]\makecell{}\\
 		      \textit{Uso} & 
@@ -46,7 +47,7 @@
 \printindex 
 
 \addversione{0.0.0}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
-\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Creata struttura di base del documento}
+\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Creata struttura di base del documento}
 \makeversioni
 
 \section{Introduzione}
@@ -54,14 +55,23 @@ Lo scopo di questo documento è quello di fornire un inieme di strumenti atti a 
 \section{Analisi d'insieme}
 \subsection{Qualità di prodotto}
 \subsection{Documentazione}
+ \begin{itemize}
+	\item  i documenti devono essere scritti in modo chiaro e comprensibile per gli utenti.
+	\item  i documenti devono essere scritti correttamente dal punto di vista grammaticale.
+\end{itemize}
 Per valutare la documentazione è stato concordato l'utilizzo dell'indice di Gulapease, che permette di valutare la leggibilità di un testo, tarando l'indice sulla lingua italiana.
 \[ \text{Indice di Gulpease} = 89 + \frac{300*\text{\#frasi} - 10*\text{\#lettere}}{\text{\#parole}} \]
+
+
 \begin{itemize}
 	\item \#lettere: numero di caratteri alfanumerici;
 	\item \#parole: numero di gruppi di caratteri alfanumerici;
 	\item \#frasi: numero di gruppi di punti o punti e virgola consecutivi.
 \end{itemize}
-
+L'indice di Gulpease oscilla su una scala di valori tra 0 e 100, dove 100 indica la leggibilità più alta e 0 la leggibilità più bassa:\\
+indice di Gulpease $<$ 80: difficoltà nel leggere per chi ha la licenza elementare \\
+indice di Gulpease $<$ 60: difficoltà nel leggere per chi ha la licenza media
+indice di Gulpease $<$ 40: difficoltà nel leggere per chi ha un diploma superiore
 \subparagraph{Prodotti coinvolti:}
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|}
