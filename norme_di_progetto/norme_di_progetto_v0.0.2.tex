@@ -4,8 +4,11 @@
 \usepackage{makecell}
 \usepackage{makeidx}
 \usepackage{eurosym}
+\usepackage{fancyhdr}
+
 \input{../templates/first_page.tex}
 \input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
 \begin{document}
 
 \graphicspath{ {../templates/img/} }
@@ -14,6 +17,7 @@
 
 \firstPage
 
+\pagestyle{genericDocstyle}
 \maketitle
 
 \begin{center}
@@ -47,7 +51,7 @@
 
 \addversione{0.0.0}{22/03/2023}{Andrea Veronese}{Davide Porporati}{Versione preliminare con convenzioni di base}
 \addversione{0.0.1}{19/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunta convenzioni adottate per lo sviluppo}
-\addversione{0.0.2}{23/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunte sezioni verifica e scrum}
+\addversione{0.0.2}{23/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunte sezioni verifica e scrum}
 \makeversioni
 \section{Introduzione}
 Lo scopo del documento è quello di fornire un insieme di regole, strumenti e stadard di qualità necessari per creare un Way of Working condiviso e efficacemente impiegabile da tutti i membri del gruppo.
@@ -108,6 +112,18 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
     \item Indice
     \item Breve descrizione dello scopo del documento
 \end{itemize}
+\subsubsection{Struttura delle pagine}
+\begin{itemize}
+	\item Intestazione:
+		\begin{itemize}
+			\item Lato sinistro:  logo del gruppo
+			\item Lato destro: nome del documento
+		\end{itemize}
+	\item Corpo del documento:  strutturato in sezioni e sottosezioni, ognuna con il proprio titolo e sottotitolo.Il corpo del documento include anche qualsiasi supporto visivo, come tabelle, figure, grafici, 	diagrammi o illustrazioni, che aiutano a presentare le informazioni in modo più accessibile o coinvolgente.
+	\item Piè di pagina: al centro è presente il numero di pagina.
+\end{itemize}
+\subsubsection{Registro delle versioni}
+Il registro delle versioni è un elemento che viene aggiunto ai documenti che non siano verbali per tracciare le modifiche e le revisioni che vengono apportate al documento nel tempo. Questo registro tiene traccia delle diverse versioni del documento, come descritto nelle \hyperref[ver]{Regole per il versionamento}, indicando la data in cui sono state apportate le modifiche, il tipo di modifica effettuata e l'autore della modifica. In questo modo, chiunque acceda al documento in un secondo momento può facilmente vedere quali modifiche sono state apportate e da chi, e può verificare se il contenuto del documento è aggiornato e preciso.
 \subsection{Struttura di un verbale}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
 \begin{itemize}
@@ -118,6 +134,7 @@ La struttura di un verbale utilizza la struttura di base del template impiegato 
     \item Ordine del giorno
     \item Riassunto contenuti
 \end{itemize}
+\subsubsection{Nomenclatura verbali}
 Per la nomenclatura dei verbali invece segue la seguente struttura:
 \begin{itemize}
     \item verbale
@@ -169,6 +186,7 @@ Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la s
 \end{itemize}
 
 \subsection{Regole per il versionamento}
+\label{ver}
 E' stato concordato l'uso del Versionamento Semantico, affindandosi alle caratteristiche principali.
 La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usate per indicare una modifica minore o sostanziale del documento.
 \begin{itemize}
