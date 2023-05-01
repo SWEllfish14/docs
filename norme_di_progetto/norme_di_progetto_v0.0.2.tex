@@ -188,19 +188,29 @@ Il verificatore incaricato utilizzerà la seguente procedura per valutare l'idon
 \end{itemize}
 \subsubsection{Verifica del codice}
 \subsection{Validazione}
+\subsection{Comandi utili di Git}
+I comandi più frequentemente utilizzati sono riassunti in seguito:
+\begin{itemize}
+    \item Sincronizzazione con repository remota: git pull;
+    \item Creazione di un nuovo branch: git branch nome\_branch;
+    \item Passaggio a un branch specificato: git checkout nome\_branch;
+    \item Aggiunta delle modifiche alla stage area: git add file\_da\_aggiungere;
+    \item Creazione del commit con le modifiche: git commit;
+    \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
+    \item Push su un branch già esistente: git push
+\end{itemize}
 
 
 \section{Processi organizzativi}
-
-\subsection{Organizzazione dei File}
+\subsection{Gestione dei processi}
+\subsubsection{Organizzazione dei File}
 Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
 I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. 
 I verbali infine sono contenuti in Documentazione/esterni/verbali.
 
-
-\subsection{Scrum}
+\subsubsection{Scrum}
 Il team utilizzerà questo framework per gestire le varie fasi di sviluppo del progetto.
-\subsubsection{Organizzazione degli Sprint}
+\paragraph{Organizzazione degli Sprint}
 Ogni sprint avrà le seguenti caratteristiche:
 \begin{itemize}
     \item Durata: una settimana. Inizia il venerdì e termina il venerdì successivo con la riunione concordata
@@ -214,27 +224,18 @@ Ogni sprint avrà le seguenti caratteristiche:
 \end{itemize}
 Gli obiettivi pianificati per lo sprint sucessivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
     
-
-\subsection{Rotazione dei ruoli}
+\subsection{Gestione delle infrastrutture}
+\subsubsection{Rotazione dei ruoli}
 Vista l'adozione del framework scrum, il team ha deciso di far ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
 Pertanto ogni membro del team avrà impegni e responsabilità diverse ogni settimana. Questo approccio permette di ottenere un maggiore coinvolgimento.
 
-\subsection{Comandi utili di Git}
-I comandi più frequentemente utilizzati sono riassunti in seguito:
-\begin{itemize}
-    \item Sincronizzazione con repository remota: git pull;
-    \item Creazione di un nuovo branch: git branch nome\_branch;
-    \item Passaggio a un branch specificato: git checkout nome\_branch;
-    \item Aggiunta delle modifiche alla stage area: git add file\_da\_aggiungere;
-    \item Creazione del commit con le modifiche: git commit;
-    \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
-    \item Push su un branch già esistente: git push
-\end{itemize}
-\subsection{Organizzazione delle task}
+\subsubsection{Organizzazione delle task}
 Per organizzare meglio il lavoro e avere una panoramica chiara dello svolgimento delle attività e dello stato di avanzamento, è stato concordato l'uso della Project Board fornita da GitHub.
 Le task riguardanti la documentazione e lo svolgimento del progetto vengo assegnate ai componenti dall'amministratore ed egli si occupa inoltre di chiuderle o modificarle in base alle esigenze.
 Per agevolare l'attività di documentazione è stata creata una board denominata "To-Do Documenti", dove in concomitanza dello sprint settimanale vengono aggiunte nuove issue riguardanti la creazione o la modifica dei documenti da affrontare nel prossimo sprint.
 Per gestire le attività di sviluppo verrà utilizzata un ulteriore board chiamata "SwellFish", al cui interno verranno inserite le task da completare in un dato sprint.
 Queste board sono raggiungibili tramite l'apposita sezione "Projects" all'interno dell'organizzazione SwellFish.
+
+\subsection{Miglioramento del processo}
 
 \end{document}
