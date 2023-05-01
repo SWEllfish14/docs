@@ -5,14 +5,15 @@
 \usepackage{makeidx}
 \usepackage{eurosym}
 \usepackage{fancyhdr}
-
-\input{../templates/first_page.tex}
+\usepackage{titlesec}
+\input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
 \begin{document}
 
 \graphicspath{ {../templates/img/} }
-
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \title{Norme di progetto}
 
 \firstPage
@@ -59,7 +60,8 @@ Questo documento conterrà tutte le convenzioni da utilizzare per lo sviluppo de
 
 
 \section{Processi Primari}
-\subsection{Repository GitHub}
+\subsection{Fornitura}
+\subsubsection{Repository GitHub}
 Data la necessità di effettuare un lavoro sostanzioso e condiviso, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
 E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno sono state create delle specifiche repository:
 
@@ -69,13 +71,14 @@ E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno son
     \item dev: repository che contiene i file sorgenti neccessari per la documentazione
 \end{itemize}
 
-\subsection{Contatti con il committente/proponente}
+\subsubsection{Contatti con il committente/proponente}
 Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con i Professori Vardenega e Cardin, è stata creata una mail, swellfish14@gmail.com, utilizzabile da tutti i componenti del gruppo.
 L'uso di questa casella è stato regolamentato con un insieme di norme condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
 Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce.
 I colloqui vengono richiesti quando le domande da porre necessitano di una discussione diretta con il proponente.
 Questi ultimi vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato di Imola Informatica.
 
+\subsection{Sviluppo}
 
 \section{Processi di supporto}
 \subsection{Organizzazione delle task}
@@ -94,15 +97,18 @@ Di seguito diamo una visione d'insieme delle fasi che ogni documento attraverser
     \item Revisione: il revisore incaricato si occupa di rileggerlo e correggere eventuali errori e/o imprecisioni, controllando che siano state rispettate le convenzioni stabilite in questo documento.
     \item Approvazione: il responsabile designato controlla che il documento sia corretto e coerente.
 \end{itemize}
-\section{Organizzazione dei File}
+
+\section{Processi organizzativi}
+
+\subsection{Organizzazione dei File}
 Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
 I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. 
 I verbali infine sono contenuti in Documentazione/esterni/verbali.
-\subsection{Strumenti impiegati}
+\subsubsection{Strumenti impiegati}
 Per la redazione della documentazione il team ha concordato l'uso del linguaggio Latex.
 Per facilitare la produzione di documenti e ridurre i tempi necessari per la redazione, sono stati ideati dei template generici da utilizzare.
 Tali templates sono reperibili in "$docs/tree/dev/templates$"
-\subsection{Struttura di un documento}
+\subsubsection{Struttura di un documento}
 Ogni documento che non sia un verbale ha una struttura ben specifica:
 \begin{itemize}
     \item Nome del gruppo
@@ -112,7 +118,7 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
     \item Indice
     \item Breve descrizione dello scopo del documento
 \end{itemize}
-\subsubsection{Struttura delle pagine}
+\paragraph{Struttura delle pagine}
 \begin{itemize}
 	\item Intestazione:
 		\begin{itemize}
@@ -122,9 +128,9 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
 	\item Corpo del documento:  strutturato in sezioni e sottosezioni, ognuna con il proprio titolo e sottotitolo.Il corpo del documento include anche qualsiasi supporto visivo, come tabelle, figure, grafici, 	diagrammi o illustrazioni, che aiutano a presentare le informazioni in modo più accessibile o coinvolgente.
 	\item Piè di pagina: al centro è presente il numero di pagina.
 \end{itemize}
-\subsubsection{Registro delle versioni}
+\paragraph{Registro delle versioni}
 Il registro delle versioni è un elemento che viene aggiunto ai documenti che non siano verbali per tracciare le modifiche e le revisioni che vengono apportate al documento nel tempo. Questo registro tiene traccia delle diverse versioni del documento, come descritto nelle \hyperref[ver]{Regole per il versionamento}, indicando la data in cui sono state apportate le modifiche, il tipo di modifica effettuata e l'autore della modifica. In questo modo, chiunque acceda al documento in un secondo momento può facilmente vedere quali modifiche sono state apportate e da chi, e può verificare se il contenuto del documento è aggiornato e preciso.
-\subsection{Struttura di un verbale}
+\subsubsection{Struttura di un verbale}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
 \begin{itemize}
     \item Data
@@ -134,7 +140,7 @@ La struttura di un verbale utilizza la struttura di base del template impiegato 
     \item Ordine del giorno
     \item Riassunto contenuti
 \end{itemize}
-\subsubsection{Nomenclatura verbali}
+\paragraph{Nomenclatura verbali}
 Per la nomenclatura dei verbali invece segue la seguente struttura:
 \begin{itemize}
     \item verbale
@@ -142,10 +148,9 @@ Per la nomenclatura dei verbali invece segue la seguente struttura:
     \item data
 \end{itemize}
 
-
-\section{Scrum}
+\subsection{Scrum}
 Il team utilizzerà questo framework per gestire le varie fasi di sviluppo del progetto.
-\subsection{Organizzazione degli Sprint}
+\subsubsection{Organizzazione degli Sprint}
 Ogni sprint avrà le seguenti caratteristiche:
 \begin{itemize}
     \item Durata: una settimana. Inizia il venerdì e termina il venerdì successivo con la riunione concordata
@@ -160,15 +165,15 @@ Ogni sprint avrà le seguenti caratteristiche:
 Gli obiettivi pianificati per lo sprint sucessivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
     
 
-\section{Rotazione dei ruoli}
+\subsection{Rotazione dei ruoli}
 Vista l'adozione del framework scrum, il team ha deciso di far ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
 Pertanto ogni membro del team avrà impegni e responsabilità diverse ogni settimana. Questo approccio permette di ottenere un maggiore coinvolgimento.
 
-\section{Versionamento}
+\subsection{Versionamento}
 Il VCS scelto dal gruppo per facilitare la gestione delle modifiche è Git, mediante l'utilizzo di GitHub.
 A questo scopo è stata creata un'organizzazione denominata "SwellFish", al cui interno sono state create le opportune repository in base alle necessità del progetto.
 Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : "$https://github.com/orgs/SWEllfish14/repositories$".
-\subsection{Regole per il versionamento}
+\subsubsection{Regole per il versionamento}
 Come prassi per la nomenclatura dei file il gruppo ha concordato la seguente struttura condivisa:
 \begin{itemize}
     \item nome file: tutto in minuscolo, con le parole separate dall'underscore
@@ -185,7 +190,7 @@ Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la s
     \item Rilascio sul branch master
 \end{itemize}
 
-\subsection{Regole per il versionamento}
+\subsubsection{Regole per il versionamento}
 \label{ver}
 E' stato concordato l'uso del Versionamento Semantico, affindandosi alle caratteristiche principali.
 La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usate per indicare una modifica minore o sostanziale del documento.
@@ -196,7 +201,7 @@ La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usa
     \item Major X: l'incremento della 'X' si ha se è stata pubblicata dal responsabile una modifica non compatibile con le versioni precedenti del documento
 \end{itemize}
 
-\subsection{Comandi utili di Git}
+\subsubsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
 \begin{itemize}
     \item Sincronizzazione con repository remota: git pull;
@@ -207,7 +212,7 @@ I comandi più frequentemente utilizzati sono riassunti in seguito:
     \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
     \item Push su un branch già esistente: git push
 \end{itemize}
-\subsection{Regole per la verifica dei documenti}
+\subsubsection{Regole per la verifica dei documenti}
 Il verificatore incaricato utilizzerà la seguente procedura per valutare l'idoneità di un documento:
 \begin{itemize}
     \item Controllo della pull request da parte degli altri membri del gruppo
