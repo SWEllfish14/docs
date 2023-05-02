@@ -118,6 +118,19 @@ La codifica ha lo scopo di concretizzare il prodotto tramite la programmazione
 
 \subparagraph{Stile della codifica}
 
+\subsubsection{Workflow GitHub}
+Tutti i documenti presenti nella repository docs, attraversano il seguente workflow:
+
+
+\begin{itemize}
+    \item Creazione del branch remoto per il rispettivo documento
+    \item Lavoro in locale con successivo push sul branch remoto corrispondente
+    \item Pull request tramite piattaforma web Gihtub per merge su branch dev
+    \item Viene verificato che il documento prodotto si attenga alle linee guida presenti in questo documento
+    \item Viene verificata la qualità del contenuto 
+    \item Se i precedenti punti sono soddisfatti, la pull request viene approvata dal responsabile e viene effettuato il merge nel branch dev della repo Documentazione
+\end{itemize}
+
 \subparagraph{Strumenti per la codifica}
 \begin{itemize}
     \item \textbf{Angular}:Un framework TypeScript per la realizzazione di pagine single-app\\ 
@@ -190,8 +203,17 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
 \end{itemize}
 
 \paragraph{Registro delle versioni}
-Il registro delle versioni è un elemento che viene aggiunto ai documenti che non siano verbali per tracciare le modifiche e le revisioni che vengono apportate al documento nel tempo.
- Questo registro tiene traccia delle diverse versioni del documento, come descritto nelle \hyperref[ver]{Regole per il versionamento}, indicando la data in cui sono state apportate le modifiche, il tipo di modifica effettuata e l'autore della modifica. In questo modo, chiunque acceda al documento in un secondo momento può facilmente vedere quali modifiche sono state apportate e da chi, e può verificare se il contenuto del documento è aggiornato e preciso.
+Ogni file, fatta esclusione per i verbali, contiene una tabella che riporta le modifiche apportate al file nel corso del tempo.
+La tabella è così strutturata:
+\begin{itemize}
+    \item \textbf{Versione}: versione attuale del documento (la nomenclatura segue le \hyperref[ver]{Regole per il versionamento})
+    \item \textbf{Data}: data in cui viene rilasciata la corrispondente versione del documento
+    \item \textbf{Redattore}: Indica chi ha apportato i cambiamenti al documento
+    \item \textbf{Verificatore}: Indica chi si è occupato della verifica del documento
+    \item \textbf{Descrizione}: Breve descrizione della modifica apportata nella corrispondente versione
+\end{itemize}
+Per facilitare l'inserimento della tabella all'interno dei vari file è stato creato un template apposito come spiegato nella sezione \hyperref[ver]{Template}
+
 \subsubsection{Struttura di un verbale}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
 \begin{itemize}
@@ -245,16 +267,33 @@ La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usa
     \item Major X: l'incremento della 'X' si ha se è stata pubblicata dal responsabile una modifica non compatibile con le versioni precedenti del documento
 \end{itemize}
 
-\subsection{Gestione della qualità}
+%\subsection{Gestione della qualità}
+%La gestione della qualità è un processo descritto in dettaglio nel "piano di qualifica".
+%Il gruppo si impegna al mantenimento della qualità seguendo le linee guida di quest'ultimo. 
+
 \subsection{Verifica}
-\subsubsection{Verifica della documentazione}
-Il verificatore incaricato utilizzerà la seguente procedura per valutare l'idoneità di un documento:
+Durante questo processo, il compito dei verificatori è quello di effettuare l’analisi dei prodotti del team.
+Tale analisi si differenzia in due diverse tipologie:
 \begin{itemize}
-    \item Controllo della pull request da parte degli altri membri del gruppo
-    \item Viene verificato che il documento prodotto si attenga alle linee guida presenti in questo documento
-    \item Viene verificata la qualità del contenuto 
-    \item Se i precedenti punti sono soddisfatti viene effettuato il merge nel main branch della repo Documentazione
+    \item \textbf{Analisi statica}:processo di valutazione di un sistema o di un suo componente basato sulla sua
+    forma, struttura, contenuto, documentazione. Questo tipo di analisi viene generalmente svolto
+    tramite ispezioni e revisioni e pu`o essere svolta sui documenti cos`ı come sul software o su parti
+    di esso;
+    
+    \item \textbf{Analisi dinamica}: processo di valutazione di un sistema software o di un suo componente
+    basato sull’osservazione del suo comportamento in esecuzione. Questo tipo di analisi viene
+    generalmente chiamato testing e per motivi logici non pu`o essere svolta sui documenti.
 \end{itemize}
+
+
+\subsubsection{Verifica della documentazione}
+Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
+\begin{itemize}
+    \item \textbf{Walkthrough}: Un controllo esaustivo del documento (è un processo oneroso che può richiedere molto tempo e risorse)
+    \item \textbf{Inspection}: Un controllo parziale legato solo ai punti critici del documento
+\end{itemize}
+Il team ha deciso di utilizzare una tecnica \textbf{Walkthrough} nella fase iniziale del documento e prima del rilascio di versioni "major".
+Dopo la formazione del documento ed un primo controllo esaustivo, si procede passando ad una tecnica di tipo \textbf{Inspection}
 
 \subsubsection{Verifica del codice}
 
