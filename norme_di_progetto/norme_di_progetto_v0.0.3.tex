@@ -1,0 +1,373 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\input{../templates/first_page.tex} 
+\input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
+\begin{document}
+\graphicspath{ {../templates/img/} }
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\title{Norme di progetto}
+
+\firstPage
+
+\pagestyle{genericDocstyle}
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
+
+			\textit{Revisori} &
+			[Jude Vensil Barceros]\makecell{}\\
+			\textit{Responsabili} &
+			[Andrea Veronese]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+	File contenente l'analisi dei requisiti necessaria per la realizzazione del progetto. 
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\printindex 
+
+\addversione{0.0.0}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
+\addversione{0.0.1}{24/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunti casi d'uso di base}
+\addversione{0.0.2}{26/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
+\addversione{0.0.3}{03/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Braceros}{Andrea Veronese}{Ristrutturazione casi d'uso in vista del primo diario di bordo}
+\makeversioni
+
+\section{Introduzione}
+Lo scopo di questo documento è quello di raccogliere i risultati dell'attività di analisi dei requisti, includendo la descrizione dei casi d'uso del software e i requisiti necessari per la sua realizzazione.
+Questa analisi nasce dalla necessità di dimostrare di aver capito a fondo i requisiti del problema e le aspettative della soluzione che il nostro gruppo andrà a proporre.
+I casi d'uso analizzati in seguito dovranno essere tenuti in considerazione durante tutte le fasi di progettazione, verifica e validazione.
+
+\subsection{Riferimenti}
+Questo documento contiene un analisi tecnica dei requisiti necessari allo sviluppo del software per il capitolato C2 Lumos Minima.
+
+I documenti in cui vengono specificati i requisiti sono i seguenti:
+\begin{itemize}
+	\item Capitolato d'appalto C2
+	\item Norme di progetto
+	\item Verbale incontro conoscitivo con Imola del 14/03/2023
+	\item Verbale incontro per approfondimento requisiti con Imola del 21/04/2023
+\end{itemize}
+
+Mentre i documenti che ci forniscono un'indicazione su come fare sono i seguenti:
+\begin{itemize}
+	\item Slide analisi requisiti - T06, prof. Vardenega
+	\item Slide diagrammi d'uso - Diagrammi e Use Case, prof. Cardin
+\end{itemize}
+
+\section{Descrizione del prodotto}
+L'azienda Imola Informatica propone lo sviluppo di una "$webapp$" che consente la gestione automatica o manuale degli impianti di illuminazione pubblica "$smart$", ovvero dotati di sensori in grado di rilevare la presenza di persone o veicoli in transito.
+Lo scopo del progetto è quello di fornire una piattaforma che grazie all'automazione permette di ridurre i consumi elettrici e al contempo aumentare la sicurezza stradale dei luoghi in cui sarà installata.
+Il funzionamento di tale sistema avviene secondo delle fasi ben precise:
+\begin{itemize}
+	\item l'illuminazione viene impostata ad un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
+	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona ad un livello prefissato
+	\item Viene fatto trascorrere un intervallo temporale predefinito, nell'ordine di alcuni minuti
+	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata nuovamente al livello pre-rilevamento.
+\end{itemize}
+Oltre al funzionamento automatico il capitolato prevede la possibilità di un funzionamento manuale, ovvero deve permettere all'amministratore di sistema di aumentare o ridurre a piacimento la luminosità in una data area, senza che ci sia un effettivo rilevamento.
+
+\subsection{Parti del prodotto}
+Il sistema software sarà composto dalle seguenti unità:
+\begin{itemize}
+	\item webapp, ovvero la dashboard che permette di gestire la aree illuminate
+	\item interfacciamento con i lampioni e con i sensori, che avverrà tramite chiamate api-rest o client mqtt.
+	\item schermata di login/logout, per consentire l'accesso al sistema solamente ai soggetti autorizzati
+	\item tracciamento dei guasti
+	\item schermata per aggiungere,modificare o eliminare lampioni/sensori o intere aree illuminate.
+\end{itemize}
+\subsection{Caratteristiche degli utenti}
+Il capitolato prevede la presenza di una singola tipologia di utente, ovveero l'amministratore di sistema. Con l'azienda è stato concordato che tale utente riceve le credenziali direttamente dall'azienda, mentre se rimane tempo e budget è prevista la possibilità di implementare una schermata di registrazione tramite la quale i nuovi amministratori otterranno le credenziali di accesso e i permessi necessari.
+L'amministratore potrà eseguire le seguenti operazioni:
+\begin{itemize}
+	\item Accedere alla dashboard
+	\item Aumentare manualmente l'intensità luminosa di una o più zone
+	\item Aggiungere nuove zone da gestire
+	\item Rimuovere o modificare le informazioni delle zone già presenti a sistema
+	\item Tracciare le zone guaste e inserirle in un apposito elenco che funge da storico dei malfunzionamenti
+\end{itemize}
+
+\subsection{Vincoli e preferenze}
+L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggerimenti da considerare:
+\begin{itemize}
+	\item Utilizzare framework open-source e ben noti, che non comportino il pagamento di canoni mensili o di licenze
+	\item L'interfacciamento con i sensori o con i lampioni potrà avvenire tramite api-rest oppure tramite un broker mqtt come "$Mosquito$"
+\end{itemize}
+
+Per il completamento del progetto il proponente richede che le seguenti condizioni siano soddisfatte:
+\begin{itemize}
+	\item Soddisfacimento di tutti i requisiti obbligatori descritti nel capitolato
+	\item test che dimostrino il corretto funzionamento delle funzionalità previste, con una percentuale di superamento \begin{math}\geq 80\% \end{math}, correlata da appositi report
+	\item  webapp completa, dotata di UI responsive
+	\item documentazione su scelte implementative e progettuali effettuate, con relativo registro delle motivazioni, dei problemi incontrati e delle soluzioni adottate per superarli.
+\end{itemize}
+
+
+\section{Casi d'uso}
+\subsection{Attori}
+\begin{itemize}
+	\item Amministratore di sistema: persona con apposite credenziali e permessi che può gestire per intero il sistema di illuminazione. Può aggiungere, modificare o eliminare aree di illuminazione
+	\item Sensore: dispositivo IoT che rileva la presenza in una determinata area
+	\item Lampione: fonte luminosa comandata dal sensore o dall'amministratore in modalità manuale
+	\item Webapp: dashboard che permette di controllare la luminosità del sistema e di ottenere informazioni sul suo stato.
+	\item Database: persistenze SQL necessarie per tenere traccia dei lampioni e delle aree illuminate
+	\item Imola Informatica: fornisce le credenziali per l'accesso al sistema
+\end{itemize}
+\pagebreak
+
+\subsection{User Case 1 - Primo accesso al sistema senza credenziali}
+\textbf{Tipologia: obbligatorio.} \\
+L'utente vuole poter operare come amministratore ma non ha ancora ottenuto le credenziali necessarie all'accesso.
+\begin{itemize}
+	\item Attori primari: Nuovi amministratori di sistema
+	\item Attori secondari: Imola Informatica
+	\item Precondizioni: i nuovi amministratori vorrebbero poter accedere al sistema, ma non sono ancora autorizzati
+	\item Postcondizioni: Imola Informatica, dopo essere stata contattata dagli amministratori interessati, fornisce le credenziali per l'accesso al sistema
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente contatta via mail il servizio clienti di Imola Informatica
+	\item Imola Informatica fornisce le credenziali
+	\item L'utente viene impostato come amministratore
+	\item l'utente effettua l'accesso
+	\item l'utente riceve una conferma di avvenuto accesso e può operare nella dashboard
+\end{itemize}
+
+\subsection{User Case 2 - Accesso al sistema con credenziali}
+\textbf{Tipologia: obbligatorio} \\
+L'utente è in possesso delle credenziali ed è riconosciuto come amministratore, ma non ha ancora effettuato l'accesso.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: WebApp
+	\item Precondizioni: l'amministratore vuole accedere al sistema per poterlo gestire, ma non è ancora loggato pur facendo parte del gruppo di utenti autorizzati.
+	\item Postcondizioni: l'utente è riconosciuto dal sistema e può svolgere le consuete attività
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente inserisce l'username
+	\item l'utente inserisce la password
+	\item l'utente riceve una conferma di avvenuto accesso e può operare nella dashboard
+\end{itemize}
+
+\paragraph{Estensioni} L'utente non è riconosciuto o non è presente nella lista dei soggetti autorizzati. Si rimanda al caso d'uso "$User Case 1$" .
+
+\paragraph{User Case 2.1 - Visualizzazione del messaggio d'errore autenticazione}
+\begin{itemize}
+	\item Attore primario: L'attore primario è l'utente non autenticato.
+	\item Precondizioni: L'attore primario ha tentato di autenticarsi senza successo.
+	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore ed è invitato a contattare Imola Informatica.
+\end{itemize}
+
+\subsection{User Case 3 - Consultazione manuale Lumos Minima}
+\textbf{Tipologia: obbligatorio}\\
+L'utente non sa come funziona il sistema o come eseguire un'operazione specifica e vuole approfondire questi aspetti.
+\begin{itemize}
+	\item Attori primari: Amministratore di sistema
+	\item Attore secondario: WebApp
+	\item Precondizioni: l'amministratore usa il sistema e vorrebbe avere una panoramica dettagliata sul suo funzionamento.
+	\item Postcondizioni: l'amministratore consulta il manuale d'uso
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item L'amministratore si autentica. Per il funzionamento si rimanda allo "$User Case 2$"
+	\item l'utente clicca l'apposito bottone per visualizzare il manuale
+	\item Viene aperta una nuova finestra nel browser che mostra il manuale utente
+\end{itemize}
+
+\paragraph{Estensioni} L'utente non è loggato nel sistema. Si rimanda allo "$User Case 2$".
+
+\subsection{User Case 4 - Visualizzazione stato sistema}
+\textbf{Tipologia: obbligatorio} \\
+L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: l'utente è un amministratore e vuole avere una panoramica sulla luminosità del sistema e sullo stato operativo delle aree gestite
+	\item Postcondizioni: la webapp fornisce queste informazioni
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore si è loggato
+	\item la webapp mostra la dashboard
+\end{itemize}
+
+\paragraph{Estensioni} L'utente non è loggato nel sistema. Si rimanda allo "$User Case 2$".
+\paragraph{Estensioni} L'utente non è riconosciuto o non è presente nella lista dei soggetti autorizzati. Si rimanda al caso d'uso "$User Case 1$" .
+
+\subsection{User Case 5 - Aumento luminosità automatico}
+\textbf{Tipologia: obbligatorio}\\
+Uno o più sensori rilevano la presenza di utenti della strada e comandano l'aumento della luminosità.
+\begin{itemize}
+	\item Attori primario: sensore/i
+	\item Attore secondario: WebApp
+	\item Precondizioni: uno o più sensori rilevano la presenza di pedoni o veicoli all'interno del loro raggio d'azione e il sistema riceve una segnalazione in modalita "$push$".
+	\item Postcondizioni: la webapp comanda le lampadine e la luminosità dell'area in cui si trova il sensore viene incrementata
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item uno o più sensori rilevano la presenza di utenti stradali
+	\item i sensori inviano un segnale alla webapp
+	\item la webapp riceve il segnale
+	\item la webapp incrementa la luminosità di tutte le lampadine della zona
+\end{itemize}
+
+\subsection{User Case 5 - Aumento luminosità manuale}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che ci sia un rilevamento o meno.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di una zona
+	\item Postcondizioni: tutti i lampioni della zona vedono un incremento della luminosità
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item L'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede alla dashboard
+	\item l'utente incrementa manualmente la luminosità di una o più zone gestite
+\end{itemize}
+
+\paragraph{Estensioni} In caso di guasto di sistema o mancanza di rete, l'amministratore comanda l'aumento della luminosità ma non vi è un incremento effettivo.
+
+\subsection{User Case 5.1 - Visualizzazione del messaggio d'errore}
+\begin{itemize}
+	\item Attore primario: L'attore primario è l'utente loggato, ovvero l'amministratore.
+	\item Precondizioni: L'attore primario ha tentato di aumentare la luminosità di una o più zone.
+	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore.
+\end{itemize}
+
+\subsection{User Case 6 - Inserimento nuova area illuminata}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole inserire a sistema una nuova area da gestire dotata di sensori e lampadine smart e vuole poter eseguire le operazioni consentite dal sistema.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono aggiungere una nuova zona illuminata da gestire tramite la webapp
+	\item Postcondizioni: viene aggiunta la nuova zona alla lista di quelle già presenti a sistema ed è possibile effettuare le operazioni consentite dal software.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item L'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente crea una nuova zona illuminata
+	\item l'utente inserisce gli indirizzi ip, il polling time, il protocollo dei sensori, la posizione geografica e il raggio d'azione.
+	\item l'utente inserisce gli indirizzi ip delle lampadine smart installate
+\end{itemize}
+
+\paragraph{Estensioni} L'amministratore vuole configurare le impostazioni standard di una nuova zona illuminata. Si rimanda allo .....
+
+\subsection{User Case 7 - Rimozione area illuminata}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole rimuovere una zona illuminata in quanto non viene più gestita dal sistema.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono rimuovere una zona illuminata gestita tramite la webapp
+	\item Postcondizioni: viene rimossa la zona e non è più possibile effettuare le operazioni consentite.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item L'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente rimuove la zona illuminata tramite l'apposito tasto
+\end{itemize}
+
+\subsection{User Case 8 - Modifica informazioni area illuminata}
+\textbf{Tipologia: obbligatorio} \\
+L'utente vuole modificare le informazioni di una zona illuminata, come ad esempio l'indirizzo ip di un sensore che è stato sostituito o il raggio d'azione.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
+	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato.Si rimanda allo "$User Case 2$".
+	\item l'utente accede ai dettagli di una zona illuminata
+	\item l'utente preme l'apposito pulsante di modifica
+	\item l'utente modifica i parametri necessari
+	\item l'amministratore riceve una notifica di successo o di errore
+\end{itemize}
+\paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi, l'amministratore riceve un messaggio di errore.
+
+\subsection{User Case 8.1 - Visualizzazione del messaggio d'errore in modalità di modifica}
+\begin{itemize}
+	\item Attore primario: L'attore primario è l'utente loggato, ovvero l'amministratore.
+	\item Precondizioni: L'attore primario ha modificato uno o più dettagli di una zona illuminata
+	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore.
+\end{itemize}
+
+\subsection{User Case 9 - Inserimento nuovo sensore}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono inserire un nuovo sensore a sistema per rilevare la presenza in una zona prestabilita.\\
+	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
+	\begin{itemize}
+		\item Tipo di iterazione con il sensore: Push o Pull
+		\item indirizzo IP
+		\item polling time
+		\item coordinate geografiche del sensore
+		\item raggio d'azione del dispositivo
+	\end{itemize}
+	\item Postcondizioni: se l'utente ha le credenziali corrette, il sistema accetta l'inserimento di un nuovo dispositivo IoT
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede ad un area illuminata
+	\item l'utente preme il pulsante di inserimento di un sensore
+	\item l'utente inserisce i dettagli richiesti dal form per l'inserimento
+	\item l'utente preme salva e riceve un messaggio di successo o errore
+\end{itemize}
+
+\subsection{User Case 10 - Rilevamento malfunzionamenti}
+Tipologia: opzionale
+\begin{itemize}
+	\item Attori primari: sensori
+	\item Attori secondari: amministratore di sistema
+	\item Precondizioni: un sensore rileva una discrepanza tra intensità luminosa impostata e quella rilevata in una zona qualsiasi.
+	\item Postcondizioni: l'amministratore segnala la zona di illuminazione come guasta e la inserisce in un apposito elenco e la rimuove da questo elenco solamente quando il malfunzionamento è stato risolto
+	\item Scenario Principale: i sensori rilevano un guasto in una zona illuminata e l'amministratore interviene inserendola nell'elenco delle zone con malfunzionamenti, salvo poi rimuoverle quando il problema verrà risolto.
+\end{itemize}
+\subsection{User Case 11 - Registrazione a sistema}
+Tipologia: opzionale
+\begin{itemize}
+	\item Attori primari: sensori
+	\item Attori secondari: amministratore di sistema
+	\item Precondizioni: un sensore rileva una discrepanza tra intensità luminosa impostata e quella rilevata in una zona qualsiasi.
+	\item Postcondizioni: l'amministratore segnala la zona di illuminazione come guasta e la inserisce in un apposito elenco e la rimuove da questo elenco solamente quando il malfunzionamento è stato risolto
+	\item Scenario Principale: i sensori rilevano un guasto in una zona illuminata e l'amministratore interviene inserendola nell'elenco delle zone con malfunzionamenti, salvo poi rimuoverle quando il problema verrà risolto.
+\end{itemize}
+
+\subsection{User Case 12 - Cifratura comunicazioni}
+
+
+\subsection{User Case 13 - Analisi carico massimo del server e possibile migrazione du cloud}
+
+\subsection{User Case 14 - COnfigurazione iniziale delle impostazioni di una nuova zona illuminata}
+
+\end{document}
