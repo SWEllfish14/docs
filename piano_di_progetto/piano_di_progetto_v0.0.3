@@ -4,16 +4,20 @@
 \usepackage{makecell}
 \usepackage{makeidx}
 \usepackage{eurosym}
-\input{../templates/first_page.tex}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
 \begin{document}
-
 \graphicspath{ {../templates/img/} }
-
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \title{Piano di progetto}
 
 \firstPage
 
+\pagestyle{genericDocstyle}
 \maketitle
 
 \begin{center}
@@ -44,11 +48,17 @@
 \pagebreak
 
 \printindex 
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\printindex 
 
 \addversione{0.0.0}{25/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Creata struttura di base del documento}
 \addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto diagramma e tabella suddivisione ore}
 \addversione{0.0.2}{28/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto resoconto primo sprint}
-
+\addversione{0.0.3}{04/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Barceros}{Andrea Veronese}{Aggiunto resoconto secondo sprint e problematiche riscontrate}
 
 \makeversioni
 
@@ -191,11 +201,11 @@ Al termine del primo sprint non sono state rilevate particolari problematiche, p
         \hline
         \textbf{Ruolo} & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)}\\
         \hline
-        Responsabile    & 30 & 5(+5)  & 150\\
+        Responsabile    & 30 & 7(+7)  & 210\\
         \hline
         Amministratore  & 20 & 5(+5)  & 100\\
         \hline
-        Analista        & 25 & 15(+15)  & 375\\
+        Analista        & 25 & 12(+12)  & 300\\  
         \hline
         Progettista     & 25 & 0(+0)  & 0\\
         \hline
@@ -204,7 +214,96 @@ Al termine del primo sprint non sono state rilevate particolari problematiche, p
         Verificatore    & 15 & 4(+4)  & 60\\
         \hline
         \hline
-        \textbf{Totale} &    & 29 & 685\\
+        \textbf{Totale} &    & 28 & 670\\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+
+
+\section{Sprint 1}
+Qui vengono riportate le informazioni relative al secondo sprint del gruppo. \\
+Il secondo ciclo è stato caratterizzato dalla revisione completa delle norme di progetto e dalla revisione degli user case fino ad ora incontrati nell'analisi dei requisiti.\\
+Oltre a ciò, è stato realizzato il template da utilizzare per i diari di bordo.
+
+
+Caratteristiche:
+\begin{itemize}
+    \item Data inizio: 27/04/2023
+    \item Data fine preventivata: 05/05/2023
+    \item Data fine effettiva: 04/05/2023
+\end{itemize}
+\subsection{Pianificazione}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Item da realizzare}}\\
+        \hline
+        \hline
+        \textbf{Item} & \textbf{Persone richieste}\\
+        \hline
+        Piano di progetto & 1\\
+        \hline
+        Norme di progetto & 3\\
+        \hline
+        Analisi dei requisiti & 2 \\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+\subsection{Preventivo Costi/Ore}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}\\
+        \hline
+        \hline
+        \textbf{Ruolo} & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)}\\
+        \hline
+        Responsabile    & 30 & 5  & 150\\   
+        \hline
+        Amministratore  & 20 & 4  & 80\\ 
+        \hline
+        Analista        & 25 & 9  & 225\\ 
+        \hline
+        Progettista     & 25 & 0  & 0\\
+        \hline
+        Programmatore   & 15 & 0  & 0\\
+        \hline
+        Verificatore    & 15 & 4  & 60\\
+        \hline
+        \hline
+        \textbf{Totale} &    & 22 & 515\\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+\subsection{Problematiche riscontrate}
+L'unica problematica riscontrata fino ad ora è stata quella della ristrutturazione delle norme di progetto, pertanto è stato dedicato del tempo aggiuntivo per ristrutturare e incrementare il way of working seguendo il ciclo di vita del software.
+L'aggiunta degli UML per gli Use Case è stata rimandata al prossimo sprint per approfondire al meglio il loro funzionamento e perchè lo sprint è durato un giorno in meno a causa della coincidenza con il diario di bordo.
+\subsection{Resoconto}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}\\
+        \hline
+        \hline
+        \textbf{Ruolo} & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)}\\
+        \hline
+        Responsabile    & 30 & 12(+5)  & 150\\
+        \hline
+        Amministratore  & 20 & 9(+4)  & 80\\
+        \hline
+        Analista        & 25 & 21(+9)  & 225\\
+        \hline
+        Progettista     & 25 & 0(+0)  & 0\\
+        \hline
+        Programmatore   & 15 & 0(+0)  & 0\\
+        \hline
+        Verificatore    & 15 & 8(+4)  & 60\\
+        \hline
+        \hline
+        \textbf{Totale} &    & 50 &  1185 \\
         \hline
     \end{tabularx}\\[8pt]
     \mbox{}\\
