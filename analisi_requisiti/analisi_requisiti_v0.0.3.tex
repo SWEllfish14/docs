@@ -25,7 +25,7 @@
 			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
 
 			\textit{Revisori} &
-			[Jude Vensil Barceros]\makecell{}\\
+			[Jude Vensil Braceros]\makecell{}\\
 			\textit{Responsabili} &
 			[Andrea Veronese]\makecell{}\\
 		      \textit{Uso} & 
@@ -46,8 +46,9 @@
 \printindex 
 
 \addversione{0.0.0}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
-\addversione{0.0.1}{24/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunti casi d'uso di base}
-\addversione{0.0.2}{26/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
+\addversione{0.0.1}{24/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunti casi d'uso di base}
+\addversione{0.0.2}{26/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
+\addversione{0.0.3}{05/05/2023}{}{Jude Vensil Braceros}{Verifica generale del documento}
 \makeversioni
 
 \section{Introduzione}
@@ -62,8 +63,8 @@ L'azienda Imola Informatica propone lo sviluppo di una "$webapp$" che consenta l
 Lo scopo del progetto è quello di fornire una piattaforma che grazie all'automazione permetta di ridurre i consumi elettrici e al contempo aumentare la sicurezza stradale dei luoghi in cui sarà installata.
 Il funzionamento di tale sistema avviene secondo delle fasi ben precise:
 \begin{itemize}
-	\item l'illuminazione viene impostata ad un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
-	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona ad un livello prefissato
+	\item l'illuminazione viene impostata a un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
+	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona a un livello prefissato
 	\item Viene fatto trascorrere un intervallo temporale predefinito, nell'ordine di alcuni minuti
 	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata nuovamente al livello pre-rilevamento.
 \end{itemize}
@@ -168,7 +169,7 @@ Tipologia: obbligatorio
 	\item Attori secondari: webapp
 	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
 	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
-	\item Scenario Principale: gli amministratori vogliono modificare le informazioni relative ad una zona dotata di lampioni controllati da sensori smart.
+	\item Scenario Principale: gli amministratori vogliono modificare le informazioni relative a una zona dotata di lampioni controllati da sensori smart.
 \end{itemize}
 
 \subsection{User Case 9 - Inserimento nuovo sensore}
