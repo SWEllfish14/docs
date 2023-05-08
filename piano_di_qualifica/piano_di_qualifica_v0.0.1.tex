@@ -51,67 +51,15 @@
 \makeversioni
 
 \section{Introduzione}
-Lo scopo di questo documento è quello di fornire un inieme di strumenti atti a verificare se accettare o meno un prodotto, sia esso software o documentale.
-\section{Analisi d'insieme}
-\subsection{Qualità di prodotto}
-\subsection{Documentazione}
- \begin{itemize}
-	\item  i documenti devono essere scritti in modo chiaro e comprensibile per gli utenti.
-	\item  i documenti devono essere scritti correttamente dal punto di vista grammaticale.
-\end{itemize}
-Per valutare la documentazione è stato concordato l'utilizzo dell'indice di Gulapease, che permette di valutare la leggibilità di un testo, tarando l'indice sulla lingua italiana.
-\[ \text{Indice di Gulpease} = 89 + \frac{300*\text{\#frasi} - 10*\text{\#lettere}}{\text{\#parole}} \]
+\subsection{Scopo del documento}
+Questo documento ha lo scopo di definire le strategia di validazione e verifica addottate per garantire la qualità del prodotto.
+Per raggiungere questo obbiettivo viene applicato un sistema di verifica continua sui processi e sulle attività del gruppo, questo permette di ottenere un miglioramento continuo.
+Il documento viene redatto in maniera incrementale, ovvero viene tenuto in costante aggiornamento durante tutta la durata del progetto. 
+\subsection{Scopo del capitolato}
+In Italia, il prezzo del gas è aumentato significativamente, e il consumo di gas e carbone sta portando ad un aumento delle emissioni di gas serra e CO2. Per affrontare il problema del costo dell'energia, molti comuni stanno tagliando l'illuminazione pubblica, ma questo può essere evitato attraverso l'implementazione di un sistema di illuminazione pubblica ottimizzato, che consentirebbe sia la sicurezza stradale che il risparmio energetico ed economico.
+Nel capitolato in questione si vuole implementare questa soluzione tramite un applicativo web. Quest'ultimo permetterebbe la gestione dell'illuminazione in modo sia automatico che manuale.
+\section{Qualità di processo}
+\section{Qualità di prodotto}
+\section{Specifica di test}
 
-
-\begin{itemize}
-	\item \#lettere: numero di caratteri alfanumerici;
-	\item \#parole: numero di gruppi di caratteri alfanumerici;
-	\item \#frasi: numero di gruppi di punti o punti e virgola consecutivi.
-\end{itemize}
-L'indice di Gulpease oscilla su una scala di valori tra 0 e 100, dove 100 indica la leggibilità più alta e 0 la leggibilità più bassa:\\
-indice di Gulpease $<$ 80: difficoltà nel leggere per chi ha la licenza elementare \\
-indice di Gulpease $<$ 60: difficoltà nel leggere per chi ha la licenza media
-indice di Gulpease $<$ 40: difficoltà nel leggere per chi ha un diploma superiore
-\subparagraph{Prodotti coinvolti:}
-\begin{center}
-	\begin{tabularx}{\textwidth}{|X|X|X|}
-		\hline
-		\textbf{Prodotto} & \textbf{Valore accettabile} & \textbf{Valore ottimale } \\
-		\hline
-		Documenti interni & $>$ 40                      & $>$ 50                    \\
-		\hline
-		Documenti esterni & $>$ 40                      & $>$ 60                    \\
-		\hline
-	\end{tabularx}\\[8pt]
-	\mbox{}\\
-\end{center}
-\subsection{Software}
-\subsubsection{Copertura statement}
-Per valutare la copertuta degli statement verrà utilizzata una metrica basata sullo statement coverage. Con questa metrica tutti gli statement del codice sorgente verranno eseguiti almeno una volta.
-\subparagraph{Prodotti coinvolti:}
-\begin{center}
-	\begin{tabularx}{\textwidth}{|X|X|X|}
-		\hline
-		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
-		\hline
-		Software          & $>$ 80\%                     & $>$ 95\%                     \\
-		\hline
-	\end{tabularx}\\[8pt]
-	\mbox{}\\
-\end{center}
-\subsubsection{Copertura branch}
-Un altra metrica che verrà utilizzata sarà quella del Branch coverage, con la quale si verificherà se tutti i branch del codice sono coperti da test.
-Una copertura bassa andrà ad indicare che ci sono degli scenari dell'applicazione che mancano di test a sufficienza.
-
-\subparagraph{Prodotti coinvolti:}
-\begin{center}
-	\begin{tabularx}{\textwidth}{|X|X|X|}
-		\hline
-		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
-		\hline
-		Software          & $>$ 80\%                     & $>$ 95\%                     \\
-		\hline
-	\end{tabularx}\\[8pt]
-	\mbox{}\\
-\end{center}
 \end{document}
