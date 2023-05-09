@@ -53,6 +53,7 @@
 \addversione{0.0.1}{24/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunti casi d'uso di base}
 \addversione{0.0.2}{26/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
 \addversione{0.0.3}{03/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Braceros}{Andrea Veronese}{Ristrutturazione casi d'uso in vista del primo diario di bordo}
+\addversione{0.0.4}{09/05/2023}{Andrea Veronese, Francesco Naletto, Jude Vensil Braceros}{Claudio Giaretta}{Aggiunti ulteriori casi d'uso}
 \makeversioni
 
 \section{Introduzione}
@@ -309,7 +310,6 @@ L'amministratore vuole inserire a sistema una nuova area da gestire dotata di se
 	\item l'utente inserisce gli indirizzi ip, il polling time, il protocollo dei sensori, la posizione geografica e il raggio d'azione.
 	\item l'utente inserisce gli indirizzi ip delle lampadine smart installate
 \end{itemize}
-
 \paragraph{Estensioni} L'amministratore vuole configurare le impostazioni standard di una nuova zona illuminata. Si rimanda allo .....
 
 \subsection{User Case 10 - Rimozione area illuminata}
@@ -379,9 +379,25 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 	\item l'utente preme salva e riceve un messaggio di successo o errore
 \end{itemize}
 
-\subsection{User Case 14 - Registrazione a sistema}
+\subsection{User Case 13 - Rimozione sensore}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp
+	\item Precondizioni: gli amministratori vogliono rimuovere un sensore a sistema.\\
+	\item Postcondizioni: non è puù possibile comandare la zona gestita dal sensore.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede ad un area illuminata
+	\item l'utente preme il pulsante di rimozione di un sensore
+	\item l'utente riceve un avviso di conferma
+	\item l'utente preme salva e riceve un messaggio di successo o errore
+\end{itemize}
 
-\subsection{User Case 15 - Cifratura comunicazioni}
+\subsection{User Case 14 - Cifratura comunicazioni}
 \textbf{Tipologia: desiderabile} \\
 Le comunicazioni devono avvenire in modo sicuro, senza possibilità di intromissioni di utenti non autorizzati.
 \begin{itemize}
@@ -398,9 +414,7 @@ Le comunicazioni devono avvenire in modo sicuro, senza possibilità di intromiss
 	\item il sensore effettua le operazioni desiderate
 \end{itemize}
 
-\subsection{User Case 16 - Analisi carico massimo del server e possibile migrazione du cloud}
-
-\subsection{User Case 17 - Configurazione iniziale delle impostazioni di una nuova zona illuminata}
+\subsection{User Case 15 - Configurazione iniziale delle impostazioni di una nuova zona illuminata}
 \textbf{Tipologia: desiderabile} \\
 Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
 \begin{itemize}
@@ -417,7 +431,8 @@ Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni d
 	\item il sensore viene tarato con tali impostazioni
 	\item il sistema funziona correttamente senza intraprendere ulteriori azioni
 \end{itemize}
-\subsection{User Case 18 - Logout dal sistema}
+
+\subsection{User Case 16 - Logout dal sistema}
 \textbf{Tipologia: obbligatorio} \\
 L'utente è riconosciuto come amministratore e vuole effettuare il logout dal sistema.
 \begin{itemize}
@@ -433,8 +448,7 @@ L'utente è riconosciuto come amministratore e vuole effettuare il logout dal si
 	\item viene effettuata la disconnessione ed è necessario reinserire le credenziali per operare nuovamente
 \end{itemize}
 
-
-\subsection{User Case 19 - Visualizzazione elenco aree illuminate}
+\subsection{User Case 17 - Visualizzazione elenco aree illuminate}
 \textbf{Tipologia: obbligatorio} \\
 L'utente autorizzato vuole avere una panoramica delle aree illuminate
 \begin{itemize}
@@ -445,12 +459,12 @@ L'utente autorizzato vuole avere una panoramica delle aree illuminate
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'amministratore si è loggato
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
 	\item l'utente preme il pulsante che fornisce la panoramica del sistema
 	\item viene visualizzato l'elenco delle aree illuminate
 \end{itemize}
 
-\subsection{User Case 20 - Inserimento di un impianto nella sezione guasti}
+\subsection{User Case 18 - Inserimento di un impianto nella sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco dei sistemi con guasti.
 \begin{itemize}
@@ -461,14 +475,14 @@ L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'amministratore si è loggato
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
 	\item l'utente preme il pulsante che fornisce la panoramica del sistema
 	\item viene visualizzato l'elenco delle aree illuminate
 	\item viene rilevata una discrepanza tra luminosità misurata e quella impostata
 	\item l'amministratore inserisce l'impianto nell'elenco dei guasti
 \end{itemize}
 
-\subsection{User Case 21 - Rimozione di un impianto dalla sezione guasti}
+\subsection{User Case 19 - Rimozione di un impianto dalla sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
 L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai manutentori.
 \begin{itemize}
@@ -479,11 +493,130 @@ L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai m
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'amministratore si è loggato
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
 	\item l'utente preme il pulsante che fornisce la panoramica del sistema
 	\item viene visualizzato l'elenco delle aree con guasti
 	\item l'amministratore rimuove l'impianto desiderato dall'elenco dei guasti
 \end{itemize}
 
+\subsection{User Case 20 - Visualizzazione dettagliata di una zona}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e lampioni
+	\item Precondizioni: l'amministratore vuole sapere lo stato di una zona e la luminosità pre-impostata
+	\item Postcondizioni: l'utente ottiene le informazioni desiderate
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente preme il pulsante che fornisce la panoramica delle zone
+	\item l'utente sceglie la zona desiderata
+	\item da webapp sceglie i dettagli richiesti
+\end{itemize}
+
+\subsection{User Case 21 - Visualizzazione dettagliata di un sensore}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole conoscere in dettaglio le impostazioni di un sensore.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e sensori
+	\item Precondizioni: l'amministratore vuole sapere lo stato e le impostazioni di un sensore
+	\item Postcondizioni: l'utente visualizza e può modificare le impostazioni del sensore
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente preme il pulsante che fornisce la panoramica delle zone
+	\item l'utente sceglie la zona desiderata
+	\item preme il pulsante di informazioni del sensore
+	\item la webapp fa una richiesta di pull al sensore
+	\item il sensore trasmette le informazioni
+	\item la webapp mostra le informazioni
+	\item l'utente decide se modificare le informazioni ottenuto o si limita a visualizzarle
+\end{itemize}
+
+\subsection{User Case 22 - Visualizzazione dettagliata di un lampione}
+\textbf{Tipologia: obbligatorio} \\
+L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e lampione
+	\item Precondizioni: l'amministratore vuole sapere lo stato e le impostazioni di un lampione
+	\item Postcondizioni: l'utente visualizza le impostazioni del lampione
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore si è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente preme il pulsante che fornisce la panoramica delle zone
+	\item l'utente sceglie la zona desiderata
+	\item l'utente sceglie il lampione desiderato
+	\item preme il pulsante di informazioni del lampione
+	\item la webapp fa una richiesta di pull al lampione
+	\item il lampione trasmette le informazioni
+	\item la webapp mostra le informazioni
+\end{itemize}
+
+\subsection{User Case 23 - Inserimento di un lampione}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e lampione
+	\item Precondizioni: gli amministratori vogliono inserire un nuovo lampione a sistema.\\
+	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
+	\begin{itemize}
+		\item Tipo di iterazione con il lampione: Push o Pull
+		\item indirizzo IP
+		\item polling time
+		\item coordinate geografiche del lampione
+	\end{itemize}
+	\item Postcondizioni: se l'utente ha le credenziali corrette, il lampione è inserito a sistema e può essere comandato.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede ad un area illuminata
+	\item l'utente preme il pulsante di inserimento di un lampione
+	\item l'utente inserisce i dettagli richiesti dal form per l'inserimento
+	\item l'utente preme salva e riceve un messaggio di successo o errore
+\end{itemize}
+
+\subsection{User Case 24 - Rimozione lampione}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e lampione
+	\item Precondizioni: gli amministratori vogliono rimuovere un lampione a sistema.\\
+	\item Postcondizioni: se l'utente ha le credenziali corrette, il lampione non è più comandabile e non fa più parte della zona.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede ad un area illuminata
+	\item l'utente preme il pulsante di rimozione di un lampione
+	\item l'utente preme salva e riceve un messaggio di successo o errore
+\end{itemize}
+
+\subsection{User Case 25 - Modifica luminosità singolo lampione}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole modificare la luminosità un lampione all'interno dell'area gestita.
+\begin{itemize}
+	\item Attori primari: amministratori di sistema
+	\item Attori secondari: webapp e lampione
+	\item Precondizioni: gli amministratori vogliono modificare la luminosità di un lampione a sistema.\\
+	\item Postcondizioni: se l'utente ha le credenziali corrette, la luminosità del lampione viene incrementata o diminuita.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore è loggato. Si rimanda allo "$User Case 2$".
+	\item l'utente accede ad un area illuminata
+	\item l'utente sceglie il lampione desiderato
+	\item l'utente preme il pulsante di modifica della luminosità del lampione
+	\item l'utente incrementa o diminuisce la luminosità
+	\item l'utente preme salva e riceve un messaggio di successo o errore
+\end{itemize}
 
 \end{document}
