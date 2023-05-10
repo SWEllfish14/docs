@@ -89,24 +89,58 @@ Budget at Completion (BAC) = 11.900 !!
 	\begin{itemize}
 		\item \textbf{Descrizione}: Rappresenta la differenza tra EV e AC. Ci fa capire quando siamo sopra o sotto il budget atteso
 		\item \textbf{Calcolo della metrica}:  EV - AC
-		\item \textbf{Valore ottimale}: $\ge 0$
-		\item \textbf{Valore accettabile}: $\ge -10$
+		\item \textbf{Valore ottimale}: $\ge 0\%$
+		\item \textbf{Valore accettabile}: $\ge -10\%$
 	\end{itemize}
-	\item Schedule Variance (CV)
+	\item Schedule Variance (SV)
 	\begin{itemize}
 		\item \textbf{Descrizione}: Rappresenta la differenza tra EV e PV. Ci fa capire se siamo avanti o indietro rispetto a quanto pianificato in termini di denaro
 		\item \textbf{Calcolo della metrica}:  EV - PV
-		\item \textbf{Valore ottimale}: $\ge 0$
-		\item \textbf{Valore accettabile}: $\ge -10$
+		\item \textbf{Valore ottimale}: $\ge 0\%$
+		\item \textbf{Valore accettabile}: $\ge -10\%$
 	\end{itemize}
 \end{itemize}
 \subsection{Processi di supporto}
+\subsubsection{Documentazione}
 \begin{itemize}
-	\item Code coverage
+	\item Indice di Gulpease
+	\begin{itemize}
+		\item \textbf{Descrizione}: L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana
+		\item \textbf{Calcolo della metrica}:  89 + $\frac{300*(F) - 10 * (L)}{(P)}$
+		\begin{itemize}
+			\item \textbf{L} = Numero di lettere nel testo
+			\item \textbf{P} = Numero di parole nel testo
+			\item \textbf{F} = Numero di frasi nel testo
+		\end{itemize}
+		\item \textbf{Valore ottimale}: 100 \%
+		\item \textbf{Valore accettabile}: $\ge 60\%$
+	\end{itemize}
 \end{itemize}
+\begin{itemize}
+	\item Errori ortografici
+	\begin{itemize}
+		\item \textbf{Descrizione}: Indica il numero di errori ortografici presente nella documentazione
+		\item \textbf{Calcolo della metrica}: numero errori ortografici presenti nel testo
+		\item \textbf{Valore ottimale}: 0
+		\item \textbf{Valore accettabile}: 0
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{verifica}
+\begin{itemize}
+	\item Code Coverage
+	\begin{itemize}
+		\item \textbf{Descrizione}: Indica la percentuale di codice testato
+		\item \textbf{Calcolo della metrica}:  !!
+		\item \textbf{Valore ottimale}: 100\%
+		\item \textbf{Valore accettabile}: 80\%
+	\end{itemize}
+\end{itemize}
+
 \subsection{Processi organizzativi}
+
 \section{Qualità di prodotto}
 \section{Specifica di test}
-\section {Resoconto verifica}
+\section {Resoconto attività di verifica}
 
 \end{document}
