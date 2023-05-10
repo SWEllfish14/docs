@@ -18,25 +18,25 @@
 \maketitle
 
 \begin{center}
-    \begin{tabular}{r | l}
-		\multicolumn{2}{c}{\textit{Informazioni}}\\
+	\begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}                         \\
 		\hline
-		
-			\textit{Redattori} &
-			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
 
-			\textit{Revisori} &
-			[Jude Vensil Braceros]\makecell{}\\
-			\textit{Responsabili} &
-			[Andrea Veronese]\makecell{}\\
-		      \textit{Uso} & 
-                [Esterno]\makecell{}\\
-    \end{tabular}
+		\textit{Redattori}    &
+		[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{} \\
+
+		\textit{Revisori}     &
+		[Jude Vensil Braceros]\makecell{}                                 \\
+		\textit{Responsabili} &
+		[Andrea Veronese]\makecell{}                                      \\
+		\textit{Uso}          &
+		[Esterno]\makecell{}                                              \\
+	\end{tabular}
 \end{center}
 
 \begin{center}
-    \textbf{Descrizione}\\
-    File contenente il piano di qualifica. Contiene le metriche e i criteri di accettazione dei prodotti.
+	\textbf{Descrizione}\\
+	File contenente il piano di qualifica. Contiene le metriche e i criteri di accettazione dei prodotti.
 \end{center}
 
 \pagebreak
@@ -44,7 +44,7 @@
 \tableofcontents
 \pagebreak
 
-\printindex 
+\printindex
 
 \addversione{0.0.0}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Creata struttura di base del documento}
@@ -54,12 +54,87 @@
 \subsection{Scopo del documento}
 Questo documento ha lo scopo di definire le strategia di validazione e verifica addottate per garantire la qualità del prodotto.
 Per raggiungere questo obbiettivo viene applicato un sistema di verifica continua sui processi e sulle attività del gruppo, questo permette di ottenere un miglioramento continuo.
-Il documento viene redatto in maniera incrementale, ovvero viene tenuto in costante aggiornamento durante tutta la durata del progetto. 
+Il documento viene redatto in maniera incrementale, ovvero viene tenuto in costante aggiornamento durante tutta la durata del progetto.
 \subsection{Scopo del capitolato}
 In Italia, il prezzo del gas è aumentato significativamente, e il consumo di gas e carbone sta portando ad un aumento delle emissioni di gas serra e CO2. Per affrontare il problema del costo dell'energia, molti comuni stanno tagliando l'illuminazione pubblica, ma questo può essere evitato attraverso l'implementazione di un sistema di illuminazione pubblica ottimizzato, che consentirebbe sia la sicurezza stradale che il risparmio energetico ed economico.
 Nel capitolato in questione si vuole implementare questa soluzione tramite un applicativo web. Quest'ultimo permetterebbe la gestione dell'illuminazione in modo sia automatico che manuale.
 \section{Qualità di processo}
 \section{Qualità di prodotto}
+\subsection{Introduzione}
+Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 9126 come punto di riferimento. In questa sezione, forniamo i valori ottimali e accettabili per le metriche selezionate dal gruppo SWEllFish. Per una descrizione dettagliata delle metriche elencate di seguito, consultare il documento "Norme di Progetto v1.0.0".
+
+
+
+Here is the LaTeX code for the given text:
+
+\subsection{Affidabilità}
+\begin{itemize}
+	\item \textbf{Descrizione}: La capacità del prodotto di svolgere le sue funzioni, anche in presenza di errori, provando ad eliminarne la loro incidenza.
+	\item \textbf{Metriche}:
+	      \begin{itemize}
+		      \item MPD01: Percentuale di difetti del prodotto.
+		      \item Valore ottimale: 80\%.
+		      \item Soglia accettabile: 60\%.
+		      \item Note: I valori possono essere modificati.
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Efficienza}
+\begin{itemize}
+	\item \textbf{Descrizione}: La capacità del prodotto di svolgere le sue funzioni utilizzando il minor numero di risorse possibile.
+	\item \textbf{Metriche}:
+	      \begin{itemize}
+		      \item MPD02: Tempo medio di risposta.
+		      \item Metrica di misurazione: Secondi.
+		      \item Valore ottimale: 5 secondi.
+		      \item Soglia accettabile: 7 secondi.
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Funzionalità}
+\begin{itemize}
+	\item \textbf{Descrizione}: La capacità del prodotto di svolgere tutte le funzioni previste in modo completo e corretto.
+	\item \textbf{Metriche}:
+	      \begin{itemize}
+		      \item MPD03: Percentuale di copertura dei requisiti.
+		      \item Valore ottimale: 100\% dei requisiti obbligatori e 80\% dei requisiti opzionali.
+		      \item Soglia accettabile: 100\% dei requisiti obbligatori.
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Manutenibilità}
+\begin{itemize}
+	\item \textbf{Descrizione}: La capacità del prodotto di essere modificato e mantenuto in modo efficiente.
+	\item \textbf{Metriche}:
+	      \begin{itemize}
+		      \item MPD04: Percentuale di comprensibilità del codice.
+		      \item Valore ottimale: 85\% - 100\%.
+		      \item Soglia accettabile: 65\%.
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Portabilità}
+\begin{itemize}
+	\item \textbf{Descrizione}: La capacità del prodotto di essere utilizzato in diverse piattaforme e ambienti.
+	\item \textbf{Metriche}:
+	      \begin{itemize}
+		      \item MPD05: Percentuale di compatibilità del prodotto.
+		      \item Valore ottimale: 85\% - 100\%.
+		      \item Soglia accettabile: 60\%.
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Usabilità}
+\begin{itemize}
+	\item Descrizione: La capacità del prodotto di essere utilizzato in modo efficace, efficiente e soddisfacente dagli utenti finali.
+	\item Metriche:
+	      \begin{itemize}
+		      \item MPD06: Numero di errori compiuti dagli utenti durante l'utilizzo del prodotto.
+		      \item Valore ottimale: Inferiore a 1 errore per utente.
+		      \item Soglia accettabile: Inferiore a 2 errori per utente.
+	      \end{itemize}
+\end{itemize}
+
 \section{Specifica di test}
 
 \end{document}
