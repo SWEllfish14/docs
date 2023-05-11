@@ -29,7 +29,7 @@
 			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
 
 			\textit{Revisori} &
-			[Jude Vensil Braceros]\makecell{}\\
+			[Jude Vensil Barceros]\makecell{}\\
 			\textit{Responsabili} &
 			[Andrea Veronese]\makecell{}\\
 		      \textit{Uso} & 
@@ -50,12 +50,16 @@
 \printindex 
 \pagebreak
 
+\tableofcontents
+\pagebreak
 
-\addversione{0.0.0}{25/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Creata struttura di base del documento}
-\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunto diagramma e tabella suddivisione ore}
-\addversione{0.0.2}{28/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunto resoconto primo sprint}
-\addversione{0.0.3}{04/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Braceros}{Andrea Veronese}{Aggiunto resoconto secondo sprint e problematiche riscontrate}
+\printindex 
 
+\addversione{0.0.0}{25/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Creata struttura di base del documento}
+\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto diagramma e tabella suddivisione ore}
+\addversione{0.0.2}{28/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto resoconto primo sprint}
+\addversione{0.0.3}{04/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Barceros}{Andrea Veronese}{Aggiunto resoconto secondo sprint e problematiche riscontrate}
+\addversione{0.0.4}{11/05/2023}{Francesco Naletto, Jude Vensil Barceros, Andrea Veronese}{Claudio Giaretta}{Aggiunto resoconto terzo sprint}
 \makeversioni
 
 \section{Introduzione}
@@ -66,7 +70,7 @@ Questo documento conterrà una sintesi degli sprint effettuati, con le relative 
 \subsection{Diagramma di Gantt}
 Viene qui inserito il diagramma di Gantt, contenente la percentuale di completamento delle varie attività svolte al momento delle redazione.
 \begin{center}
-%\includegraphics[width=1.2\textwidth]{Gantt}
+\includegraphics[width=1.2\textwidth]{Gantt}
 \end{center}
 
 \subsection{Preventivo ore finale}
@@ -300,6 +304,96 @@ L'aggiunta degli UML per gli Use Case è stata rimandata al prossimo sprint per 
         \hline
         \hline
         \textbf{Totale} &    & 50 &  1185 \\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+
+
+\section{Sprint 2}
+Qui vengono riportate le informazioni relative alla terza settimana di sprint del gruppo. \\
+Il terzo ciclo è stato caratterizzato dal perfezionamento dell'analisi dei requisiti, individuando nuovi casi d'uso non considerati in precedenza ed espandendoli con la rappresentazione tramite UML.\\
+
+
+
+Caratteristiche:
+\begin{itemize}
+    \item Data inizio: 04/04/2023
+    \item Data fine preventivata: 11/05/2023
+    \item Data fine effettiva: 11/05/2023
+\end{itemize}
+
+\subsection{Pianificazione}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Item da realizzare}}\\
+        \hline
+        \hline
+        \textbf{Item} & \textbf{Persone richieste}\\
+        \hline
+        Piano di progetto & 1\\
+        \hline
+        Piano di qualifica & 2\\
+        \hline
+        Analisi dei requisiti & 3 \\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+\subsection{Preventivo Costi/Ore}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}\\
+        \hline
+        \hline
+        \textbf{Ruolo} & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)}\\
+        \hline
+        Responsabile    & 30 & 3  & 90\\   
+        \hline
+        Amministratore  & 20 & 3  & 60\\ 
+        \hline
+        Analista        & 25 & 15  & 375\\ 
+        \hline
+        Progettista     & 25 & 0  & 0\\
+        \hline
+        Programmatore   & 15 & 0  & 0\\
+        \hline
+        Verificatore    & 15 & 3  & 45\\
+        \hline
+        \hline
+        \textbf{Totale} &    & 24 & 570\\
+        \hline
+    \end{tabularx}\\[8pt]
+    \mbox{}\\
+\end{center}
+\subsection{Problematiche riscontrate}
+Sono sorti dei dubbi riguardanti gli attori nei casi d'uso, pertanto è stata concordata una riunione con Imola Informatica per avere una visione più chiara su questi dubbi.
+L'altra problematica riscontrata è inerente alle metriche da utilizzare per valutare la qualità del lavoro.
+\subsection{Resoconto}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}\\
+        \hline
+        \hline
+        \textbf{Ruolo} & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)}\\
+        \hline
+        Responsabile    & 30 & 15(+3)  & 90\\
+        \hline
+        Amministratore  & 20 & 12(+3)  & 60\\
+        \hline
+        Analista        & 25 & 36(+15)  & 375\\
+        \hline
+        Progettista     & 25 & 0(+0)  & 0\\
+        \hline
+        Programmatore   & 15 & 0(+0)  & 0\\
+        \hline
+        Verificatore    & 15 & 11(+3)  & 45\\
+        \hline
+        \hline
+        \textbf{Totale} &    & 74 &  1755 \\
         \hline
     \end{tabularx}\\[8pt]
     \mbox{}\\
