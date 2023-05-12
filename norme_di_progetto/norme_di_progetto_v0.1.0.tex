@@ -20,7 +20,7 @@
 
 \firstPage
 
-\pagestyle{genericDocstyle}
+\sethdr{Norme di progetto}
 \maketitle
 
 \begin{center}
@@ -56,21 +56,47 @@
 \addversione{0.0.0}{22/03/2023}{Andrea Veronese}{Davide Porporati}{Versione preliminare con convenzioni di base}
 \addversione{0.0.1}{19/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunta convenzioni adottate per lo sviluppo}
 \addversione{0.0.2}{23/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunte sezioni verifica e scrum}
+\addversione{0.1.0}{04/05/2023}{Claudio Giaretta}{Jude Vensil Braceros}{Verifica generale del documento}
 \makeversioni
 \section{Introduzione}
-Lo scopo del documento è quello di fornire un insieme di regole, strumenti e stadard di qualità necessari per creare un Way of Working condiviso e efficacemente impiegabile da tutti i membri del gruppo.
+Lo scopo del documento è quello di fornire un insieme di regole, strumenti e standard di qualità necessari per creare un Way of Working condiviso ed efficacemente impiegabile da tutti i membri del gruppo.
 Questo documento conterrà tutte le convenzioni da utilizzare per lo sviluppo del progetto e verrà aggiornato in maniera incrementale durante tutte le fasi dello sviluppo, pertanto è da considerarsi come work-in-progress.
 
 
 \section{Processi Primari}
 \subsection{Fornitura}
+\subsubsection{Documenti}
+I documenti da redarre per la fornitura sono:
+\begin{itemize}
+	\item Piano di progetto
+	\item Piano di qualifica
+\end{itemize}
+\paragraph{Piano di progetto}
+Il piano di progetto è il documento, redatto dagli amministratori e dal responsabile del progetto, che definisce l'approccio e le attività che saranno utilizzate per gestire e completare un progetto con successo.
+Il documento è diviso nelle seguenti parti:
+\begin{itemize}
+	\item Analisi dei rischi e le strategie di mitigazione
+	\item Modello di sviluppo
+	\item Pianificazione
+	\item Preventivo
+	\item Consuntivo di periodo
+\end{itemize}
+\paragraph{Piano di qualifica}
+Il piano di qualifica è il documento, redatto dal verificatore, che definisce le attività e le risorse necessarie per garantire che un prodotto, un servizio o un processo soddisfi i requisiti di qualità specificati. Il piano di qualifica descrive in dettaglio le attività che devono essere svolte, le responsabilità dei membri del team e le risorse necessarie per raggiungere gli obiettivi di qualità.
+Il documento è formato dalle seguenti parti:
+\begin{itemize}
+	\item  Qualità dei processi
+	\item  Qualità del prodotto
+	\item  Specifica dei test
+	\item 	Resoconto attività di verifica
+\end{itemize}
 \subsubsection{Repository GitHub}
 Data la necessità di effettuare un lavoro sostanzioso e condiviso, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
 E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno sono state create delle specifiche repository:
 
 \begin{itemize}
-    \item SWELLFish: questa repo conterrà tutto il codice necessario per il progetto
-    \item Documentazione: questa repo contiene tutta la documentazione di interesse per il committente e il proponente.
+    \item SWELLFish: questa repository conterrà tutto il codice necessario per il progetto
+    \item Documentazione: questa repository contiene tutta la documentazione di interesse per il committente e il proponente.
     \item dev: repository che contiene i file sorgenti neccessari per la documentazione
 \end{itemize}
 
@@ -98,7 +124,7 @@ Durante fase di progettazione vengono definite le funzionalità, la struttura e 
 
 Inizialmente tutto ciò si tradurrà in un proof of Concept, ossia una prima demo per dimostrare la fattibilità del prodotto, e in seguito approfondita e descritta nel documento tecnico allegato alla Product Baseline.
 
-La progettazione è divisa in due fasi :
+La progettazione è divisa in due fasi:
 
 \subparagraph{Requirements \& Technology Baseline}
 I documenti neccessari in questa fase sono:
@@ -110,9 +136,10 @@ I documenti neccessari in questa fase sono:
 \end{itemize}
 
 \subparagraph{Product Baseline}
-I documenti neccessari in questa fase sono:
+I documenti necessari in questa fase sono:
 \begin{itemize}
     \item Manuale utente
+    \item Allegato tecnico
     \item Verbali di periodo
 \end{itemize}
 
@@ -121,12 +148,12 @@ La codifica ha lo scopo di concretizzare il prodotto tramite la programmazione
 
 \subparagraph{Stile della codifica} 
 \begin{itemize}
-    \item \textbf{Variabili}: Le variabili devono seeguire la notazione camelCase, iniziando quindi con la lettera minuscola e se composte da più parole, ogni parola successiva alla prima dovrà iniziare con la maiuscola
+    \item \textbf{Variabili}: Le variabili devono seguire la notazione camelCase, iniziando quindi con la lettera minuscola e se composte da più parole, ogni parola successiva alla prima dovrà iniziare con la maiuscola
     \item \textbf{Metodi}: I metodi, devono seguire la stessa nomenclatura (camelCase) delle variabili 
     \item \textbf{Indentazione}: Tutto il codice deve essere indentato seguendo le regole di indentazione del linguaggio di programmazione scelto
     \item \textbf{Commenti}: Nel caso il codice venga ritenuto di difficile comprensione il programmatore può inserire un commento per esplicitarlo. Tutti i commenti vanno inseriti la riga sopra del codice da commentare, in modo da rendere subito visibile il commento e renderlo di facile lettura
-    \item \textbf{Blocchi condizionali}: tutti i blocchi condizionali devono essere racchiusi all'interno delle parentesi grafe, anche quando non sono neccessarie, questo per rendere esplicito l'inizio e la fine di un blocco
-    \item \textbf{Classi}: tutte le classi devono avere la lettera iniziale maiuscola, se composte da più parole ogni parola successiva dovra anch'essa avere la prima lettera maiuscola
+    \item \textbf{Blocchi condizionali}: tutti i blocchi condizionali devono essere racchiusi all'interno delle parentesi grafe, anche quando non sono necessarie, questo per rendere esplicito l'inizio e la fine di un blocco
+    \item \textbf{Classi}: tutte le classi devono avere la lettera iniziale maiuscola, se composte da più parole ogni parola successiva dovrà anch'essa avere la prima lettera maiuscola
     \item \textbf{File}: Dovrà avere la lettera maiuscola ed un nome significativo rispetto al suo contenuto
 \end{itemize}
 
@@ -176,7 +203,7 @@ Di seguito gli strumenti utilizzati dal gruppo per la stesura della documentazio
     \begin{center}
         \url{https://www.latex-project.org/}
     \end{center}
-    \item \textbf{Visual Studio Code e Latex workshop}: Editor popolare per la scrittura del codice in vari linguaggi di programmazione, utilizato iniseme al framework Latex WorkShop che permette di operare anche su codice latex. E' stato preferito a Overleaf in quanto permette di lavorare in locale e facilita l'interazione con sistemi di versionamento remoto come GitHub
+    \item \textbf{Visual Studio Code e Latex workshop}: Editor popolare per la scrittura del codice in vari linguaggi di programmazione, utilizzato insieme al framework Latex WorkShop che permette di operare anche su codice latex. E' stato preferito a Overleaf in quanto permette di lavorare in locale e facilita l'interazione con sistemi di versionamento remoto come GitHub
     \begin{center}  
         \url{https://code.visualstudio.com/docs}
     \end{center}
@@ -188,7 +215,7 @@ Il team ha deciso di utilizzare dei template scritti in Latex per facilitare il 
 Di seguito sono indicati i template utilizzati dal gruppo:
 \begin{itemize}
     \item \textbf{first\_page}: template presente in tutti i documenti per la creazione della prima pagina
-    \item \textbf{styles}: template presente in tutti i documenti che contiene dettagli di stile comuni a tutti i fle della documentazione
+    \item \textbf{styles}: template presente in tutti i documenti che contiene dettagli di stile comuni a tutti i file della documentazione
     \item \textbf{tabella\_versioni}: template per facilitare la creazione della tabella delle versioni nei documenti in cui è previsto versionamento.
     
 \end{itemize}
@@ -288,12 +315,12 @@ Tale analisi si differenzia in due diverse tipologie:
 \begin{itemize}
     \item \textbf{Analisi statica}:processo di valutazione di un sistema o di un suo componente basato sulla sua
     forma, struttura, contenuto, documentazione. Questo tipo di analisi viene generalmente svolto
-    tramite ispezioni e revisioni e pu`o essere svolta sui documenti cos`ı come sul software o su parti
+    tramite ispezioni e revisioni e può essere svolta sui documenti così come sul software o su parti
     di esso;
     
     \item \textbf{Analisi dinamica}: processo di valutazione di un sistema software o di un suo componente
     basato sull’osservazione del suo comportamento in esecuzione. Questo tipo di analisi viene
-    generalmente chiamato testing e per motivi logici non pu`o essere svolta sui documenti.
+    generalmente chiamato testing e per motivi logici non può essere svolta sui documenti.
 \end{itemize}
 
 
@@ -305,12 +332,15 @@ Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
 \end{itemize}
 Il team ha deciso di utilizzare una tecnica \textbf{Walkthrough} nella fase iniziale del documento e prima del rilascio di versioni "major".
 Dopo la formazione del documento ed un primo controllo esaustivo, si procede passando ad una tecnica di tipo \textbf{Inspection}
-
+\paragraph{Strumenti utilizzati}
+\begin{itemize}
+	\item \url{https://www.italiancorrector.com/}
+\end{itemize}
 \subsubsection{Verifica del codice}
 
 \subsection{Validazione}
 Processo per assicurarsi che il prodotto sviluppato rispetti i requisiti concordati con il proponente.
-Per fare ciò il prodotto verrà esaminato dai verificari, verificando che esso sia conforme a quanto scritto nell'analisi dei requisiti. Sarà poi il responsabile successivamente che deciderà se accettare il prodotto o rifiutarlo chiedendo un ulteriore verifica. 
+Per fare ciò il prodotto verrà esaminato dai verificatori, verificando che esso sia conforme a quanto scritto nell'analisi dei requisiti. Sarà poi il responsabile successivamente che deciderà se accettare il prodotto o rifiutarlo chiedendo un ulteriore verifica. 
 \subsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
 \begin{itemize}
@@ -327,7 +357,7 @@ I comandi più frequentemente utilizzati sono riassunti in seguito:
 \section{Processi organizzativi}
 \subsection{Gestione dei processi}
 \subsubsection{Organizzazione dei File}
-Tutta la documentazione inerente al progetto sarà incusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
+Tutta la documentazione inerente al progetto sarà inclusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
 I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. 
 I verbali infine sono contenuti in Documentazione/esterni/verbali.
 
@@ -345,7 +375,7 @@ Ogni sprint avrà le seguenti caratteristiche:
         \item Pianificazione data inizio prossimo sprint e obiettivi da fissare
     \end{itemize}
 \end{itemize}
-Gli obiettivi pianificati per lo sprint sucessivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
+Gli obiettivi pianificati per lo sprint successivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
 
 \subsubsection{Rotazione dei ruoli}
 Vista l'adozione del framework scrum, il team ha deciso di far ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
@@ -353,14 +383,14 @@ Pertanto ogni membro del team avrà impegni e responsabilità diverse ogni setti
 
 \subsection{Gestione delle infrastrutture}
 \subsubsection{Comunicazioni interne}
-Le comunicazioni interne avvengono prinicipalmente tramite:
+Le comunicazioni interne avvengono principalmente tramite:
 \begin{itemize}
     \item \textbf{Discord}: Per quanto riguarda le riunioni settimanali e non. E' stato scelto in quanto conosciuto da tutti membri del gruppo, e la piattaforma web lo rende di facile accesso.
     \item \textbf{Telegram}: Per quanto riguarda comunicazioni minori o per comunicazioni di carattere logistico. Scelto in quanto conosciuto e usato da tutti i membri del gruppo.
 \end{itemize}
 
 \subsubsection{Comunicazioni esterne}
-Le comunicazioni esterne avvengono prinicipalmente tramite:
+Le comunicazioni esterne avvengono principalmente tramite:
 \begin{itemize}
     \item \textbf{E-mail} utilizzando l'email del gruppo "swellfish14@gmail.com"
     \item \textbf{Google meet} tramite link inviato dal proponente
