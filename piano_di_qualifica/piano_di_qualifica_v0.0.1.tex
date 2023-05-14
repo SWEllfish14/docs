@@ -59,10 +59,13 @@ Il documento viene redatto in maniera incrementale, ovvero viene tenuto in costa
 In Italia, il prezzo del gas è aumentato significativamente, e il consumo di gas e carbone sta portando ad un aumento delle emissioni di gas serra e CO2. Per affrontare il problema del costo dell'energia, molti comuni stanno tagliando l'illuminazione pubblica, ma questo può essere evitato attraverso l'implementazione di un sistema di illuminazione pubblica ottimizzato, che consentirebbe sia la sicurezza stradale che il risparmio energetico ed economico.
 Nel capitolato in questione si vuole implementare questa soluzione tramite un applicativo web. Quest'ultimo permetterebbe la gestione dell'illuminazione in modo sia automatico che manuale.
 \section{Qualità di processo}
-Metriche !!
 
 \subsection{Processi primari}
-Budget at Completion (BAC) = 11.900 !!
+
+ Budget at Completion (BAC) = 11.900 !!
+
+\subsubsection{Fornitura}
+\textbf{Metriche:}
 \begin{itemize}
 	\item Actual Cost (AV)
 	      \begin{itemize}
@@ -81,7 +84,7 @@ Budget at Completion (BAC) = 11.900 !!
 	\item Earned Value (EV)
 	      \begin{itemize}
 		      \item \textbf{Descrizione}: Rappresenta il valore effettivo del progetto ad una determinata data
-		      \item \textbf{Calcolo della metrica}: percentuale dell'effettivo stato di completamento del progetto * BAC
+		      \item \textbf{Calcolo della metrica}: Percentuale dell'effettivo stato di completamento del progetto * BAC
 		      \item \textbf{Valore ottimale}: $\ge 0$
 		      \item \textbf{Valore accettabile}: $\le BAC$
 	      \end{itemize}
@@ -99,9 +102,34 @@ Budget at Completion (BAC) = 11.900 !!
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
 		      \item \textbf{Valore accettabile}: $\ge -10\%$
 	      \end{itemize}
+
+	\item Cost Performance Index (CPI)
+			\begin{itemize}
+				\item \textbf{Descrizione}: Misura l'efficienza del lavoro svolto ad una determinata data
+				\item \textbf{Calcolo della metrica}:  EV / AC
+				\item \textbf{Valore ottimale}: $\ge 1$
+				\item \textbf{Valore accettabile}: $\ge 0,9$
+			\end{itemize}
+	
+	\item Estimated At Completition (EAC)
+	      \begin{itemize}
+		      \item \textbf{Descrizione}: Rappresenta la previsione del costo aspettato alla fine del progetto.
+		      \item \textbf{Calcolo della metrica}:  BAC / CPI
+		      \item \textbf{Valore ottimale}: = BAC
+		      \item \textbf{Valore accettabile}: $\ge BAC - 3\% ; \le BAC + 3\% $
+	      \end{itemize}
+	\item Estimate To Completition (ETC)
+	      \begin{itemize}
+		      \item \textbf{Descrizione}: Rappresenta una previsione dei costi neccessari per il completamento del progetto
+		      \item \textbf{Calcolo della metrica}:  (BAC - EV) / CPI
+		      \item \textbf{Valore ottimale}: $\ge 0\%$
+		      \item \textbf{Valore accettabile}: $\le EAC$
+	      \end{itemize}
+	
 \end{itemize}
 \subsection{Processi di supporto}
 \subsubsection{Documentazione}
+\textbf{Metriche:}
 \begin{itemize}
 	\item Indice di Gulpease
 	      \begin{itemize}
@@ -126,12 +154,14 @@ Budget at Completion (BAC) = 11.900 !!
 	      \end{itemize}
 \end{itemize}
 
-\subsubsection{verifica}
+\subsubsection{Verifica}
+
+\textbf{Metriche:}
 \begin{itemize}
 	\item Code Coverage
 	      \begin{itemize}
 		      \item \textbf{Descrizione}: Indica la percentuale di codice testato
-		      \item \textbf{Calcolo della metrica}:  !!
+		      \item \textbf{Calcolo della metrica}:  (Numero di righe di codice testate / Numero totale di righe di codice) * 100
 		      \item \textbf{Valore ottimale}: 100\%
 		      \item \textbf{Valore accettabile}: 80\%
 	      \end{itemize}
@@ -141,75 +171,88 @@ Budget at Completion (BAC) = 11.900 !!
 
 \section{Qualità di prodotto}
 \subsection{Introduzione}
-Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 9126 come punto di riferimento. In questa sezione, forniamo i valori ottimali e accettabili per le metriche selezionate dal gruppo SWEllFish. Per una descrizione dettagliata delle metriche elencate di seguito, consultare il documento "Norme di Progetto v1.0.0".
+Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 9126 come punto di riferimento. In questa sezione, forniamo i valori ottimali e accettabili per le metriche selezionate dal gruppo SWEllFish.
+
+
 
 \subsection{Affidabilità}
-\begin{itemize}
-	\item \textbf{Descrizione}: La capacità del prodotto di svolgere le sue funzioni, anche in presenza di errori, provando ad eliminarne la loro incidenza.
-	\item \textbf{Metriche}:
-	      \begin{itemize}
-		      \item MPD01: Percentuale di difetti del prodotto.
-		      \item Valore ottimale: 80\%.
-		      \item Soglia accettabile: 60\%.
-		      \item Note: I valori possono essere modificati.
-	      \end{itemize}
-\end{itemize}
+	Indica la capacità del prodotto di svolgere le sue funzioni, anche in presenza di errori, provando ad eliminarne la loro incidenza.
+	\\\\
+	\textbf{Metriche}:
+	\begin{itemize}
+		\item MPD01: Percentuale di difetti del prodotto.
+		\begin{itemize}	
+			\item Valore ottimale: 80\%.
+			\item Valore accettabile: 60\%.
+			\item Note: I valori possono essere modificati.
+		\end{itemize}
+	\end{itemize}
+
 
 \subsection{Efficienza}
-\begin{itemize}
-	\item \textbf{Descrizione}: La capacità del prodotto di svolgere le sue funzioni utilizzando il minor numero di risorse possibile.
-	\item \textbf{Metriche}:
-	      \begin{itemize}
-		      \item MPD02: Tempo medio di risposta.
-		      \item Metrica di misurazione: Secondi.
-		      \item Valore ottimale: 5 secondi.
-		      \item Soglia accettabile: 7 secondi.
-	      \end{itemize}
-\end{itemize}
+	Indica la capacità del prodotto di svolgere le sue funzioni utilizzando il minor numero di risorse possibile.
+	\\\\
+	\textbf{Metriche}:
+	\begin{itemize}
+		\item MPD02: Tempo medio di risposta.
+		\begin{itemize}	
+			\item Metrica di misurazione: Secondi.
+			\item Valore ottimale: 5 secondi.
+			\item Valore accettabile: 7 secondi.
+		\end{itemize}
+	\end{itemize}
 
 \subsection{Funzionalità}
-\begin{itemize}
-	\item \textbf{Descrizione}: La capacità del prodotto di svolgere tutte le funzioni previste in modo completo e corretto.
-	\item \textbf{Metriche}:
-	      \begin{itemize}
-		      \item MPD03: Percentuale di copertura dei requisiti.
-		      \item Valore ottimale: 100\% dei requisiti obbligatori e 80\% dei requisiti opzionali.
-		      \item Soglia accettabile: 100\% dei requisiti obbligatori.
-	      \end{itemize}
-\end{itemize}
+
+	Indica la capacità del prodotto di svolgere tutte le funzioni previste in modo completo e corretto.
+	\\\\
+	\textbf{Metriche}:
+	\begin{itemize}
+		\item MPD03: Percentuale di copertura dei requisiti.
+		\begin{itemize}	
+			\item Valore ottimale: 100\% dei requisiti obbligatori e 80\% dei requisiti opzionali.
+			\item Valore accettabile: 100\% dei requisiti obbligatori.
+		\end{itemize}
+	\end{itemize}
 
 \subsection{Manutenibilità}
-\begin{itemize}
-	\item \textbf{Descrizione}: La capacità del prodotto di essere modificato e mantenuto in modo efficiente.
-	\item \textbf{Metriche}:
-	      \begin{itemize}
-		      \item MPD04: Percentuale di comprensibilità del codice.
-		      \item Valore ottimale: 85\% - 100\%.
-		      \item Soglia accettabile: 65\%.
-	      \end{itemize}
-\end{itemize}
+	Indica la capacità del prodotto di essere modificato e mantenuto in modo efficiente.
+	\\\\
+	\textbf{Metriche}:
+		\begin{itemize}
+			\item MPD04: Percentuale di comprensibilità del codice.
+			\begin{itemize}	
+				\item Valore ottimale: 85\% - 100\%.
+				\item Valore accettabile: 65\%.
+			\end{itemize}
+		\end{itemize}
 
 \subsection{Portabilità}
-\begin{itemize}
-	\item \textbf{Descrizione}: La capacità del prodotto di essere utilizzato in diverse piattaforme e ambienti.
-	\item \textbf{Metriche}:
-	      \begin{itemize}
-		      \item MPD05: Percentuale di compatibilità del prodotto.
-		      \item Valore ottimale: 85\% - 100\%.
-		      \item Soglia accettabile: 60\%.
-	      \end{itemize}
-\end{itemize}
+	Indica la capacità del prodotto di essere utilizzato in diverse piattaforme e ambienti.
+	\\\\
+	\textbf{Metriche}:
+		  \begin{itemize}
+			\item MPD05: Percentuale di compatibilità del prodotto.
+			\begin{itemize}	
+				\item Valore ottimale: 85\% - 100\%.
+				\item Valore accettabile: 60\%.
+			\end{itemize}
+		\end{itemize}
+
 
 \subsection{Usabilità}
-\begin{itemize}
-	\item Descrizione: La capacità del prodotto di essere utilizzato in modo efficace, efficiente e soddisfacente dagli utenti finali.
-	\item Metriche:
-	      \begin{itemize}
-		      \item MPD06: Numero di errori compiuti dagli utenti durante l'utilizzo del prodotto.
-		      \item Valore ottimale: Inferiore a 1 errore per utente.
-		      \item Soglia accettabile: Inferiore a 2 errori per utente.
-	      \end{itemize}
-\end{itemize}
+	Indica la capacità del prodotto di essere utilizzato in modo efficace, efficiente e soddisfacente dagli utenti finali.
+	\\\\
+	\textbf{Metriche:}
+		  \begin{itemize}
+			\item MPD06: Numero di errori compiuti dagli utenti durante l'utilizzo del prodotto.
+			\begin{itemize}	
+				\item Valore ottimale: Inferiore a 1 errore per utente.
+				\item Valore accettabile: Inferiore a 2 errori per utente.
+			\end{itemize}
+		\end{itemize}
+		  
+
 
 \section{Specifica di test}
 \section {Resoconto attività di verifica}
