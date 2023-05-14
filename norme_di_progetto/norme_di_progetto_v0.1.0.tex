@@ -1,0 +1,410 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\input{../templates/first_page.tex} 
+\input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
+
+\begin{document}
+
+
+\graphicspath{ {../templates/img/} }
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\title{Norme di progetto}
+
+\firstPage
+
+\sethdr{Norme di progetto}
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Andrea Veronese][Claudio Giaretta]\makecell{}\\
+
+			\textit{Revisori} &
+			[Davide Porporati]\makecell{}\\
+			\textit{Responsabili} &
+			[Elena Marchioro]\makecell{}\\
+		      \textit{Uso} & 
+                [Interno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+    File contenente tutte le best practices applicate al progetto 
+\end{center}
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\printindex 
+
+\addversione{0.0.0}{22/03/2023}{Andrea Veronese}{Davide Porporati}{Versione preliminare con convenzioni di base}
+\addversione{0.0.1}{19/04/2023}{Andrea Veronese}{Davide Porporati}{Aggiunta convenzioni adottate per lo sviluppo}
+\addversione{0.0.2}{23/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Aggiunte sezioni verifica e scrum}
+\addversione{0.1.0}{04/05/2023}{Claudio Giaretta}{Jude Vensil Braceros}{Verifica generale del documento}
+\makeversioni
+\section{Introduzione}
+Lo scopo del documento è quello di fornire un insieme di regole, strumenti e standard di qualità necessari per creare un Way of Working condiviso ed efficacemente impiegabile da tutti i membri del gruppo.
+Questo documento conterrà tutte le convenzioni da utilizzare per lo sviluppo del progetto e verrà aggiornato in maniera incrementale durante tutte le fasi dello sviluppo, pertanto è da considerarsi come work-in-progress.
+
+
+\section{Processi Primari}
+\subsection{Fornitura}
+\subsubsection{Documenti}
+I documenti da redarre per la fornitura sono:
+\begin{itemize}
+	\item Piano di progetto
+	\item Piano di qualifica
+\end{itemize}
+\paragraph{Piano di progetto}
+Il piano di progetto è il documento, redatto dagli amministratori e dal responsabile del progetto, che definisce l'approccio e le attività che saranno utilizzate per gestire e completare un progetto con successo.
+Il documento è diviso nelle seguenti parti:
+\begin{itemize}
+	\item Analisi dei rischi e le strategie di mitigazione
+	\item Modello di sviluppo
+	\item Pianificazione
+	\item Preventivo
+	\item Consuntivo di periodo
+\end{itemize}
+\paragraph{Piano di qualifica}
+Il piano di qualifica è il documento, redatto dal verificatore, che definisce le attività e le risorse necessarie per garantire che un prodotto, un servizio o un processo soddisfi i requisiti di qualità specificati. Il piano di qualifica descrive in dettaglio le attività che devono essere svolte, le responsabilità dei membri del team e le risorse necessarie per raggiungere gli obiettivi di qualità.
+Il documento è formato dalle seguenti parti:
+\begin{itemize}
+	\item  Qualità dei processi
+	\item  Qualità del prodotto
+	\item  Specifica dei test
+	\item 	Resoconto attività di verifica
+\end{itemize}
+\subsubsection{Repository GitHub}
+Data la necessità di effettuare un lavoro sostanzioso e condiviso, il team ha deciso di utilizzare una repository pubblica su GitHub per rendere agevole la collaborazione e la visione delle modifiche apportate alle varie parti del progetto.
+E' stata quindi creata un'organizzazione chiamata SWEllFish e al suo interno sono state create delle specifiche repository:
+
+\begin{itemize}
+    \item SWELLFish: questa repository conterrà tutto il codice necessario per il progetto
+    \item Documentazione: questa repository contiene tutta la documentazione di interesse per il committente e il proponente.
+    \item dev: repository che contiene i file sorgenti neccessari per la documentazione
+\end{itemize}
+
+\subsubsection{Contatti con il committente/proponente}
+Per semplificare la gestione dei contatti e delle eventuali richieste con l'azienda committente e con i Professori Vardenega e Cardin, è stata creata una mail, swellfish14@gmail.com, utilizzabile da tutti i componenti del gruppo.
+L'uso di questa casella è stato regolamentato con un insieme di norme condivise dagli sviluppatori, pertanto un messaggio nasce dalla necessità di uno o più componenti del gruppo di avere delucidazioni da parte del committente o per sottoporre una modifica in attesa di accettazione.
+Il canale telegram verrà usato per chiedere informazioni in modo informale con il proponente oppure per richiedere un confronto veloce.
+I colloqui vengono richiesti quando le domande da porre necessitano di una discussione diretta con il proponente.
+Questi ultimi vengono richiesti via mail oppure via telegram, tramite l'apposito gruppo creato con il responsabile incaricato di Imola Informatica.
+
+\subsection{Sviluppo}
+\subsubsection{Attività}
+La parte di sviluppo è suddivisa nelle seguenti attività:
+
+\begin{itemize}
+    \item Analisi dei requisiti
+    \item Progettazione
+    \item Codifica
+\end{itemize}
+
+\paragraph{Analisi dei requisiti}
+
+\paragraph{Progettazione}
+Durante fase di progettazione vengono definite le funzionalità, la struttura e i comportamenti del prodotto, appoggiandosi dell'analisi dei requisiti fatta preventivamente.
+
+Inizialmente tutto ciò si tradurrà in un proof of Concept, ossia una prima demo per dimostrare la fattibilità del prodotto, e in seguito approfondita e descritta nel documento tecnico allegato alla Product Baseline.
+
+La progettazione è divisa in due fasi:
+
+\subparagraph{Requirements \& Technology Baseline}
+I documenti neccessari in questa fase sono:
+\begin{itemize}
+    \item Piano di progetto
+    \item Piano di qualifica
+    \item Norme di progetto
+    \item Verbali interni ed esterni
+\end{itemize}
+
+\subparagraph{Product Baseline}
+I documenti necessari in questa fase sono:
+\begin{itemize}
+    \item Manuale utente
+    \item Allegato tecnico
+    \item Verbali di periodo
+\end{itemize}
+
+\paragraph{Codifica}
+La codifica ha lo scopo di concretizzare il prodotto tramite la programmazione
+
+\subparagraph{Stile della codifica} 
+\begin{itemize}
+    \item \textbf{Variabili}: Le variabili devono seguire la notazione camelCase, iniziando quindi con la lettera minuscola e se composte da più parole, ogni parola successiva alla prima dovrà iniziare con la maiuscola
+    \item \textbf{Metodi}: I metodi, devono seguire la stessa nomenclatura (camelCase) delle variabili 
+    \item \textbf{Indentazione}: Tutto il codice deve essere indentato seguendo le regole di indentazione del linguaggio di programmazione scelto
+    \item \textbf{Commenti}: Nel caso il codice venga ritenuto di difficile comprensione il programmatore può inserire un commento per esplicitarlo. Tutti i commenti vanno inseriti la riga sopra del codice da commentare, in modo da rendere subito visibile il commento e renderlo di facile lettura
+    \item \textbf{Blocchi condizionali}: tutti i blocchi condizionali devono essere racchiusi all'interno delle parentesi grafe, anche quando non sono necessarie, questo per rendere esplicito l'inizio e la fine di un blocco
+    \item \textbf{Classi}: tutte le classi devono avere la lettera iniziale maiuscola, se composte da più parole ogni parola successiva dovrà anch'essa avere la prima lettera maiuscola
+    \item \textbf{File}: Dovrà avere la lettera maiuscola ed un nome significativo rispetto al suo contenuto
+\end{itemize}
+
+Il team ha scelto l'inglese come lingua ufficiale per ogni componente del codice (commenti, variabili, classi ecc..)
+
+\subparagraph{Strumenti per la codifica}
+\begin{itemize}
+    \item \textbf{Angular}:Un framework per la realizzazione applicazioni Web\\ 
+    \begin{center}
+        \url{https://angular.io/docs}
+    \end{center}
+    \item \textbf{Spring}: Un popolare framework di Java per la gestione della parte backend 
+    \begin{center}
+        \url{https://spring.io/}
+    \end{center}
+\end{itemize}
+
+\subsubsection{Workflow GitHub}
+Tutti i documenti presenti nella repository docs, attraversano il seguente workflow:
+
+\begin{itemize}
+    \item Creazione del branch remoto per il rispettivo documento
+    \item Lavoro in locale con successivo push sul branch remoto corrispondente
+    \item Pull request tramite piattaforma web Gihtub per merge su branch dev
+    \item Viene verificato che il documento prodotto si attenga alle linee guida presenti in questo documento
+    \item Viene verificata la qualità del contenuto 
+    \item Se i precedenti punti sono soddisfatti, la pull request viene approvata dal responsabile e viene effettuato il merge nel branch dev della repo Documentazione
+\end{itemize}
+
+\section{Processi di supporto}
+
+\subsection{Documentazione}
+\subsubsection{Ciclo di vita del documento}
+Ogni documento che verrà redatto attraverserà diversi processi, ognuno dei quali vedrà impegnati uno o più componenti del gruppo.
+Di seguito diamo una visione d'insieme delle fasi che ogni documento attraverserà:
+\begin{itemize}
+    \item Pianificazione: il file viene ideato e discusso con i membri del team sulla base delle necessità che deve soddisfare
+    \item Stesura: il testo e il contenuto del documento viene realizzato dal redattore
+    \item Revisione: il revisore incaricato si occupa di rileggerlo e correggere eventuali errori e/o imprecisioni, controllando che siano state rispettate le convenzioni stabilite in questo documento.
+    \item Approvazione: il responsabile designato controlla che il documento sia corretto e coerente.
+\end{itemize}
+
+\subsubsection{Strumenti utilizzati}
+Di seguito gli strumenti utilizzati dal gruppo per la stesura della documentazione:
+\begin{itemize}
+    \item \textbf{Latex}: linguaggio di Markup per la creazioni di testi. E' stato scelto in quanto permette la stesura dei documenti con una struttura formale e standardizzata, oltre alla moltitudine di strumenti che mette a disposizione il linguaggio che facilitano la stesura della documentazione
+    \begin{center}
+        \url{https://www.latex-project.org/}
+    \end{center}
+    \item \textbf{Visual Studio Code e Latex workshop}: Editor popolare per la scrittura del codice in vari linguaggi di programmazione, utilizzato insieme al framework Latex WorkShop che permette di operare anche su codice latex. E' stato preferito a Overleaf in quanto permette di lavorare in locale e facilita l'interazione con sistemi di versionamento remoto come GitHub
+    \begin{center}  
+        \url{https://code.visualstudio.com/docs}
+    \end{center}
+\end{itemize}
+
+
+\subsubsection{Template}
+Il team ha deciso di utilizzare dei template scritti in Latex per facilitare il lavoro ed evitare codice ridondante tra i vari file della documentazione.
+Di seguito sono indicati i template utilizzati dal gruppo:
+\begin{itemize}
+    \item \textbf{first\_page}: template presente in tutti i documenti per la creazione della prima pagina
+    \item \textbf{styles}: template presente in tutti i documenti che contiene dettagli di stile comuni a tutti i file della documentazione
+    \item \textbf{tabella\_versioni}: template per facilitare la creazione della tabella delle versioni nei documenti in cui è previsto versionamento.
+    
+\end{itemize}
+Tutti i template si possono trovare all'interno della repository nella cartella \url{https://github.com/SWEllfish14/docs/tree/dev/templates}
+
+\subsubsection{Struttura del documento}
+Ogni documento che non sia un verbale ha una struttura ben specifica:
+\begin{itemize}
+    \item Nome del gruppo
+    \item Logo 
+    \item Tabella con le modifiche fatte e relativo numero di versionamento (se previsto)
+    \item Tabella con ruoli dei componenti del gruppo e finalità d'uso del documento
+    \item Indice
+    \item Breve descrizione dello scopo del documento
+\end{itemize}
+
+\paragraph{Struttura delle pagine}
+\begin{itemize}
+	\item Intestazione:
+		\begin{itemize}
+			\item Lato sinistro: logo del gruppo
+			\item Lato destro: nome del documento
+		\end{itemize}
+	\item Corpo del documento:  strutturato in sezioni e sottosezioni, ognuna con il proprio titolo e sottotitolo.Il corpo del documento include anche qualsiasi supporto visivo, come tabelle, figure, grafici, 	diagrammi o illustrazioni, che aiutano a presentare le informazioni in modo più accessibile o coinvolgente.
+	\item Piè di pagina: al centro è presente il numero di pagina.
+\end{itemize}
+
+\paragraph{Registro delle versioni}
+Ogni file, fatta esclusione per i verbali, contiene una tabella che riporta le modifiche apportate al file nel corso del tempo.
+La tabella è così strutturata:
+\begin{itemize}
+    \item \textbf{Versione}: versione attuale del documento (la nomenclatura segue le \hyperref[ver]{Regole per il versionamento})
+    \item \textbf{Data}: data in cui viene rilasciata la corrispondente versione del documento
+    \item \textbf{Redattore}: Indica chi ha apportato i cambiamenti al documento
+    \item \textbf{Verificatore}: Indica chi si è occupato della verifica del documento
+    \item \textbf{Descrizione}: Breve descrizione della modifica apportata nella corrispondente versione
+\end{itemize}
+Per facilitare l'inserimento della tabella all'interno dei vari file è stato creato un template apposito come spiegato nella sezione \hyperref[ver]{Template}
+
+\subsubsection{Struttura di un verbale}
+La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
+\begin{itemize}
+    \item Data
+    \item Ora
+    \item Durata
+    \item Partecipanti
+    \item Ordine del giorno
+    \item Riassunto contenuti
+\end{itemize}
+\paragraph{Nomenclatura verbali}
+Per la nomenclatura dei verbali invece segue la seguente struttura:
+\begin{itemize}
+    \item verbale
+    \item nome azienda/docente/attività svolta
+    \item data
+\end{itemize}
+
+\subsection{Gestione della configurazione}
+\subsubsection{Versionamento}
+\paragraph{Sistemi software utilizzati}
+Il VCS scelto dal gruppo per facilitare la gestione delle modifiche è Git, mediante l'utilizzo di GitHub.
+A questo scopo è stata creata un'organizzazione denominata "SwellFish", al cui interno sono state create le opportune repository in base alle necessità del progetto.
+Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : "$https://github.com/orgs/SWEllfish14/repositories$".
+
+\paragraph{Codice di versione}
+Come prassi per la nomenclatura dei file il gruppo ha concordato la seguente struttura condivisa:
+\begin{itemize}
+    \item nome file: tutto in minuscolo, con le parole separate dall'underscore
+    \item numero versione
+\end{itemize}
+
+Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la seguente prassi:
+\begin{itemize}
+    \item Creazione di un nuovo branch per un apposito documento
+    \item Stesura del documento
+    \item Caricamento sul branch appena creato
+    \item Verifica della struttura, contenuti e rispetto delle convenzioni stabilite
+    \item Pull request sul branch dev
+    \item Rilascio sul branch master
+\end{itemize}
+
+\paragraph{Regole per il versionamento}
+\label{ver}
+E' stato concordato l'uso del Versionamento Semantico, affidandosi alle caratteristiche principali.
+La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usate per indicare una modifica minore o sostanziale del documento.
+\begin{itemize}
+    \item Major Zero: E' la versione 0.X.Y, denota una versione preliminare del documento
+    \item Patch Z: un aumento del valore della "Z" indica che sono state introdotte delle modifiche al testo da parte del redattore
+    \item Minor Y: l'aumento della 'Y' indica una modifica testuale che è stata approvata dal verificatore
+    \item Major X: l'incremento della 'X' si ha se è stata pubblicata dal responsabile una modifica non compatibile con le versioni precedenti del documento
+\end{itemize}
+
+
+\subsection{Verifica}
+Durante questo processo, il compito dei verificatori è quello di effettuare l’analisi dei prodotti del team.
+Tale analisi si differenzia in due diverse tipologie:
+\begin{itemize}
+    \item \textbf{Analisi statica}:processo di valutazione di un sistema o di un suo componente basato sulla sua
+    forma, struttura, contenuto, documentazione. Questo tipo di analisi viene generalmente svolto
+    tramite ispezioni e revisioni e può essere svolta sui documenti così come sul software o su parti
+    di esso;
+    
+    \item \textbf{Analisi dinamica}: processo di valutazione di un sistema software o di un suo componente
+    basato sull’osservazione del suo comportamento in esecuzione. Questo tipo di analisi viene
+    generalmente chiamato testing e per motivi logici non può essere svolta sui documenti.
+\end{itemize}
+
+
+\subsubsection{Verifica della documentazione}
+Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
+\begin{itemize}
+    \item \textbf{Walkthrough}: Un controllo esaustivo del documento (è un processo oneroso che può richiedere molto tempo e risorse)
+    \item \textbf{Inspection}: Un controllo parziale legato solo ai punti critici del documento
+\end{itemize}
+Il team ha deciso di utilizzare una tecnica \textbf{Walkthrough} nella fase iniziale del documento e prima del rilascio di versioni "major".
+Dopo la formazione del documento ed un primo controllo esaustivo, si procede passando ad una tecnica di tipo \textbf{Inspection}
+\paragraph{Strumenti utilizzati}
+\begin{itemize}
+	\item \url{https://www.italiancorrector.com/}
+\end{itemize}
+\subsubsection{Verifica del codice}
+
+\subsection{Validazione}
+Processo per assicurarsi che il prodotto sviluppato rispetti i requisiti concordati con il proponente.
+Per fare ciò il prodotto verrà esaminato dai verificatori, verificando che esso sia conforme a quanto scritto nell'analisi dei requisiti. Sarà poi il responsabile successivamente che deciderà se accettare il prodotto o rifiutarlo chiedendo un ulteriore verifica. 
+\subsection{Comandi utili di Git}
+I comandi più frequentemente utilizzati sono riassunti in seguito:
+\begin{itemize}
+    \item Sincronizzazione con repository remota: git pull;
+    \item Creazione di un nuovo branch: git branch nome\_branch;
+    \item Passaggio a un branch specificato: git checkout nome\_branch;
+    \item Aggiunta delle modifiche alla stage area: git add file\_da\_aggiungere;
+    \item Creazione del commit con le modifiche: git commit;
+    \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
+    \item Push su un branch già esistente: git push
+\end{itemize}
+
+
+\section{Processi organizzativi}
+\subsection{Gestione dei processi}
+\subsubsection{Organizzazione dei File}
+Tutta la documentazione inerente al progetto sarà inclusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".
+I documenti di interesse per il proponente/committente si trovano in Documentazione/esterni, mentre quelli necessari al team di sviluppo si trovano in Documentazione/interni. 
+I verbali infine sono contenuti in Documentazione/esterni/verbali.
+
+\subsubsection{Scrum}
+Il team utilizzerà questo framework per gestire le varie fasi di sviluppo del progetto.
+\paragraph{Organizzazione degli Sprint}
+Ogni sprint avrà le seguenti caratteristiche:
+\begin{itemize}
+    \item Durata: una settimana. Inizia il venerdì e termina il venerdì successivo con la riunione concordata
+    \item Riunione: viene effettuata il venerdì al termine dello sprint e vengono discussi i seguenti punti:
+    \begin{itemize}
+        \item Resoconto delle attività completate
+        \item Problemi riscontrati e soluzioni adottate
+        \item Analisi e resoconto delle ore e dei costi sostenuti
+        \item Pianificazione data inizio prossimo sprint e obiettivi da fissare
+    \end{itemize}
+\end{itemize}
+Gli obiettivi pianificati per lo sprint successivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
+
+\subsubsection{Rotazione dei ruoli}
+Vista l'adozione del framework scrum, il team ha deciso di far ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
+Pertanto ogni membro del team avrà impegni e responsabilità diverse ogni settimana. Questo approccio permette di ottenere un maggiore coinvolgimento.
+
+\subsection{Gestione delle infrastrutture}
+\subsubsection{Comunicazioni interne}
+Le comunicazioni interne avvengono principalmente tramite:
+\begin{itemize}
+    \item \textbf{Discord}: Per quanto riguarda le riunioni settimanali e non. E' stato scelto in quanto conosciuto da tutti membri del gruppo, e la piattaforma web lo rende di facile accesso.
+    \item \textbf{Telegram}: Per quanto riguarda comunicazioni minori o per comunicazioni di carattere logistico. Scelto in quanto conosciuto e usato da tutti i membri del gruppo.
+\end{itemize}
+
+\subsubsection{Comunicazioni esterne}
+Le comunicazioni esterne avvengono principalmente tramite:
+\begin{itemize}
+    \item \textbf{E-mail} utilizzando l'email del gruppo "swellfish14@gmail.com"
+    \item \textbf{Google meet} tramite link inviato dal proponente
+    \item \textbf{Telegram} tramite apposito gruppo messo a disposizione dal proponente
+\end{itemize}
+
+\subsubsection{Gestione dei task}
+Per organizzare meglio il lavoro e avere una panoramica chiara dello svolgimento delle attività e dello stato di avanzamento, è stato concordato l'uso della \textbf{Project Board} fornita da GitHub.
+Le task riguardanti la documentazione e lo svolgimento del progetto vengo assegnate ai componenti dall'amministratore ed egli si occupa inoltre di chiuderle o modificarle in base alle esigenze.
+Per agevolare l'attività di documentazione è stata creata una board denominata "To-Do Documenti", dove in concomitanza dello sprint settimanale vengono aggiunte nuove issue riguardanti la creazione o la modifica dei documenti da affrontare nel prossimo sprint.
+Per gestire le attività di sviluppo verrà utilizzata un ulteriore board chiamata "SwellFish", al cui interno verranno inserite le task da completare in un dato sprint.
+Queste board sono raggiungibili tramite l'apposita sezione "Projects" all'interno dell'organizzazione SwellFish.
+
+
+\subsection{Miglioramento del processo} 
+Durante le riunioni settimanali, si guarda in retrospettiva il lavoro fatto nel periodo corrispondente e si valutano eventuali correzioni laddove si sono riscontrati problemi.
+\end{document}
