@@ -204,7 +204,7 @@ L'utente non sa come funziona il sistema o come eseguire un'operazione specifica
 L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: l'utente è un amministratore e vuole avere una panoramica sulla luminosità del sistema e sullo stato operativo delle aree gestite
 	\item Postcondizioni: la webapp fornisce queste informazioni
 \end{itemize}
@@ -256,7 +256,7 @@ Uno o più sensori non rilevano più la presenza di utenti della strada e comand
 L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che ci sia un rilevamento o meno.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di una zona
 	\item Postcondizioni: tutti i lampioni della zona vedono un incremento della luminosità
 \end{itemize}
@@ -283,7 +283,7 @@ L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che 
 L'amministratore vuole diminuire la luminosità indipendentemente che ci siano rilevamenti di utenti stradali o meno.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono diminuire manualmente la luminosità di una zona
 	\item Postcondizioni: tutti i lampioni della zona vedono una diminuzione della luminosità
 \end{itemize}
@@ -301,7 +301,7 @@ L'amministratore vuole diminuire la luminosità indipendentemente che ci siano r
 L'amministratore vuole inserire a sistema una nuova area da gestire dotata di sensori e lampadine smart e vuole poter eseguire le operazioni consentite dal sistema.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono aggiungere una nuova zona illuminata da gestire tramite la webapp
 	\item Postcondizioni: viene aggiunta la nuova zona alla lista di quelle già presenti a sistema ed è possibile effettuare le operazioni consentite dal software.
 \end{itemize}
@@ -320,7 +320,7 @@ L'amministratore vuole inserire a sistema una nuova area da gestire dotata di se
 L'amministratore vuole rimuovere una zona illuminata in quanto non viene più gestita dal sistema.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono rimuovere una zona illuminata gestita tramite la webapp
 	\item Postcondizioni: viene rimossa la zona e non è più possibile effettuare le operazioni consentite.
 \end{itemize}
@@ -336,7 +336,7 @@ L'amministratore vuole rimuovere una zona illuminata in quanto non viene più ge
 L'utente vuole modificare le informazioni di una zona illuminata, come ad esempio l'indirizzo ip di un sensore che è stato sostituito o il raggio d'azione.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
 	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
 \end{itemize}
@@ -363,7 +363,7 @@ L'utente vuole modificare le informazioni di una zona illuminata, come ad esempi
 L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono inserire un nuovo sensore a sistema per rilevare la presenza in una zona prestabilita.\\
 	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
 	\begin{itemize}
@@ -389,7 +389,7 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: gli amministratori vogliono rimuovere un sensore a sistema.\\
 	\item Postcondizioni: non è puù possibile comandare la zona gestita dal sensore.
 \end{itemize}
@@ -408,7 +408,7 @@ L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione
 Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
 \begin{itemize}
 	\item Attori primari: amministratore
-	\item Attori secondari: webapp
+	\item Attori secondari: WebApp
 	\item Precondizioni: l'amministratore accede al sistema ed inserisce una nuova zona da gestire
 	\item Postcondizioni: la nuova zona viene settata con delle impostazioni standard, senza richiedere ulteriori azioni
 \end{itemize}
@@ -442,7 +442,7 @@ L'utente è riconosciuto come amministratore e vuole effettuare il logout dal si
 L'utente autorizzato vuole avere una panoramica delle aree illuminate
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: l'utente è un amministratore e vuole avere una panoramica sulla luminosità e sullo stato del sistema. Non riesce a vedere queste informazioni
 	\item Postcondizioni: l'amministratore visualizza la lista delle aree e può interagire
 \end{itemize}
@@ -459,7 +459,7 @@ L'utente autorizzato vuole avere una panoramica delle aree illuminate
 L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco dei sistemi con guasti.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database, sensore
+	\item Attori secondari: WebApp, database, sensore
 	\item Precondizioni: un sensore rileva una discrepanza tra luminosità rilevata e quella impostata in un'impianto gestito.
 	\item Postcondizioni: l'amministratore inserisce l' area in questione nell'elenco dei guasti
 \end{itemize}
@@ -478,7 +478,7 @@ L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco
 L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai manutentori.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp, database
+	\item Attori secondari: WebApp, database
 	\item Precondizioni: l'impianto con un guasto viene sistemato dai manutentori
 	\item Postcondizioni: l'amministratore rimuove le aree in questione dall'elenco dei guasti
 \end{itemize}
@@ -496,7 +496,7 @@ L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai m
 L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp e lampioni, database
+	\item Attori secondari: WebApp, database, lampioni
 	\item Precondizioni: l'amministratore vuole sapere lo stato di una zona e la luminosità pre-impostata
 	\item Postcondizioni: l'utente ottiene le informazioni desiderate
 \end{itemize}
@@ -513,7 +513,7 @@ L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
 L'amministratore vuole conoscere in dettaglio le impostazioni di un sensore.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp e sensori, database
+	\item Attori secondari: WebApp, database, sensori
 	\item Precondizioni: l'amministratore vuole sapere lo stato e le impostazioni di un sensore
 	\item Postcondizioni: l'utente visualizza e può modificare le impostazioni del sensore
 \end{itemize}
@@ -534,7 +534,7 @@ L'amministratore vuole conoscere in dettaglio le impostazioni di un sensore.
 L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp e lampione
+	\item Attori secondari: WebApp, lampione
 	\item Precondizioni: l'amministratore vuole sapere lo stato e le impostazioni di un lampione
 	\item Postcondizioni: l'utente visualizza le impostazioni del lampione
 \end{itemize}
@@ -555,7 +555,7 @@ L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp,lampione, database
+	\item Attori secondari: WebApp, database, lampione
 	\item Precondizioni: gli amministratori vogliono inserire un nuovo lampione a sistema.\\
 	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
 	\begin{itemize}
@@ -581,7 +581,7 @@ L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita
 L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp,lampione, database
+	\item Attori secondari: WebApp, database, lampione
 	\item Precondizioni: gli amministratori vogliono rimuovere un lampione a sistema.\\
 	\item Postcondizioni: se l'utente ha le credenziali corrette, il lampione non è più comandabile e non fa più parte della zona.
 \end{itemize}
@@ -599,7 +599,7 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 L'amministratore vuole modificare la luminosità un lampione all'interno dell'area gestita.
 \begin{itemize}
 	\item Attori primari: amministratori di sistema
-	\item Attori secondari: webapp e lampione, database
+	\item Attori secondari: WebApp, database, lampione
 	\item Precondizioni: gli amministratori vogliono modificare la luminosità di un lampione a sistema.\\
 	\item Postcondizioni: se l'utente ha le credenziali corrette, la luminosità del lampione viene incrementata o diminuita.
 \end{itemize}
