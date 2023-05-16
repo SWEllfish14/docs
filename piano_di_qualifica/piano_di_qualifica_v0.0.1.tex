@@ -51,8 +51,8 @@
 
 \printindex
 
-\addversione{0.0.0}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
-\addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Creata struttura di base del documento}
+\addversione{0.0.1}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
+\addversione{0.0.2}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Modificata la struttura del documento}
 \makeversioni
 
 \section{Introduzione}
@@ -67,78 +67,67 @@ Nel capitolato in questione si vuole implementare questa soluzione tramite un ap
 
 \subsection{Processi primari}
 
- Budget at Completion (BAC) = 11.900 !!
-
 \subsubsection{Fornitura}
 \textbf{Metriche:}
 \begin{itemize}
-	\item Actual Cost (AV)
+	\item MPC01: Actual Cost (AV)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta i soldi che sono stati spesi dall'inizio del progetto ad un determinata data
 		      \item \textbf{Calcolo della metrica}: Somma dei costi tracciati dal gruppo
 		      \item \textbf{Valore ottimale}: $\le BAC$
 		      \item \textbf{Valore accettabile}: $\le BAC$
 	      \end{itemize}
-	\item Planned Value (PV)
+	\item MPC02: Planned Value (PV)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta il costo previsto del prodotto in un determinato momento, se si è in pari con la progettazione
 		      \item \textbf{Calcolo della metrica}: Percentuale di completamento del progetto pianificata * BAC
 		      \item \textbf{Valore ottimale}: $\le BAC$
 		      \item \textbf{Valore accettabile}: $\le BAC$
 	      \end{itemize}
-	\item Earned Value (EV)
+	\item MPC03: Earned Value (EV)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta il valore effettivo del progetto ad una determinata data
 		      \item \textbf{Calcolo della metrica}: Percentuale dell'effettivo stato di completamento del progetto * BAC
 		      \item \textbf{Valore ottimale}: $\ge 0$
 		      \item \textbf{Valore accettabile}: $\le BAC$
 	      \end{itemize}
-	\item Cost Variance (CV)
+	\item MPC04: Cost Variance (CV)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta la differenza tra EV e AC. Ci fa capire quando siamo sopra o sotto il budget atteso
 		      \item \textbf{Calcolo della metrica}:  EV - AC
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
 		      \item \textbf{Valore accettabile}: $\ge -10\%$
 	      \end{itemize}
-	\item Schedule Variance (SV)
+	\item MPC05: Schedule Variance (SV)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta la differenza tra EV e PV. Ci fa capire se siamo avanti o indietro rispetto a quanto pianificato in termini di denaro
 		      \item \textbf{Calcolo della metrica}:  EV - PV
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
 		      \item \textbf{Valore accettabile}: $\ge -10\%$
 	      \end{itemize}
 
-	\item Cost Performance Index (CPI)
+	\item MPC06: Cost Performance Index (CPI)
 			\begin{itemize}
-				\item \textbf{Descrizione}: Misura l'efficienza del lavoro svolto ad una determinata data
 				\item \textbf{Calcolo della metrica}:  EV / AC
 				\item \textbf{Valore ottimale}: $\ge 1$
 				\item \textbf{Valore accettabile}: $\ge 0,9$
 			\end{itemize}
 	
-	\item Estimated At Completition (EAC)
+	\item MPC07: Estimated At Completition (EAC)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta la previsione del costo aspettato alla fine del progetto.
 		      \item \textbf{Calcolo della metrica}:  BAC / CPI
 		      \item \textbf{Valore ottimale}: = BAC
 		      \item \textbf{Valore accettabile}: $\ge BAC - 3\% ; \le BAC + 3\% $
 	      \end{itemize}
-	\item Estimate To Completition (ETC)
+	\item MPC08: Estimate To Completition (ETC)
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Rappresenta una previsione dei costi neccessari per il completamento del progetto
 		      \item \textbf{Calcolo della metrica}:  (BAC - EV) / CPI
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
 		      \item \textbf{Valore accettabile}: $\le EAC$
 	      \end{itemize}
-	
 \end{itemize}
+
 \subsection{Processi di supporto}
 \subsubsection{Documentazione}
 \textbf{Metriche:}
 \begin{itemize}
-	\item Indice di Gulpease
+	\item MPC09: Indice di Gulpease
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: L'Indice Gulpease è un indice di leggibilità di un testo tarato sulla lingua italiana
 		      \item \textbf{Calcolo della metrica}:  89 + $\frac{300*(F) - 10 * (L)}{(P)}$
 		            \begin{itemize}
 			            \item \textbf{L} = Numero di lettere nel testo
@@ -150,9 +139,8 @@ Nel capitolato in questione si vuole implementare questa soluzione tramite un ap
 	      \end{itemize}
 \end{itemize}
 \begin{itemize}
-	\item Errori ortografici
+	\item MPC10: Errori ortografici
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Indica il numero di errori ortografici presente nella documentazione
 		      \item \textbf{Calcolo della metrica}: numero errori ortografici presenti nel testo
 		      \item \textbf{Valore ottimale}: 0
 		      \item \textbf{Valore accettabile}: 0
@@ -163,9 +151,8 @@ Nel capitolato in questione si vuole implementare questa soluzione tramite un ap
 
 \textbf{Metriche:}
 \begin{itemize}
-	\item Code Coverage
+	\item MPC11: Code Coverage
 	      \begin{itemize}
-		      \item \textbf{Descrizione}: Indica la percentuale di codice testato
 		      \item \textbf{Calcolo della metrica}:  (Numero di righe di codice testate / Numero totale di righe di codice) * 100
 		      \item \textbf{Valore ottimale}: 100\%
 		      \item \textbf{Valore accettabile}: 80\%
