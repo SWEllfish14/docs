@@ -71,6 +71,7 @@ I documenti in cui vengono specificati i requisiti sono i seguenti:
 	\item Norme di progetto
 	\item Verbale incontro conoscitivo con Imola del 14/03/2023
 	\item Verbale incontro per approfondimento requisiti con Imola del 21/04/2023
+	\item Verbale incontro per revisione dei casi d'uso con Imola del 16/05/2023
 \end{itemize}
 
 Mentre i documenti che ci forniscono un'indicazione su come fare sono i seguenti:
@@ -87,7 +88,7 @@ Il funzionamento di tale sistema avviene secondo delle fasi ben precise:
 	\item l'illuminazione viene impostata ad un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
 	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona ad un livello prefissato
 	\item Viene fatto trascorrere un intervallo temporale predefinito, nell'ordine di alcuni minuti
-	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata nuovamente al livello pre-rilevamento.
+	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata, come descritto nel primo punto del funzionamento del sistema, al livello pre-rilevamento.
 \end{itemize}
 Oltre al funzionamento automatico il capitolato prevede la possibilità di un funzionamento manuale, ovvero deve permettere all'amministratore di sistema di aumentare o ridurre a piacimento la luminosità in una data area, senza che ci sia un effettivo rilevamento.
 
@@ -112,12 +113,15 @@ L'amministratore potrà eseguire le seguenti operazioni:
 \end{itemize}
 
 \subsection{Vincoli e preferenze}
+
+\subsubsection{Vincoli Tecnologici}
 L'azienda proponente non ha imposto vincoli teconologici, ma ha dato dei suggerimenti da considerare:
 \begin{itemize}
 	\item Utilizzare framework open-source e ben noti, che non comportino il pagamento di canoni mensili o di licenze
 	\item L'interfacciamento con i sensori o con i lampioni potrà avvenire tramite api-rest oppure tramite un broker mqtt come "$Mosquito$"
 \end{itemize}
 
+\subsubsection{Vincoli di consegna}
 Per il completamento del progetto il proponente richede che le seguenti condizioni siano soddisfatte:
 \begin{itemize}
 	\item Soddisfacimento di tutti i requisiti obbligatori descritti nel capitolato
@@ -125,6 +129,16 @@ Per il completamento del progetto il proponente richede che le seguenti condizio
 	\item  webapp completa, dotata di UI responsive
 	\item documentazione su scelte implementative e progettuali effettuate, con relativo registro delle motivazioni, dei problemi incontrati e delle soluzioni adottate per superarli.
 \end{itemize}
+
+\subsubsection{Vincoli prestazionali}
+Il sistema suppone di utilizzare istanze di massimo 1GB di memoria e 2 CPU
+
+\subsubsection{Vincoli Opzionali}
+\begin{itemize}
+	\item Cifratura di tutte le comunicazioni tra app e server
+	\item Vincoli di tempo permettendo, fornire un'analisi del carico massimo di sistema e dei servizi cloud più adatti ad hostare il sistema
+\end{itemize}
+
 
 
 \section{Casi d'uso}
@@ -151,30 +165,13 @@ Il termine "WebApp" si riferisce all'insieme dei seguenti componenti del sistema
 
 
 \pagebreak
+\section{UC Obbligatori}
 
-\subsection{User Case 1 - Primo accesso al sistema senza credenziali}
-\textbf{Tipologia: desiderabile.} \\
-L'utente vuole poter operare come amministratore ma non ha ancora ottenuto le credenziali necessarie all'accesso.
-\begin{itemize}
-	\item Attori primari: Nuovi amministratori di sistema
-	\item Attori secondari: SuperAdmin
-	\item Precondizioni: i nuovi amministratori vorrebbero poter accedere al sistema, ma non sono ancora autorizzati
-	\item Postcondizioni: I SuperAmministratori, dopo essere stata contattati dagli amministratori interessati, forniscono le credenziali per l'accesso al sistema
-\end{itemize}
-\paragraph{Scenario Principale}
-\begin{itemize}
-	\item l'utente contatta via mail il servizio clienti di del gestore del sisitema
-	\item Il superamministratore del sistema fornisce le credenziali
-	\item L'utente viene impostato come amministratore
-	\item l'utente effettua l'accesso
-	\item l'utente riceve una conferma di avvenuto accesso e può operare nella dashboard
-\end{itemize}
-
-\subsection{User Case 2 - Accesso al sistema con credenziali}
+\subsection{User Case 1 - Accesso al sistema con credenziali}
 \textbf{Tipologia: obbligatorio} \\
 L'utente è in possesso delle credenziali ed è riconosciuto come amministratore, ma non ha ancora effettuato l'accesso.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema, SuperAdmin
+	\item Attori primari: SuperAdmin, Admin
 	\item Attori secondari: WebApp
 	\item Precondizioni: l'amministratore vuole accedere al sistema per poterlo gestire, ma non è ancora loggato pur facendo parte del gruppo di utenti autorizzati.
 	\item Postcondizioni: l'utente è riconosciuto dal sistema e può svolgere le consuete attività
@@ -185,32 +182,14 @@ L'utente è in possesso delle credenziali ed è riconosciuto come amministratore
 	\item l'utente inserisce la password
 	\item l'utente riceve una conferma di avvenuto accesso e può operare nella dashboard
 \end{itemize}
-
 \paragraph{Estensioni} L'utente non è riconosciuto o non è presente nella lista dei soggetti autorizzati. Si rimanda al caso d'uso "$User Case 1$" .
 
-\subsection{User Case 3 - Consultazione manuale Lumos Minima}
-\textbf{Tipologia: desiderabile}\\
-L'utente non sa come funziona il sistema o come eseguire un'operazione specifica e vuole approfondire questi aspetti.
-\begin{itemize}
-	\item Attori primari: Amministratore di sistema, manutentori
-	\item Attore secondario: WebApp
-	\item Precondizioni: l'amministratore o il manutentore usa il sistema e vorrebbe avere una panoramica dettagliata sul suo funzionamento.
-	\item Postcondizioni: l'utente consulta il manuale d'uso
-\end{itemize}
-\paragraph{Scenario Principale}
-\begin{itemize}
-	\item L'utente si autentica.
-	\item l'utente clicca l'apposito bottone per visualizzare il manuale
-	\item Viene aperta una nuova finestra del browser che mostra il manuale utente sottoforma di PDF
-\end{itemize}
-
-
-\subsection{User Case 4 - Visualizzazione stato sistema}
+\subsection{User Case 2 - Visualizzazione stato sistema}
 \textbf{Tipologia: obbligatorio} \\
 L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: l'utente è un amministratore e vuole avere una panoramica sulla luminosità del sistema e sullo stato operativo delle aree gestite
 	\item Postcondizioni: la webapp fornisce queste informazioni
 \end{itemize}
@@ -220,12 +199,12 @@ L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
 	\item la webapp mostra la dashboard come landing page
 \end{itemize}
 
-\subsection{User Case 5 - Aumento luminosità automatico}
+\subsection{User Case 3 - Aumento luminosità automatico}
 \textbf{Tipologia: obbligatorio}\\
 Uno o più sensori rilevano la presenza di utenti della strada e comandano l'aumento della luminosità.
 \begin{itemize}
 	\item Attori primario: sensore/i
-	\item Attore secondario: WebApp, database
+	\item Attore secondario: WebApp, Database
 	\item Precondizioni: uno o più sensori rilevano la presenza di pedoni o veicoli all'interno del loro raggio d'azione e il sistema riceve una segnalazione.
 	\item Postcondizioni: la webapp comanda tutti i lampioni della zona e la luminosità dell'area viene incrementata
 \end{itemize}
@@ -238,7 +217,7 @@ Uno o più sensori rilevano la presenza di utenti della strada e comandano l'aum
 	\item la webapp incrementa la luminosità di tutti i lampioni della zona
 \end{itemize}
 
-\subsection{User Case 6 - Diminuzione luminosità automatica}
+\subsection{User Case 4 - Diminuzione luminosità automatica}
 \textbf{Tipologia: obbligatorio}\\
 Uno o più sensori non rilevano più la presenza di utenti della strada e il sistema diminuisce automaticamente la luminosità, portandola alla soglia prefissata.
 \begin{itemize}
@@ -248,17 +227,17 @@ Uno o più sensori non rilevano più la presenza di utenti della strada e il sis
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item Parte il countdown prefissato per la riduzione della luminosità
+	\item parte il countdown prefissato per la riduzione della luminosità
 	\item se i sensori non rilevando più presenze, non interrompono il countdown
 	\item se il countdown arriva a zero senza interruzioni, la webapp diminuisce la luminosità di tutte le lampadine della zona
 \end{itemize}
 
-\subsection{User Case 7 - Aumento luminosità manuale}
+\subsection{User Case 5 - Aumento luminosità manuale}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che ci sia un rilevamento o meno.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di una zona
 	\item Postcondizioni: tutti i lampioni della zona vedono un incremento della luminosità dopo aver fatto trascorre un "tempo tecnico" necessario per la propagazione dei comandi a tutti i lampioni della zona
 \end{itemize}
@@ -269,23 +248,22 @@ L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che 
 	\item il database fornisce gli indirizzi ip dei lampioni della zona interessata
 	\item l'utente incrementa manualmente la luminosità della zona selezionata
 \end{itemize}
-
 \paragraph{Estensioni} In caso di guasto di sistema o mancanza di rete, l'amministratore comanda l'aumento della luminosità ma non vi è un incremento effettivo dopo aver fatto trascorrere il tempo tecnico prefissato.\\
 Al termine del tempo tecnico, se non vi è un cambiamento nella luminosità del sistema, esso viene inserito dall'amministratore nell'elenco dei guasti. 
 
-\subsection{User Case 7.1 - Visualizzazione del messaggio d'errore}
+\subsection{User Case 5.1 - Visualizzazione del messaggio d'errore}
 \begin{itemize}
-	\item Attore primario: amministratore di sistema.
-	\item Precondizioni: L'attore primario ha tentato di aumentare la luminosità di una o più zone.
-	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore.
+	\item Attore primario: SuperAdmin, Admin
+	\item Precondizioni: L'attore primario ha tentato di aumentare la luminosità di una o più zone
+	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore
 \end{itemize}
 
-\subsection{User Case 8 - Diminuzione luminosità manuale}
+\subsection{User Case 6 - Diminuzione luminosità manuale}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole diminuire la luminosità indipendentemente che ci siano rilevamenti di utenti stradali o meno.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono diminuire manualmente la luminosità di una zona
 	\item Postcondizioni: tutti i lampioni della zona vedono una diminuzione della luminosità
 \end{itemize}
@@ -299,13 +277,13 @@ L'amministratore vuole diminuire la luminosità indipendentemente che ci siano r
 \paragraph{Estensioni} Nel caso in cui si comandi una dimunuzione della luminosità in modalità manuale, ma il sensore non rileva un decremento effettivo della luminosità dopo aver fatto trascorrere il "tempo tecnico", si visualizza un messaggio di errore.
 Al termine del tempo tecnico, se non ci sono stati cambiamenti di luminosità, il sistema può essere inserito nell'elenco dei guasti dall'amministratore.
 
-\subsection{User Case 9 - Inserimento nuova area illuminata}
+\subsection{User Case 7 - Inserimento nuova area illuminata}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole inserire a sistema una nuova area da gestire che potrà essere dotata di sensori e lampioni in un secondo momento.\\
 Se sono presenti dispositivi comandabili, si vuole poter eseguire le operazioni consentite dal sistema.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono aggiungere una nuova zona illuminata da gestire tramite la webapp
 	\item Postcondizioni: viene aggiunta la nuova zona alla lista di quelle già presenti a sistema ed è possibile inserire lampioni e sensori da comandare.
 \end{itemize}
@@ -316,12 +294,12 @@ Se sono presenti dispositivi comandabili, si vuole poter eseguire le operazioni 
 	\item la zona inserita viene salvata sul database per la ridondanza
 \end{itemize}
 
-\subsection{User Case 10 - Rimozione area illuminata}
+\subsection{User Case 8 - Rimozione area illuminata}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole rimuovere una zona illuminata in quanto non viene più gestita dal sistema.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono rimuovere una zona illuminata gestita tramite la webapp
 	\item Postcondizioni: viene rimossa la zona e i relativi dispositivi presenti e non è più possibile effettuare le operazioni consentite.
 \end{itemize}
@@ -333,12 +311,12 @@ L'amministratore vuole rimuovere una zona illuminata in quanto non viene più ge
 	\item i lampioni e i sensori afferenti a tale area vengono eliminati a cascata dal database
 \end{itemize}
 
-\subsection{User Case 11 - Modifica informazioni area illuminata}
+\subsection{User Case 9 - Modifica informazioni area illuminata}
 \textbf{Tipologia: obbligatorio} \\
 L'utente vuole modificare le informazioni di una zona illuminata, come ad esempio l'indirizzo ip di un sensore che è stato sostituito.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
 	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
 \end{itemize}
@@ -358,24 +336,24 @@ L'utente vuole modificare le informazioni di una zona illuminata, come ad esempi
 \end{itemize}
 \paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi, l'amministratore riceve un messaggio di errore.
 
-\subsection{User Case 11.1 - Visualizzazione del messaggio d'errore in modalità di modifica}
+\subsection{User Case 9.1 - Visualizzazione del messaggio d'errore in modalità di modifica}
 \begin{itemize}
 	\item Attore primario: amministratore
 	\item Precondizioni: L'attore primario ha modificato uno o più dettagli di una zona illuminata
 	\item Post-condizioni: I dettagli non vengono modificati e l'utente visualizza un messaggio recante un messaggio di errore.
 \end{itemize}
 
-\subsection{User Case 12 - Inserimento nuovo sensore}
+\subsection{User Case 10 - Inserimento nuovo sensore}
 \textbf{Tipologia: obbligatorio}\\
 L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database, sensore
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database, sensore
 	\item Precondizioni: gli amministratori vogliono inserire un nuovo sensore a sistema per rilevare la presenza di utenti stradali in una zona prestabilita.\\
 	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
 	\begin{itemize}
-		\item Zona illuminata in cui il sensore è installato
-		\item Tipo di iterazione con il sensore: Push o Pull
+		\item zona illuminata in cui il sensore è installato
+		\item tipo di iterazione con il sensore: Push o Pull
 		\item indirizzo IP
 		\item polling time
 		\item coordinate geografiche del sensore
@@ -394,12 +372,12 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 \end{itemize}
 \paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi,come ad esempio l'indirizzo ip del sensore,  l'amministratore riceve un messaggio di errore a seguito del fallimento del test di comunicazione.
 
-\subsection{User Case 13 - Rimozione sensore}
+\subsection{User Case 11 - Rimozione sensore}
 \textbf{Tipologia: obbligatorio}\\
 L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: gli amministratori vogliono rimuovere un sensore a sistema.\\
 	\item Postcondizioni: non è più possibile aumentare o diminuire automaticamente la luminosità in una data zona.
 \end{itemize}
@@ -413,28 +391,11 @@ L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione
 	\item l'utente riceve un messaggio di successo o di errore
 \end{itemize}
 
-\subsection{User Case 14 - Configurazione iniziale delle impostazioni di una nuova zona illuminata}
-\textbf{Tipologia: desiderabile} \\
-Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
-\begin{itemize}
-	\item Attori primari: amministratore
-	\item Attori secondari: WebApp, lampioni
-	\item Precondizioni: l'amministratore accede al sistema ed inserisce una nuova zona da gestire
-	\item Postcondizioni: la nuova zona viene settata con delle impostazioni standard, senza richiedere ulteriori azioni
-\end{itemize}
-\paragraph{Scenario Principale}
-\begin{itemize}
-	\item l'utente aggiunge una nuova area illuminata
-	\item vengono applicate le impostazioni di default, come la luminosità minima e massima
-	\item il lampione viene tarato con tali impostazioni
-	\item il sistema funziona correttamente senza intraprendere ulteriori azioni
-\end{itemize}
-
-\subsection{User Case 15 - Logout dal sistema}
+\subsection{User Case 12 - Logout dal sistema}
 \textbf{Tipologia: obbligatorio} \\
 L'utente è riconosciuto come amministratore e vuole effettuare il logout dal sistema.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
+	\item Attori primari: SuperAdmin, Admin
 	\item Attori secondari: WebApp
 	\item Precondizioni: l'amministratore ha accesso al sistema per poterlo gestire
 	\item Postcondizioni: l'utente viene disconnesso e non può più operare, ma rimane nella lista degli amministratori.
@@ -446,12 +407,12 @@ L'utente è riconosciuto come amministratore e vuole effettuare il logout dal si
 	\item viene effettuata la disconnessione ed è necessario reinserire le credenziali per operare nuovamente
 \end{itemize}
 
-\subsection{User Case 16 - Visualizzazione elenco aree illuminate}
+\subsection{User Case 13 - Visualizzazione elenco aree illuminate}
 \textbf{Tipologia: obbligatorio} \\
 L'utente autorizzato vuole avere una panoramica delle aree illuminate
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: l'utente è un amministratore e vuole avere una panoramica sulla luminosità e sullo stato del sistema. Non riesce a vedere queste informazioni
 	\item Postcondizioni: l'amministratore visualizza la lista delle aree e può interagire
 \end{itemize}
@@ -462,12 +423,12 @@ L'utente autorizzato vuole avere una panoramica delle aree illuminate
 	\item viene visualizzato l'elenco delle aree illuminate
 \end{itemize}
 
-\subsection{User Case 17 - Inserimento di un impianto nella sezione guasti}
+\subsection{User Case 14 - Inserimento di un impianto nella sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco dei sistemi con guasti.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database, sensore
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database, sensore
 	\item Precondizioni: un sensore rileva una discrepanza tra luminosità rilevata e quella impostata in un'impianto gestito.
 	\item Postcondizioni: l'amministratore inserisce l'area in questione nell'elenco dei guasti
 \end{itemize}
@@ -480,12 +441,12 @@ L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco
 	\item viene aggiornata la tabella dei guasti nel database
 \end{itemize}
 
-\subsection{User Case 18 - Rimozione di un impianto dalla sezione guasti}
+\subsection{User Case 15 - Rimozione di un impianto dalla sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
 L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai manutentori.
 \begin{itemize}
-	\item Attori primari: manutentore
-	\item Attori secondari: WebApp, database
+	\item Attori primari: Manutentore
+	\item Attori secondari: WebApp, Database
 	\item Precondizioni: l'impianto con un guasto viene sistemato dai manutentori
 	\item Postcondizioni: il manutentore rimuove le aree in questione dall'elenco dei guasti
 \end{itemize}
@@ -498,12 +459,12 @@ L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai m
 	\item nella webapp l'impianto appare nuovamente come funzionante e non è più segnalato graficamente il guasto
 \end{itemize}
 
-\subsection{User Case 19 - Visualizzazione dettagliata di una zona}
+\subsection{User Case 16 - Visualizzazione dettagliata di una zona}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database, lampioni
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database, lampioni
 	\item Precondizioni: l'amministratore vuole sapere lo stato di una zona e la luminosità pre-impostata
 	\item Postcondizioni: l'utente ottiene le informazioni desiderate
 \end{itemize}
@@ -515,12 +476,11 @@ L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
 	\item la webapp mostra lo stato della zona, la luminosità preimpostata
 \end{itemize}
 
-
-\subsection{User Case 20 - Visualizzazione dettagliata di un lampione}
+\subsection{User Case 17 - Visualizzazione dettagliata di un lampione}
 \textbf{Tipologia: obbligatorio} \\
 L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
+	\item Attori primari: SuperAdmin, Admin
 	\item Attori secondari: WebApp, lampione
 	\item Precondizioni: l'amministratore vuole sapere lo stato e le impostazioni di un lampione
 	\item Postcondizioni: l'utente visualizza le impostazioni del lampione
@@ -530,22 +490,22 @@ L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 	\item l'utente preme il pulsante che fornisce la panoramica delle zone
 	\item l'utente sceglie la zona desiderata
 	\item l'utente sceglie il lampione desiderato
-	\item preme il pulsante di informazioni del lampione
+	\item l'utente preme il pulsante di informazioni del lampione
 	\item la webapp fa una richiesta al lampione
 	\item il lampione trasmette le informazioni
 	\item la webapp mostra le informazioni
 \end{itemize}
 
-\subsection{User Case 21 - Inserimento di un lampione}
+\subsection{User Case 18 - Inserimento di un lampione}
 \textbf{Tipologia: obbligatorio}\\
 L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database, lampione
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database, lampione
 	\item Precondizioni: gli amministratori vogliono inserire un nuovo lampione a sistema.\\
 	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
 	\begin{itemize}
-		\item Tipo di iterazione con il lampione: Push o Pull
+		\item tipo di iterazione con il lampione: Push o Pull
 		\item indirizzo IP
 		\item polling time
 		\item coordinate geografiche del lampione
@@ -562,12 +522,12 @@ L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita
 	\item l'utente riceve un messaggio di successo o di errore
 \end{itemize}
 
-\subsection{User Case 22 - Rimozione lampione}
+\subsection{User Case 19 - Rimozione lampione}
 \textbf{Tipologia: obbligatorio}\\
 L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \begin{itemize}
-	\item Attori primari: amministratori di sistema
-	\item Attori secondari: WebApp, database, lampione
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, Database, lampione
 	\item Precondizioni: gli amministratori vogliono rimuovere un lampione a sistema.\\
 	\item Postcondizioni: il lampione non è più comandabile e non fa più parte della zona.
 \end{itemize}
@@ -579,6 +539,59 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 	\item l'utente preme salva
 	\item il lampione viene rimosso dal database
 	\item l'utente riceve un messaggio di errore o di successo
+\end{itemize}
+
+\section{UC Desiderabili}
+
+\subsection{User Case 20 - Primo accesso al sistema senza credenziali}
+\textbf{Tipologia: desiderabile.} \\
+L'utente vuole poter operare come amministratore ma non ha ancora ottenuto le credenziali necessarie all'accesso.
+\begin{itemize}
+	\item Attori primari: Nuovi Admin
+	\item Attori secondari: SuperAdmin
+	\item Precondizioni: i nuovi amministratori vorrebbero poter accedere al sistema, ma non sono ancora autorizzati
+	\item Postcondizioni: I SuperAmministratori, dopo essere stata contattati dagli amministratori interessati, forniscono le credenziali per l'accesso al sistema
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente contatta via mail il servizio clienti di del gestore del sisitema
+	\item il superamministratore del sistema fornisce le credenziali
+	\item l'utente viene impostato come amministratore
+	\item l'utente effettua l'accesso
+	\item l'utente riceve una conferma di avvenuto accesso e può operare nella dashboard
+\end{itemize}
+
+\subsection{User Case 21 - Consultazione manuale Lumos Minima}
+\textbf{Tipologia: desiderabile}\\
+L'utente non sa come funziona il sistema o come eseguire un'operazione specifica e vuole approfondire questi aspetti.
+\begin{itemize}
+	\item Attori primari: SuperAdmin, Admin, Manutentori
+	\item Attore secondario: WebApp
+	\item Precondizioni: l'amministratore o il manutentore usa il sistema e vorrebbe avere una panoramica dettagliata sul suo funzionamento.
+	\item Postcondizioni: l'utente consulta il manuale d'uso
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item L'utente si autentica.
+	\item l'utente clicca l'apposito bottone per visualizzare il manuale
+	\item viene aperta una nuova finestra del browser che mostra il manuale utente sottoforma di PDF
+\end{itemize}
+
+\subsection{User Case 22 - Configurazione iniziale delle impostazioni di una nuova zona illuminata}
+\textbf{Tipologia: desiderabile} \\
+Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
+\begin{itemize}
+	\item Attori primari: SuperAdmin, Admin
+	\item Attori secondari: WebApp, lampioni
+	\item Precondizioni: l'amministratore accede al sistema ed inserisce una nuova zona da gestire
+	\item Postcondizioni: la nuova zona viene settata con delle impostazioni standard, senza richiedere ulteriori azioni
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente aggiunge una nuova area illuminata
+	\item vengono applicate le impostazioni di default, come la luminosità minima e massima
+	\item il lampione viene tarato con tali impostazioni
+	\item il sistema funziona correttamente senza intraprendere ulteriori azioni
 \end{itemize}
 
 \end{document}
