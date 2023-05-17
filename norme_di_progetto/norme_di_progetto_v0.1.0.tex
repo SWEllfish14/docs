@@ -242,7 +242,8 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
     \item Corpo del documento:  strutturato in sezioni e sottosezioni, ognuna con il proprio titolo e sottotitolo.Il corpo del documento include anche qualsiasi supporto visivo, come tabelle, figure, grafici, 	diagrammi o illustrazioni, che aiutano a presentare le informazioni in modo più accessibile o coinvolgente.
     \item Piè di pagina: al centro è presente il numero di pagina.
 \end{itemize}
-
+\paragraph{Glossario}
+Il documento Glossario elenca e spiega tutti i termini e le definizioni utilizzate nel contesto del progetto
 \paragraph{Registro delle versioni}
 Ogni file, fatta esclusione per i verbali, contiene una tabella che riporta le modifiche apportate al file nel corso del tempo.
 La tabella è così strutturata:
@@ -309,12 +310,12 @@ La base del versionamento ha struttura "X.Y.Z" e le seguenti regole verranno usa
 \end{itemize}
 
 \subsection{Gestione della Qualità}
-La gestione di qualità è un processo che viene descritto nel piano di qualifica, in esso sono definite le metriche ritenute neccessarie per valutare la qualità dei processi e dei prodotti.
+La gestione di qualità è un processo che viene descritto nel piano di qualifica, in esso sono definite le metriche ritenute necessarie per valutare la qualità dei processi e dei prodotti.
 In questa sezione delle norme di progetto vengono descritte le singole metriche, mentre nel file "piano\_di\_qualifica" viene mostrato come esse vengono impiegate.
 
 \subsubsection{Indici utilizzati}
 \begin{itemize}
-    \item \textbf{BAC - Budget at Completition}: Indica il budget prefissato dal gruppo per la realizzazione del progetto. Il suo valore è fisso ed è di 11.900 \euro
+    \item \textbf{BAC - Budget at Completion}: Indica il budget prefissato dal gruppo per la realizzazione del progetto. Il suo valore è fisso ed è di 11.900 \euro
 \end{itemize}
 
 \subsubsection{Descrizione delle metriche}
@@ -334,9 +335,9 @@ Qui vengono descritte le metriche utilizzate nel file "piano\_di\_qualifica".
 
     \item \textbf{MPC06: Cost Performance Index (CPI)}: Misura l'efficienza del lavoro svolto ad una determinata data
 
-    \item \textbf{MPC07: Estimated At Completition (EAC)}: Rappresenta la previsione del costo aspettato alla fine del progetto.
+    \item \textbf{MPC07: Estimate At Completion (EAC)}: Rappresenta la previsione del costo aspettato alla fine del progetto.
 
-    \item \textbf{MPC08: Estimate To Completition (ETC)}: Rappresenta una previsione dei costi neccessari per il completamento del progetto
+    \item \textbf{MPC08: Estimate To Complete (ETC)}: Rappresenta una previsione dei costi necessari per il completamento del progetto
 \end{itemize}
 
 \subparagraph{Processi di Supporto}
@@ -397,12 +398,19 @@ Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
 \end{itemize}
 Il team ha deciso di utilizzare una tecnica \textbf{Walkthrough} nella fase iniziale del documento e prima del rilascio di versioni "major".
 Dopo la formazione del documento ed un primo controllo esaustivo, si procede passando ad una tecnica di tipo \textbf{Inspection}
-\paragraph{Strumenti utilizzati}
-\begin{itemize}
-    \item \url{https://www.italiancorrector.com/}
-\end{itemize}
-\subsubsection{Verifica del codice}
+\paragraph{Verifica ortografica}
+Per la verifica ortografica dei documenti  si utilizzerà lo strumento di correzione
+automatica italiancorrector:
 
+     \url{https://www.italiancorrector.com/}
+\subsubsection{Verifica del codice}
+Il processo di verifica del codice avviene tramite due fasi:
+\begin{itemize}
+	\item \textbf{Analisi statica}:tecnica per esaminare il codice sorgente senza eseguirlo, al fine di identificare errori e problemi di progettazione prima dell'esecuzione del software. Si utilizzano strumenti o revisioni manuali per individuare errori di sintassi, accessi alla memoria non validi, problemi di sicurezza e violazioni delle best practice di programmazione. L'obiettivo è migliorare la qualità del codice e ridurre i costi di risoluzione degli errori.
+	\item \textbf{Analisi dinamica}:tecnica che consiste nell'eseguire il software e testarlo per identificare errori, problemi di prestazioni e di sicurezza. Si generano dati di esecuzione per individuare anomalie e miglioramenti. L'obiettivo è verificare il corretto funzionamento del software e migliorarne la qualità complessiva.
+\end{itemize}	
+\paragraph{Test} attività che consentono di verificare se un software funziona correttamente, identificando errori e problemi. Si utilizzano input specifici per osservare il comportamento e i risultati, al fine di garantire la qualità del prodotto e apportare eventuali miglioramenti.
+\paragraph{Classificazione Test}
 \subsection{Validazione}
 Processo per assicurarsi che il prodotto sviluppato rispetti i requisiti concordati con il proponente.
 Per fare ciò il prodotto verrà esaminato dai verificatori, verificando che esso sia conforme a quanto scritto nell'analisi dei requisiti. Sarà poi il responsabile successivamente che deciderà se accettare il prodotto o rifiutarlo chiedendo un ulteriore verifica.
