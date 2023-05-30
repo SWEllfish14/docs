@@ -10,14 +10,16 @@
 \input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
-\begin{document}
 \graphicspath{ {../templates/img/} }
+
+\begin{document}
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 \title{Analisi dei Requisiti}
 
 \firstPage
 
+\graphicspath{ {./UML/images/} }
 
 \maketitle
 
@@ -45,23 +47,19 @@
 
 \pagebreak
 
-\tableofcontents
-\pagebreak
-
-\printindex 
-
 \addversione{0.0.0}{24/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.1}{24/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunti casi d'uso di base}
 \addversione{0.0.2}{26/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunta nuovi casi d'uso come da capitolato Lumos Minima}
 \addversione{0.0.3}{03/05/2023}{Elena Marchioro, Francesco Naletto, Jude Vensil Braceros}{Andrea Veronese}{Ristrutturazione casi d'uso in vista del primo diario di bordo}
 \addversione{0.0.4}{09/05/2023}{Andrea Veronese, Francesco Naletto, Jude Vensil Braceros}{Claudio Giaretta}{Aggiunti ulteriori casi d'uso}
 \addversione{0.0.5}{17/05/2023}{Andrea Veronese, Claudio Giaretta, Jude Vensil Braceros}{Davide Porporati}{Modificati casi d'uso su indicazione di Imola Informatica}
+\addversione{0.0.6}{30/05/2023}{Davide Porporati}{Claudio Giaretta}{Inserite le immagini UML}
 \makeversioni
 
 \section{Introduzione}
 Lo scopo di questo documento è quello di raccogliere i risultati dell'attività di analisi dei requisti, includendo la descrizione dei casi d'uso del software e i requisiti necessari per la sua realizzazione.
 Questa analisi nasce dalla necessità di dimostrare di aver capito a fondo i requisiti del problema e le aspettative della soluzione che il nostro gruppo andrà a proporre.
-I casi d'uso analizzati in seguito dovranno essere tenuti in considerazione durante tutte le fasi di progettazione, verifica e validazione.
+I casi d'uso analizzati in seguito, dovranno essere tenuti in considerazione durante tutte le fasi di progettazione, verifica e validazione.
 
 \subsection{Riferimenti}
 Questo documento contiene un'analisi tecnica dei requisiti necessari allo sviluppo del software per il capitolato C2 Lumos Minima.
@@ -161,6 +159,7 @@ Il sistema suppone di utilizzare istanze di massimo 1GB di memoria e 2 CPU.
 
 
 \section{Casi d'uso}
+
 \subsection{Attori primari}
 Utente: persona con apposite credenziali e permessi che può accedere ad aree diverse del sistema ed eseguire operazioni differenti
 Gli utenti vengono suddivisi nelle seguenti sottocategorie, ognuna delle quali ha dei privilegi e delle azioni eseguibili specifiche.
@@ -169,11 +168,25 @@ Gli utenti vengono suddivisi nelle seguenti sottocategorie, ognuna delle quali h
 	\item Admin: Utente amministratore standard. Può effettuare tutte le operazioni previste dal sistema.
 	\item Manutentore: utente base che può accedere a funzionalità limitate, riguardanti solamente la manutenzione dei lampioni e la gestione dei guasti.
 \end{itemize}
+
 \subsection{Attori secondari}
 \begin{itemize}
 	\item Sistema di ticketing: sistema esterno usato per gestire i ticket.
 \end{itemize}
-	
+
+\subsection{Diagrammi dei casi d'uso}
+
+\includegraphics[scale=0.5]{autenticazione.png}
+
+\includegraphics[scale=0.5]{gestione area.png}	
+
+\includegraphics[scale=0.5]{gestione guasti.png}	
+
+\includegraphics[scale=0.5]{gestione sensore.png}	
+
+\includegraphics[scale=0.5]{illuminazione.png}	
+
+\includegraphics[scale=0.5]{informazioni.png}	
 
 \pagebreak
 \section{UC Obbligatori}
@@ -194,6 +207,7 @@ L'utente è in possesso delle credenziali ed è riconosciuto come amministratore
 \end{itemize}
 \paragraph{Estensioni} L'utente non è riconosciuto o non è presente nella lista dei soggetti autorizzati. Si rimanda allo "$Use Case 21 $".
 
+\includegraphics[scale=0.4]{UC01.png}
 
 \subsection{Use Case 2 - Visualizzazione stato sistema}
 \textbf{Tipologia: obbligatorio} \\
@@ -209,6 +223,7 @@ L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
 	\item la webapp mostra la dashboard come landing page
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC02.png}
 
 \subsection{Use Case 3 - Aumento luminosità automatico}
 \textbf{Tipologia: obbligatorio}\\
@@ -227,6 +242,7 @@ Uno o più sensori rilevano la presenza di utenti della strada e comandano l'aum
 	\item la webapp incrementa la luminosità di tutti i lampioni della zona
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC03.png}
 
 \subsection{Use Case 4 - Diminuzione luminosità automatica}
 \textbf{Tipologia: obbligatorio}\\
@@ -243,6 +259,7 @@ Uno o più sensori non rilevano più la presenza di utenti della strada e il sis
 	\item se il countdown arriva a zero senza interruzioni, la webapp comanda la diminuzione della luminosità di tutti i lampioni della zona.
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC04.png}
 
 \subsection{Use Case 5 - Aumento luminosità manuale}
 \textbf{Tipologia: obbligatorio} \\
@@ -269,6 +286,7 @@ Al termine di questo lasso di tempo, se non vi è un cambiamento nella luminosit
 	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC05.png}
 
 \subsection{Use Case 6 - Diminuzione luminosità manuale}
 \textbf{Tipologia: obbligatorio} \\
@@ -288,6 +306,7 @@ L'amministratore vuole diminuire la luminosità indipendentemente che ci siano r
 \paragraph{Estensioni} Nel caso in cui si comandi una dimunuzione della luminosità in modalità manuale, ma il sensore non rileva un decremento effettivo della luminosità dopo aver fatto trascorrere il "tempo tecnico", si visualizza un messaggio di errore.
 Al termine del tempo prefissato, se non ci sono stati cambiamenti di luminosità, il sistema può essere inserito nell'elenco dei guasti dall'amministratore.
 
+\includegraphics[scale=0.5]{UC06.png}
 
 \subsection{Use Case 7 - Inserimento nuova area illuminata}
 \textbf{Tipologia: obbligatorio} \\
@@ -306,6 +325,7 @@ Se sono presenti dispositivi comandabili, si vuole poter eseguire le operazioni 
 	\item la zona inserita viene salvata sul database per la ridondanza
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC07.png}
 
 \subsection{Use Case 8 - Rimozione area illuminata}
 \textbf{Tipologia: obbligatorio} \\
@@ -323,6 +343,7 @@ L'amministratore vuole rimuovere una zona illuminata in quanto non viene più ge
 	\item i lampioni e i sensori afferenti a tale area vengono eliminati a cascata dal database
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC08.png}
 
 \subsection{Use Case 9 - Modifica informazioni area illuminata}
 \textbf{Tipologia: obbligatorio} \\
@@ -355,6 +376,7 @@ L'utente vuole modificare le informazioni di una zona illuminata, come ad esempi
 	\item Post-condizioni: I dettagli non vengono modificati e l'utente visualizza un messaggio recante un messaggio di errore.
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC09.png}
 
 \subsection{Use Case 10 - Inserimento nuovo sensore}
 \textbf{Tipologia: obbligatorio}\\
@@ -384,6 +406,7 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 \end{itemize}
 \paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi,come ad esempio l'indirizzo ip del sensore,  l'amministratore riceve un messaggio di errore a seguito del fallimento del test di comunicazione.
 
+\includegraphics[scale=0.5]{UC10.png}
 
 \subsection{Use Case 11 - Rimozione sensore}
 \textbf{Tipologia: obbligatorio}\\
@@ -453,6 +476,7 @@ L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco
 	\item viene aggiornata la tabella dei guasti nel database
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC14.png}
 
 \subsection{Use Case 15 - Rimozione di un impianto dalla sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
@@ -488,6 +512,7 @@ L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
 	\item la webapp mostra lo stato della zona, la luminosità preimpostata
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC16.png}
 
 \subsection{Use Case 17 - Visualizzazione dettagliata di un lampione}
 \textbf{Tipologia: obbligatorio} \\
@@ -508,6 +533,7 @@ L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 	\item la webapp mostra le informazioni
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC17.png}
 
 \subsection{Use Case 18 - Inserimento di un lampione}
 \textbf{Tipologia: obbligatorio}\\
@@ -586,6 +612,7 @@ L'amministratore apre un ticket per un guasto rilevato
 	\item il ticket è visualizzabile dal manutentore
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC21.png}
 
 \subsection{Use Case 22 - Chiusura ticket}
 \textbf{Tipologia: obbligatorio}\\
@@ -603,6 +630,7 @@ L'amministratore chiude un ticket del un guasto sistemato
 	\item il titcket viene archiviato
 \end{itemize}
 
+\includegraphics[scale=0.5]{UC22.png}
 
 \subsection{Use Case 23 - Visualizzazione lista ticket}
 \textbf{Tipologia: obbligatorio}\\
