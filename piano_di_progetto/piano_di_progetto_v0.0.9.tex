@@ -6,6 +6,7 @@
 \usepackage{eurosym}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{float}
 \input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
@@ -69,9 +70,13 @@ Questo documento conterrà una sintesi degli sprint effettuati, con le relative 
 \section{Pianificazione Generale}
 \subsection{Diagramma di Gantt}
 Viene qui inserito il diagramma di Gantt, contenente la percentuale di completamento delle varie attività svolte al momento delle redazione.
-\begin{center}
-%\includegraphics[width=1.2\textwidth]{Gantt}
-\end{center}
+
+\floatplacement{figure}{H}
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{img/Gantt.png}
+	\caption{Diagramma di Gantt}
+\end{figure}
 
 
 \subsection{Preventivo ore finale}
