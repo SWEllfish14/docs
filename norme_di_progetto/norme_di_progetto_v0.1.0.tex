@@ -211,10 +211,9 @@ Tutti i documenti presenti nella repository docs, attraversano il seguente workf
 \begin{itemize}
     \item Creazione del branch remoto per il rispettivo documento
     \item Lavoro in locale con successivo push sul branch remoto corrispondente
-    \item Pull request tramite piattaforma web Gihtub per merge su branch dev
     \item Viene verificato che il documento prodotto si attenga alle linee guida presenti in questo documento
     \item Viene verificata la qualità del contenuto
-    \item Se i precedenti punti sono soddisfatti, la pull request viene approvata dal responsabile e viene effettuato il merge nel branch dev della repo Documentazione
+    \item Se i precedenti punti sono soddisfatti viene fatto il merge del branch in dev. 
 \end{itemize}
 
 \section{Processi di supporto}
@@ -245,6 +244,7 @@ Di seguito gli strumenti utilizzati dal gruppo per la stesura della documentazio
 
 
 \subsubsection{Template}
+\label{Temp}
 Il team ha deciso di utilizzare dei template scritti in Latex per facilitare il lavoro ed evitare codice ridondante tra i vari file della documentazione.
 Di seguito sono indicati i template utilizzati dal gruppo:
 \begin{itemize}
@@ -266,7 +266,7 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
     \item Breve descrizione dello scopo del documento
 \end{itemize}
 
-\paragraph{Struttura delle pagine}
+\paragraph{Struttura e stile delle pagine}
 \begin{itemize}
     \item Intestazione:
           \begin{itemize}
@@ -288,7 +288,7 @@ La tabella è così strutturata:
     \item \textbf{Verificatore}: Indica chi si è occupato della verifica del documento
     \item \textbf{Descrizione}: Breve descrizione della modifica apportata nella corrispondente versione
 \end{itemize}
-Per facilitare l'inserimento della tabella all'interno dei vari file è stato creato un template apposito come spiegato nella sezione \hyperref[ver]{Template}
+Per facilitare l'inserimento della tabella all'interno dei vari file è stato creato un template apposito come spiegato nella sezione \hyperref[Temp]{Template}
 
 \subsubsection{Struttura di un verbale}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
@@ -306,6 +306,7 @@ Per la nomenclatura dei verbali invece segue la seguente struttura:
     \item verbale
     \item nome azienda/docente/attività svolta
     \item data
+    
 \end{itemize}
 
 \subsection{Gestione della configurazione}
@@ -313,7 +314,7 @@ Per la nomenclatura dei verbali invece segue la seguente struttura:
 \paragraph{Sistemi software utilizzati}
 Il VCS scelto dal gruppo per facilitare la gestione delle modifiche è Git, mediante l'utilizzo di GitHub.
 A questo scopo è stata creata un'organizzazione denominata "SwellFish", al cui interno sono state create le opportune repository in base alle necessità del progetto.
-Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : "$https://github.com/orgs/SWEllfish14/repositories$".
+Le varie repository presenti nell'organizzazione sono raggiungibili al seguente link : \url{https://github.com/orgs/SWEllfish14/repositories}.
 
 \paragraph{Codice di versione}
 Come prassi per la nomenclatura dei file il gruppo ha concordato la seguente struttura condivisa:
@@ -328,7 +329,7 @@ Per la verifica e la validazione dei file il gruppo ha deciso di utilizzare la s
     \item Stesura del documento
     \item Caricamento sul branch appena creato
     \item Verifica della struttura, contenuti e rispetto delle convenzioni stabilite
-    \item Pull request sul branch dev
+    \item Merge sul branch dev
     \item Rilascio sul branch master
 \end{itemize}
 
@@ -357,19 +358,19 @@ Qui vengono descritte le metriche utilizzate nel file "piano\_di\_qualifica".
 
 \paragraph{Qualità di processo}
 \begin{itemize}
-    \item \textbf{MPC01: Actual Cost (AV)}: Rappresenta i costi affrontati dall'inizio del progetto ad un determinata data
+    \item \textbf{MPC01: Actual Cost (AV)}: Rappresenta i costi affrontati dall'inizio del progetto fino ad un determinata momento
 
     \item \textbf{MPC02: Planned Value (PV)}:  Rappresenta il costo previsto del prodotto in un determinato momento, se si è in pari con la progettazione
 
-    \item \textbf{MPC03: Earned Value (EV)}:  Rappresenta il valore effettivo del progetto ad una determinata data
+    \item \textbf{MPC03: Earned Value (EV)}:  Rappresenta il valore effettivo del progetto fino ad un determinato momento
 
-    \item \textbf{MPC04: Cost Variance (CV)}:  Rappresenta la differenza tra EV e AC. Ci fa capire quando siamo sopra o sotto il budget atteso
+    \item \textbf{MPC04: Cost Variance (CV)}:  Rappresenta la differenza tra EV e AC. Utile per capire quando siamo sopra o sotto il budget atteso
 
-    \item \textbf{MPC05: Schedule Variance (SV)}:  Rappresenta la differenza tra EV e PV. Ci fa capire se siamo avanti o indietro rispetto a quanto pianificato in termini di denaro
+    \item \textbf{MPC05: Schedule Variance (SV)}:  Rappresenta la differenza tra EV e PV. Utile per capire se siamo avanti o indietro rispetto a quanto pianificato in termini di denaro
 
-    \item \textbf{MPC06: Cost Performance Index (CPI)}: Misura l'efficienza del lavoro svolto ad una determinata data
+    \item \textbf{MPC06: Cost Performance Index (CPI)}: Misura l'efficienza del lavoro svolto fino ad un determinato momento
 
-    \item \textbf{MPC07: Estimate At Completion (EAC)}: Rappresenta la previsione del costo aspettato alla fine del progetto.
+    \item \textbf{MPC07: Estimate At Completion (EAC)}: Rappresenta la previsione del costo finale del progetto.
 
     \item \textbf{MPC08: Estimate To Complete (ETC)}: Rappresenta una previsione dei costi necessari per il completamento del progetto
 \end{itemize}
@@ -451,13 +452,13 @@ Per fare ciò il prodotto verrà esaminato dai verificatori, verificando che ess
 \subsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
 \begin{itemize}
-    \item Sincronizzazione con repository remota: git pull;
-    \item Creazione di un nuovo branch: git branch nome\_branch;
-    \item Passaggio a un branch specificato: git checkout nome\_branch;
-    \item Aggiunta delle modifiche alla stage area: git add file\_da\_aggiungere;
-    \item Creazione del commit con le modifiche: git commit;
-    \item Push sul remote di un nuovo branch: git push --set-upstream origin nome branch;
-    \item Push su un branch già esistente: git push
+    \item Sincronizzazione con repository remota: \textit{git pull};
+    \item Creazione di un nuovo branch: \textit{git branch nome\_branch};
+    \item Passaggio a un branch specificato: \textit{git checkout nome\_branch};
+    \item Aggiunta delle modifiche alla stage area: \textit{git add file\_da\_aggiungere};
+    \item Creazione del commit con le modifiche: \textit{git commit};
+    \item Push sul remote di un nuovo branch: \textit{git push --set-upstream origin nome branch};
+    \item Push su un branch già esistente: \textit{git push};
 \end{itemize}
 
 
