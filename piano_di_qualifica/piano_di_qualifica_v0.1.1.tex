@@ -13,7 +13,7 @@
 
 \graphicspath{ {../templates/img/} {./img}}
 
-\title{Piano di progetto}
+\title{Piano di qualifica}
 
 \firstPage
 
@@ -28,7 +28,7 @@
 		\hline
 
 		\textit{Redattori}    &
-		[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{} \\
+		[Davide Porporati, Claudio Giaretta, Francesco Naletto]\makecell{} \\
 
 		\textit{Revisori}     &
 		[Jude Vensil Braceros]\makecell{}                                 \\
@@ -54,6 +54,7 @@
 \addversione{0.0.1}{25/04/2023}{Andrea Veronese}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.2}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Braceros}{Modificata la struttura del documento}
 \addversione{0.1.0}{25/05/2023}{Claudio Giaretta, Francesco Naletto}{Francesco Naletto}{Stesura introduzione, qualità di processo e qualità di prodotto}
+\addversione{0.1.1}{13/07/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiornamento dei grafici e aggiunta delle ultime considerazioni del gruppo}
 \makeversioni
 
 \section{Introduzione}
@@ -61,9 +62,6 @@
 Questo documento ha lo scopo di definire le strategia di validazione e verifica addottate per garantire la qualità del prodotto.
 Per raggiungere questo obbiettivo viene applicato un sistema di verifica continua sui processi e sulle attività del gruppo, questo permette di ottenere un miglioramento continuo.
 Il documento non ha una funzione descrittiva, la definizione delle metriche indicate all'interno di questo documento, è presente nel documento "norme\_di\_progetto".
-\subsection{Scopo del capitolato}
-In Italia, il prezzo del gas è aumentato significativamente, e il consumo di gas e carbone sta portando ad un aumento delle emissioni di gas serra e CO2. Per affrontare il problema del costo dell'energia, molti comuni stanno tagliando l'illuminazione pubblica, ma questo può essere evitato attraverso l'implementazione di un sistema di illuminazione pubblica ottimizzato, che consentirebbe sia la sicurezza stradale che il risparmio energetico ed economico.
-Nel capitolato in questione si vuole implementare questa soluzione tramite un applicativo web. Quest'ultimo permetterebbe la gestione dell'illuminazione in modo sia automatico che manuale.
 \section{Qualità di processo}
 
 \subsection{Processi primari}
@@ -93,13 +91,13 @@ Nel capitolato in questione si vuole implementare questa soluzione tramite un ap
 	      \begin{itemize}
 		      \item \textbf{Calcolo della metrica}:  EV - AC
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
-		      \item \textbf{Valore accettabile}: $\ge -10\%$
+		      \item \textbf{Valore accettabile}: $\ge -12\%$
 	      \end{itemize}
 	\item MPC05: Schedule Variance (SV)
 	      \begin{itemize}
 		      \item \textbf{Calcolo della metrica}:  EV - PV
 		      \item \textbf{Valore ottimale}: $\ge 0\%$
-		      \item \textbf{Valore accettabile}: $\ge -10\%$
+		      \item \textbf{Valore accettabile}: $\ge -12\%$
 	      \end{itemize}
 
 	\item MPC06: Cost Performance Index (CPI)
@@ -237,6 +235,9 @@ Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 91
 \section{Specifica di test}
 \section {Applicazione e valutazione delle metriche}
 I grafici sono frutto di un foglio di calcolo creato dal gruppo che applica le formule per il calcolo delle metriche definite in questo documento.
+
+\subsection{Valutazione d’insieme (Qualità di processo)}
+Il lavoro è proseguito secondo le aspettative del gruppo.È stato riscontrato un calo delle ore lavorate negli sprint 8,9,10 dovuti a impegni universitari dei membri del gruppo. Questo calo ha particolarmente influenzato il grafico dello schedule variance che è effettivamente sceso sotto la soglia di tolleranza prefissata dal gruppo. Lo stesso si può riscontrare nella distanza tra il planned e l’earned value, che è cresciuta particolarmente durante quegli sprint. Il gruppo aveva comunque previsto un calo di lavoro durante gli sprint indicati, stimando di rientrare all’interno dei valori di tolleranza nei successivi sprint. 
 
 \subsection{Planning Value, Actual Cost e Earned Value}
 \begin{center}
