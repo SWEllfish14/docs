@@ -56,6 +56,7 @@
 \addversione{0.1.0}{25/05/2023}{Claudio Giaretta, Francesco Naletto}{Francesco Naletto}{Stesura introduzione, qualità di processo e qualità di prodotto}
 \addversione{0.1.1}{13/07/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiornamento dei grafici e aggiunta delle ultime considerazioni del gruppo}
 \addversione{1.0.0}{18/07/2023}{Andrea Veronese}{Claudio Giaretta, Davide Porporati}{Aggiornato a versione 1.0.0}
+\addversione{1.0.0}{07/08/2023}{Andrea Veronese}{Claudio Giaretta, Davide Porporati}{Aggiunte metriche da usare nei test di verifica}
 \makeversioni
 
 \section{Introduzione}
@@ -151,13 +152,69 @@ Il documento non ha una funzione descrittiva, la definizione delle metriche indi
 
 \textbf{Metriche:}
 \begin{itemize}
-	\item MPC11: Code Coverage
-	      \begin{itemize}
-		      \item \textbf{Calcolo della metrica}:  (Numero di righe di codice testate / Numero totale di righe di codice) * 100
-		      \item \textbf{Valore ottimale}: 100\%
-		      \item \textbf{Valore accettabile}: 80\%
-	      \end{itemize}
+\item MPC11: Statement Coverage. \\
+La metrica si basa sullo statement coverage.
+Indica la percentuale di statement eseguiti almeno una volta dall'insieme dei testi di unità.\\
+ I valori sono forniti dalla suite di testing Jest.
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 80\%                     & $>$ 95\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\item MPC12: Branch Coverage \\
+La metrica si basa sul branch coverage. Indica la percentuale di branch che vengono testati almeno una volta, con esito positivo. \\
+Valori fonriti dal report di Jest.
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 80\%                     & $>$ 95\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\item MPC13: Code Coverage \\
+La metrica si basa sul code coverage. Indica la percentuale di codice eseguito nella fase di testing. \\
+Valori fonriti dal report di Jest.
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 80\%                     & $>$ 95\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\item MPC14: Condition Coverage \\
+La metrica si basa sul conndition coverage. Indica la percentuale di branch che risultano almeno una volta true e almeno una volta false nell'esecuzione di un test dedicato. \\
+Valori fonriti dal report di Jest.
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Prodotto} & \textbf{Valore accettabile } & \textbf{Valore ottimale } \\
+		\hline
+		Software          & $>$ 70\%                     & $>$ 80\%                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
 \end{itemize}
+
 
 \subsection{Processi organizzativi}
 
@@ -210,6 +267,7 @@ Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 91
 	      \end{itemize}
 \end{itemize}
 
+
 \subsection{Portabilità}
 \textbf{Metriche}:
 \begin{itemize}
@@ -230,7 +288,6 @@ Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 91
 		      \item Valore accettabile: Inferiore a 2 errori per utente.
 	      \end{itemize}
 \end{itemize}
-
 
 
 \section{Specifica di test}
