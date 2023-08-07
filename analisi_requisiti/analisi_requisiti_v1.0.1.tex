@@ -681,42 +681,73 @@ Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni d
 
 \section{Requisiti}
 \subsection{Funzionali}
-\begin{longtable}{ |p{1.8cm}|p{5.2cm}|p{3cm}| p{2cm}|}
-\caption{Requisiti} \label{tab:tabellaRequisiti} \\
+
+\begin{xltabular}{\linewidth}{|>{\hsize=0.6\hsize}X|>{\hsize=1.8\hsize}X|>{\hsize=1\hsize}X|>{\hsize=0.6\hsize}X|}
+\hline
+\textbf{Requisito} & \textbf{Descrizione} & \textbf{Classificazione} & \textbf{Fonti} \\
+\hline
+\endfirsthead
 \hline
 \textbf{Requisito} & \textbf{Descrizione} & \textbf{Classificazione} & \textbf{Fonti} \\
 \hline
 \endhead
 \hline
 \endfoot
-RF1 & L'utente deve poter fare il login al sistema  & Obbligatorio & Capitolato Use Case 1 \\
-RF2 & L'utente visualizza lo stato del sistema & Obbligatorio & Capitolato Use Case 2 \\
-RF3 & L'utente deve poter aumentare la luminosità& Obbligatorio & Capitolato Use Case 3 \\
-RF3.1 & Viene visualizzato un messaggio d'errore se non si è potuto aumentare la luminosità & Obbligatorio & Use Case 3.1 \\
-RF4 & L'utente deve poter diminuire la luminosità & Obbligatorio & Use Case 4\\
-RF5 & L'utente deve poter inserire una nuova area illuminata & Obbligatorio & Use Case 5 \\
-RF6 & L'utente deve poter rimuovere una nuova area illuminata & Obbligatorio & Use Case 6\\
-RF7 & L'utente deve poter modificare le informazioni di una zona illuminata & Obbligatorio & Use Case 7 \\
-RF7.1 & Viene visualizzato un messaggio d'errore se non si è potuta effetuare la modifica & Obbligatorio & Use Case 7.1\\
-RF8 & L'utente deve poter inserire un nuovo sensore in una zona illuminata & Obbligatorio & Capitolato Use Case 8 \\
-RF9 & L'utente deve poter rimuovere un sensore da una zona illuminata & Obbligatorio & Use Case 9 \\
-RF10 & L'utente deve poter fare il logout dal sistema & Obbligatorio & Capitolato Use Case 10 \\
-RF11 & L'utente visualizza l'elenco delle aree illuminate& Obbligatorio & Use Case 11 \\
-RF12 & L'utente deve poter inserire un impianto nell'elenco dei guasti& Obbligatorio & Use Case 12 \\
-RF13 & L'utente deve poter rimuovere un impianto dall'elenco dei guasti& Obbligatorio & Use Case 13 \\
-RF14 & L'utente visualizza i dettagli di una zona& Obbligatorio & Use Case 14 \\
-RF15 & L'utente visualizza i dettagli di un lampione& Obbligatorio & Use Case 15 \\
-RF16 & L'utente deve poter inserire un nuovo lampione all'interno di un area illuminata& Obbligatorio & Use Case 16 \\
-RF17 & L'utente deve poter rimuovere un lampione all'interno di un area illuminata& Obbligatorio & Use Case 17 \\
-RF18 & L'utente visualizza l'elenco delle aree illuminate con dei malfunzionamenti& Obbligatorio & Use Case 18 \\
-RF19 & L'amministratore apre una nuova segnalazione di un guasto tramite un ticket & Obbligatorio & Use Case 19\\
-RF20 & L'amministratore chiude il ticket dopo aver fatto la dovuta manutenzione & Obbligatorio & Use Case 20\\
-RF21 & Il manutentore visualizza i dettagli aggiuntivi di un guasto forniti dal ticket & Obbligatorio & Use Case 21\\
-RF22 & L'utente non amministratore riceve le credenziali da amministratore da un superamministratore& Desiderabile & Use Case 22 \\
-RF23 & L'utente consulta il manuale Lumos Minima & Desiderabile & Use Case 23\\
-RF24 & Le nuove zone illuminate appena inserite hanno un setup standard& Desiderabile& Use Case 24\\
+RF1 & L'utente deve poter fare il login al sistema & Obbligatorio & Capitolato Use Case 1 \\
 \hline
-\end{longtable}
+RF2 & L'utente visualizza lo stato del sistema & Obbligatorio & Capitolato Use Case 2 \\
+\hline
+RF3 & L'utente deve poter aumentare la luminosità & Obbligatorio & Capitolato Use Case 3 \\
+\hline
+RF3.1 & Viene visualizzato un messaggio d'errore se non si è potuto aumentare la luminosità & Obbligatorio & Use Case 3.1 \\
+\hline
+RF4 & L'utente deve poter diminuire la luminosità & Obbligatorio & Use Case 4 \\
+\hline
+RF5 & L'utente deve poter inserire una nuova area illuminata & Obbligatorio & Use Case 5 \\
+\hline
+RF6 & L'utente deve poter rimuovere una nuova area illuminata & Obbligatorio & Use Case 6 \\
+\hline
+RF7 & L'utente deve poter modificare le informazioni di una zona illuminata & Obbligatorio & Use Case 7 \\
+\hline
+RF7.1 & Viene visualizzato un messaggio d'errore se non si è potuta effetuare la modifica & Obbligatorio & Use Case 7.1 \\
+\hline
+RF8 & L'utente deve poter inserire un nuovo sensore in una zona illuminata & Obbligatorio & Capitolato Use Case 8 \\
+\hline
+RF9 & L'utente deve poter rimuovere un sensore da una zona illuminata & Obbligatorio & Use Case 9 \\
+\hline
+RF10 & L'utente deve poter fare il logout dal sistema & Obbligatorio & Capitolato Use Case 10 \\
+\hline
+RF11 & L'utente visualizza l'elenco delle aree illuminate & Obbligatorio & Use Case 11 \\
+\hline
+RF12 & L'utente deve poter inserire un impianto nell'elenco dei guasti & Obbligatorio & Use Case 12 \\
+\hline
+RF13 & L'utente deve poter rimuovere un impianto dall'elenco dei guasti & Obbligatorio & Use Case 13 \\
+\hline
+RF14 & L'utente visualizza i dettagli di una zona & Obbligatorio & Use Case 14 \\
+\hline
+RF15 & L'utente visualizza i dettagli di un lampione & Obbligatorio & Use Case 15 \\
+\hline
+RF16 & L'utente deve poter inserire un nuovo lampione all'interno di un'area illuminata & Obbligatorio & Use Case 16 \\
+\hline
+RF17 & L'utente deve poter rimuovere un lampione all'interno di un'area illuminata & Obbligatorio & Use Case 17 \\
+\hline
+RF18 & L'utente visualizza l'elenco delle aree illuminate con dei malfunzionamenti & Obbligatorio & Use Case 18 \\
+\hline
+RF19 & L'amministratore apre una nuova segnalazione di un guasto tramite un ticket & Obbligatorio & Use Case 19 \\
+\hline
+RF20 & L'amministratore chiude il ticket dopo aver fatto la dovuta manutenzione & Obbligatorio & Use Case 20 \\
+\hline
+RF21 & Il manutentore visualizza i dettagli aggiuntivi di un guasto forniti dal ticket & Obbligatorio & Use Case 21 \\
+\hline
+RF22 & L'utente non amministratore riceve le credenziali da amministratore da un superamministratore & Desiderabile & Use Case 22 \\
+\hline
+RF23 & L'utente consulta il manuale Lumos Minima & Desiderabile & Use Case 23 \\
+\hline
+RF24 & Le nuove zone illuminate appena inserite hanno un setup standard & Desiderabile & Use Case 24 \\
+\hline
+\end{xltabular}
+
+
 \subsection{Qualità}
 \begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{3cm}| p{2cm}| }
 \hline
