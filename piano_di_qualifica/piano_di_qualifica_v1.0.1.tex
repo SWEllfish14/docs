@@ -6,6 +6,7 @@
 \usepackage{eurosym}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
+\usepackage{booktabs} % Per linee orizzontali migliori
 \input{../templates/first_page.tex}
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
@@ -292,6 +293,32 @@ Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 91
 
 
 \section{Specifica di test}
+\subsection{Test di accettazione}
+\subsection{Test di sistema}
+Le sigle dei requisiti sono state ottenunte dal file "analisi dei requisiti"
+
+\begin{table}[htbp]
+	\centering
+
+	\begin{tabular}{|c|p{4cm}|c|c|}
+	  \hline
+	  \textbf{ID test} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato implementazione} \\
+	  \hline
+	  1 & \makecell{Test di funzionalità\\ X} & REQ-001 & Completato \\
+	  \hline
+	  2 & \makecell{Test di prestazione\\ Y} & REQ-005 & In corso \\
+	  \hline
+	  3 & \makecell{Test di usabilità\\ Z} & REQ-010 & Da iniziare \\
+	  \hline
+	\end{tabular}
+  \end{table}
+  
+  \end{document}  
+
+\subsection{Test di integrazione}
+\subsection{Test di unità}
+\subsubsection{Code coverage}
+
 \section {Applicazione e valutazione delle metriche}
 I grafici sono frutto di un foglio di calcolo creato dal gruppo che applica le formule per il calcolo delle metriche definite in questo documento.
 
