@@ -294,26 +294,88 @@ Per assicurare la qualità del prodotto, abbiamo adottato lo standard ISO/IEC 91
 
 \section{Specifica di test}
 \subsection{Test di accettazione}
-\subsection{Test di sistema}
-Le sigle dei requisiti sono state ottenunte dal file "analisi dei requisiti"
-
-\begin{table}[htbp]
-	\centering
-
-	\begin{tabular}{|c|p{4cm}|c|c|}
-	  \hline
-	  \textbf{ID test} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato implementazione} \\
-	  \hline
-	  1 & \makecell{Test di funzionalità\\ X} & REQ-001 & Completato \\
-	  \hline
-	  2 & \makecell{Test di prestazione\\ Y} & REQ-005 & In corso \\
-	  \hline
-	  3 & \makecell{Test di usabilità\\ Z} & REQ-010 & Da iniziare \\
-	  \hline
-	\end{tabular}
-  \end{table}
-  
-  \end{document}  
+\subsection{Test di sistema}  
+  \begin{xltabular}{\linewidth}{|>{\hsize=0.6\hsize}X|>{\hsize=2.3\hsize}X|>{\hsize=0.7\hsize}X|>{\hsize=0.4\hsize}X|}						
+						
+	\hline						
+	\textbf{ID Test} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato} \\						
+	\hline						
+	\endfirsthead						
+	\hline						
+	\textbf{ID Test} & \textbf{Descrizione} & \textbf{Requisito} & \textbf{Stato} \\						
+	\hline						
+	\endhead						
+	\hline						
+	\endfoot						
+	TS1	 & Verificare che l'utente riesca ad effettuare correttamente l'accesso a sistema	&	RF1	&	NI	\\
+	\hline						
+	TS2	 & Verificare che l'utente visualizzi correttamente lo stato del sistema	&	RF2	&	NI	\\
+	\hline						
+	TS3	 & Verificare che l'utente sia in grado di cambiare la luminosità correttamente	&	RF3	&	NI	\\
+	\hline						
+	TS4	 & Verificare che il sistema visualizzi correttamente il messaggio di errore nel caso in cui l'aumento della luminosità non fosse andato a buon fine 	&	RF4	&	NI	\\
+	\hline						
+	TS5	& Verificare che l'utente possa visualizzare correttamente la lista delle aree illuminate	&	RF5 	&	NI	\\
+	\hline						
+	TS6	& Verificare che l'utente possa vedere correttamente l'elenco delle zone	&	RF6	&	NI	\\
+	\hline						
+	TS7	 & Verificare che l'utente possa selezionare le zone correttamente	&	RF7	&	NI	\\
+	\hline						
+	TS8	 & Verificare che l'utente possa diminuire la luminosità di una zona correttamente	&	RF8	&	NI	\\
+	\hline						
+	TS9	 & Verificare che l'utente possa accedere correttamente alla dashboard	&	RF10	&	NI	\\
+	\hline						
+	TS10	 & Verificare che il sistema visualizzi correttamente il messaggio di errore nel caso la diminuzione della luminosità non fosse andata a buon fine 	&	RF11	&	NI	\\
+	\hline						
+	TS11	 & Verificare che l'utente possa diminuire la luminosità correttamente	&	RF12	&	NI	\\
+	\hline						
+	TS12	 & Verificare che l'utente possa inserire una nuova area illuminata correttamente	&	RF13	&	NI	\\
+	\hline						
+	TS13	 & Verificare che l'utente possa rimuovere un area di illuminazione correttamente	&	RF14	&	NI	\\
+	\hline						
+	TS14	 & Verificare che l'utente possa accedere alla lista delle zone gestite correttamente	&	RF15	&	NI	\\
+	\hline						
+	TS15	 & Verificare che l'utente possa modificare le informazioni di un area illuminata	&	RF16	&	NI	\\
+	\hline						
+	TS16	 & Verificare che il sisteam mostri correttamente il messaggio di notifica una volta fatta la modifica all'area illuminata 	&	RF17	&	NI	\\
+	\hline						
+	TS17	 & Verificare che l'utente possa inserire correttamente un sensore in un area illuminata	&	RF18	&	NI	\\
+	\hline						
+	TS18	 & Verificare che l'utente possa accedere correttamente all'area illuminata	&	RF19	&	NI	\\
+	\hline						
+	TS19	 & Verificare che l'utente possa rimuovere un sensore dall'area illuminata	&	RF20	&	NI	\\
+	\hline						
+	TS20	 & Verificare che l'utente possa fare il logout dal sistema correttamente	&	RF21	&	NI	\\
+	\hline						
+	TS21	 & Verificare che l'utente possa inserire un impianto nell'elenco dei guasti correttamente	&	RF22	&	NI	\\
+	\hline						
+	TS22	 & Verificare che l'utente possa rimuovere un impianto dall'elenco dei guasti correttamente	&	RF23	&	NI	\\
+	\hline						
+	TS23	 & Verificare che l'utente possa visualizzare i dettagli di una zona correttamente	&	RF24	&	NI	\\
+	\hline						
+	TS24	 & Verificare che l'utente possa selezionare un lampione correttamente	&	RF25	&	NI	\\
+	\hline						
+	TS25	 & Verificare che l'utente possa visualizzare i dettagli di un lampione correttamente	&	RF26	&	NI	\\
+	\hline						
+	TS26	 & Verificare che l'utente possa inserire un nuovo lampione all'interno di un'area illuminata correttamente	&	RF27	&	NI	\\
+	\hline						
+	TS27	 & Verificare che l'utente possa rimuovere un lampione all'interno di un'area illuminata correttamente	&	RF28	&	NI	\\
+	\hline						
+	TS28	 & Verificare che l'utente possa visualizzare l'elenco delle aree illuminate con dei malfunzionamenti correttamente	&	RF29	&	NI	\\
+	\hline						
+	TS29	 & Verificare che l'amministratore possa poter aprire una nuova segnalazione di un guasto tramite un ticket	&	RF30	&	NI	\\
+	\hline						
+	TS30	 & Verificare che l'amministratire possa poter chiudere il ticket dopo aver fatto la dovuta manutenzione correttamente	&	RF31	&	NI	\\
+	\hline						
+	TS31	 & Verificare che il manutentore possa visualizzare i dettagli aggiuntivi di un guasto forniti dal ticket correttamente	&	RF32	&	NI	\\
+	\hline						
+	TS32	 & Verificare che l'utente non amministratore possa riceve le credenziali di amministratore da un superamministratore	&	RF33	&	NI	\\
+	\hline						
+	TS33	 & Verificare che l'utente possa consultare il manuale Lumos Minima	&	RF34	&	NI	\\
+	\hline						
+	TS34	 & Verificare che le nuove aree illuminate appena inserite abbiano un setup standard	&	RF35	&	NI	\\
+							
+	\end{xltabular}						
 
 \subsection{Test di integrazione}
 \subsection{Test di unità}
