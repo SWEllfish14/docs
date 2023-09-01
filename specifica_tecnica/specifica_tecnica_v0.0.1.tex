@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{longtable}
+\input{../templates/first_page.tex} 
+\input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
+\graphicspath{ {../templates/img/} }
+
+\begin{document}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\title{Specifica Tecnica}
+
+\firstPage
+\pagebreak
+
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
+
+			\textit{Revisori} &
+			[Jude Vensil Braceros]\makecell{}\\
+			\textit{Responsabili} &
+			[Andrea Veronese]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+	File contenente la specifica tecnica necessaria per la realizzazione del progetto. 
+\end{center}
+
+\pagebreak
+\addversione{0.0.1}{01/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiunti UML, modificata tabella requisiti e informazioni principali}
+\addversione{0.0.0}{09/08/2023}{Elena Marchioro}{Davide Porporati}{Creata struttura di base del documento}
+\makeversioni
+
+\tableofcontents
+
+\pagebreak
+
+\graphicspath{ {./UML/images/} }
+
+\section{Introduzione}
+
+\subsection{Scopo del documento}
+Nel seguente documento vengono illustrate e motivate le scelte architetturali decise. Vengono riportati i diagrammi delle classi per l'architettura e le funzionalità principali,
+il diagramma ER della base di dati e infine una sezione dalla quale si può verificare lo stato di avanzamento del prodotto grazie a una tabella che illustra
+i requisiti soddisfatti.
+
+\subsection{Scopo del prodotto}
+L’obiettivo di SWEllfish e dell’azienda ImolaInformatica S.p.A. è lo sviluppo di un sistema per l’ottimizzazione dell’illuminazione, attraverso la realizzazione di una WebApp che permetta a degli utenti registrati di gestire l'impianto di illuminazione
+di una zona in modo manuale e automatico. Nel documento viene riportata l'architettura del sistema per i vari servizi e i design pattern utilizzati.
+
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+	\item Norme di progetto
+	\item Capitolato d'appalto C2 - \href{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C2.pdf}{Lumos Minima}
+\end{itemize}
+\subsubsection{Riferimenti informativi}
+\begin{itemize}
+	\item Analisi dei requisiti
+	\item Slide P2 del corso di ingegneria del software - \href{https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf}{Diagrammi delle classi}
+	\item Slide P4 del corso di ingegneria del software - \href{https://www.math.unipd.it/~rcardin/sweb/2022/L02.pdf}{Progettazione: il pattern Model-View-Controller e derivati}
+\end{itemize}
+
+\section{Architettura del prodotto}
+
+
+
+\subsection{Diagramma delle classi}
+
+Tabella diagramma delle classi
+
+\subsection{Design Pattern}
+\subsubsection{Back-end}
+Per il backend è stato utilizzato il seguente pattern:
+	\begin{itemize}
+		\item Router Service Pattern
+	\end{itemize}
+\subsubsection{Front-end}
+Per il frontend si sono utilizzati i pattern:
+\begin{itemize}
+	\item Observer Pattern:
+	\begin{itemize}
+		\item Scopo: definire una dipendenza fra oggetti, riflettendo la modifica di un oggetto sui dipendenti.
+		\item Motivazione: mantenere la consistenza fra oggetti e definire come implementare la relazione di dipendenza.
+	\end{itemize}
+	\item Model View ViewModel Pattern (MVVM): è un modello architettonico nel software per computer che facilita la separazione dello sviluppo dell'interfaccia utente grafica, ovvero la GUI,
+sia tramite un linguaggio di markup o un codice GUI, dallo sviluppo del business logica o logica back-end in modo tale che la vista non dipenda da alcuna piattaforma di modello specifica.
+I componenti del modello MVVM:	
+	\begin{itemize}
+		\item Model;
+		\item View;
+		\item ViewModel;
+		\item Binder.
+	\end{itemize}
+\end{itemize}
+\section{Requisiti soddisfatti}
+\subsection{Tabella requisiti soddisfatti}
+
+\begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{2.5cm}| p{3.5cm}| }
+	\hline
+	Requisito& Descrizione &Classificazione & Stato \\
+	\hline
+	RF1	 & L'utente deve poter fare il login al sistema & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF2	 & L'utente visualizza lo stato del sistema & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF3	 & L'utente deve poter aumentare la luminosità di una zona & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF4	 & Il sistema deve visualizzare un messaggio d'errore se non si è potuto aumentare la luminosità & Obbligatorio & Soddisfatto \\
+	\hline	
+	RF5 & L'utente deve poter vedere l'elenco delle aree illuminate & Obbligatorio & Soddisfatto \\
+	\hline
+	RF6 & L'utente deve poter vedere l'elenco delle zone & Obbligatorio & Soddisfatto \\
+	\hline
+	RF7	 & L'utente deve poter selezionare le zone su cui operare & Obbligatorio & Soddisfatto \\
+	\hline	
+	RF8	 & L'utente deve poter diminuire la luminosità di una zona & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF10	 & L'utente deve poter accedere alla dashboard & Obbligatorio & Soddisfatto \\
+	\hline										
+	RF11	 & Il sistema deve visualizzare un messaggio d'errore nel caso l'operazione di diminuzione della luminosità non fosse andata a buon fine & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF12	 & L'utente deve poter diminuire la luminosità & Obbligatorio & Soddisfatto \\
+	\hline				
+\end{tabular}
+
+\begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{2.5cm}| p{3.5cm}| }
+	\hline
+	Requisito& Descrizione &Classificazione & Stato \\
+	\hline
+	RF13	 & L'utente deve poter inserire una nuova area illuminata & Obbligatorio & Soddisfatto \\
+	\hline
+	RF14	 & L'utente deve poter rimuovere un area illuminata & Obbligatorio & Soddisfatto \\
+	\hline
+	RF15	 & L'utente deve poter accedere alla lista delle zone gestite & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF16	 & L'utente deve poter modificare le informazioni di un'area illuminata	& Obbligatorio & Soddisfatto \\
+	\hline				
+	RF17	 & Il sistema mostra un messaggio di notifica una volta effettuata la modifica ad un area illuminata & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF18	 & L'utente deve poter inserire un nuovo sensore in una area illuminata & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF19	 & L'utente deve poter accedere all'area illuminata & Obbligatorio & Soddisfatto \\
+	\hline 				
+	RF20	 & L'utente deve poter rimuovere un sensore da una zona illuminata & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF21	 & L'utente deve poter fare il logout dal sistema & Obbligatorio & Soddisfatto \\
+	\hline										
+	RF22	 & L'utente deve poter inserire un impianto nell'elenco dei guasti & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF23	 & L'utente deve poter rimuovere un impianto dall'elenco dei guasti & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF24	 & L'utente deve poter visualizzare i dettagli di una zona & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF25	 & L'utente deve poter selezionare un lampione & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF26	 & L'utente deve poter visualizzare i dettagli di un lampione & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF27	 & L'utente deve poter inserire un nuovo lampione all'interno di un'area illuminata & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF28	 & L'utente deve poter rimuovere un lampione all'interno di un'area illuminata & Obbligatorio & Soddisfatto \\
+	\hline
+\end{tabular}
+	
+\begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{2.5cm}| p{3.5cm}| }
+	\hline
+	Requisito& Descrizione &Classificazione & Stato \\
+	\hline	
+	RF29	 & L'utente deve poter visualizzare l'elenco delle aree illuminate con dei malfunzionamenti & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF30	 & L'amministratore deve poter aprire una nuova segnalazione di un guasto tramite un ticket & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF31	 & L'amministratore deve poter chiudere il ticket dopo aver fatto la dovuta manutenzione & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF32	 & Il manutentore deve poter visualizzare i dettagli aggiuntivi di un guasto forniti dal ticket & Obbligatorio & Soddisfatto \\
+	\hline				
+	RF33	 & L'utente non amministratore riceve le credenziali da amministratore da un superamministratore & Desiderabile & Non Soddisfatto \\
+	\hline				
+	RF34	 & L'utente consulta il manuale Lumos Minima & Desiderabile & Non Soddisfatto \\
+	\hline				
+	RF35	 & Le nuove aree illuminate appena inserite hanno un setup standard & Desiderabile & Non Soddisfatto \\
+	\hline				
+	\end{tabular}
+	
+	\subsection{Qualità}
+	\begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{3cm}| p{2cm}| }
+	\hline
+	Requisito& Descrizione &Classificazione & Stato \\
+	\hline
+	RQ1 & La webapp deve essere sviluppata seguendo le regole descritte nel documento Norme di progetto & Obbligatorio & Non soddisfatto \\
+	RQ2 & Devono essere sviluppati dei test con una copertura minima dell'80\% e correlati di report & Obbligatorio & Non soddisfatto\\
+	RQ3 & Deve essere prodotto un documento sulle scelte implementative e progettuali & Obbligatorio & Non soddisfatto \\
+	RQ4 & Deve essere prodotto un documento sui problemi aperti e sulle eventuali soluzioni da esplorare & Obbligatorio & Non soddisfatto \\
+	RQ5 & Fornire un’analisi rispetto al carico massimo supportato in numero di dispositivi e di quale sarebbe il servizio cloud più adatto per supportarlo analizzando prezzo, stabilità del servizio ed assistenza.  &  Facoltativo & Non soddisfatto \\
+	\hline
+	
+	\end{tabular}
+\subsection{Dati soddisfazione requisiti}
+percentuali varie
+
+\end{document}
