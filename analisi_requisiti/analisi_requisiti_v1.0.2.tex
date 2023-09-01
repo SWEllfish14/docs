@@ -56,6 +56,7 @@
 \addversione{0.1.0}{07/06/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiornate le immagini UML e verificato intero documento}
 \addversione{1.0.0}{18/06/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiornato a versione 1.0.0}
 \addversione{1.0.1}{18/06/2023}{Claudio Giaretta}{Andrea Veronese}{Aggiunti vincoli di compatibilità con browser}
+\addversione{1.0.2}{01/09/2023}{Davide Porporati, Elena Marchioro}{Andrea Veronese}{Aggiornati UC in base alla consegna della PB}
 \makeversioni
 
 \tableofcontents
@@ -93,7 +94,7 @@ Lo scopo del progetto è quello di fornire una piattaforma che grazie all'automa
 Il funzionamento di tale sistema avviene secondo delle fasi ben precise:
 \begin{itemize}
 	\item l'illuminazione viene impostata ad un livello standard, ovvero un numero compreso tra 0 (spento) e 10(luminosità massima)
-	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni della zona ad un livello prefissato
+	\item Se un sensore rileva un veicolo o una persona, aumenta la luminosità di tutti i lampioni dell'area ad un livello prefissato
 	\item Viene fatto trascorrere un intervallo temporale predefinito, nell'ordine di alcuni minuti
 	\item Se al termine dell'intervallo stabilito non ci sono nuovi rilevamenti da parte dei sensori, la luminosità viene abbassata, come descritto nel primo punto del funzionamento del sistema, al livello pre-rilevamento.
 \end{itemize}
@@ -113,7 +114,7 @@ Il sistema software sarà composto dalle seguenti unità:
 Il termine "WebApp" si riferisce all'insieme dei seguenti componenti del sistema:
 \begin{itemize}
 	\item Frontend: Dashboard accessibile via web che permette di interagire graficamente con il sistema
-	\item Backend: Sistema di comunicazione e interazione con i dispositivi IoT utilizzati per gestire la luminosità di una zona
+	\item Backend: Sistema di comunicazione e interazione con i dispositivi IoT utilizzati per gestire la luminosità di un'area
 	\item Database: sistema usato per salvare e gestire dati strutturati di interesse per l'applicazione.
 \end{itemize}
 
@@ -123,10 +124,10 @@ Con Imola Informatica è stato concordato che tale utente riceve le credenziali 
 L'utente che ricoprirà il ruolo di amministratore può eseguire le seguenti operazioni:
 \begin{itemize}
 	\item Accedere alla dashboard
-	\item Aumentare manualmente l'intensità luminosa di una o più zone
-	\item Aggiungere, modificare e rimuovere lampioni in una zona predefinita
-	\item Aggiungere, rimuovere o modificare le zone di illuminazione
-	\item Tracciare le zone guaste e inserirle in un apposito elenco che funge da storico dei malfunzionamenti
+	\item Aumentare manualmente l'intensità luminosa di una o più aree
+	\item Aggiungere, modificare e rimuovere lampioni in un'area predefinita
+	\item Aggiungere, rimuovere o modificare le aree di illuminazione
+	\item Tracciare le aree guaste e inserirle in un apposito elenco che funge da storico dei malfunzionamenti
 \end{itemize}
 Il SuperAmministratore potrà eseguire le seguenti operazioni:
 \begin{itemize}
@@ -246,23 +247,23 @@ L'utente autorizzato desidera avere una panoramica sullo stato del sistema.
 L'amministratore vuole aumentare la luminosità indipendentemente dal fatto che ci sia un rilevamento o meno.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di una zona
-	\item Postcondizioni:viene incrementata la luminosità della zona dopo aver fatto trascorre un "tempo tecnico" necessario per la propagazione dei comandi a tutti i lampioni afferenti ad un'area specifica.
+	\item Precondizioni: gli amministratori vogliono aumentare manualmente la luminosità di un'area
+	\item Postcondizioni:viene incrementata la luminosità dell'area dopo aver fatto trascorre un "tempo tecnico" necessario per la propagazione dei comandi a tutti i lampioni afferenti ad un'area specifica.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
 	\item l'utente accede alla dashboard
-	\item l'utente seleziona una o più zone con cui operare
-	\item il database fornisce gli indirizzi ip dei lampioni della zona interessata
-	\item l'utente incrementa manualmente la luminosità della zona selezionata
+	\item l'utente seleziona una o più aree con cui operare
+	\item il database fornisce gli indirizzi ip dei lampioni dell'area interessata
+	\item l'utente incrementa manualmente la luminosità dell'area selezionata
 \end{itemize}
 \paragraph{Estensioni} In caso di guasto di sistema o mancanza di rete, l'amministratore comanda l'aumento della luminosità ma non vi è un incremento effettivo dopo aver fatto trascorrere il tempo tecnico prefissato.\\
-Al termine di questo lasso di tempo, se non vi è un cambiamento nella luminosità del sistema, la zona viene inserita dall'amministratore nell'elenco dei guasti. 
+Al termine di questo lasso di tempo, se non vi è un cambiamento nella luminosità del sistema, l'area viene inserita dall'amministratore nell'elenco dei guasti. 
 
 \subsubsection{UC03.1 - Visualizzazione del messaggio d'errore}
 \begin{itemize}
 	\item Attore primario: SuperAdmin, Admin
-	\item Precondizioni: L'attore primario ha tentato di aumentare la luminosità di una o più zone senza successo
+	\item Precondizioni: L'attore primario ha tentato di aumentare la luminosità di una o più aree senza successo
 	\item Post-condizioni: L'attore primario visualizza un messaggio recante un messaggio di errore
 \end{itemize}
 
@@ -273,15 +274,15 @@ Al termine di questo lasso di tempo, se non vi è un cambiamento nella luminosit
 L'amministratore vuole diminuire la luminosità indipendentemente che ci siano rilevamenti di utenti stradali o meno.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: gli amministratori vogliono diminuire manualmente la luminosità di una zona
-	\item Postcondizioni: tutti i lampioni della zona vedono una diminuzione della luminosità
+	\item Precondizioni: gli amministratori vogliono diminuire manualmente la luminosità di un'area
+	\item Postcondizioni: tutti i lampioni dell'area vedono una diminuzione della luminosità
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
 	\item l'utente accede alla dashboard
-	\item l'utente seleziona una o più zone con cui operare
- 	\item il database fornisce gli indirizzi ip dei lampioni della zona interessata
-	\item l'utente decrementa manualmente la luminosità delle zone selezionate
+	\item l'utente seleziona una o più aree con cui operare
+ 	\item il database fornisce gli indirizzi ip dei lampioni dell'area interessata
+	\item l'utente decrementa manualmente la luminosità delle aree selezionate
 \end{itemize}
 \paragraph{Estensioni} Nel caso in cui si comandi una dimunuzione della luminosità in modalità manuale, ma il sensore non rileva un decremento effettivo della luminosità dopo aver fatto trascorrere il "tempo tecnico", si visualizza un messaggio di errore.
 Al termine del tempo prefissato, se non ci sono stati cambiamenti di luminosità, il sistema può essere inserito nell'elenco dei guasti dall'amministratore.
@@ -294,32 +295,32 @@ L'amministratore vuole inserire a sistema una nuova area da gestire che potrà e
 Se sono presenti dispositivi comandabili, si vuole poter eseguire le operazioni consentite dal sistema.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: gli amministratori vogliono aggiungere una nuova zona illuminata da gestire tramite la webapp
-	\item Postcondizioni: viene aggiunta la nuova zona alla lista di quelle già presenti a sistema ed è possibile inserire lampioni e sensori da comandare.
+	\item Precondizioni: gli amministratori vogliono aggiungere una nuova area illuminata da gestire tramite la webapp
+	\item Postcondizioni: viene aggiunta la nuova area alla lista di quelle già presenti a sistema ed è possibile inserire lampioni e sensori da comandare.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'utente preme il pulsante di creazione di una nuova zona
-	\item l'utente inserisce i dettagli della zona appena creata
-	\item la nuova zona illuminata prevede l'inserimento di lampioni e sensori, ma se non sono stati inseriti le funzioni smart come l'aumento o ladiminuzione della luminosità risultano momentaneamente non disponibili
-	\item la zona inserita viene salvata sul database per la ridondanza
+	\item l'utente preme il pulsante di creazione di una nuova area
+	\item l'utente inserisce i dettagli dell'area appena creata
+	\item la nuova area illuminata prevede l'inserimento di lampioni e sensori, ma se non sono stati inseriti le funzioni smart come l'aumento o ladiminuzione della luminosità risultano momentaneamente non disponibili
+	\item l'area inserita viene salvata sul database per la ridondanza
 \end{itemize}
 
 \includegraphics[scale=0.5]{UC05.png}
 
 \subsection{UC06 - Rimozione area illuminata}
 \textbf{Tipologia: obbligatorio} \\
-L'amministratore vuole rimuovere una zona illuminata in quanto non viene più gestita dal sistema.
+L'amministratore vuole rimuovere un'area illuminata in quanto non viene più gestita dal sistema.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: gli amministratori vogliono rimuovere una zona illuminata gestita tramite la webapp
-	\item Postcondizioni: viene rimossa la zona e i relativi dispositivi presenti e non è più possibile effettuare le operazioni consentite.
+	\item Precondizioni: gli amministratori vogliono rimuovere un'area illuminata gestita tramite la webapp
+	\item Postcondizioni: viene rimossa l'area e i relativi dispositivi presenti e non è più possibile effettuare le operazioni consentite.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'utente accede alla lista delle zone gestite
-	\item l'utente rimuove la zona illuminata tramite l'apposito tasto
-	\item la zona viene rimossa dal database 
+	\item l'utente accede alla lista delle aree gestite
+	\item l'utente rimuove l'area illuminata tramite l'apposito tasto
+	\item l'area viene rimossa dal database 
 	\item i lampioni e i sensori afferenti a tale area vengono eliminati a cascata dal database
 \end{itemize}
 
@@ -327,16 +328,16 @@ L'amministratore vuole rimuovere una zona illuminata in quanto non viene più ge
 
 \subsection{UC07 - Modifica informazioni area illuminata}
 \textbf{Tipologia: obbligatorio} \\
-L'utente vuole modificare le informazioni di una zona illuminata, come ad esempio l'indirizzo ip di un sensore che è stato sostituito.
+L'utente vuole modificare le informazioni di un'area illuminata, come ad esempio l'indirizzo ip di un sensore che è stato sostituito.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: gli amministratori vogliono modificare le informazioni di una  zona illuminata da gestire tramite la webapp
-	\item Postcondizioni: vengono modificati i dettagli della zona in questione ed è possibile effettuare le operazioni consentite dal software.
+	\item Precondizioni: gli amministratori vogliono modificare le informazioni di un'area illuminata da gestire tramite la webapp
+	\item Postcondizioni: vengono modificati i dettagli dell'area in questione ed è possibile effettuare le operazioni consentite dal software.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'utente accede alla lista delle zone gestite
-	\item l'utente selezione la zona desiderata
+	\item l'utente accede alla lista delle aree gestite
+	\item l'utente selezione l'area desiderata
 	\item l'utente preme l'apposito pulsante di modifica
 	\item l'utente può modificare i seguenti parametri:
 		\begin{itemize}
@@ -352,7 +353,7 @@ L'utente vuole modificare le informazioni di una zona illuminata, come ad esempi
 \subsubsection{UC07.1 - Visualizzazione del messaggio d'errore in modalità di modifica}
 \begin{itemize}
 	\item Attore primario: SuperAdmin, Admin
-	\item Precondizioni: L'attore primario ha modificato uno o più dettagli di una zona illuminata
+	\item Precondizioni: L'attore primario ha modificato uno o più dettagli di un'area illuminata
 	\item Post-condizioni: I dettagli non vengono modificati e l'utente visualizza un messaggio recante un messaggio di errore.
 \end{itemize}
 
@@ -360,13 +361,13 @@ L'utente vuole modificare le informazioni di una zona illuminata, come ad esempi
 
 \subsection{UC08 - Inserimento nuovo sensore}
 \textbf{Tipologia: obbligatorio}\\
-L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
+L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la riduzione della luminosità di un'area gestita.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
 	\item Precondizioni: gli amministratori vogliono inserire un nuovo sensore a sistema per la rilevazione degli utenti stradali.\\
 	 Per compiere quest'operazione è necessario essere in possesso delle seguenti informazioni: 
 	\begin{itemize}
-		\item zona illuminata in cui il sensore è installato
+		\item area illuminata in cui il sensore è installato
 		\item tipo di iterazione con il sensore: Push o Pull
 		\item indirizzo IP
 		\item polling time
@@ -390,11 +391,11 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 
 \subsection{UC09 - Rimozione sensore}
 \textbf{Tipologia: obbligatorio}\\
-L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione della luminosità di una zona gestita.
+L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione della luminosità di un'area gestita.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
 	\item Precondizioni: gli amministratori vogliono rimuovere un sensore dal sistema.
-	\item Postcondizioni: non è più possibile aumentare o diminuire automaticamente la luminosità in una data zona.
+	\item Postcondizioni: non è più possibile aumentare o diminuire automaticamente la luminosità in una data area.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
@@ -460,36 +461,36 @@ L'amministratore rileva un guasto e inserisce manualmente l'impianto nell'elenco
 
 \subsection{UC13 - Rimozione di un impianto dalla sezione guasti}
 \textbf{Tipologia: obbligatorio} \\
-L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto dai manutentori.
+L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto.
 \begin{itemize}
-	\item Attori primari: Manutentore
-	\item Precondizioni: l'impianto con un guasto viene sistemato dai manutentori
-	\item Postcondizioni: il manutentore rimuove le aree in questione dall'elenco dei guasti
+	\item Attori primari: Amministratore
+	\item Precondizioni: l'impianto con un guasto viene sistemato
+	\item Postcondizioni: l'amministratore rimuove le aree in questione dall'elenco dei guasti
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item il manutentore accede alla lista degli impianti guasto
-	\item l'utente selezione l'impianto su cui è stata eseguita la manutenzione
+	\item l'amministratore accede alla lista degli impianti guasto
+	\item l'utente seleziona l'impianto su cui è stata eseguita la manutenzione
 	\item l'utente preme il pulsante di cancellazione dall'elenco
 	\item l'impianto viene rimosso dalla sezione guasti
 	\item nella webapp l'impianto appare nuovamente come funzionante e non è più segnalato graficamente il guasto
 \end{itemize}
 
 
-\subsection{UC14 - Visualizzazione dettagliata di una zona}
+\subsection{UC14 - Visualizzazione dettagliata di un'area}
 \textbf{Tipologia: obbligatorio} \\
-L'amministratore vuole conoscere in dettaglio le impostazioni di una zona.
+L'amministratore vuole conoscere in dettaglio le impostazioni di un'area.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: l'amministratore vuole sapere lo stato di una zona e la luminosità pre-impostata
+	\item Precondizioni: l'amministratore vuole sapere lo stato di un'area e la luminosità pre-impostata
 	\item Postcondizioni: l'utente ottiene le informazioni desiderate
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'utente preme il pulsante che fornisce la panoramica delle zone
-	\item l'utente sceglie la zona desiderata
+	\item l'utente preme il pulsante che fornisce la panoramica delle aree
+	\item l'utente sceglie l'area desiderata
 	\item l'utente preme il pulsante "dettagli"
-	\item la webapp mostra lo stato della zona, la luminosità preimpostata
+	\item la webapp mostra lo stato dell'area, la luminosità preimpostata
 \end{itemize}
 
 \includegraphics[scale=0.5]{UC14.png}
@@ -504,8 +505,8 @@ L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item l'utente preme il pulsante che fornisce la panoramica delle zone
-	\item l'utente sceglie la zona desiderata
+	\item l'utente preme il pulsante che fornisce la panoramica delle aree
+	\item l'utente sceglie l'area desiderata
 	\item l'utente sceglie il lampione desiderato
 	\item l'utente preme il pulsante di informazioni del lampione
 	\item la webapp fa una richiesta al lampione
@@ -536,7 +537,7 @@ L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita
 	\item l'utente preme il pulsante di inserimento di un lampione
 	\item l'utente inserisce i dettagli richiesti dal form per l'inserimento
 	\item l'utente preme salva
-	\item il lampione viene aggiunto nel database nella zona di competenza
+	\item il lampione viene aggiunto nel database nell'area di competenza
 	\item l'utente riceve un messaggio di successo o di errore
 \end{itemize}
 
@@ -547,7 +548,7 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
 	\item Precondizioni: gli amministratori vogliono rimuovere un lampione a sistema.\\
-	\item Postcondizioni: il lampione non è più comandabile e non fa più parte della zona.
+	\item Postcondizioni: il lampione non è più comandabile e non fa più parte dell'area.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
@@ -560,13 +561,13 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \end{itemize}
 
 
-\subsection{UC18 - Consultazione elenco zone con guasti}
+\subsection{UC18 - Consultazione elenco aree con guasti}
 \textbf{Tipologia: obbligatorio}\\
-Il manutentore vuole consultare la lista delle zone con dei malfunzionamenti per sapere dove intervenire.
+Il manutentore vuole consultare la lista delle aree con dei malfunzionamenti per sapere dove intervenire.
 \begin{itemize}
 	\item Attori primari: manutentore
-	\item Precondizioni: il manutentore vuole sapere quali zone presentano dei guasti.\\
-	\item Postcondizioni: il manutentore ottiene la lista delle zone in cui è stato rilevato un malfunzionamento.
+	\item Precondizioni: il manutentore vuole sapere quali aree presentano dei guasti.\\
+	\item Postcondizioni: il manutentore ottiene la lista delle aree in cui è stato rilevato un malfunzionamento.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
@@ -582,7 +583,7 @@ L'amministratore apre un ticket per un guasto rilevato
 \begin{itemize}
 	\item Attori primari: Admin
 	\item Attore secondario: sistema di ticketing
-	\item Precondizioni: è stato rilevato un guasto in una zona illuminata.
+	\item Precondizioni: è stato rilevato un guasto in un'area illuminata.
 	\item Postcondizioni: un apposito ticket è stato creato e presenta i dettagli utili al manutentore.
 \end{itemize}
 \paragraph{Scenario Principale}
@@ -610,13 +611,15 @@ L'amministratore chiude un ticket del un guasto sistemato
 \end{itemize}
 
 
+\section{UC Desiderabili}
+
 \subsection{UC21 - Visualizzazione lista ticket}
-\textbf{Tipologia: obbligatorio}\\
+\textbf{Tipologia: desiderabile}\\
 Il manutentore vuole consultare i dettagli di un guasto
 \begin{itemize}
 	\item Attori primari: manutentore
 	\item Attori secondari: sistema di ticketing
-	\item Precondizioni: il manutentore vuole sapere ulteriori dettagli sulla zona da operare.
+	\item Precondizioni: il manutentore vuole sapere ulteriori dettagli sull'area da operare.
 	\item Postcondizioni: il ticket fornisce delle informazioni aggiuntive.
 \end{itemize}
 \paragraph{Scenario Principale}
@@ -626,8 +629,6 @@ Il manutentore vuole consultare i dettagli di un guasto
 	\item visualizza il ticket che mostrerà ulteriori informazioni
 \end{itemize}
 
-
-\section{UC Desiderabili}
 
 \subsection{UC22 - Primo accesso al sistema senza credenziali}
 \textbf{Tipologia: desiderabile.} \\
@@ -663,19 +664,19 @@ L'utente non sa come funziona il sistema o come eseguire un'operazione specifica
 \end{itemize}
 
 
-\subsection{UC24 - Configurazione iniziale delle impostazioni di una nuova zona illuminata}
+\subsection{UC24 - Configurazione iniziale delle impostazioni di una nuova area illuminata}
 \textbf{Tipologia: desiderabile} \\
-Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
+Per ogni area illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
 \begin{itemize}
 	\item Attori primari: SuperAdmin, Admin
-	\item Precondizioni: l'amministratore accede al sistema e inserisce una nuova zona illuminata.
-	\item Postcondizioni: la nuova zona viene settata con delle impostazioni standard, senza richiedere ulteriori azioni
+	\item Precondizioni: l'amministratore accede al sistema e inserisce una nuova area illuminata.
+	\item Postcondizioni: la nuova area viene settata con delle impostazioni standard, senza richiedere ulteriori azioni
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
 	\item l'utente aggiunge una nuova area illuminata
 	\item vengono applicate le impostazioni di default, come la luminosità minima e massima
-	\item tutti i lampioni della zona vengono tarati con queste impostazioni.
+	\item tutti i lampioni dell'area vengono tarati con queste impostazioni.
 \end{itemize}
 
 
@@ -693,73 +694,73 @@ Per ogni zona illuminata inserita a sistema vengono fornite delle impostazioni d
 \endhead
 \hline
 \endfoot
-RF1	 & L'utente deve poter fare il login al sistema	 & Obbligatorio	 & UC1 \\
+RF1	 & L'utente deve poter fare il login al sistema	 & Obbligatorio & UC1 \\
 \hline				
-RF2	 & L'utente visualizza lo stato del sistema	 & Obbligatorio	 & UC2 \\
+RF2	 & L'utente visualizza lo stato del sistema	 & Obbligatorio & UC2 \\
 \hline				
-RF3	 & L'utente deve poter aumentare la luminosità di una zona	 & Obbligatorio	 & UC3 \\
+RF3	 & L'utente deve poter aumentare la luminosità di un'area & Obbligatorio & UC3 \\
 \hline				
-RF4	 & Il sistema deve visualizzare un messaggio d'errore se non si è potuto aumentare la luminosità	 & Obbligatorio	 & UC3.1 \\
+RF4	 & Il sistema deve visualizzare un messaggio d'errore se non si è potuto aumentare la luminosità & Obbligatorio	& UC3.1 \\
 \hline	
-RF5 & L'utente deve poter vedere l'elenco delle aree illuminate	 & Obbligatorio	 & UC12.1, UC11 \\
+RF5 & L'utente deve poter vedere l'elenco delle aree illuminate	 & Obbligatorio & UC12.1, UC11 \\
 \hline
-RF6 & L'utente deve poter vedere l'elenco delle zone & Obbligatorio	 & UC14.1 \\
+RF6 & L'utente deve poter vedere l'elenco delle aree & Obbligatorio & UC14.1 \\
 \hline
-RF7	 & L'utente deve poter selezionare le zone su cui operare	 & Obbligatorio	 & UC4.2, UC14.2,  \\
+RF7	 & L'utente deve poter selezionare le aree su cui operare & Obbligatorio & UC4.2, UC14.2,  \\
 \hline	
-RF8	 & L'utente deve poter diminuire la luminosità di una zona	 & Obbligatorio	 & UC4 \\
+RF8	 & L'utente deve poter diminuire la luminosità di un'area & Obbligatorio & UC4 \\
 \hline				
-RF10	 & L'utente deve poter accedere alla dashboard	 & Obbligatorio	 & UC4.1 \\
+RF10	 & L'utente deve poter accedere alla dashboard & Obbligatorio & UC4.1 \\
 \hline										
-RF11	 & Il sistema deve visualizzare un messaggio d'errore nel caso l'operazione di diminuzione della luminosità non fosse andata a buon fine	 & Obbligatorio	 & UC4.3, UC4.4 \\
+RF11	 & Il sistema deve visualizzare un messaggio d'errore nel caso l'operazione di diminuzione della luminosità non fosse andata a buon fine & Obbligatorio & UC4.3, UC4.4 \\
 \hline				
-RF12	 & L'utente deve poter diminuire la luminosità	 & Obbligatorio	 & UC4 \\
+RF12	 & L'utente deve poter diminuire la luminosità & Obbligatorio & UC4 \\
 \hline				
-RF13	 & L'utente deve poter inserire una nuova area illuminata	 & Obbligatorio	 & UC5 \\
+RF13	 & L'utente deve poter inserire una nuova area illuminata & Obbligatorio & UC5 \\
 \hline				
-RF14	 & L'utente deve poter rimuovere un area illuminata	 & Obbligatorio	 & UC6.2 \\
+RF14	 & L'utente deve poter rimuovere un area illuminata & Obbligatorio & UC6.2 \\
 \hline				
-RF15	 & L'utente deve poter accedere alla lista delle zone gestite	 & Obbligatorio	 & UC6.1 \\
+RF15	 & L'utente deve poter accedere alla lista delle aree gestite & Obbligatorio & UC6.1 \\
 \hline				
-RF16	 & L'utente deve poter modificare le informazioni di un'area illuminata	 & Obbligatorio	 & UC7 \\
+RF16	 & L'utente deve poter modificare le informazioni di un'area illuminata & Obbligatorio & UC7 \\
 \hline				
-RF17	 & Il sistema mostra un messaggio di notifica una volta effettuata la modifica ad un area illuminata	 & Obbligatorio	 & UC7.3 \\
+RF17	 & Il sistema mostra un messaggio di notifica una volta effettuata la modifica ad un area illuminata & Obbligatorio	& UC7.3 \\
 \hline				
-RF18	 & L'utente deve poter inserire un nuovo sensore in una area illuminata	 & Obbligatorio	 & Capitolato, UC8 \\
+RF18	 & L'utente deve poter inserire un nuovo sensore in una area illuminata & Obbligatorio & Capitolato, UC8 \\
 \hline				
-RF19	 & L'utente deve poter accedere all'area illuminata	 & Obbligatorio	 & Capitolato, UC8.1 \\
+RF19	 & L'utente deve poter accedere all'area illuminata & Obbligatorio & Capitolato, UC8.1 \\
 \hline 				
-RF20	 & L'utente deve poter rimuovere un sensore da una zona illuminata	 & Obbligatorio	 & UC9 \\
+RF20	 & L'utente deve poter rimuovere un sensore da un'area illuminata & Obbligatorio & UC9 \\
 \hline				
-RF21	 & L'utente deve poter fare il logout dal sistema	 & Obbligatorio	 & Capitolato UC10 \\
+RF21	 & L'utente deve poter fare il logout dal sistema & Obbligatorio & Capitolato UC10 \\
 \hline										
-RF22	 & L'utente deve poter inserire un impianto nell'elenco dei guasti	 & Obbligatorio	 & UC12 \\
+RF22	 & L'utente deve poter inserire un impianto nell'elenco dei guasti & Obbligatorio & UC12 \\
 \hline				
-RF23	 & L'utente deve poter rimuovere un impianto dall'elenco dei guasti	 & Obbligatorio	 & UC13 \\
+RF23	 & L'utente deve poter rimuovere un impianto dall'elenco dei guasti & Obbligatorio & UC13 \\
 \hline				
-RF24	 & L'utente deve poter visualizzare i dettagli di una zona	 & Obbligatorio	 & UC14 \\
+RF24	 & L'utente deve poter visualizzare i dettagli di un'area & Obbligatorio & UC14 \\
 \hline				
-RF25	 & L'utente deve poter selezionare un lampione	 & Obbligatorio	 & UC15.2\\
+RF25	 & L'utente deve poter selezionare un lampione & Obbligatorio & UC15.2\\
 \hline				
-RF26	 & L'utente deve poter visualizzare i dettagli di un lampione	 & Obbligatorio	 & UC15\\
+RF26	 & L'utente deve poter visualizzare i dettagli di un lampione & Obbligatorio & UC15\\
 \hline				
-RF27	 & L'utente deve poter inserire un nuovo lampione all'interno di un'area illuminata	 & Obbligatorio	 & UC16 \\
+RF27	 & L'utente deve poter inserire un nuovo lampione all'interno di un'area illuminata & Obbligatorio & UC16 \\
 \hline				
-RF28	 & L'utente deve poter rimuovere un lampione all'interno di un'area illuminata	 & Obbligatorio	 & UC17 \\
+RF28	 & L'utente deve poter rimuovere un lampione all'interno di un'area illuminata & Obbligatorio & UC17 \\
 \hline				
-RF29	 & L'utente deve poter visualizzare l'elenco delle aree illuminate con dei malfunzionamenti	 & Obbligatorio	 & UC18 \\
+RF29	 & L'utente deve poter visualizzare l'elenco delle aree illuminate con dei malfunzionamenti & Obbligatorio & UC18 \\
 \hline				
-RF30	 & L'amministratore deve poter aprire una nuova segnalazione di un guasto tramite un ticket	 & Obbligatorio	 & UC19 \\
+RF30	 & L'amministratore deve poter aprire una nuova segnalazione di un guasto tramite un ticket & Obbligatorio & UC19 \\
 \hline				
-RF31	 & L'amministratore deve poter chiudere il ticket dopo aver fatto la dovuta manutenzione	 & Obbligatorio	 & UC20 \\
+RF31	 & L'amministratore deve poter chiudere il ticket dopo aver fatto la dovuta manutenzione & Obbligatorio & UC20 \\
 \hline				
-RF32	 & Il manutentore deve poter visualizzare i dettagli aggiuntivi di un guasto forniti dal ticket	 & Obbligatorio	 & UC21 \\
+RF32	 & Il manutentore deve poter visualizzare i dettagli aggiuntivi di un guasto forniti dal ticket & Desiderabile & UC21 \\
 \hline				
-RF33	 & L'utente non amministratore riceve le credenziali da amministratore da un superamministratore	 & Desiderabile	 & UC22 \\
+RF33	 & L'utente non amministratore riceve le credenziali da amministratore da un superamministratore & Desiderabile & UC22 \\
 \hline				
-RF34	 & L'utente consulta il manuale Lumos Minima	 & Desiderabile	 & UC23 \\
+RF34	 & L'utente consulta il manuale Lumos Minima & Desiderabile & UC23 \\
 \hline				
-RF35	 & Le nuove aree illuminate appena inserite hanno un setup standard	 & Desiderabile	 & UC24 \\
+RF35	 & Le nuove aree illuminate appena inserite hanno un setup standard & Desiderabile & UC24 \\
 \hline				
 \end{xltabular}
 
