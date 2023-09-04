@@ -93,7 +93,40 @@ Tabella diagramma delle classi
 \subsubsection{Back-end}
 Per il backend è stato utilizzato il seguente pattern:
 	\begin{itemize}
-		\item Router Service Pattern
+		\item Router Controller Service Pattern:
+Il design pattern dell'API Router-Controller-Service è un modello architetturale del software comunemente utilizzato nelle applicazioni web per strutturare e organizzare il codice responsabile della gestione delle richieste e delle risposte HTTP. Questo pattern aiuta a mantenere la separazione delle responsabilità e migliora la modularità e la manutenibilità dell'applicazione. Ecco una panoramica di ciascun componente:
+
+Router: Il componente Router è responsabile per l'instradamento delle richieste HTTP in arrivo al Controller appropriato in base all'URL della richiesta e al metodo HTTP (GET, POST, PUT, DELETE, ecc.). Esamina il percorso e il metodo della richiesta per determinare quale Controller deve gestire la richiesta.
+
+Responsabilità:
+
+Ricevere e analizzare le richieste HTTP in arrivo.
+Determinare quale Controller deve gestire la richiesta in base all'URL e al metodo HTTP.
+Inviare il metodo appropriato del Controller.
+
+Controller: Il componente Controller è responsabile della gestione della logica aziendale relativa a una specifica route o risorsa. Riceve la richiesta dal Router, elabora la richiesta, interagisce con il livello di servizio (se necessario) e invia una risposta HTTP.
+
+Responsabilità:
+
+Ricevere la richiesta dal Router.
+Convalidare e elaborare i dati della richiesta.
+Interagire con il livello di servizio per eseguire operazioni aziendali.
+Costruire una risposta HTTP e inviarla al client.
+
+Service: Il componente Service incapsula la logica aziendale fondamentale dell'applicazione. È responsabile di eseguire operazioni sui dati, interagire con database o servizi esterni e eseguire eventuali logiche complesse. I Controller delegano il lavoro effettivo al livello di servizio.
+
+Responsabilità:
+
+Implementare la logica aziendale e la manipolazione dei dati.
+Gestire le interazioni con database, servizi esterni o API.
+Mantenere il livello di Controller libero da elaborazioni complesse.
+
+Ecco come funziona il pattern in pratica:
+
+Un client invia una richiesta HTTP alla tua applicazione.
+Il componente Router riceve la richiesta e determina quale Controller deve gestirla in base all'URL e al metodo HTTP.
+Il Controller selezionato elabora la richiesta. Se necessario, chiama i metodi del livello di Servizio per eseguire la logica aziendale e le operazioni sui dati.
+Il Controller costruisce una risposta HTTP, che viene inviata al client.
 		\item Strategy: È stato utilizzato questo pattern per le classi astratte Model, Routher, Controller e Service che hanno come derivate Area, Sensori, Lampioni e Guasti.
 	\end{itemize}
 \subsubsection{Front-end}
