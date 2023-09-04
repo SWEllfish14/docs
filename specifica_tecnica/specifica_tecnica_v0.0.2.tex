@@ -47,6 +47,7 @@
 \pagebreak
 \addversione{0.0.0}{09/08/2023}{Elena Marchioro}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.1}{01/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Modificata tabella requisiti e informazioni principali}
+\addversione{0.0.2}{04/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i design pattern e caricato diagramma delle classi}
 
 \makeversioni
 
@@ -93,6 +94,7 @@ Tabella diagramma delle classi
 Per il backend è stato utilizzato il seguente pattern:
 	\begin{itemize}
 		\item Router Service Pattern
+		\item Strategy: È stato utilizzato questo pattern per le classi astratte Model, Routher, Controller e Service che hanno come derivate Area, Sensori, Lampioni e Guasti.
 	\end{itemize}
 \subsubsection{Front-end}
 Per il frontend si sono utilizzati i pattern:
