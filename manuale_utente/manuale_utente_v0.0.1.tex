@@ -24,18 +24,18 @@
 
 \begin{center}
 	\begin{tabular}{r | l}
-		\multicolumn{2}{c}{\textit{Informazioni}}                         \\
+		\multicolumn{2}{c}{\textit{Informazioni}}        \\
 		\hline
 
 		\textit{Redattori}    &
 		[Claudio Giaretta, Francesco Naletto]\makecell{} \\
 
 		\textit{Revisori}     &
-		[Jude Vensil Barceros]\makecell{}                                 \\
+		[Jude Vensil Barceros]\makecell{}                \\
 		\textit{Responsabili} &
-		[Andrea Veronese]\makecell{}                                      \\
+		[Andrea Veronese]\makecell{}                     \\
 		\textit{Uso}          &
-		[Esterno]\makecell{}                                              \\
+		[Esterno]\makecell{}                             \\
 	\end{tabular}
 \end{center}
 
@@ -53,14 +53,31 @@
 \pagebreak
 
 \addversione{0.0.0}{23/08/2023}{Davide Porporati}{Claudio Giaretta}{Impostata struttura documento}
+\addversione{0.0.1}{04/09/2023}{Francesco Naletto}{Claudio Giaretta}{Redatta prima versione documento}
 
 \makeversioni
 
 \section{Introduzione}
+\subsection{Scopo del documento}
+Il presente documento ha lo scopo di delineare le funzioni offerte dall'applicazione e di fornire istruzioni dettagliate per l'utente sull'uso di quest'ultima.
+In tal modo, l'utente verrà informato sui requisiti minimi indispensabili per assicurare il corretto funzionamento di LumosMinima.
+\subsection{Cos'è LumosMinima}
+LumosMinima è un progetto che mira a ottimizzare l'illuminazione pubblica. L'obiettivo è regolare l'intensità luminosa degli impianti pubblici al fine di garantire sicurezza e risparmio energetico. Il sistema agisce automaticamente sui dispositivi di illuminazione, rileva la presenza umana, segnala guasti e offre un controllo globale dell'intensità luminosa. LumosMinima rappresenta una soluzione innovativa per affrontare le sfide energetiche e ambientali del futuro.
+
 \section{Strumenti necessari}
+Per garantire il corretto funzionamento dell'applicazione, è indispensabile avere una connessione internet attiva. L'applicazione è stata verificata e supporta i seguenti browser:
+
+\begin{itemize}
+	\item Chrome, versione 116.
+	\item Safari, versione 16.5.
+	\item Edge, versione 116.
+	\item Firefox, versione 117.
+	\item Opera, versione 102.
+\end{itemize}
+
 \section{LumosMinima}
 \subsection{Home}
-Il sito LumosMinima si presenta con una dashboard composta di 4 pannelli che danno informazioni generali 
+Il sito LumosMinima si presenta con una dashboard composta di 4 pannelli che danno informazioni generali
 sul sistema
 
 \begin{center}
@@ -78,20 +95,20 @@ In particolare:
 La navbar presente in alto (sezione 5) è composta da 3 link:
 
 \begin{itemize}
-\item \textbf{Home}: Porta alla pagina corrente ovvero la Home
-\item \textbf{Gestione aree}: porta alla pagina "Gestione Aree" in cui è possibile gestire le varie aree inserite a sistema
-\item \textbf{Gestione guasti}: porta alla pagina in cui vengono visualizzati tutti i guasti segnalati a sistema
+	\item \textbf{Home}: Porta alla pagina corrente ovvero la Home
+	\item \textbf{Gestione aree}: porta alla pagina "Gestione Aree" in cui è possibile gestire le varie aree inserite a sistema
+	\item \textbf{Gestione guasti}: porta alla pagina in cui vengono visualizzati tutti i guasti segnalati a sistema
 \end{itemize}
 
 \subsection{Gestione aree}
-In questa pagina è presente la lista di tutte le aree inserite a sistema. 
-Ogni area è rappresentata da un link cliccabile che porta alla pagina di dettaglio corrispondente all'area cliccata.
+In questa pagina è presente la lista di tutte le aree inserite a sistema.
+Ogni area ha un tasto associato che porta alla pagina di dettaglio corrispondente all'area cliccata.
 
 \begin{center}
 	\includegraphics[scale=0.3]{Gestione_aree.png}
 \end{center}
 
-Nella sezione 2 è presente il tasto per aggiungere una nuova area di illuminazione, che porterà alla pagina "Aggiugni area". 
+Nella sezione 2 è presente il tasto per aggiungere una nuova area di illuminazione, che porterà alla pagina "Aggiugni area", insieme ai due tasti per aumentare e diminuire la luminosità di tutte le aree.
 
 \subsection{Aggiungi area}
 
@@ -99,9 +116,9 @@ In questa pagina è possibile immettere tutte le informazioni riguardanti l'area
 
 \begin{center}
 	\includegraphics[scale=0.3]{Aggiungi_area.png}
-\end{center}	
+\end{center}
 
-Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci" 
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
 l'area verrà inserita nel sistema e si verrà reindirizzati nella pagina "Area" con il dettaglio dell'area appena inserita.
 
 \subsection{Area}
@@ -110,19 +127,121 @@ In questa area è possibile gestire tutti gli aspetti legati all'area di illumin
 
 \begin{center}
 	\includegraphics[scale=0.3]{Area.png}
-\end{center}	
+\end{center}
 
 La pagina è suddivisa nei seguenti riquadri:
 \begin{itemize}
-	\item \textbf{la sezione 1}: Informazioni contententi i dettagli dell'area, è presente un pulsante con cui è possibile spegnere o accendere tutta l'area
-	\item \textbf{la sezione 2}: Contiene i pulsanti che permettono di eliminare o modificare l'area.
-	\item \textbf{la sezione 3}: 
-	\item \textbf{la sezione 4}: 
+	\item \textbf{la sezione 1}: Informazioni contententi i dettagli dell'area, è presente un pulsante con cui è possibile aggiungere un guasto, porta alla pagina "Aggiungi guasto".
+	\item \textbf{la sezione 2}: Contiene i pulsanti che permettono di gestire l'illuminazione dell'area in maniera manuale oppure automatica.
+	\item \textbf{la sezione 3}: Contiene i pulsanti per l'eliminazione dell'area o per la modifica delle sue informazioni.
+	\item \textbf{la sezione 4}: Contiene i pulsanti per aggiungere un sensore all'area, che porta alla pagina "Aggiungi sensore", e per visualizzare la lista dei sensori dell'area, che porta alla pagina "Lista sensori".
+	\item \textbf{la sezione 5}: Contiene i pulsanti per aggiungere un lampione all'area, che porta alla pagina "Aggiungi lampione", e per visualizzare la lista dei lampioni dell'area, che porta alla pagina "Lista lampioni".
 \end{itemize}
-\subsection{Gestione guasti}
 
-\subsection{Aggiungi area}
-\subsection{Aggiungi lampione}
+\subsection{Aggiungi guasto}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il guasto che si vuole inserire.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Aggiungi_guasto.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+il guasto verrà inserita nel sistema.
+
+
 \subsection{Aggiungi sensore}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il sensore che si vuole inserire.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Aggiungi_sensore.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+il sensore verrà inserita nel sistema.
+
+\subsection{Lista sensori}
+In questa pagina è presente la lista di tutti i sensori dell'area indicata.
+Ogni sensore ha un tasto associato che porta alla pagina di modifica del sensore.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Lista_sensori.png}
+\end{center}
+
+\subsection{Modifica sensore}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il sensore che si vuole modificare.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Modifica_sensore.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+la modifica verrà inserita nel sistema.
+E' anche presente il tasto per eliminare il sensore dal sistema.
+
+
+\subsection{Aggiungi lampione}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il lampione che si vuole inserire.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Aggiungi_lampione.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+il lampione verrà inserita nel sistema.
+
+\subsection{Lista lampioni}
+In questa pagina è presente la lista di tutti i lampioni dell'area indicata.
+Ogni lampione ha un tasto associato per spegnerlo e uno che porta alla pagina di modifica del lampione.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Lista_lampioni.png}
+\end{center}
+
+
+\subsection{Modifica lampione}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il lampione che si vuole modificare.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Modifica_lampione.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+la modifica verrà inserita nel sistema.
+E' anche presente il tasto per eliminare il lampione dal sistema.
+
+
+\subsection{Gestione guasti}
+In questa pagina è presente la lista di tutti i guasti inseriti a sistema.
+Ogni guasto ha un tasto associato che porta alla pagina di dettaglio corrispondente al guasto cliccato.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Gestione_guasti.png}
+\end{center}
+
+\subsection{Guasto}
+
+In questa area è possibile gestire tutti gli aspetti legati al guasto selezionato.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Guasto.png}
+\end{center}
+
+La pagina è suddivisa nei seguenti riquadri:
+\begin{itemize}
+	\item \textbf{la sezione 1}: Informazioni contententi i dettagli del guasto.
+	\item \textbf{la sezione 2}: Contiene i pulsanti per la chiusura del guasto o per la modifica delle sue informazioni.
+\end{itemize}
+
+\subsection{Modifica guasto}
+In questa pagina è possibile immettere tutte le informazioni riguardanti il guasto che si vuole modificare.
+
+\begin{center}
+	\includegraphics[scale=0.3]{Modifica_guasto.png}
+\end{center}
+
+Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
+la modifica verrà inserita nel sistema.
+
+
 
 \end{document}
