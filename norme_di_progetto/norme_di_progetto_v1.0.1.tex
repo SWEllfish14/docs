@@ -257,32 +257,6 @@ Di seguito diamo una visione d'insieme delle fasi che ogni documento attraverser
     \item \textbf{Approvazione}: il responsabile designato controlla che il documento sia corretto e coerente.
 \end{itemize}
 
-\subsubsection{Strumenti utilizzati}
-Di seguito gli strumenti utilizzati dal gruppo per la stesura della documentazione:
-\begin{itemize}
-    \item \textbf{Latex}: linguaggio di Markup per la creazioni di testi. E' stato scelto in quanto permette la stesura dei documenti con una struttura formale e standardizzata, oltre alla moltitudine di strumenti che mette a disposizione il linguaggio che facilitano la stesura della documentazione
-          \begin{center}
-              \url{https://www.latex-project.org/}
-          \end{center}
-    \item \textbf{Visual Studio Code e Latex workshop}: Editor popolare per la scrittura del codice in vari linguaggi di programmazione, utilizzato insieme al framework Latex WorkShop che permette di operare anche su codice latex. E' stato preferito a Overleaf in quanto permette di lavorare in locale e facilita l'interazione con sistemi di versionamento remoto come GitHub
-          \begin{center}
-              \url{https://code.visualstudio.com/docs}
-          \end{center}
-\end{itemize}
-
-
-\subsubsection{Template}
-\label{Temp}
-Il team ha deciso di utilizzare dei template scritti in Latex per facilitare il lavoro ed evitare codice ridondante tra i vari file della documentazione.
-Di seguito sono indicati i template utilizzati dal gruppo:
-\begin{itemize}
-    \item \textbf{first\_page}: template presente in tutti i documenti per la creazione della prima pagina
-    \item \textbf{styles}: template presente in tutti i documenti che contiene dettagli di stile comuni a tutti i file della documentazione
-    \item \textbf{tabella\_versioni}: template per facilitare la creazione della tabella delle versioni nei documenti in cui è previsto versionamento.
-
-\end{itemize}
-Tutti i template si possono trovare all'interno della repository nella cartella \url{https://github.com/SWEllfish14/docs/tree/dev/templates}
-
 \subsubsection{Struttura del documento}
 Ogni documento che non sia un verbale ha una struttura ben specifica:
 \begin{itemize}
@@ -304,8 +278,7 @@ Ogni documento che non sia un verbale ha una struttura ben specifica:
     \item Corpo del documento:  strutturato in sezioni e sottosezioni, ognuna con il proprio titolo e sottotitolo.Il corpo del documento include anche qualsiasi supporto visivo, come tabelle, figure, grafici, 	diagrammi o illustrazioni, che aiutano a presentare le informazioni in modo più accessibile o coinvolgente.
     \item Piè di pagina: al centro è presente il numero di pagina.
 \end{itemize}
-\paragraph{Glossario}
-Il documento Glossario elenca e spiega tutti i termini e le definizioni utilizzate nel contesto del progetto
+
 \paragraph{Registro delle versioni}
 Ogni file, fatta esclusione per i verbali, contiene una tabella che riporta le modifiche apportate al file nel corso del tempo.
 La tabella è così strutturata:
@@ -318,7 +291,11 @@ La tabella è così strutturata:
 \end{itemize}
 Per facilitare l'inserimento della tabella all'interno dei vari file è stato creato un template apposito come spiegato nella sezione \hyperref[Temp]{Template}
 
-\subsubsection{Struttura di un verbale}
+\paragraph{Indice}
+In tutti i documenti sarà presente un indice numerato con lo scopo di facilitare la lettura. L'indice sarà composto da link cliccabili che permettono di spostarsi all'interno del documento 
+
+\subsubsection{Struttura dei verbali}
+\paragraph{Struttura e stile delle pagine}
 La struttura di un verbale utilizza la struttura di base del template impiegato per la stesura di un documento, con le seguenti aggiunte
 \begin{itemize}
     \item Data
@@ -334,8 +311,67 @@ Per la nomenclatura dei verbali invece segue la seguente struttura:
     \item verbale
     \item nome azienda/docente/attività svolta
     \item data
-    
 \end{itemize}
+\subsubsection{Convenzioni}
+\paragraph{Nome dei file}
+I nomi di tutti i file presente nel repository seguono la seguente struttura:
+\begin{itemize}
+    \item Tutti i file iniziano con la lettera maiuscola
+    \item Gli spazi vengono rappresenteti con il simbolo "\_"
+    \item Tutti i file add eccezione fatta per la "lettera di presentazione" e verbali devono terminare con la versione del documento
+\end{itemize}
+
+\paragraph{Glossario}
+Le norme da seguire relative al Glossario sono:
+\begin{itemize}
+    \item Ogni parola presente nel documento \textit{Glossario v 1.0.0} viene contrassegnata con una '\textbf{G}' a
+    pedice all'interno dei vari documenti dove è utilizzata
+    \item Se un termine compare nella sua stessa definizione all'interno del Glossario, esso viene contrassegnato
+
+\end{itemize}
+    
+\paragraph{Formato delle date}
+Tutte le date utilizzate all'interno dei file sono riportate nel seguente formato:
+\begin{center}
+    \textbf{GG-MM-YYYY}
+
+    Dove:
+    \begin{itemize}
+        \item GG = giorno
+        \item MM = mese
+        \item YYYY = anno nel formato a quattro cifre
+    \end{itemize}
+\end{center}
+
+       
+
+\subsubsection{Strumenti utilizzati}
+Di seguito gli strumenti utilizzati dal gruppo per la stesura della documentazione:
+\begin{itemize}
+    \item \textbf{Latex}: linguaggio di Markup per la creazioni di testi. E' stato scelto in quanto permette la stesura dei documenti con una struttura formale e standardizzata, oltre alla moltitudine di strumenti che mette a disposizione il linguaggio che facilitano la stesura della documentazione
+          \begin{center}
+              \url{https://www.latex-project.org/}
+          \end{center}
+    \item \textbf{Visual Studio Code e Latex workshop}: Editor popolare per la scrittura del codice in vari linguaggi di programmazione, utilizzato insieme al framework Latex WorkShop che permette di operare anche su codice latex. E' stato preferito a Overleaf in quanto permette di lavorare in locale e facilita l'interazione con sistemi di versionamento remoto come GitHub
+          \begin{center}
+              \url{https://code.visualstudio.com/docs}
+          \end{center}
+\end{itemize}
+
+
+\paragraph{Template}
+\label{Temp}
+Il team ha deciso di utilizzare dei template scritti in Latex per facilitare il lavoro ed evitare codice ridondante tra i vari file della documentazione.
+Di seguito sono indicati i template utilizzati dal gruppo:
+\begin{itemize}
+    \item \textbf{first\_page}: template presente in tutti i documenti per la creazione della prima pagina
+    \item \textbf{styles}: template presente in tutti i documenti che contiene dettagli di stile comuni a tutti i file della documentazione
+    \item \textbf{tabella\_versioni}: template per facilitare la creazione della tabella delle versioni nei documenti in cui è previsto versionamento.
+
+\end{itemize}
+Tutti i template si possono trovare all'interno della repository nella cartella \url{https://github.com/SWEllfish14/docs/tree/dev/templates}
+
+
 
 \subsection{Gestione della configurazione}
 \subsubsection{Versionamento}
