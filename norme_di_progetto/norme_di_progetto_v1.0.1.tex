@@ -14,8 +14,8 @@
 
 
 \graphicspath{ {../templates/img/} }
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
 \title{Norme di progetto}
 
 \firstPage
@@ -52,6 +52,7 @@
 \addversione{0.1.1}{12/07/2023}{Claudio Giaretta}{Andrea Veronese}{Aggiunti strumenti di codifica utilizzati e corrette alcune sezioni del documento}
 \addversione{1.0.0}{19/07/2023}{Claudio Giaretta}{Davide Porporati, Andrea Veronese}{Revisione generale del documento e avanzamento di versione}
 \addversione{1.0.1}{02/08/2023}{Claudio Giaretta}{Elena Marchioro}{Aggiornamento dei processi primari con attività ben definite}
+\addversione{1.0.2}{05/08/2023}{Davide Porporati}{Elena Marchioro}{Aggiornamento dei processi secondari riorganizzate e riviste attività di verifica e validazione}
 \makeversioni
 \pagebreak
 
@@ -339,7 +340,7 @@ Tutte le date utilizzate all'interno dei file sono riportate nel seguente format
     \begin{itemize}
         \item GG = giorno
         \item MM = mese
-        \item YYYY = anno nel formato a quattro cifre
+        \item YYYY = anno (nel formato a quattro cifre)
     \end{itemize}
 \end{center}
 
@@ -483,6 +484,7 @@ Qui vengono descritte le metriche utilizzate nel file "piano\_di\_qualifica".
 
 \label{Verifica}
 \subsection{Verifica}
+\subsubsection{Descrizione}
 Durante questo processo, il compito dei verificatori è quello di effettuare l’analisi dei prodotti del team.
 Tale analisi si differenzia in due diverse tipologie:
 \begin{itemize}
@@ -496,8 +498,9 @@ Tale analisi si differenzia in due diverse tipologie:
           generalmente chiamato testing e per motivi logici non può essere svolta sui documenti.
 \end{itemize}
 
-
-\subsubsection{Verifica della documentazione}
+\subsubsection{Attività}
+\paragraph{Verifica della documentazione}
+\label{VerificaDocumento}
 Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
 \begin{itemize}
     \item \textbf{Walkthrough}: Un controllo esaustivo del documento (è un processo oneroso che può richiedere molto tempo e risorse)
@@ -505,24 +508,69 @@ Nel caso la verifica venga fatta manualmente vengono usate le seguenti tecniche:
 \end{itemize}
 Il team ha deciso di utilizzare una tecnica \textbf{Walkthrough} nella fase iniziale del documento e prima del rilascio di versioni "major".
 Dopo la formazione del documento ed un primo controllo esaustivo, si procede passando ad una tecnica di tipo \textbf{Inspection}
-\paragraph{Verifica ortografica}
-Per la verifica ortografica dei documenti  si utilizzerà lo strumento di correzione
-automatica italiancorrector:
 
-     \url{https://www.italiancorrector.com/}
-\subsubsection{Verifica del codice}
+\paragraph{Verifica del codice}
 Il processo di verifica del codice avviene tramite due fasi:
 \begin{itemize}
 	\item \textbf{Analisi statica}:tecnica per esaminare il codice sorgente senza eseguirlo, al fine di identificare errori e problemi di progettazione prima dell'esecuzione del software. Si utilizzano strumenti o revisioni manuali per individuare errori di sintassi, accessi alla memoria non validi, problemi di sicurezza e violazioni delle best practice di programmazione. L'obiettivo è migliorare la qualità del codice e ridurre i costi di risoluzione degli errori.
 	\item \textbf{Analisi dinamica}:tecnica che consiste nell'eseguire il software e testarlo per identificare errori, problemi di prestazioni e di sicurezza. Si generano dati di esecuzione per individuare anomalie e miglioramenti. L'obiettivo è verificare il corretto funzionamento del software e migliorarne la qualità complessiva.
 \end{itemize}	
-\paragraph{Test} attività che consentono di verificare se un software funziona correttamente, identificando errori e problemi. Si utilizzano input specifici per osservare il comportamento e i risultati, al fine di garantire la qualità del prodotto e apportare eventuali miglioramenti.
-\paragraph{Classificazione Test}
+
+\subparagraph{Test} attività che consentono di verificare se un software funziona correttamente, identificando errori e problemi. Si utilizzano input specifici per osservare il comportamento e i risultati, al fine di garantire la qualità del prodotto e apportare eventuali miglioramenti.
+
+\subparagraph{Classificazione dei test} 
+I test sono identificati tramite un codice descritto come segue:
+\begin{center}
+    \textbf{T[TipologiaTest]*[IdNumerico]}
+\end{center}
+
+dove TipologiaTest può assumere uno dei seguenti valori:
+\begin{itemize}
+    \item \textbf{A}: "Test di Accettazione"
+    \item \textbf{I}: "Test di Integrazione"
+    \item \textbf{S}: "Test di Sistema"
+    \item \textbf{U}: "Test di Unità"
+\end{itemize}
+
+\paragraph{Verifica ortografica}
+Per la verifica ortografica dei documenti  si utilizzerà lo strumento di correzione
+automatica italiancorrector:
+
+     \url{https://www.italiancorrector.com/}
+
+\subsubsection{Strumenti utilizzati}
+Di seguito gli strumenti utilizzati dal gruppo per la Verifica:
+\begin{itemize}
+    \item \textbf{Jest}: Jest è un framework di testing scritto in JavaScript ampiamente utilizzato per i test di unità in applicazioni che fanno uso dei linguaggi di programmazione JavaScript e TypeScript
+          \begin{center}
+              \url{https://jestjs.io/}
+          \end{center}
+    \item \textbf{ts-Jest}: ts-Jest è un pacchetto aggiuntivo del framework Jest che aggiunge funzionalità per il testing di codice Typescript.
+          \begin{center}
+              \url{https://kulshekhar.github.io/ts-jest/}
+          \end{center}
+\end{itemize}
 
 \label{Validazione}
 \subsection{Validazione}
+\subsubsection{Descrizione}
 Processo per assicurarsi che il prodotto sviluppato rispetti i requisiti concordati con il proponente.
-Per fare ciò il prodotto verrà esaminato dai verificatori, verificando che esso sia conforme a quanto scritto nell'analisi dei requisiti. Sarà poi il responsabile successivamente che deciderà se accettare il prodotto o rifiutarlo chiedendo un ulteriore verifica.
+
+\subsubsection{Attività}
+\paragraph{Validazione della documentazione}
+Ad ogni modifica apportata ad un documento, compresa la creazione, il controllo delle modifiche apportate viene preso in carico dal verificatore che si occuperà di:
+\begin{itemize}
+    \item Rileggere il documento o le modifiche fatte secondo quanto riportato nel paragrafo \hyperref[VerificaDocumento]{3.4.2.1}
+    \item Analizzare eventuali errori di ortografia e correttezza grammaticale
+    \item Assicurarsi che le modifiche apportate siano corrette
+    \item Comunicare al responsabile se la modifca è stata approvata o meno, il quale aggiornerà le task di conseguenza
+\end{itemize} 
+\paragraph{Validazione del codice}
+Dopo aver eseguito i test il verificatore controlla che essi rispettino le metriche di qualità riportate nel \textit{Piano di qualifica}, se queste non sono state rispettate si reitera la fase di testing fino a quando non vengono soddisfatte
+
+\paragraph{Validazione del prodotto}
+Il verificatore testa le funzionalità del prodotto e controlla che i requisiti segnati nel documento \textit{Analisi dei requisiti} siano stati tutti rispettati
+
 \subsection{Comandi utili di Git}
 I comandi più frequentemente utilizzati sono riassunti in seguito:
 \begin{itemize}
