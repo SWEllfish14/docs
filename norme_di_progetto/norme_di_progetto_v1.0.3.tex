@@ -53,6 +53,7 @@
 \addversione{1.0.0}{19/07/2023}{Claudio Giaretta}{Davide Porporati, Andrea Veronese}{Revisione generale del documento e avanzamento di versione}
 \addversione{1.0.1}{02/08/2023}{Claudio Giaretta}{Elena Marchioro}{Aggiornamento dei processi primari con attività ben definite}
 \addversione{1.0.2}{05/08/2023}{Davide Porporati}{Elena Marchioro}{Aggiornamento dei processi secondari riorganizzate e riviste attività di verifica e validazione}
+\addversione{1.0.3}{06/08/2023}{Davide Porporati}{Francesco Naletto}{Aggiornato i processi organizzativi, indicate chiaramente le attività dei processi e specificato il compito di ogni ruolo}
 \makeversioni
 \pagebreak
 
@@ -203,6 +204,7 @@ I documenti necessari in questa fase sono:
 La codifica ha lo scopo di concretizzare il prodotto tramite la programmazione
 
 \subparagraph{Stile della codifica}
+\label{StileCodifica}
 \begin{itemize}
     \item \textbf{Variabili}: Le variabili devono seguire la notazione camelCase, iniziando quindi con la lettera minuscola e se composte da più parole, ogni parola successiva alla prima dovrà iniziare con la maiuscola
     \item \textbf{Metodi}: I metodi, devono seguire la stessa nomenclatura (camelCase) delle variabili
@@ -584,32 +586,83 @@ I comandi più frequentemente utilizzati sono riassunti in seguito:
 \end{itemize}
 
 \section{Processi organizzativi}
-\subsection{Gestione dei processi}
-\subsubsection{Organizzazione dei File}
+\subsection{Attività}
+\subsubsection{Scrum meeting}
+Ogni giovedì della settimana, seguendo la metodologia scrum adottata dal gruppo, si terranno incontri strutturati come indicato nella sezione nel paragrafo \hyperref[Sprint]{4.3.1} 
+
+\subsubsection{Suddivisione dei ruoli}
+Vista l'adozione del framework scrum, il gruppo farà ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
+I ruoli del progetto sono i seguenti:\\\\
+\textbf{Responsabile}\\
+Pianifica il progetto, assegna le persone ai ruoli giusti e rappresenta il progetto presso il fornitore e il committente. In particolare:
+\begin{itemize}
+    \item Organizza il lavoro in task;
+    \item Assegna le varie task ai membri del gruppo 
+    \item Riceve il risultato della verifica e approva o rifiuta le modifiche fatte
+\end{itemize}
+\textbf{Amministratore}\\
+Controlla che le risorse siano presenti e operanti, inoltre gestisce la documnetazione e controlla il versionamento e la configurazione. In particolare:
+\begin{itemize}
+    \item Gestisce i documenti e il loro versionamento
+    \item Controlla che vengano rispettate le norme di progetto
+    \item Controlla che vengano rispettati i parametrie le procedure per la gestione della qualità
+    \item Si occupa di controllare l'ambiente di sviluppo e mantenere efficente la cooperazione dei membri del gruppo 
+\end{itemize}
+\textbf{Analista}\\
+Analizza il capitolato e raccoglie informazioni sui bisgoni del cliente da cui individua il problema da fornire al progettista. In particolare:
+\begin{itemize}
+    \item Studia in modo approfondito il problema e le funzionalità richieste
+    \item Redige il documento di \textit{Analisi dei requisiti}
+    \item Stima i costi e le risorse neccessarie per il completmento del progetto
+\end{itemize}
+\textbf{Progettista}\\
+A partire dalle specifiche del problema fornite dagli analisti si occupa di sviluppare una soluzione. In particolare:
+\begin{itemize}
+    \item Studia l'architettura più adatta alla soluzione da adottare
+    \item Redige il file \textit{Specifica tecnica}
+    \item Segue l'implementazione da parte dei programmatori della soluzione adottata
+\end{itemize}
+\textbf{Programmatore}\\
+Implementa il codice della soluzione del progettista. In particolare:
+\begin{itemize}
+    \item Riproduce l'architettura selezionata dai progettisti
+    \item Facilita il lavoro del verificatore producendo codice facilmente testabile
+    \item Segue le norme di codifica scritte nel paragrafo \hyperref[StileCodifica]{2.2.1.3.1}
+\end{itemize}
+\textbf{Verificatore}\\
+Si occupa della verifica generale del progetto. In particolare:
+\begin{itemize}
+    \item Comunica il risultato della verifica sulle modifche dei documenti e del prodotto da parte degli altri membri del gruppo
+    \item Testare il codice prodotto dai programmatori
+    \item Redige il processo di verifica e validazione descritto nel documento \textit{Norme di progetto}
+\end{itemize}
+
+\subsubsection{Aggiornamento documenti e fogli di calcolo}
+Successivamente allo scrum meeting, gli incaricati dal responsabile hanno il compito di aggiornare i documenti di piano di progetto e il foglio di calcolo delle ore di ogni componente in relazione a quanto riportato durante lo scrum meeting. 
+Questo permette di tenere traccia dello stato di avanzamento e del impegno dei singoli membri del gruppo.
+
+\subsection{Organizzazione dei File}
 Tutta la documentazione inerente al progetto sarà inclusa nella repository "Documentazione" all'interno dell'organizzazione chiamata "SwellFish".\\
 All'interno di questa repository è presente la cartella "Candidatura" (nella quale sono contenuti i documenti presentati all'inzio del progetto) e le cartelle rispettive alle revisioni di avanzamento (inizialmente solo RTB). 
 Tutti i documenti di interesse per il proponente/committente si trovano nella cartella "documenti esterni" all'interno della corrispondente revisione , mentre quelli necessari al team di sviluppo si trovano nella cartella "documenti interni".
 I verbali interni ed esterni sono rispettivamente contenuti nella cartella "interni" ed "esterni" della corrispondente revisione.
 
-\subsubsection{Scrum}
+\subsection{Scrum}
 Il team utilizzerà questo framework per gestire le varie fasi di sviluppo del progetto.
-\paragraph{Organizzazione degli Sprint}
+\label{Sprint}
+\subsubsection{Organizzazione degli Sprint}
 Ogni sprint avrà le seguenti caratteristiche:
 \begin{itemize}
     \item Durata: una settimana. Inizia il giovedì e termina il giovedì successivo con la riunione concordata
     \item Riunione: viene effettuata il giovedì al termine dello sprint e vengono discussi i seguenti punti:
           \begin{itemize}
               \item Resoconto delle attività completate
-              \item Problemi riscontrati e soluzioni adottate
+              \item Analisi dello sprint precedente e pianificazione obbiettivi per lo sprint successivo
               \item Analisi e resoconto delle ore e dei costi sostenuti
               \item Pianificazione data inizio prossimo sprint e obiettivi da fissare
           \end{itemize}
 \end{itemize}
 Gli obiettivi pianificati per lo sprint successivo verranno tradotti in "item" da aggiungere alla/e board presenti su Github e ad ogni item verranno assegnati dei membri del gruppo, coerentemente con la suddivisione dei ruoli per lo sprint in questione.
-
-\subsubsection{Rotazione dei ruoli}
-Vista l'adozione del framework scrum, il team ha deciso di far ruotare i ruoli dei componenti in corrispondenza della fine dello sprint, seguendo l'ordine alfabetico del nome dei componenti.
-Pertanto ogni membro del team avrà impegni e responsabilità diverse ogni settimana. Questo approccio permette di ottenere un maggiore coinvolgimento.
 
 \subsection{Gestione delle infrastrutture}
 \subsubsection{Comunicazioni interne}
