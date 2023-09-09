@@ -48,6 +48,8 @@
 \addversione{0.0.0}{09/08/2023}{Elena Marchioro}{Davide Porporati}{Creata struttura di base del documento}
 \addversione{0.0.1}{01/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Modificata tabella requisiti e informazioni principali}
 \addversione{0.0.2}{04/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i design pattern e caricato diagramma delle classi}
+\addversione{0.0.3}{09/09/2023}{Davide Porporati, Elena Marchioro}{Claudio Giaretta}{Aggiornati i design pattern e revisionato il documento}
+\addversione{1.0.0}{09/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi delle classi}
 
 \makeversioni
 
@@ -94,40 +96,17 @@ Tabella diagramma delle classi
 Per il backend è stato utilizzato il seguente pattern:
 	\begin{itemize}
 		\item Router Controller Service Pattern:
-Il design pattern dell'API Router-Controller-Service è un modello architetturale del software comunemente utilizzato nelle applicazioni web per strutturare e organizzare il codice responsabile della gestione delle richieste e delle risposte HTTP. Questo pattern aiuta a mantenere la separazione delle responsabilità e migliora la modularità e la manutenibilità dell'applicazione. Ecco una panoramica di ciascun componente:
+			Il design pattern dell'API Router-Controller-Service è un modello architetturale del software comunemente utilizzato nelle applicazioni web per strutturare e organizzare il codice responsabile della gestione delle richieste e delle risposte HTTP. Questo pattern aiuta a mantenere la separazione delle responsabilità e migliora la modularità e la manutenibilità dell'applicazione. Ecco una panoramica di ciascun componente:
 
-Router: Il componente Router è responsabile per l'instradamento delle richieste HTTP in arrivo al Controller appropriato in base all'URL della richiesta e al metodo HTTP (GET, POST, PUT, DELETE, ecc.). Esamina il percorso e il metodo della richiesta per determinare quale Controller deve gestire la richiesta.
+			Ecco come funziona il pattern in pratica:
+			\begin{itemize}
+				\item Un client invia una richiesta HTTP alla tua applicazione;
+				\item Il componente Router riceve la richiesta e determina quale Controller deve gestirla in base all'URL e al metodo HTTP;
+				\item Il Controller selezionato elabora la richiesta. Se necessario, chiama i metodi del livello di Servizio per eseguire la logica aziendale e le operazioni sui dati.
+				\item Il Controller costruisce una risposta HTTP, che viene inviata al client.
+			\end{itemize}
 
-Responsabilità:
-
-Ricevere e analizzare le richieste HTTP in arrivo.
-Determinare quale Controller deve gestire la richiesta in base all'URL e al metodo HTTP.
-Inviare il metodo appropriato del Controller.
-
-Controller: Il componente Controller è responsabile della gestione della logica aziendale relativa a una specifica route o risorsa. Riceve la richiesta dal Router, elabora la richiesta, interagisce con il livello di servizio (se necessario) e invia una risposta HTTP.
-
-Responsabilità:
-
-Ricevere la richiesta dal Router.
-Convalidare e elaborare i dati della richiesta.
-Interagire con il livello di servizio per eseguire operazioni aziendali.
-Costruire una risposta HTTP e inviarla al client.
-
-Service: Il componente Service incapsula la logica aziendale fondamentale dell'applicazione. È responsabile di eseguire operazioni sui dati, interagire con database o servizi esterni e eseguire eventuali logiche complesse. I Controller delegano il lavoro effettivo al livello di servizio.
-
-Responsabilità:
-
-Implementare la logica aziendale e la manipolazione dei dati.
-Gestire le interazioni con database, servizi esterni o API.
-Mantenere il livello di Controller libero da elaborazioni complesse.
-
-Ecco come funziona il pattern in pratica:
-
-Un client invia una richiesta HTTP alla tua applicazione.
-Il componente Router riceve la richiesta e determina quale Controller deve gestirla in base all'URL e al metodo HTTP.
-Il Controller selezionato elabora la richiesta. Se necessario, chiama i metodi del livello di Servizio per eseguire la logica aziendale e le operazioni sui dati.
-Il Controller costruisce una risposta HTTP, che viene inviata al client.
-		\item Strategy: È stato utilizzato questo pattern per le classi astratte Model, Routher, Controller e Service che hanno come derivate Area, Sensori, Lampioni e Guasti.
+		\item Strategy: È stato utilizzato questo pattern per le classi astratte Model, Router, Controller e Service che hanno come derivate Area, Sensori, Lampioni e Guasti.
 	\end{itemize}
 \subsubsection{Front-end}
 Per il frontend si sono utilizzati i pattern:
@@ -241,15 +220,17 @@ I componenti del modello MVVM:
 	\hline
 	Requisito& Descrizione &Classificazione & Stato \\
 	\hline
-	RQ1 & La webapp deve essere sviluppata seguendo le regole descritte nel documento Norme di progetto & Obbligatorio & Non soddisfatto \\
-	RQ2 & Devono essere sviluppati dei test con una copertura minima dell'80\% e correlati di report & Obbligatorio & Non soddisfatto\\
-	RQ3 & Deve essere prodotto un documento sulle scelte implementative e progettuali & Obbligatorio & Non soddisfatto \\
+	RQ1 & La webapp deve essere sviluppata seguendo le regole descritte nel documento Norme di progetto & Obbligatorio & Soddisfatto \\
+	RQ2 & Devono essere sviluppati dei test con una copertura minima dell'80\% e correlati di report & Obbligatorio & Soddisfatto\\
+	RQ3 & Deve essere prodotto un documento sulle scelte implementative e progettuali & Obbligatorio & Soddisfatto \\
 	RQ4 & Deve essere prodotto un documento sui problemi aperti e sulle eventuali soluzioni da esplorare & Obbligatorio & Non soddisfatto \\
 	RQ5 & Fornire un’analisi rispetto al carico massimo supportato in numero di dispositivi e di quale sarebbe il servizio cloud più adatto per supportarlo analizzando prezzo, stabilità del servizio ed assistenza.  &  Facoltativo & Non soddisfatto \\
 	\hline
 	
 	\end{tabular}
 \subsection{Dati soddisfazione requisiti}
-percentuali varie
+	\subsubsection{Percentuali test}
+	Dopo aver completato un'accurata fase di testing, i risultati sono i seguenti:
+	\graphicspath{ {./UML/images/} }
 
 \end{document}
