@@ -54,6 +54,8 @@
 
 \addversione{0.0.0}{23/08/2023}{Davide Porporati}{Claudio Giaretta}{Impostata struttura documento}
 \addversione{0.0.1}{04/09/2023}{Francesco Naletto}{Claudio Giaretta}{Redatta prima versione documento}
+\addversione{0.0.2}{09/09/2023}{Davide Porporati}{Elena Marchioro}{Completato documento}
+\addversione{1.0.0}{09/09/2023}{Davide Porporati}{Elena Marchioro}{Aggiornato le immagini in base al CSS e revisionato}
 
 \makeversioni
 
@@ -74,6 +76,7 @@ Per garantire il corretto funzionamento dell'applicazione, è indispensabile ave
 	\item Firefox, versione 117.
 	\item Opera, versione 102.
 \end{itemize}
+\clearpage
 
 \section{LumosMinima}
 \subsection{Home}
@@ -87,12 +90,12 @@ sul sistema
 In particolare:
 \begin{itemize}
 	\item \textbf{la sezione 1}: indica informazioni riguardanti lo stato del sistema
-	\item \textbf{la sezione 2}: riporta una lista delle ultime 9 segnalazioni di guasti inseriti a sistema dall'utente
-	\item \textbf{la sezione 3}: riporta una lista delle aree illuminate inserite a sistema
+	\item \textbf{la sezione 2}: riporta una lista delle aree illuminate inserite a sistema
+	\item \textbf{la sezione 3}: riporta una lista delle ultime segnalazioni di guasti inseriti a sistema dall'utente
 	\item \textbf{la sezione 4}: riporta un link in cui è possibile scaricare il manuale utente\\
 \end{itemize}
 
-La navbar presente in alto (sezione 5) è composta da 3 link:
+La navbar presente in alto è composta da 3 link:
 
 \begin{itemize}
 	\item \textbf{Home}: Porta alla pagina corrente ovvero la Home
@@ -108,7 +111,7 @@ Ogni area ha un tasto associato che porta alla pagina di dettaglio corrispondent
 	\includegraphics[scale=0.3]{Gestione_aree.png}
 \end{center}
 
-Nella sezione 2 è presente il tasto per aggiungere una nuova area di illuminazione, che porterà alla pagina "Aggiugni area", insieme ai due tasti per aumentare e diminuire la luminosità di tutte le aree.
+Nella sezione "Impostazioni Aree" è presente il tasto per aggiungere una nuova area di illuminazione, che porterà alla pagina "Aggiugni area", insieme ai due tasti per aumentare e diminuire la luminosità di tutte le aree.
 
 \subsection{Aggiungi area}
 
@@ -123,7 +126,7 @@ l'area verrà inserita nel sistema e si verrà reindirizzati nella pagina "Area"
 
 \subsection{Area}
 
-In questa area è possibile gestire tutti gli aspetti legati all'area di illuminazione selezionata
+In questa sezione è possibile gestire tutti gli aspetti legati all'area di illuminazione selezionata
 
 \begin{center}
 	\includegraphics[scale=0.3]{Area.png}
@@ -131,11 +134,11 @@ In questa area è possibile gestire tutti gli aspetti legati all'area di illumin
 
 La pagina è suddivisa nei seguenti riquadri:
 \begin{itemize}
-	\item \textbf{la sezione 1}: Informazioni contententi i dettagli dell'area, è presente un pulsante con cui è possibile aggiungere un guasto, porta alla pagina "Aggiungi guasto".
+	\item \textbf{la sezione 1}: Contiene i dettagli dell'area e un pulsante con cui è possibile aggiungere un guasto.
 	\item \textbf{la sezione 2}: Contiene i pulsanti che permettono di gestire l'illuminazione dell'area in maniera manuale oppure automatica.
 	\item \textbf{la sezione 3}: Contiene i pulsanti per l'eliminazione dell'area o per la modifica delle sue informazioni.
-	\item \textbf{la sezione 4}: Contiene i pulsanti per aggiungere un sensore all'area, che porta alla pagina "Aggiungi sensore", e per visualizzare la lista dei sensori dell'area, che porta alla pagina "Lista sensori".
-	\item \textbf{la sezione 5}: Contiene i pulsanti per aggiungere un lampione all'area, che porta alla pagina "Aggiungi lampione", e per visualizzare la lista dei lampioni dell'area, che porta alla pagina "Lista lampioni".
+	\item \textbf{la sezione 4}: Contiene i pulsanti per aggiungere un sensore all'area, che porta alla pagina "Aggiungi sensore" e per visualizzare la lista dei sensori dell'area, che porta alla pagina "Lista sensori".
+	\item \textbf{la sezione 5}: Contiene i pulsanti per aggiungere un lampione all'area, che porta alla pagina "Aggiungi lampione" e per visualizzare la lista dei lampioni dell'area, che porta alla pagina "Lista lampioni".
 \end{itemize}
 
 \subsection{Aggiungi guasto}
@@ -146,7 +149,7 @@ In questa pagina è possibile immettere tutte le informazioni riguardanti il gua
 \end{center}
 
 Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
-il guasto verrà inserita nel sistema.
+il guasto verrà inserito nel sistema.
 
 
 \subsection{Aggiungi sensore}
@@ -157,7 +160,7 @@ In questa pagina è possibile immettere tutte le informazioni riguardanti il sen
 \end{center}
 
 Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
-il sensore verrà inserita nel sistema.
+il sensore verrà inserito nel sistema.
 
 \subsection{Lista sensori}
 In questa pagina è presente la lista di tutti i sensori dell'area indicata.
@@ -187,7 +190,7 @@ In questa pagina è possibile immettere tutte le informazioni riguardanti il lam
 \end{center}
 
 Una volta terminato l'inserimento dei dati, cliccando sul pulsante "Conferma e Inserisci"
-il lampione verrà inserita nel sistema.
+il lampione verrà inserito nel sistema.
 
 \subsection{Lista lampioni}
 In questa pagina è presente la lista di tutti i lampioni dell'area indicata.
@@ -220,7 +223,7 @@ Ogni guasto ha un tasto associato che porta alla pagina di dettaglio corrisponde
 
 \subsection{Guasto}
 
-In questa area è possibile gestire tutti gli aspetti legati al guasto selezionato.
+In questa pagina è possibile gestire tutti gli aspetti legati al guasto selezionato.
 
 \begin{center}
 	\includegraphics[scale=0.3]{Guasto.png}
@@ -229,7 +232,7 @@ In questa area è possibile gestire tutti gli aspetti legati al guasto seleziona
 La pagina è suddivisa nei seguenti riquadri:
 \begin{itemize}
 	\item \textbf{la sezione 1}: Informazioni contententi i dettagli del guasto.
-	\item \textbf{la sezione 2}: Contiene i pulsanti per la chiusura del guasto o per la modifica delle sue informazioni.
+	\item \textbf{la sezione 2}: Pulsanti per la chiusura del guasto o per la modifica delle sue informazioni.
 \end{itemize}
 
 \subsection{Modifica guasto}
