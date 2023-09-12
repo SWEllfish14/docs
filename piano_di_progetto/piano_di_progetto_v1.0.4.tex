@@ -8,6 +8,7 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{float}
+\usepackage{booktabs} % Per linee orizzontali migliori
 \input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
@@ -66,6 +67,8 @@
 \addversione{1.0.3}{24/08/2023}{Elena Marchioro}{Francesco Naletto}{Aggiunto resoconto quattordicesimo sprint e problematiche}
 \addversione{1.0.4}{30/08/2023}{Davide Porporati}{Claudio Giaretta}{Aggiunto resoconto quindicesiomo sprint e problematiche}
 \addversione{1.0.5}{07/09/2023}{Claudio Giaretta}{Davide Porporati}{Aggiunto resoconto sedicesimo sprint e problematiche}
+\addversione{1.0.6}{14/09/2023}{Claudio Giaretta}{Davide Porporati}{Aggiunto resoconto diciasettesimo sprint e problematiche}
+\addversione{1.0.7}{15/09/2023}{Francesco Naletto}{Claudio Giaretta}{Aggiunto consuntivo periodo MVP e fatta valutazione rischi}
 \makeversioni
 
 
@@ -245,21 +248,21 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	24		&	720		\\
-		\hline									
-		Amministratore  &	20		&	25		&	500		\\
-		\hline									
-		Analista        &	25		&	61		&	1525		\\
-		\hline									
-		Progettista     &	25		&	0		&	0		\\
-		\hline									
-		Programmatore   &	15		&	0		&	0		\\
-		\hline									
-		Verificatore    &	15		&	22		&	330		\\
-		\hline									
-		\textbf{Totale} &			&	132		&	3075		\\
-		\hline																														
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 25           & 500                     \\
+		\hline
+		Analista        & 25                            & 61           & 1525                    \\
+		\hline
+		Progettista     & 25                            & 0            & 0                       \\
+		\hline
+		Programmatore   & 15                            & 0            & 0                       \\
+		\hline
+		Verificatore    & 15                            & 22           & 330                     \\
+		\hline
+		\textbf{Totale} &                               & 132          & 3075                    \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -294,26 +297,26 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 
 \subsection{Preventivo - Progettazione e codifica MVP}
 \begin{center}
-	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
-		\hline									
-		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\									
-		\hline									
-		\hline									
-		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\									
-		\hline									
-		Responsabile    &	30		&	24		&	720		\\
-		\hline									
-		Amministratore  &	20		&	34		&	680		\\
-		\hline									
-		Analista        &	25		&	31		&	775		\\
-		\hline									
-		Progettista     &	25		&	82		&	2050		\\
-		\hline									
-		Programmatore   &	15		&	67		&	1005		\\
-		\hline									
-		Verificatore    &	15		&	51		&	765		\\
-		\hline									
-		\textbf{Totale} &			&	265		&	5995		\\
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 34           & 680                     \\
+		\hline
+		Analista        & 25                            & 31           & 775                     \\
+		\hline
+		Progettista     & 25                            & 82           & 2050                    \\
+		\hline
+		Programmatore   & 15                            & 67           & 1005                    \\
+		\hline
+		Verificatore    & 15                            & 51           & 765                     \\
+		\hline
+		\textbf{Totale} &                               & 265          & 5995                    \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -392,7 +395,7 @@ Al termine del primo sprint non sono state rilevate particolari problematiche, p
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -481,7 +484,7 @@ L'aggiunta degli UML per gli Use Case è stata rimandata al prossimo sprint per 
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -559,7 +562,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 5            & 75                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 34           &                         \\ 800\\
+		\textbf{Totale} &                               & 34           &                         800\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -571,7 +574,7 @@ L'altra problematica riscontrata è inerente alle metriche da utilizzare per val
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -648,7 +651,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 5            & 75                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 27           &                         \\ 625\\
+		\textbf{Totale} &                               & 27           &	 625\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -660,7 +663,7 @@ Le altre difficoltà riscontrate riguardano la valutazione delle metriche e i gr
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -737,7 +740,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 21           &                         \\ 460\\
+		\textbf{Totale} &                               & 21           &	460\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -748,7 +751,7 @@ I dubbi riguardanti i casi d'uso e gli uml sono stati discussi e valutati con il
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -834,7 +837,7 @@ Il monte ore settimanale è in deficit in quanto diversi componenti del gruppo h
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -920,7 +923,7 @@ La mancanza di conoscenze delle tecnologie porta via molto tempo all'apprendimen
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1006,7 +1009,7 @@ Il tempo a disposizione
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1091,7 +1094,7 @@ Il poco tempo a disposizione ha rallentato lo sviluppo del poc.
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1178,7 +1181,7 @@ Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter util
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1264,7 +1267,7 @@ Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter util
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1311,9 +1314,9 @@ Caratteristiche:
 		\hline
 		Piano di progetto        & 1                          \\
 		\hline
-		Piano di qualifica        & 1                          \\
+		Piano di qualifica       & 1                          \\
 		\hline
-		Glossario        & 1                          \\
+		Glossario                & 1                          \\
 		\hline
 		POC (backend e database) & 2                          \\
 		\hline
@@ -1335,11 +1338,11 @@ Caratteristiche:
 		\hline
 		Analista        & 25                            & 0            & 0                       \\
 		\hline
-		Progettista     & 25                            & 10            & 250                      \\
+		Progettista     & 25                            & 10           & 250                     \\
 		\hline
 		Programmatore   & 15                            & 15           & 225                     \\
 		\hline
-		Verificatore    & 15                            & 6           & 90                      \\
+		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\textbf{Totale} &                               & 37           & 715                     \\
 		\hline
@@ -1354,7 +1357,7 @@ Nessun particolare dubbio o difficoltà riscontrate
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1365,11 +1368,11 @@ Nessun particolare dubbio o difficoltà riscontrate
 		\hline
 		Analista        & 25                            & 57(+0)       & 0                       \\
 		\hline
-		Progettista     & 25                            & 38(+10)       & 250                     \\
+		Progettista     & 25                            & 38(+10)      & 250                     \\
 		\hline
-		Programmatore   & 15                            & 68(+18)       & 270                     \\
+		Programmatore   & 15                            & 68(+18)      & 270                     \\
 		\hline
-		Verificatore    & 15                            & 48(+9)       & 135                      \\
+		Verificatore    & 15                            & 48(+9)       & 135                     \\
 		\hline
 		\hline
 		\textbf{Totale} &                               & 281          & 5905                    \\
@@ -1380,7 +1383,7 @@ Nessun particolare dubbio o difficoltà riscontrate
 
 \subsection{Sprint 12}
 Qui vengono riportate le informazioni relative alla tredicesima settimana di sprint del gruppo. \\
-In questo ciclo di sprint è stato deciso come procedere per la fase di PB. 
+In questo ciclo di sprint è stato deciso come procedere per la fase di PB.
 Sono inoltre stati rivisti alcuni requisiti e sono stati impostati test di sistema e parte dei test di integrazione.
 Infine è stata iniziata la progettazione del MVP e del file di specifica tecnica \\
 
@@ -1395,16 +1398,16 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}  \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}         & \textbf{Persone richieste} \\
 		\hline
-		Specifica tecnica        	& 2                          \\
+		Specifica tecnica     & 2                          \\
 		\hline
-		MVP        					& 1           \\
+		MVP                   & 1                          \\
 		\hline
-		Analisi dei requisiti       & 1                          \\
+		Analisi dei requisiti & 1                          \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1422,13 +1425,13 @@ Caratteristiche:
 		\hline
 		Amministratore  & 20                            & 4            & 80                      \\
 		\hline
-		Analista        & 25                            & 10            & 250                       \\
+		Analista        & 25                            & 10           & 250                     \\
 		\hline
-		Progettista     & 25                            & 22	            & 550                      \\
+		Progettista     & 25                            & 22           & 550                     \\
 		\hline
-		Programmatore   & 15                            & 0           & 0                     \\
+		Programmatore   & 15                            & 0            & 0                       \\
 		\hline
-		Verificatore    & 15                            & 6           & 90                      \\
+		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\textbf{Totale} &                               & 42           & 990                     \\
 		\hline
@@ -1443,7 +1446,7 @@ Difficoltà nella progettazione di architetture e test adatti al progetto
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1452,11 +1455,11 @@ Difficoltà nella progettazione di architetture e test adatti al progetto
 		\hline
 		Amministratore  & 20                            & 35(+4)       & 80                      \\
 		\hline
-		Analista        & 25                            & 67(+10)       & 250                       \\
+		Analista        & 25                            & 67(+10)      & 250                     \\
 		\hline
-		Progettista     & 25                            & 60(+22)       & 550                     \\
+		Progettista     & 25                            & 60(+22)      & 550                     \\
 		\hline
-		Programmatore   & 15                            & 68(+0)       & 0                     \\
+		Programmatore   & 15                            & 68(+0)       & 0                       \\
 		\hline
 		Verificatore    & 15                            & 54(+6)       & 90                      \\
 		\hline
@@ -1470,7 +1473,7 @@ Difficoltà nella progettazione di architetture e test adatti al progetto
 
 \subsection{Sprint 13}
 Qui vengono riportate le informazioni relative alla quattordicesima settimana di sprint del gruppo. \\
-In questo ciclo di sprint è stato iniziato il documento di specifica tecnica in linea con la progettazione dell'archietettura del MVP. 
+In questo ciclo di sprint è stato iniziato il documento di specifica tecnica in linea con la progettazione dell'archietettura del MVP.
 Inoltre è stato preparato l'ambiente di test con tutti gli strumenti necessari alla fase di testing.\\
 
 Caratteristiche:
@@ -1484,14 +1487,14 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}     & \textbf{Persone richieste}    \\
 		\hline
-		Specifica tecnica        	& 3                          \\
+		Specifica tecnica & 3                             \\
 		\hline
-		MVP        					& 2           \\
+		MVP               & 2                             \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1504,21 +1507,21 @@ Caratteristiche:
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	3		&	90		\\
-		\hline									
-		Amministratore  &	20		&	3		&	60		\\
-		\hline									
-		Analista        &	25		&	8		&	200		\\
-		\hline									
-		Progettista     &	25		&	22		&	550		\\
-		\hline									
-		Programmatore   &	15		&	10		&	150		\\
-		\hline									
-		Verificatore    &	15		&	2		&	30		\\
-		\hline									
-		\textbf{Totale} &			&	48		&	1080		\\
-		\hline																
+		\hline
+		Responsabile    & 30                            & 3            & 90                      \\
+		\hline
+		Amministratore  & 20                            & 3            & 60                      \\
+		\hline
+		Analista        & 25                            & 8            & 200                     \\
+		\hline
+		Progettista     & 25                            & 22           & 550                     \\
+		\hline
+		Programmatore   & 15                            & 10           & 150                     \\
+		\hline
+		Verificatore    & 15                            & 2            & 30                      \\
+		\hline
+		\textbf{Totale} &                               & 48           & 1080                    \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -1530,23 +1533,23 @@ Difficoltà nella scelta dell'architettura e degli strumenti per i test.
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
-		\hline														
-		Responsabile		&		30		&		44(+3)		&		90		\\
-		\hline														
-		Amministratore		&		20		&		40(+5)		&		100		\\
-		\hline														
-		Analista		&		25		&		75(+8)		&		200		\\
-		\hline														
-		Progettista		&		25		&		84(+24)		&		600		\\
-		\hline														
-		Programmatore		&		15		&		80(+12)		&		180		\\
-		\hline														
-		Verificatore		&		15		&		56(+2)		&		30		\\
-		\hline														
-		\hline														
-		\textbf{Totale}		&				&		379		&		8135		\\
-		\hline																										
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}} \\
+		\hline
+		Responsabile    & 30 & 44(+3)  & 90          \\
+		\hline
+		Amministratore  & 20 & 40(+5)  & 100         \\
+		\hline
+		Analista        & 25 & 75(+8)  & 200         \\
+		\hline
+		Progettista     & 25 & 84(+24) & 600         \\
+		\hline
+		Programmatore   & 15 & 80(+12) & 180         \\
+		\hline
+		Verificatore    & 15 & 56(+2)  & 30          \\
+		\hline
+		\hline
+		\textbf{Totale} &    & 379     & 8135        \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -1554,7 +1557,7 @@ Difficoltà nella scelta dell'architettura e degli strumenti per i test.
 \subsection{Sprint 14}
 Qui vengono riportate le informazioni relative alla quindicesima settimana di sprint del gruppo. \\
 In questo ciclo di sprint è stato implementato il back-end e sono stati iniziati i test sul codice prodotto fin'ora.
-Abbiamo inoltre iniziato la progettazione dell'architettura del front-end e riportato quanto fatto nella specifica tecnica. 
+Abbiamo inoltre iniziato la progettazione dell'architettura del front-end e riportato quanto fatto nella specifica tecnica.
 
 Caratteristiche:
 
@@ -1567,14 +1570,14 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}     & \textbf{Persone richieste}    \\
 		\hline
-		Specifica tecnica        	& 2                          \\
+		Specifica tecnica & 2                             \\
 		\hline
-		MVP        					& 3           \\
+		MVP               & 3                             \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1587,26 +1590,26 @@ Caratteristiche:
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	3		&	90		\\
-		\hline									
-		Amministratore  &	20		&	4		&	80		\\
-		\hline									
-		Analista        &	25		&	0		&	0		\\
-		\hline									
-		Progettista     &	25		&	14		&	350		\\
-		\hline									
-		Programmatore   &	15		&	20		&	300		\\
-		\hline									
-		Verificatore    &	15		&	20		&	300		\\
-		\hline									
-		\textbf{Totale} &			&	61		&	1120		\\
-		\hline																								
+		\hline
+		Responsabile    & 30                            & 3            & 90                      \\
+		\hline
+		Amministratore  & 20                            & 4            & 80                      \\
+		\hline
+		Analista        & 25                            & 0            & 0                       \\
+		\hline
+		Progettista     & 25                            & 14           & 350                     \\
+		\hline
+		Programmatore   & 15                            & 20           & 300                     \\
+		\hline
+		Verificatore    & 15                            & 20           & 300                     \\
+		\hline
+		\textbf{Totale} &                               & 61           & 1120                    \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
 \subsubsection{Problematiche riscontrate}
-Difficoltà nel passaggio dal vecchio back-end al nuovo 
+Difficoltà nel passaggio dal vecchio back-end al nuovo
 
 
 \subsubsection{Resoconto}
@@ -1650,14 +1653,14 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}     & \textbf{Persone richieste}    \\
 		\hline
-		Specifica tecnica        	& 2                          \\
+		Specifica tecnica & 2                             \\
 		\hline
-		MVP        					& 3           \\
+		MVP               & 3                             \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1670,21 +1673,21 @@ Caratteristiche:
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	5		&	150		\\
-		\hline									
-		Amministratore  &	20		&	6		&	120		\\
-		\hline									
-		Analista        &	25		&	0		&	0		\\
-		\hline									
-		Progettista     &	25		&	11		&	275		\\
-		\hline									
-		Programmatore   &	15		&	18		&	270		\\
-		\hline									
-		Verificatore    &	15		&	14		&	210		\\
-		\hline									
-		\textbf{Totale} &			&	54		&	1025		\\
-		\hline																																	
+		\hline
+		Responsabile    & 30                            & 5            & 150                     \\
+		\hline
+		Amministratore  & 20                            & 6            & 120                     \\
+		\hline
+		Analista        & 25                            & 0            & 0                       \\
+		\hline
+		Progettista     & 25                            & 11           & 275                     \\
+		\hline
+		Programmatore   & 15                            & 18           & 270                     \\
+		\hline
+		Verificatore    & 15                            & 14           & 210                     \\
+		\hline
+		\textbf{Totale} &                               & 54           & 1025                    \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -1720,7 +1723,7 @@ Nessun particolare dubbio o difficoltà
 
 \subsection{Sprint 16}
 Qui vengono riportate le informazioni relative alla diciasettesima settimana di sprint del gruppo. \\
-In questo ciclo di sprint è stato iniziato il manuale utente ed è stata fatta una revisione del MVP controllando che tutte le funzionalità implementate soddisfino quanto riportato nell'analisi dei requisiti.	 
+In questo ciclo di sprint è stato iniziato il manuale utente ed è stata fatta una revisione del MVP controllando che tutte le funzionalità implementate soddisfino quanto riportato nell'analisi dei requisiti.
 Inoltre è stata continuata la fase di testing del back end.
 
 Caratteristiche:
@@ -1734,16 +1737,16 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}     & \textbf{Persone richieste}    \\
 		\hline
-		Specifica tecnica        	& 1                          \\
+		Specifica tecnica & 1                             \\
 		\hline
-		Manuale utente        	& 1                          \\
+		Manuale utente    & 1                             \\
 		\hline
-		MVP        					& 2           \\
+		MVP               & 2                             \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1756,21 +1759,21 @@ Caratteristiche:
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	5		&	150		\\
-		\hline									
-		Amministratore  &	20		&	6		&	120		\\
-		\hline									
-		Analista        &	25		&	8		&	200		\\
-		\hline									
-		Progettista     &	25		&	0		&	0		\\
-		\hline									
-		Programmatore   &	15		&	10		&	150		\\
-		\hline									
-		Verificatore    &	15		&	18		&	270		\\
-		\hline									
-		\textbf{Totale} &			&	47		&	890		\\
-		\hline																														
+		\hline
+		Responsabile    & 30                            & 5            & 150                     \\
+		\hline
+		Amministratore  & 20                            & 6            & 120                     \\
+		\hline
+		Analista        & 25                            & 8            & 200                     \\
+		\hline
+		Progettista     & 25                            & 0            & 0                       \\
+		\hline
+		Programmatore   & 15                            & 10           & 150                     \\
+		\hline
+		Verificatore    & 15                            & 18           & 270                     \\
+		\hline
+		\textbf{Totale} &                               & 47           & 890                     \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -1898,21 +1901,21 @@ Caratteristiche:
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
-		\hline									
-		Responsabile    &	30		&	24		&	720		\\
-		\hline									
-		Amministratore  &	20		&	22(-3)		&	440(-60)		\\
-		\hline									
-		Analista        &	25		&	57(-4)		&	1425(-100)		\\
-		\hline									
-		Progettista     &	25		&	5(+5)		&	125(+125)		\\
-		\hline									
-		Programmatore   &	15		&	0		&	0		\\
-		\hline									
-		Verificatore    &	15		&	24(+2)		&	360(+30)		\\
-		\hline									
-		\textbf{Totale} &			&	132		&	3070(-5)		\\
-		\hline																														
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 22(-3)       & 440(-60)                \\
+		\hline
+		Analista        & 25                            & 57(-4)       & 1425(-100)              \\
+		\hline
+		Progettista     & 25                            & 5(+5)        & 125(+125)               \\
+		\hline
+		Programmatore   & 15                            & 0            & 0                       \\
+		\hline
+		Verificatore    & 15                            & 24(+2)       & 360(+30)                \\
+		\hline
+		\textbf{Totale} &                               & 132          & 3070(-5)                \\
+		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
@@ -1989,4 +1992,64 @@ La progettazione e la codifica del MVP sono procedute come da preventivo. La ver
 I controlli fatti dall'amministratore hanno inoltre necessitato meno ore di quanto preventivato dal gruppo.
 Il costo e le ore hanno comunque soddisfatto le aspettative del gruppo 
 \section{Valutazione dei Rischi}
+\begin{xltabular}{\linewidth}{|>{\hsize=0.25\hsize}X|X|X|X|}
+
+	\hline
+	\textbf{ID} & \textbf{Descrizione} & \textbf{Mitigazione} & \textbf{Conclusioni} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{ID} & \textbf{Descrizione} & \textbf{Mitigazione} & \textbf{Conclusioni} \\
+	\hline
+	\endhead
+	\hline
+	\endfoot
+
+	\multicolumn{4}{|c|}{\textbf{Sprint 0}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 1}}                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
+	\textbf{RO1} & Mancanza di distribuzione adeguata delle attività tra i membri del gruppo, causando così una situazione di disorganizzazione.         & Le attività sono state rimandate alla settimana seguente.                                       & Le attività sono state efficaciemente svolte.                                                                                                       \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 2}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	\textbf{RR2} & Incomprensione su chi dovessero essere i protagonisti nei casi d'uso.                                                                 & È stata contattata l'azienda per chiedere chiarimenti.                                          & La stesura dei casi d'uso è potuta procedere senza rallentamenti.                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 3}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 4}  }                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+	\textbf{RR2 }& Dubbi sulla realizzazione degli UML                                                                                                   & È stata contattato il professor Cardin per chiedere chiarimenti.                                & L'aiuto del professor Cardin ha sciolto i dubbi e le perplessità dei componenti.                                                                    \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 5}  }                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+	\textbf{RT2} & Difficoltà di interfacciamento tra i simulatori dei lampioni.                                                                         & È stata effuata una sessione di approfondimento e analisi del codice                            & Dopo un'analisi più attenta è stato possibile usare al meglio i simulatori.                                                                         \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 6}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 7}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RT1} & Difficoltà generali nello studio di React                                                                                             & È stata effuata una sessione di approfondimento                                                 & Dopo aver compreso meglio il funzionamento di React, non stati riscontrati altri problemi.                                                          \\ \hline
+	\textbf{RI1} & diminuzione delle ore di lavoro a causa della sessione                                                                                & Le attività sono state equamente distribuite ed organizzate in modo efficace.                   & L'organizzazione delle attività è stata efficace, ma si è verificato un leggero scostamento rispetto alla tabella di marcia.                        \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 8}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 9}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RT1} & Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter utilizzare in maniera efficace lo sviluppo della parte di CSS. & È stata effuata una sessione di approfondimento                                                 & Dopo aver compreso meglio il funzionamento di Bulma, non stati riscontrati altri problemi.                                                          \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 10}   }                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 11}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 12}  }                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           & -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 13}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI2} & Dubbi sulla gestione della suddivisione delle ore tra i vari ruoli per proseguire nel modo migliore                          & da vedere & da vedere \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 14}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI2} & Nessun rischio riscontrato.                          
+	& - 
+	& - \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 15}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI2} & Nessun rischio riscontrato.                          
+	& - 
+	& - \\ \hline	
+	\multicolumn{4}{|c|}{\textbf{Sprint 16}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           
+	& -                                                                                               
+	& -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 17}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.     
+		& -     
+        & -                                                                                                                                                   \\
+\end{xltabular}
+
 \end{document}
