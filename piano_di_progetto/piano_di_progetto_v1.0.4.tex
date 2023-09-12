@@ -60,6 +60,7 @@
 \addversione{0.0.10}{07/07/2023}{Francesco Naletto, Jude Vensil Barceros}{Andrea Veronese}{Aggiunto resoconto undicesimo sprint}
 \addversione{0.1.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Verificato documento}
 \addversione{1.0.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiornato a versione 1.0.0}
+\addversione{1.0.0}{09/08/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiunti preventivi e consuntivo RTB}
 \addversione{1.0.1}{10/08/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiunto resoconto dodicesimo sprint e problematiche}
 \addversione{1.0.2}{17/08/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiunto resoconto tredicesimo sprint e problematiche}
 \addversione{1.0.3}{24/08/2023}{Elena Marchioro}{Francesco Naletto}{Aggiunto resoconto quattordicesimo sprint e problematiche}
@@ -236,8 +237,7 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 	\end{tabular}
 \end{center}
 
-\subsection{RTB}
-\subsubsection{Analisi dei requisiti}
+\subsection{Preventivo - Analisi dei requisiti}
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
@@ -264,7 +264,7 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 	\mbox{}\\
 \end{center}
 
-\subsubsection{Proof of Concept}
+\subsection{Preventivo - Progettazione e codifica POC}
 
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
@@ -292,14 +292,32 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 	\mbox{}\\
 \end{center}
 
-\subsection{PB}
-\subsubsection{Progettazione MVP}
-
-\subsubsection{Minimum Viable Product}
-
-
-\subsection{Preventivo a finire}
-Al termine delle attività verrà effettuata un'analisi mirata a capire le motivazioni che abbiano portato ad uno sforamento delle ore e/o dei costi.
+\subsection{Preventivo - Progettazione e codifica MVP}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
+		\hline									
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\									
+		\hline									
+		\hline									
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\									
+		\hline									
+		Responsabile    &	30		&	24		&	720		\\
+		\hline									
+		Amministratore  &	20		&	34		&	680		\\
+		\hline									
+		Analista        &	25		&	31		&	775		\\
+		\hline									
+		Progettista     &	25		&	82		&	2050		\\
+		\hline									
+		Programmatore   &	15		&	67		&	1005		\\
+		\hline									
+		Verificatore    &	15		&	51		&	765		\\
+		\hline									
+		\textbf{Totale} &			&	265		&	5995		\\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
 
 \section{Metodo di Lavoro}
 Il gruppo ha concordato l'utilizzo del framework Scrum come metodo di lavoro agile.
@@ -1516,7 +1534,7 @@ Difficoltà nella scelta dell'architettura e degli strumenti per i test.
 		\hline														
 		Responsabile		&		30		&		44(+3)		&		90		\\
 		\hline														
-		Amministratore		&		20		&		38(+3)		&		60		\\
+		Amministratore		&		20		&		40(+5)		&		100		\\
 		\hline														
 		Analista		&		25		&		75(+8)		&		200		\\
 		\hline														
@@ -1527,7 +1545,7 @@ Difficoltà nella scelta dell'architettura e degli strumenti per i test.
 		Verificatore		&		15		&		56(+2)		&		30		\\
 		\hline														
 		\hline														
-		\textbf{Totale}		&				&		377		&		8095		\\
+		\textbf{Totale}		&				&		379		&		8135		\\
 		\hline																										
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1599,7 +1617,7 @@ Difficoltà nel passaggio dal vecchio back-end al nuovo
 		\hline														
 		Responsabile		&		30		&		47(+3)		&		90		\\
 		\hline														
-		Amministratore		&		20		&		42(+4)		&		80		\\
+		Amministratore		&		20		&		44(+4)		&		80		\\
 		\hline														
 		Analista		&		25		&		75(+0)		&		0		\\
 		\hline														
@@ -1610,7 +1628,7 @@ Difficoltà nel passaggio dal vecchio back-end al nuovo
 		Verificatore		&		15		&		72(+9)		&		135		\\
 		\hline														
 		\hline														
-		\textbf{Totale}		&				&		434		&		9155		\\
+		\textbf{Totale}		&				&		436		&		9195		\\
 		\hline																																							
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1682,7 +1700,7 @@ Nessun particolare dubbio o difficoltà
 		\hline														
 		Responsabile		&		30		&		52(+5)		&		150		\\
 		\hline														
-		Amministratore		&		20		&		48(+6)		&		120		\\
+		Amministratore		&		20		&		50(+6)		&		120		\\
 		\hline														
 		Analista		&		25		&		75(+0)		&		0		\\
 		\hline														
@@ -1693,7 +1711,7 @@ Nessun particolare dubbio o difficoltà
 		Verificatore		&		15		&		86(+14)		&		210		\\
 		\hline														
 		\hline														
-		\textbf{Totale}		&				&		488		&		10180		\\
+		\textbf{Totale}		&				&		490		&		10220		\\
 		\hline														
 																																							
 	\end{tabularx}\\[8pt]
@@ -1766,19 +1784,19 @@ Nessun particolare dubbio o difficoltà
 		\hline														
 		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\														
 		\hline														
-		Responsabile		&		30		&		52(+5)		&		150		\\
+		Responsabile		&		30		&		57(+5)		&		150		\\
 		\hline														
-		Amministratore		&		20		&		48(+6)		&		120		\\
+		Amministratore		&		20		&		56(+6)		&		120		\\
 		\hline														
-		Analista		&		25		&		75(+8)		&		200		\\
+		Analista		&		25		&		83(+8)		&		200		\\
 		\hline														
 		Progettista		&		25		&		109(+0)		&		0		\\
 		\hline														
-		Programmatore		&		15		&		118(+10)		&		150		\\
+		Programmatore		&		15		&		128(+10)		&		150		\\
 		\hline														
-		Verificatore		&		15		&		86(+18)		&		270		\\
+		Verificatore		&		15		&		104(+18)		&		270		\\
 		\hline														
-		\textbf{Totale}		&				&		535		&		11070		\\
+		\textbf{Totale}		&				&		537		&		11110		\\
 		\hline														
 																																		
 	\end{tabularx}\\[8pt]
@@ -1787,8 +1805,7 @@ Nessun particolare dubbio o difficoltà
 
 
 \section{Consuntivo di periodo}
-\subsection{RTB}
-\subsubsection{Analisi dei requisiti}
+\subsection{Analisi dei requisiti}
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
@@ -1815,7 +1832,7 @@ Nessun particolare dubbio o difficoltà
 	\mbox{}\\
 \end{center}
 
-\subsubsection{Proof of Concept}
+\subsection{Progettazione e codifica POC}
 
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
@@ -1843,4 +1860,5 @@ Nessun particolare dubbio o difficoltà
 	\mbox{}\\
 \end{center}
 	
+\section{Valutazione dei Rischi}
 \end{document}
