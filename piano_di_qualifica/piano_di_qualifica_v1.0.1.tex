@@ -53,6 +53,8 @@
 \addversione{1.0.0}{18/07/2023}{Andrea Veronese}{Claudio Giaretta, Davide Porporati}{Aggiornato a versione 1.0.0}
 \addversione{1.0.1}{07/06/2023}{Claudio Giaretta}{Andrea Veronese, Davide Porporati}{Creata struttura specifiche di test e aggiunti test di sistema}
 \addversione{1.0.2}{07/08/2023}{Andrea Veronese}{Claudio Giaretta, Davide Porporati}{Aggiunte metriche da usare nei test di verifica}
+\addversione{1.0.3}{12/09/2023}{Francesco Naletto}{Davide Porporati}{Aggiunta sezione test di unità}
+\addversione{1.0.4}{14/09/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiornato Valutazione delle metriche}
 \makeversioni
 \pagebreak
 
@@ -691,8 +693,9 @@ I test di accettazione sono essenziali per dimostrare la conformità del prodott
 I grafici sono frutto di un foglio di calcolo creato dal gruppo che applica le formule per il calcolo delle metriche definite in questo documento.
 
 \subsection{Valutazione d’insieme (Qualità di processo)}
-Il lavoro è proseguito secondo le aspettative del gruppo.È stato riscontrato un calo delle ore lavorate negli sprint 8,9,10 dovuti a impegni universitari dei membri del gruppo. Questo calo ha particolarmente influenzato il grafico dello schedule variance che è effettivamente sceso sotto la soglia di tolleranza prefissata dal gruppo. Lo stesso si può riscontrare nella distanza tra il planned e l’earned value, che è cresciuta particolarmente durante quegli sprint. Il gruppo aveva comunque previsto un calo di lavoro durante gli sprint indicati, stimando di rientrare all’interno dei valori di tolleranza nei successivi sprint.
-
+Il lavoro è proseguito secondo le aspettative, la mancanza di impegni nella fase di PB dei membri del gruppo ha permesso un aumento di ore dedicate al progetto.
+ Ciò ha permesso , dopo una prima fase RTB rallentata dagli impegni personali del gruppo, di recuperare il tempo perso e rientrare all'interno delle soglie di accettabilità e raggiungere valori ottimali in quasi tutte le valutazioni.
+Questo è particolarmente evidente nei grafico "Cost Variance e Schedule Variance" e nel grafico "Planning Value, Actual Cost e Earned Value" dove successivamente al undicesimo sprint, che ha segnato la fine del RTB, il lavoro svolto ha subito un notevole incremento della qualità.
 \subsection{Planning Value, Actual Cost e Earned Value}
 \begin{center}
 	\includegraphics[scale=0.5]{AC_PV_EV.png}
@@ -722,21 +725,20 @@ Il lavoro è proseguito secondo le aspettative del gruppo.È stato riscontrato u
 		\begin{center}
 			\includegraphics[scale=0.8]{totalCoverageFrontEnd.png}
 		\end{center}
-		L'immagine sovrastante riporta rispettivamente la Statement, Branches, Functions e Code coverage \textbf{complessiva} ottenuta sulla parte di front-end del prodotto
+		L'immagine sovrastante riporta rispettivamente la Statement, Branch, Function e Code coverage \textbf{complessiva} ottenuta sulla parte di front-end del prodotto
 		\begin{center}
 			\includegraphics[scale=0.3]{test_frontEnd.png}	
 		\end{center}
-		L'immagine sovrastante riporta rispettivamente la Statement, Branches, Functions e Code coverage ottenuta sui singoli file della parte di front-end del prodotto
+		L'immagine sovrastante riporta rispettivamente la Statement, Branch, Function e Code coverage ottenuta sui singoli file della parte di front-end del prodotto
 \end{center}
 \subsubsection{Back-end}
 	\begin{center}
 		\includegraphics[scale=0.8]{totalCoverageBackEnd.png}
 	\end{center}
-		L'immagine sovrastante riporta rispettivamente la Statement, Branches, Functions e Code coverage \textbf{complessiva} ottenuta sulla parte di back-end del prodotto
+		L'immagine sovrastante riporta rispettivamente la Statement, Branch, Function e Code coverage \textbf{complessiva} ottenuta sulla parte di back-end del prodotto
 	\begin{center}
 		\includegraphics[scale=0.3]{test_backEnd.png}
 	\end{center}
-		L'immagine sovrastante riporta rispettivamente la Statement, Branches, Functions e Code coverage ottenuta sui singoli file della parte di back-end del prodotto
+		L'immagine sovrastante riporta rispettivamente la Statement, Branch, Function e Code coverage ottenuta sui singoli file della parte di back-end del prodotto
 	
-
 \end{document}
