@@ -50,7 +50,7 @@
 \addversione{0.0.2}{04/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i design pattern e caricato diagramma delle classi}
 \addversione{0.0.3}{09/09/2023}{Davide Porporati, Elena Marchioro}{Claudio Giaretta}{Aggiornati i design pattern e revisionato il documento}
 \addversione{1.0.0}{09/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi delle classi}
-
+\addversione{1.0.1}{18/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi delle classi e aggiunte sezioni mancanti}
 \makeversioni
 
 \tableofcontents
@@ -82,6 +82,32 @@ di un'area in modo manuale e automatico. Nel documento viene riportata l'archite
 	\item Slide P2 del corso di ingegneria del software - \href{https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf}{Diagrammi delle classi}
 	\item Slide P4 del corso di ingegneria del software - \href{https://www.math.unipd.it/~rcardin/sweb/2022/L02.pdf}{Progettazione: il pattern Model-View-Controller e derivati}
 \end{itemize}
+\section{Tecnologie Utilizzate}
+\subsection{Front-end}
+Per realizzare il frontend, ovvero la GUI del sistema, le seguenti tecnologie sono state impiegate:
+\begin{itemize}
+	\item React: libreria JavaScript per creare GUI
+	\item Typescript: linguaggio basato su JavaScript, offre migliore scalabilità rispetto a JS
+	\item Bulma: framework CSS, reponsible e modulare, basato su Flexbox.
+\end{itemize}
+
+\subsection{Back-end}
+\begin{itemize}
+	\item Node.JS: runtime di tipo JavaScript
+	\item Express: framework per Node.JS
+	\item Axios: client HTTP per Node.JS di tipo "promise-based"
+	\item Sequelize: ORM tool per MariaDB, utilizzato per modellare i dati ed effettuare associazioni
+	\item Cron: modulo di node, funge da scheduler e viene impiegato per creare task ad esecuzione automatica
+\end{itemize}
+
+\subsection{Database}
+Il database implementato è di tipo relazionale, ed è stato implementato utilizzando MariaDB e HeidiSQL.
+\subsection{Interfacciamento Lampioni/Sensori}
+Per realizzare l'interfacciamento con i sensori e i lampioni a sistema le seguenti tecnologie sono state impiegate:
+\begin{itemize}
+	\item Python
+	\item API-rest 
+\end{itemize}
 
 \section{Architettura del prodotto}
 
@@ -102,15 +128,19 @@ Per il backend è stato utilizzato il seguente pattern:
 		\item Router Controller Service Pattern:
 			Il design pattern dell'API Router-Controller-Service è un modello di architettura del software comunemente utilizzato nelle applicazioni web per strutturare e organizzare il codice responsabile della gestione delle richieste e delle risposte HTTP. Questo pattern aiuta a mantenere la separazione delle responsabilità e migliora la modularità e la manutenibilità dell'applicazione.
 
+			Il pattern è composto dai seguenti componenti:
+			\begin{itemize}
+				\item Router: componente che si occupa di effettuare il routing verso il controller adatto
+				\item Controller: componente che elabora la rischiesta ricevuta dal Router. Si appoggia alla classe Service per eseguire le operazioni.
+				\item Service: componente che esegue la logica dell'applicazione.
+			\end{itemize}
 			Ecco come funziona il pattern in pratica:
 			\begin{itemize}
 				\item Un client invia una richiesta HTTP alla tua applicazione;
 				\item Il componente Router riceve la richiesta e determina quale Controller deve gestirla in base all'URL e al metodo HTTP;
 				\item Il Controller selezionato elabora la richiesta. Se necessario, chiama i metodi del livello di Servizio per eseguire la logica aziendale e le operazioni sui dati.
 				\item Il Controller costruisce una risposta HTTP, che viene inviata al client.
-			\end{itemize}
-
-		
+			\end{itemize}		
 	\end{itemize}
 \subsubsection{Front-end}
 Per il frontend si sono utilizzati i pattern:
@@ -120,20 +150,47 @@ Per il frontend si sono utilizzati i pattern:
 		\item Scopo: definire una dipendenza fra oggetti, riflettendo la modifica di un oggetto sui dipendenti.
 		\item Motivazione: mantenere la consistenza fra oggetti e definire come implementare la relazione di dipendenza.
 	\end{itemize}
-	\item Model View ViewModel Pattern (MVVM): è un modello di architettura del software che facilita la separazione dello sviluppo dell'interfaccia grafica, ovvero la GUI,
+	\item Dependency Injection: le dipendenze sono tracciate e passate agli oggetti tramite costruttore.
+	 Questo pattern è stato impiegato perchè facilita il tracciamento delle dipendenze e agevola la fase di testing, rendendo più semplice il mocking.
+	\item Model View ViewModel (MVVM): è un modello di architettura del software che facilita la separazione dello sviluppo dell'interfaccia grafica, ovvero la GUI,
 sia tramite un linguaggio di markup o un codice GUI, dallo sviluppo del business logic o logica back-end in modo tale che la vista non dipenda da alcuna piattaforma di modello specifica.
 I componenti del modello MVVM:	
 	\begin{itemize}
-		\item Model;
-		\item View;
-		\item ViewModel;
-		\item Binder.
+		\item Model: nel nostro cosa è rappresentato nel file "api-types.ts"
+		\item View: viene definita tramite un template HTML accessibile nella cartella "Public". Per ogni view la parte root del template viene sostituita con la vista corrispondente
+		\item ViewModel: viene rappresentato dalle classi TypeScript utilizzate per gestire gli eventi della vista e aggiornare il modello di conseguenza. Ne è un esempio la classe "AreeViewModel", che gestisce la visualizzazione della lista delle aree presenti a sistema.
 	\end{itemize}
 \item IoC(Inversion of Control)
 	\begin{itemize}
 		\item Pattern che si concentra sulla gestione delle dipendenze e sul controllo dell'istanziazione degli oggetti. Questo pattern inverte il controllo tradizionalmente detenuto dalla 				componente chiamante, mettendo il controllo nelle mani di un framework o di un contenitore di gestione delle dipendenze.L'uso di questo pattern favorisce il disaccoppiamento e 				semplifica i test poiché le dipendenze sono dichiarate e possono essere facilmente sostituite con versioni mock durante i test.
 	\end{itemize}
 \end{itemize}
+\subsection{Interfacciamento con lampioni e sensori}
+Per simulare i lampioni presenti in un dato momento nel Database, è stato modificato lo script fornito da Imola Informatica per simulare i lampioni.
+Lo script modificato, realizzato in python, utilizza l'export in formato JSON della relativa tabella dei lampioni presente nel DB per simulare in maniera automatica tutti i lampioni a sistema.
+Per realizzare ciò, è stato aggiunto un argparser allo script, e il suo utilizzo ha permesso di simulare N istanze dei lampioni, con porte diverse in base all' ID del singolo apparecchio luminoso.
+
+Un approccio molto simile è stato applicato per simulare i sensori presenti nel DB.
+
+In questo modo, dopo aver fatto partire i due simulatori è possibile visualizzare:
+\begin{itemize}
+	\item tutti i lampioni, raggiungibili dalla porta 4000 + l'id del singolo lampione. Dato ad esempio il lampione con ID 1, esso è raggiungibile alla porta 4001.
+	\item tutti i sensori, raggiungibili con lo stesso meccanismo dei lampioni, ma sulle porte 5000.
+\end{itemize}
+
+Avendo tutte le istanze necessarie, il sistema permette di effettuare tutte le operazioni previste dal capitolato, come l'accensione e lo spegnimento dei lampioni di un'area in modalità manuale o automatica, e per avere un effettivo riscontro sullo stato di queste operazioni, accedendo ad un qualsiasi indirizzo di un lampione è possibile visulizzarne lo stato aggiornato. Tale stato è riportato anche dall'interfaccia grafica.
+I sensori vengono invece comandati tramite l'utilizzo di un'API tester ed eseguendo un'operazione di tipo POST è possibile modificarne lo stato, comandando ad esempio un rilevamento di un utente stradale.
+\subsection{Persistenza dei dati}
+Per realizzare la persistenza dei dati, è stato utilizzato un DB relazionale, fornito da HeidiSQL.
+L'immagine seguente riporta lo schema Entity-Relationship della base di dati, dopo la ristrutturazione.
+\clearpage
+\includegraphics[width=450pt]{er ristrutturato.png}
+Per poter usare efficacemente i dati salvati nel DB, il backend dell'applicazione utilzza un'apposita classe model, che tramite l'uso di Sequelize permette di creare degli oggetti di tipo lampione, area e sensore.
+\subsection{Autenticazione}
+Il sistema di autenticazione permette di accedere al sistema e alle Routes protette, accessibili solamente dall'amministratore.
+L'autenticazione avviene tramite il check delle credenziali salvate nel database per ogni amministratore.
+Dopo aver appurato che i dati inseriti siano corretti, viene generato un token di tipo JWT, a durata predeterminata. Alla scadenza del tempo prefissato tale token viene rinnovato, altrimenti se si effettua il logout, questo viene cancellato e all'accesso successivo è necessario fornire nuovamente le credenziali per l'accesso.
+
  	
 \section{Requisiti soddisfatti}
 \subsection{Tabella requisiti soddisfatti}
@@ -220,10 +277,11 @@ I componenti del modello MVVM:
 	\hline				
 	RF34	 & L'utente consulta il manuale Lumos Minima & Desiderabile & Soddisfatto \\
 	\hline				
-	RF35	 & Le nuove aree illuminate appena inserite hanno un setup standard & Desiderabile & Non Soddisfatto \\
+	RF35	 & Le nuove aree illuminate appena inserite hanno un setup standard & Desiderabile & Soddisfatto \\
 	\hline				
 	\end{tabular}
-	
+	Numero di requisiti obbligatori soddisfatti: 30/30 \\
+	Numero di requisiti desiderabili soddisfatti: 3/4 \\
 	\subsection{Qualità}
 	\begin{tabular}{ |p{1.8cm}|p{5.2cm}|p{3cm}| p{2cm}| }
 	\hline
@@ -237,10 +295,31 @@ I componenti del modello MVVM:
 	\hline
 	
 	\end{tabular}
-\subsection{Dati soddisfazione requisiti}
+	Numero di requisiti qualitativi obbligatori soddisfatti: 3/4.
+	Numero di requisiti qualitativi facoltativi soddisfatti: 0/1.
+	\\
+	\\
+
+	Il RQ4 non è stato completato poichè non sono state rilevate particolari criticità, come confermato da Imola Informatica.
+\subsection{Dati copertura test}
+La piattaforma utilizzata per il testing è Jest, ed è stata utilizzata sia per i test di unità che per i test di integrazione, concordando con il committente una pecentuale minima di copertura dell'80\%.
+\\Tali dati sono riproducibili eseguendo il comando "npm test" sia su frontend che su backend. I valori forniti sono le percentuali medie riscontrate, visibili nella prima riga delle percentuali del report fornito da jest.
 	\subsubsection{Percentuali test}
 	Dopo aver completato un'accurata fase di testing, i risultati sono i seguenti:
 	\\
-	\includegraphics[width=450pt]{percentuali_test.png}
+	\subsubsection{Test Unità}
+	\begin{itemize}
+		\item Statement Coverage: 87\%
+		\item Branch Coverage: 81\%
+		\item Function Coverage: 95\%
+		\item Line Coverage: 87\%
+	\end{itemize}
+	\subsubsection{Test Integrazione}
+	\begin{itemize}
+		\item Statement Coverage: 99\%
+		\item Branch Coverage: 94\%
+		\item Function Coverage: 92\%
+		\item Line Coverage: 99\%
+	\end{itemize}
 
 \end{document}
