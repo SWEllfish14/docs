@@ -114,13 +114,13 @@ Il sistema software sarà composto dalle seguenti unità:
 Il termine "WebApp" si riferisce all'insieme dei seguenti componenti del sistema:
 \begin{itemize}
 	\item Frontend: Dashboard accessibile via web che permette di interagire graficamente con il sistema
-	\item Backend: Sistema di comunicazione e interazione con i dispositivi IoT utilizzati per gestire la luminosità di un'area
+	\item Backend: Sistema di comunicazione e interazione con i dispositivi IoT utilizzati per gestire la luminosità di un'area. Include anche tutti gli strumenti necessari per manipolare i dati di interesse dell'applicazione, come i lampioni, i sensori e le aree.
 	\item Database: sistema usato per salvare e gestire dati strutturati di interesse per l'applicazione.
 \end{itemize}
 
 \subsection{Caratteristiche degli utenti}
 Il capitolato prevede la presenza di due categorie distinte di utenti, ovvero l'amministratore di sistema e il manutentore. \\
-Con Imola Informatica è stato concordato che tale utente riceve le credenziali direttamente dal gestore dell'impianto.
+Con Imola Informatica è stato concordato che entrambe le categorie di utenti riceveranno le credenziali direttamente dal gestore dell'impianto.
 L'utente che ricoprirà il ruolo di amministratore può eseguire le seguenti operazioni:
 \begin{itemize}
 	\item Accedere alla dashboard
@@ -185,10 +185,9 @@ Gli utenti vengono suddivisi nelle seguenti sottocategorie, ognuna delle quali h
 	\item Admin: Utente amministratore standard. Può effettuare tutte le operazioni previste dal sistema.
 	\item Manutentore: utente base che può accedere a funzionalità limitate, riguardanti solamente la manutenzione dei lampioni e la gestione dei guasti.
 \end{itemize}
+Dopo aver sviluppato il Poc e constatata la ristrettezza dei tempi per lo sviluppo della baseline architetturale, di comune accordo con l'azienda proponente è stato deciso di non implementare il manutentore come attore del sistema. Nonostante ciò il sistema di ticketing, accessibile anche dal manutentore, è stato comunque sviluppato poichè usato anche dall'amministratore.
+\\
 
-\subsection{Attori secondari}
-\begin{itemize}
-	\item Sistema di ticketing: sistema esterno usato per gestire i ticket.
 \end{itemize}
 
 \subsection{Diagrammi dei casi d'uso}
@@ -341,14 +340,15 @@ L'utente vuole modificare le informazioni di un'area illuminata, come ad esempio
 	\item l'utente preme l'apposito pulsante di modifica
 	\item l'utente può modificare i seguenti parametri:
 		\begin{itemize}
-			\item indirizzo IP
-			\item tipo interazione con il sensore
-			\item polling time
-			\item protocollo di comunicazione
+			\item Nome città
+			\item Zona geografica in cui si trova l'impianto di illuminazione
+			\item Modalità di funzionamento
+			\item luminosità in caso di assenza di rilevamenti
+			\item luminosità in caso di rilevamenti
 		\end{itemize}
 	\item le informazioni aggiornate vengono salvate sul database
 \end{itemize}
-\paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi, l'amministratore riceve un messaggio di errore.
+\paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi nel DB, l'amministratore riceve un messaggio di errore.
 
 \subsubsection{UC07.1 - Visualizzazione del messaggio d'errore in modalità di modifica}
 \begin{itemize}
@@ -371,7 +371,7 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 		\item tipo di iterazione con il sensore: Push o Pull
 		\item indirizzo IP
 		\item polling time
-		\item coordinate geografiche del sensore
+		\item zona geografica di posizionamento del sensore
 		\item raggio d'azione del dispositivo
 	\end{itemize}
 	\item Postcondizioni: il sensore viene inserito a sistema ed è possibile sfruttare il funzionamento automatico del sistema.
@@ -382,10 +382,8 @@ L'amministratore vuole inserire un nuovo sensore che comanda l'aumento o la ridu
 	\item l'utente preme il pulsante di inserimento di un sensore
 	\item l'utente inserisce i dettagli richiesti dal form per l'inserimento
 	\item l'utente preme salva
-	\item viene effettuato un test di comunicazione
-	\item se il test è andato a buon fine riceve un messaggio di successo, altrimenti verrà visualizzato un errore
 \end{itemize}
-\paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi,come ad esempio l'indirizzo ip del sensore,  l'amministratore riceve un messaggio di errore a seguito del fallimento del test di comunicazione.
+\paragraph{Estensioni} In caso di un errore nell'inserimento dei parametri nuovi,l'amministratore riceve un messaggio di errore.
 
 \includegraphics[scale=0.5]{UC08.png}
 
@@ -401,8 +399,6 @@ L'amministratore vuole rimuovere un sensore che comanda l'aumento o la riduzione
 \begin{itemize}
 	\item l'utente accede ad un area illuminata
 	\item l'utente preme il pulsante di rimozione di un sensore
-	\item l'utente riceve un avviso di conferma
-	\item l'utente preme salva
 	\item il sensore viene rimosso dal database
 	\item l'utente riceve un messaggio di successo o di errore
 \end{itemize}
@@ -465,15 +461,15 @@ L'impianto è marcato come guasto, ma il malfunzionamento è stato risolto.
 \begin{itemize}
 	\item Attori primari: Amministratore
 	\item Precondizioni: l'impianto con un guasto viene sistemato
-	\item Postcondizioni: l'amministratore rimuove le aree in questione dall'elenco dei guasti
+	\item Postcondizioni: l'amministratore rimuove l'area in questione dall'elenco dei guasti
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
 	\item l'amministratore accede alla lista degli impianti guasto
 	\item l'utente seleziona l'impianto su cui è stata eseguita la manutenzione
 	\item l'utente preme il pulsante di cancellazione dall'elenco
-	\item l'impianto viene rimosso dalla sezione guasti
-	\item nella webapp l'impianto appare nuovamente come funzionante e non è più segnalato graficamente il guasto
+	\item l'impianto viene rimosso dalla sezione guasti aperti
+	\item nella webapp l'impianto appare nuovamente come funzionante
 \end{itemize}
 
 
@@ -489,8 +485,7 @@ L'amministratore vuole conoscere in dettaglio le impostazioni di un'area.
 \begin{itemize}
 	\item l'utente preme il pulsante che fornisce la panoramica delle aree
 	\item l'utente sceglie l'area desiderata
-	\item l'utente preme il pulsante "dettagli"
-	\item la webapp mostra lo stato dell'area, la luminosità preimpostata
+	\item vengono visualizzate tutte le informazioni dell'area di interesse
 \end{itemize}
 
 \includegraphics[scale=0.5]{UC14.png}
@@ -507,11 +502,8 @@ L'amministratore vuole conoscere in dettaglio la luminosità di un lampione.
 \begin{itemize}
 	\item l'utente preme il pulsante che fornisce la panoramica delle aree
 	\item l'utente sceglie l'area desiderata
-	\item l'utente sceglie il lampione desiderato
-	\item l'utente preme il pulsante di informazioni del lampione
-	\item la webapp fa una richiesta al lampione
-	\item il lampione trasmette le informazioni
-	\item la webapp mostra le informazioni
+	\item l'utente preme il pulsante panoramica lampioni
+	\item vengono fornite le info dettagliate per ogni lampione dell'area
 \end{itemize}
 
 \includegraphics[scale=0.5]{UC15.png}
@@ -527,7 +519,8 @@ L'amministratore vuole inserire un nuovo lampione all'interno di un'area gestita
 		\item tipo di iterazione con il lampione: Push o Pull
 		\item indirizzo IP
 		\item polling time
-		\item coordinate geografiche del lampione
+		\item luminosità manuale
+		\item area illuminata di afferenza
 	\end{itemize}
 	\item Postcondizioni: il lampione è inserito a sistema e può essere comandato.
 \end{itemize}
@@ -554,8 +547,8 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \begin{itemize}
 	\item l'utente accede ad un area illuminata
 	\item l'utente selezione il lampione desiderato
-	\item l'utente preme il pulsante di rimozione
-	\item l'utente preme salva
+	\item l'utente preme il pulsante di modifica
+	\item l'utente preme elimina
 	\item il lampione viene rimosso dal database
 	\item l'utente riceve un messaggio di errore o di successo
 \end{itemize}
@@ -565,15 +558,15 @@ L'amministratore vuole rimuovere un lampione all'interno dell'area gestita.
 \textbf{Tipologia: obbligatorio}\\
 Il manutentore vuole consultare la lista delle aree con dei malfunzionamenti per sapere dove intervenire.
 \begin{itemize}
-	\item Attori primari: manutentore
-	\item Precondizioni: il manutentore vuole sapere quali aree presentano dei guasti.\\
-	\item Postcondizioni: il manutentore ottiene la lista delle aree in cui è stato rilevato un malfunzionamento.
+	\item Attori primari: manutentore, Admin e SuperAdmin
+	\item Precondizioni: un utente vuole sapere quali aree presentano dei guasti.\\
+	\item Postcondizioni: l'utente ottiene la lista delle aree in cui è stato rilevato un malfunzionamento.
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item il manutentore effettua il login
 	\item l'utente selezione il pulsante per la panoramica dei guasti
 	\item la tabella corrispondente viene reperita dal database
+	\item vengono visualizzati i guasti non risolti e lo storico di quelli risolti
 \end{itemize}
 
 
@@ -582,7 +575,6 @@ Il manutentore vuole consultare la lista delle aree con dei malfunzionamenti per
 L'amministratore apre un ticket per un guasto rilevato
 \begin{itemize}
 	\item Attori primari: Admin
-	\item Attore secondario: sistema di ticketing
 	\item Precondizioni: è stato rilevato un guasto in un'area illuminata.
 	\item Postcondizioni: un apposito ticket è stato creato e presenta i dettagli utili al manutentore.
 \end{itemize}
@@ -599,7 +591,6 @@ L'amministratore apre un ticket per un guasto rilevato
 L'amministratore chiude un ticket del un guasto sistemato
 \begin{itemize}
 	\item Attori primari: Admin
-	\item Attori secondari: sistema di ticketing
 	\item Precondizioni: è stata fatta la dovuta manutenzione
 	\item Postcondizioni: il ticket che era stato creato è stato archiviato. 
 \end{itemize}
@@ -610,15 +601,91 @@ L'amministratore chiude un ticket del un guasto sistemato
 	\item il titcket viene archiviato
 \end{itemize}
 
+\subsection{UC20 - Visualizzazione lista lampioni area}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole vedere la lista dei lampioni di un'area
+\begin{itemize}
+	\item Attori primari: Admin
+	\item Precondizioni: l'amministratore vuole visualizzare tutti i lampioni che afferiscono ad un'area
+	\item Postcondizioni: l'amministratore visualizza le informazioni richieste. 
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore seleziona l'area di interesse
+	\item l'Admin preme il pulsante per la visualizzazione della lista dei lampioni
+	\item vengono visualizzate le informazioni richieste
+\end{itemize}
+
+\subsection{UC21 - Visualizzazione lista sensori area}
+\textbf{Tipologia: obbligatorio}\\
+L'amministratore vuole vedere la lista dei sensori di un'area
+\begin{itemize}
+	\item Attori primari: Admin
+	\item Precondizioni: l'amministratore vuole visualizzare tutti i sensori che afferiscono ad un'area
+	\item Postcondizioni: l'amministratore visualizza le informazioni richieste. 
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'amministratore seleziona l'area di interesse
+	\item l'Admin preme il pulsante per la visualizzazione della lista dei sensori
+	\item vengono visualizzate le informazioni richieste
+\end{itemize}
+
+\subsection{UC22 - Modifica lampione}
+\textbf{Tipologia: obbligatorio} \\
+L'utente vuole modificare le informazioni di un lampione.
+\begin{itemize}
+	\item Attori primari: SuperAdmin, Admin
+	\item Precondizioni: gli amministratori vogliono modificare le informazioni di un lampione da gestire tramite la webapp
+	\item Postcondizioni: vengono modificati i dettagli del lampione in questione.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente accede alla lista delle aree gestite
+	\item l'utente preme il pulsante per visualizzare la lista dei lampioni
+	\item l'utente sceglie il lampione desiderato
+	\item l'utente preme il pulsante di modifica
+	\item l'utente può modificare i seguenti parametri:
+		\begin{itemize}
+			\item IP
+			\item tipo interazione
+			\item luminosità manuale
+		\end{itemize}
+	\item le informazioni aggiornate vengono salvate sul database
+\end{itemize}
+
+\subsection{UC22 - Modifica sensore}
+\textbf{Tipologia: obbligatorio} \\
+L'utente vuole modificare le informazioni di un sensore.
+\begin{itemize}
+	\item Attori primari: SuperAdmin, Admin
+	\item Precondizioni: gli amministratori vogliono modificare le informazioni di un sensore da gestire tramite la webapp
+	\item Postcondizioni: vengono modificati i dettagli del sensore in questione.
+\end{itemize}
+\paragraph{Scenario Principale}
+\begin{itemize}
+	\item l'utente accede alla lista delle aree gestite
+	\item l'utente preme il pulsante per visualizzare la lista dei sensori
+	\item l'utente sceglie il sensore desiderato
+	\item l'utente preme il pulsante di modifica
+	\item l'utente può modificare i seguenti parametri:
+		\begin{itemize}
+			\item IP
+			\item polling time
+			\item tipo interazione
+			\item raggio di azione
+		\end{itemize}
+	\item le informazioni aggiornate vengono salvate sul database
+\end{itemize}
+
 
 \section{UC Desiderabili}
 
-\subsection{UC21 - Visualizzazione lista ticket}
+\subsection{UC23 - Visualizzazione lista ticket}
 \textbf{Tipologia: desiderabile}\\
 Il manutentore vuole consultare i dettagli di un guasto
 \begin{itemize}
 	\item Attori primari: manutentore
-	\item Attori secondari: sistema di ticketing
 	\item Precondizioni: il manutentore vuole sapere ulteriori dettagli sull'area da operare.
 	\item Postcondizioni: il ticket fornisce delle informazioni aggiuntive.
 \end{itemize}
@@ -630,7 +697,7 @@ Il manutentore vuole consultare i dettagli di un guasto
 \end{itemize}
 
 
-\subsection{UC22 - Primo accesso al sistema senza credenziali}
+\subsection{UC24 - Primo accesso al sistema senza credenziali}
 \textbf{Tipologia: desiderabile.} \\
 L'utente vuole poter operare come amministratore ma non ha ancora ottenuto le credenziali necessarie all'accesso.
 \begin{itemize}
@@ -648,7 +715,7 @@ L'utente vuole poter operare come amministratore ma non ha ancora ottenuto le cr
 \end{itemize}
 
 
-\subsection{UC23 - Consultazione manuale Lumos Minima}
+\subsection{UC25 - Consultazione manuale Lumos Minima}
 \textbf{Tipologia: desiderabile}\\
 L'utente non sa come funziona il sistema o come eseguire un'operazione specifica e vuole approfondire questi aspetti.
 \begin{itemize}
@@ -658,13 +725,13 @@ L'utente non sa come funziona il sistema o come eseguire un'operazione specifica
 \end{itemize}
 \paragraph{Scenario Principale}
 \begin{itemize}
-	\item L'utente si autentica.
+	\item L'utente visualizza la dashboard
 	\item l'utente clicca l'apposito bottone per visualizzare il manuale
 	\item viene aperta una nuova finestra del browser che mostra il manuale utente sottoforma di PDF
 \end{itemize}
 
 
-\subsection{UC24 - Configurazione iniziale delle impostazioni di una nuova area illuminata}
+\subsection{UC26 - Configurazione iniziale delle impostazioni di una nuova area illuminata}
 \textbf{Tipologia: desiderabile} \\
 Per ogni area illuminata inserita a sistema vengono fornite delle impostazioni di default che permettono il corretto funzionamento del sistema senza intraprendere azioni aggiuntive.
 \begin{itemize}
