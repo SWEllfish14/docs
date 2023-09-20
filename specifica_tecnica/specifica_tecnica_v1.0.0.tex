@@ -157,15 +157,12 @@ Per il frontend si sono utilizzati i pattern:
 sia tramite un linguaggio di markup o un codice GUI, dallo sviluppo del business logic o logica back-end in modo tale che la vista non dipenda da alcuna piattaforma di modello specifica.
 I componenti del modello MVVM:	
 	\begin{itemize}
-		\item Model: nel nostro cosa è rappresentato nel file "api-types.ts"
+		\item Model: nel nostro caso è rappresentato dai file Store.
 		\item View: viene definita tramite un template HTML accessibile nella cartella "Public". Per ogni view la parte root del template viene sostituita con la vista corrispondente
 		\item ViewModel: viene rappresentato dalle classi TypeScript utilizzate per gestire gli eventi della vista e aggiornare il modello di conseguenza. Ne è un esempio la classe "AreeViewModel", che gestisce la visualizzazione della lista delle aree presenti a sistema.
 	\end{itemize}
 Il pattern implementato dal gruppo si appoggia ad una classe Service, che si occupa di fungere da classe di appoggio per richiamare le operazioni del backend.
-\item IoC(Inversion of Control)
-	\begin{itemize}
-		\item Pattern che si concentra sulla gestione delle dipendenze e sul controllo dell'istanziazione degli oggetti. Questo pattern inverte il controllo tradizionalmente detenuto dalla 				componente chiamante, mettendo il controllo nelle mani di un framework o di un contenitore di gestione delle dipendenze.L'uso di questo pattern favorisce il disaccoppiamento e 				semplifica i test poiché le dipendenze sono dichiarate e possono essere facilmente sostituite con versioni mock durante i test.
-	\end{itemize}
+
 \end{itemize}
 \subsection{Interfacciamento con lampioni e sensori}
 Per simulare i lampioni presenti in un dato momento nel Database, è stato modificato lo script fornito da Imola Informatica per simulare i lampioni.
