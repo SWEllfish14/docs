@@ -49,8 +49,7 @@
 \printindex
 \pagebreak
 
-\tableofcontents
-\pagebreak
+
 
 \addversione{0.0.0}{23/08/2023}{Davide Porporati}{Claudio Giaretta}{Impostata struttura documento}
 \addversione{0.0.1}{04/09/2023}{Francesco Naletto}{Claudio Giaretta}{Redatta prima versione documento}
@@ -58,8 +57,11 @@
 \addversione{1.0.0}{09/09/2023}{Davide Porporati}{Elena Marchioro}{Aggiornato le immagini in base al CSS e revisionato}
 \addversione{1.0.1}{20/09/2023}{Davide Porporati}{Elena Marchioro}{Aggiunte sezioni simulatori}
 
-\makeversioni
 
+\makeversioni
+\pagebreak
+\tableofcontents
+\pagebreak
 \section{Introduzione}
 \subsection{Scopo del documento}
 Il presente documento ha lo scopo di delineare le funzioni offerte dall'applicazione e di fornire istruzioni dettagliate per l'utente sull'uso di quest'ultima.
@@ -115,17 +117,24 @@ Per avviare il simulatore occorre eseguire i seguenti passi:
 \begin{itemize}
 	\item caricare i lampioni in formato JSON nel file "lamps.json"
 	\item aprire un terminale ed esegure il comando "cd Simulatori"
-	\item eseguire lo script python con il seguente comando "python ./lamp-simulator-multiprocessing.py". Questo comando istanzia i simulatori dei lampioni a sistema.
+	\item eseguire lo script python con il seguente comando "python ./lamp-simulator-multiprocessing.py". Questo comando istanzia i simulatori dei lampioni a sistema
 \end{itemize}
 
 \subsection{Simulazione sensore}
 Per simulare un sensore il procedimento è il seguente:
 \begin{itemize}
 	\item aprire un terminale ed esegure il comando "cd Simulatori"
-	\item eseguire lo script python con il seguente comando "python ./sensor-simulator.py". 
-	\item Aggiungere i parametri desiderati per l'istanziazione di un sensore: "-i" e seguito dall'id del sensore, "-s " seguito da 0 o 1 per indicare l'assenza o la presenza di un rilevamento, "-r" seguito dal range in metri di rilevamento, "-p" indica la porta in cui il sensore è in ascolto. Infine inserire "-a" e l'id dell'area illuminata di afferenza.
+	\item eseguire lo script python con il seguente comando "python ./sensor-simulator.py"
+	\item Aggiungere i parametri desiderati per l'istanziazione di un sensore:
+    \begin{itemize}
+        \item "-i" : id sensore
+        \item "-s": inserire 0 per indicare l'assenza di rilevamenti, 1 per simulare un rilevamento
+        \item "-r": range di rilevamento in metri
+        \item "-p":  porta in cui il sensore è in ascolto
+        \item "-a": l'id dell'area illuminata di afferenza
+    \end{itemize}
 \end{itemize}
-Al termine della procedura il sensore è operativo.
+Al termine della procedura il sensore è operativo ed è possibile comandarlo mediante l'uso di un qualsiasi api-tester.
 \section{LumosMinima}
 \subsection{Home}
 Il sito LumosMinima si presenta con una dashboard composta di 4 pannelli che danno informazioni generali
