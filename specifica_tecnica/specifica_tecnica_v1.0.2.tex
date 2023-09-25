@@ -51,6 +51,7 @@
 \addversione{0.0.3}{09/09/2023}{Davide Porporati, Elena Marchioro}{Claudio Giaretta}{Aggiornati i design pattern e revisionato il documento}
 \addversione{1.0.0}{09/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi delle classi}
 \addversione{1.0.1}{18/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi delle classi e aggiunte sezioni mancanti}
+\addversione{1.0.2}{25/09/2023}{Davide Porporati, Elena Marchioro}{Francesco Naletto}{Aggiornati i diagrammi UML dopo revisione PB}
 \makeversioni
 
 \tableofcontents
@@ -112,10 +113,18 @@ Per realizzare l'interfacciamento con i sensori e i lampioni a sistema le seguen
 \section{Architettura del prodotto}
 
 \subsection{Diagramma delle classi}
-\subsubsection{Back-End}
+\subsection{Back-End}
 \includegraphics[width=475pt]{Back-End.png}
+\subsubsection{Model}
+\includegraphics[width=475pt]{Model.png}
+\subsubsection{Router}
+\includegraphics[width=475pt]{Router.png}
+\subsubsection{Controller}
+\includegraphics[width=475pt]{Controller.png}
+\subsubsection{Service}
+\includegraphics[width=475pt]{Service.png}
 \clearpage
-\subsubsection{Front-End}
+\subsection{Front-End}
 \includegraphics[width=475pt]{Front-End.png}
 \clearpage
 \includegraphics[width=475pt]{Front-End2.png}
@@ -157,12 +166,11 @@ Per il frontend si sono utilizzati i pattern:
 sia tramite un linguaggio di markup o un codice GUI, dallo sviluppo del business logic o logica back-end in modo tale che la vista non dipenda da alcuna piattaforma di modello specifica.
 I componenti del modello MVVM:	
 	\begin{itemize}
-		\item Model: nel nostro caso è rappresentato dai file Store.
+		\item Model: nel nostro cosa è rappresentato nel file "api-types.ts"
 		\item View: viene definita tramite un template HTML accessibile nella cartella "Public". Per ogni view la parte root del template viene sostituita con la vista corrispondente
 		\item ViewModel: viene rappresentato dalle classi TypeScript utilizzate per gestire gli eventi della vista e aggiornare il modello di conseguenza. Ne è un esempio la classe "AreeViewModel", che gestisce la visualizzazione della lista delle aree presenti a sistema.
 	\end{itemize}
 Il pattern implementato dal gruppo si appoggia ad una classe Service, che si occupa di fungere da classe di appoggio per richiamare le operazioni del backend.
-
 \end{itemize}
 \subsection{Interfacciamento con lampioni e sensori}
 Per simulare i lampioni presenti in un dato momento nel Database, è stato modificato lo script fornito da Imola Informatica per simulare i lampioni.
