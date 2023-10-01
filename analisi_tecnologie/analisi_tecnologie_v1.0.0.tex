@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\input{../templates/first_page.tex} 
+\input{../templates/tabella_versioni.tex}
+\input{../templates/styles.tex}
+\begin{document}
+\graphicspath{ {../templates/img/} }
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\title{Analisi delle tecnologie}
+
+\firstPage
+
+\pagestyle{genericDocstyle}
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Andrea Veronese]\makecell{}\\
+
+			\textit{Revisori} &
+			[Claudio Giaretta]\makecell{}\\
+			\textit{Responsabili} &
+			[Davide Porporati]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+	File contenente l'analisi delle tecnologie scelte per realizzare il progetto. 
+\end{center}
+
+\addversione{0.0.0}{10/05/2023}{Andrea Veronese}{Claudio Giaretta}{Creata struttura di base del documento}
+\addversione{0.0.1}{24/05/2023}{Claudio Giaretta}{Davide Porporati, Elena Marchioro}{Rework struttura con aggiunta analisi tecnologie}
+\addversione{0.1.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Revisione del documento}
+\addversione{1.0.0}{18/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiornato a versione 1.0.0}
+
+\makeversioni
+\pagebreak
+
+\tableofcontents
+\pagebreak
+\printindex 
+\pagebreak
+
+
+\section{Introduzione}
+Il progetto proposto da Imola Informatica verte sullo sviluppo di una WebApp che sia in grado di gestire l'illuminazione di lampioni smart, suddividendoli in zone di afferenza.
+Il prodotto finale è quindi composto dalle seguenti parti:
+\begin{itemize}
+	\item WebApp che funge da dashboard, dove è possibile interagire graficamente con il sistema
+	\item script di interfacciamento con i lampioni smart e con i sensori
+	\item una schermata di login/logout
+	\item un sistema di ticketing di terze parti, utilizzato per gestire i guasti di sistema
+	\item un database per memorizzare i lampioni e i vari componenti utilizzati per gestire le funzionalità automatiche/manuali del sistema
+\end{itemize}
+
+\section{Frontend}
+Per realizzare la parte frontend del prodotto il gruppo ha optato per l'utilizzo del framework React. \\
+La scelta è ricaduta su quest framework perchè è open-source e non richiede il pagamento di canoni mensili, come richiesto da capitolato.
+Oltre a react è stato valutato anche il framework Angular e le motivazioni che hanno portato a questa scelta sono riassumibili nella seguente tabella: \\
+\begin{center}
+\begin{tabular}{ |p{8cm}|p{8cm}| }
+	\hline
+	 \textbf{React} & \textbf{Angular}\\ 
+	 \hline
+	 Maggiore richiesta delle aziende & Maggiore pesantezza rispetto a React \\  
+	 \hline
+	 Utilizzo componenti nativi & Cross-Platform \\ 
+	 \hline
+	 Componenti riutilizzabili & Usa pattern MVC \\
+	 \hline
+	 Compatibilità con altri framework & Data-binding bidirezionale \\
+	\hline
+\end{tabular}
+\end{center}
+Nonostante la maggiore difficoltà di apprendimento di React, il gruppo ha comunque deciso di utilizzarlo data l'utilità futura in ambito lavorativo.
+
+Si segnala inoltre che per gestire il CSS da utilizzare per lo stile grafico della WebApp, il team ha optato per l'utilizzo del framework "Bulma". I motivi che hanno portato alla seguente scelta sono riassumibili così:
+\begin{itemize}
+    \item  facilità d'uso del framework
+    \item  notorioetà
+    \item  alternativa valida ai framework indicati come standard "de-facto"
+    \item  presenza di una documentazione ben fornita con esempi di utilizzo
+\end{itemize} 
+\section{Backend}
+La scelta per lo sviluppo del backend è stata dettata puramente dalla preferenza verso un linguaggio staticamente o dinamicamente tipizzato.
+I linguaggi che permettono la tipizzazione statica sono i seguenti:
+\begin{itemize}
+	\item Java
+	\item \texttt{C\#}
+	\item TypeScript
+\end{itemize}
+Per quanto riguarda la tipizzazione dinamica, le scelte possibili sono le seguenti:
+\begin{itemize}
+	\item Python
+	\item JavaScript
+\end{itemize}
+
+I vari framework disponibili per la tipizzazione statica sono riportati su questa tabella: \\
+\begin{center}
+\begin{tabular}{ |p{4cm}|p{4cm}| p{4cm} | }
+	\hline
+	 \textbf{Java} & \texttt{C\#} & \textbf{TypeScript}\\ 
+	 \hline
+	 JavaSpring & ASP.NET & Nest \\  
+	 \hline
+ 	& & Feathers\\ 
+	 \hline
+	 & & loopback\\
+	 \hline
+\end{tabular}
+\end{center}
+
+I vari framework disponibili per la tipizzazione dinamica sono riportati su questa tabella: \\
+
+\begin{tabular}{ |p{5cm}|p{5cm}| }
+	\hline
+	 \textbf{Python} & \textbf{JavaScript}\\ 
+	 \hline
+	 Django & Next \\  
+	 \hline
+ 	Flask & Node\\ 
+	 \hline
+\end{tabular}
+\end{center}
+
+\subsection{Database}
+Per le implementare la persistenza dei dati le scelte possibili sono sostanzialmente due: un database standard SQL o un'alternativa NoSQL.
+Entrambe sono ben accettate dall'azienda proponente e il gruppo ha optato per la versione SQL.
+In particolare si è deciso di utilizzare MariaDB, in quanto non ci sono particolari necessità da soddisfare e la documentazione è ben fornita e completa.
+
+\begin{center}
+	\begin{tabular}{ |p{8cm}|p{8cm}| }
+		\hline
+		 \textbf{SQL} & \textbf{NoSQL}\\ 
+		 \hline
+		 Schema tabellare rigido & Assenza modello dati \\  
+		 \hline
+		 General Purpose &Schema dinamico per dati non strutturati\\ 
+		 \hline
+		 Scalabilità Verticale & Utilizzo modelli di dati non tabulari \\
+		 \hline
+\end{tabular}
+\end{center}
+Pur essendo il modello NoSQL più flessibile, il team ha comunque deciso di utilizzare un database SQL visto che conosce già il funzionamento e le modalità di sviluppo del database.
+Così facendo è possibile risparmiare del tempo nell'apprendimento del nuovo modello fornito dai database NoSQL e impiegarlo per lo studio dei framework impiegati nello sviluppo delle altre componenti del progetto.
+
+\end{document}
