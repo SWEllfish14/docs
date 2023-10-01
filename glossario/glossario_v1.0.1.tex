@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{makeidx}
+\usepackage{eurosym}
+\input{../templates/first_page.tex}
+\input{../templates/tabella_versioni.tex}
+\begin{document}
+
+\graphicspath{ {../templates/img/} }
+
+\title{Glossario}
+
+\firstPage
+
+\maketitle
+
+\begin{center}
+    \begin{tabular}{r | l}
+		\multicolumn{2}{c}{\textit{Informazioni}}\\
+		\hline
+		
+			\textit{Redattori} &
+			[Davide Porporati, Elena Marchioro, Francesco Naletto]\makecell{}\\
+
+			\textit{Revisori} &
+			[Jude Vensil Barceros]\makecell{}\\
+			\textit{Responsabili} &
+			[Andrea Veronese]\makecell{}\\
+		      \textit{Uso} & 
+                [Esterno]\makecell{}\\
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \textbf{Descrizione}\\
+    File contenente un glossario dei termini fino ad ora utilizzati per il progetto.
+\end{center}
+
+\addversione{0.0.0}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Stesura della base del documento}
+\addversione{0.0.1}{14/07/2023}{Elena Marchioro}{Davide Porporati, Claudio Giaretta}{Aggiunta termini al documento}
+\addversione{0.1.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Verificato il documento}
+\addversione{1.0.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiornato a versione 1.0.0}
+\addversione{1.0.1}{22/09/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiunti termini usati per PB}
+\makeversioni
+
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\printindex 
+
+
+\section{Glossario}
+\begin{itemize}
+    \item[] A
+    \begin{itemize}
+        \item API: sono un insieme di definizioni e protocolli con i quali vengono realizzati e integrati software applicativi. Possono essere considerate come un contratto tra un fornitore di informazioni e l'utente destinatario di tali dati: l'API stabilisce il contenuto richiesto dal consumatore (la chiamata) e il contenuto richiesto dal produttore (la risposta).
+        \item Area illuminata: rappresenta un sottoinsieme degli impianti di illuminazione che vengono gestiti in modo uniforme per intensità luminosa.
+        \item Autenticazione: verifica dell'identità di un utente che vuole comunicare attraverso una connessione, autorizzandolo ad usufruire dei relativi servizi associati.
+    \end{itemize}
+    \item[] B
+    \begin{itemize}
+        \item Bulma: framework per gestire il CSS utilizzato per lo stile grafico della WebApp.
+    \end{itemize}
+    \item[] C
+    \begin{itemize}
+        \item CORS: Cross-Origin Resource Sharing. Meccanismo basato su header HTTP che consente ad un server di indicare le origini dalle quali un server può caricare risorse.
+    \end{itemize}
+    \item[] D
+    \begin{itemize}
+        \item Database: un insieme di informazioni (o dati) strutturate in genere archiviate elettronicamente in un sistema informatico.
+        \item Diagramma di Gantt: Diagramma che rappresenta un'arco temporale e i gradi di completamento delle task aggiunte in questo dato intervallo di tempo.
+        \item Discord: applicazione che consente di creare gruppi di messaggistica e videoconferenze.
+    \end{itemize}
+    \item[] E
+    \begin{itemize}
+        \item Express: framework di Node.JS che fornisce un set robusto di feature per applicazioni web/mobile.
+    \end{itemize}
+    \item[] F
+    \begin{itemize}
+        \item Framework: architettura di supporto a un software, che ne facilita l’utilizzo ad un programmatore.
+    \end{itemize}
+    \item[] G
+    \begin{itemize}
+        \item Github: è una piattaforma web di hosting e condivisione di codice sorgente basata su Git, e consente agli sviluppatori di collaborare su progetti software, gestendone la versione e favorendo la collaborazione coordinata all’interno del progetto.
+    \end{itemize}
+    \item[] I
+    \begin{itemize}
+        \item Intensità luminosa: rappresenta un valore da 0 (impianto spento) a 10 (illuminazione massima) configurabile in ogni singolo impianto di illuminazione.
+        \item Interfaccia: dispositivo di collegamento con cui un software assicura la comunicazione tra due sistemi altrimenti incompatibili, oppure tra unità centrali e periferiche.    
+    \end{itemize}
+    \item[] J
+    \begin{itemize}
+        \item Java: linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica.
+        \item JavaScript: linguaggio di programmazione utilizzato per realizzare pagine web interattive.
+    \end{itemize}
+    \item[] L
+    \begin{itemize}
+        \item Lampione: sistema di illuminazione facente parte di una specifica area illuminata provvedendo a fornire l’illuminazione per una parte dell’area illuminata.
+    \end{itemize}
+    \item[] M
+    \begin{itemize}
+        \item MQTT: è un protocollo di messaggistica basato su standard, utilizzato per la comunicazione tra macchine. I sensori intelligenti, i dispositivi indossabili e altri dispositivi IoT devono in genere trasmettere e ricevere dati su una rete con risorse limitate e larghezza di banda limitata. Questi dispositivi IoT utilizzano MQTT per la trasmissione dei dati, in quanto è facile da implementare e può comunicare i dati IoT in modo efficiente.
+        \item Mock (software): oggetti simulati che simulano il comportamento di oggetti reali in modo controllato. Vengono utilizzati per scopi di testing.
+    \end{itemize}
+    \item[] N
+    \begin{itemize}
+        \item Node.JS: runtime Javascript basato sul motore JavaScript di Chrome.
+    \end{itemize}
+    \item[] O
+    \begin{itemize}
+        \item ORM Tool: Object Reltional Mapping. Tecnica di programmazione per convertire dati di un database relazionale in un insieme di oggetti utilizzabili con la programmazione ad oggetti.
+    \end{itemize}
+    \item[] P
+    \begin{itemize}
+        \item Parser: strumento software utilizzato per analizzare un flusso continuo di dati in ingresso in modo da determinare la correttezza della sua struttura grazie ad una data grammatica formale.
+        \item Piano di Progetto (PdP): calendario di massima di un progetto riportante la stima dei costi di realizzazione, dei rischi attesi e della loro mitigazione e della suddivisione del lavoro in molteplici periodi successivi. 
+        \item Piano di Qualifica(PdQ): specifica gli obiettivi quantitativi di qualità di prodotto e di processo, oltre a misurare il raggiungimento di tali obiettivi allo stato corrente pone le fondamenta per retrospettive e iniziative di auto-miglioramento.
+        \item Processo: insieme di attività correlate che trasformano bisogni in prodotti, consumando risorse durante l'esecuzione.
+        \item Prodotto: il risultato di un insieme di attività tecnicamente ed economicamente definite. Può essere un bene o un servizio.
+        \item Proof of Concept: applicativo con lo scopo di dimostrare padronanza di alcune tecnologie ritenute particolarmente importanti per la realizzazione del prodotto.
+    \end{itemize}
+    \item[] R
+    \begin{itemize}
+        \item React: framework JavaScript open-source per applicazioni web dinamiche, utilizzato in particolare per la creazione di web app.
+        \item Rilevamento della presenza: rilevamento della presenza di persone in un area illuminata da uno dei sensori del sistema.
+    \end{itemize}
+    \item[] S
+    \begin{itemize}
+        \item Sensore: sensore con lo scopo di rilevare presenza di persone in un’area illuminata al fine di variare la luminosità dell’area a cui appartiene.
+        \item Sistema: sistema informatico che esegue azioni su impianti luminosi in maniera automatica ed in tempo reale, prendendo decisioni in base alle configurazioni inserite ed ai dati rilevati dai sensori.
+        \item Specifica Tecnica: documento che riporta le architetture e i pattern utilizzati per la realizzazione del prodotto. E' composto da diagrammi UML.
+    \end{itemize}
+    \item[] T
+    \begin{itemize}
+        \item Token: oggetto fisico o logico necessario per l'autenticazione a due fattori.
+        \item Token JWT:  token di accesso standardizzato che consente lo scambio sicuro di dati tra due parti. Contiene tutte le informazioni importanti su un’entità, in modo che non sia necessaria alcuna interrogazione del database e che la sessione non debba essere memorizzata sul server.
+        \item Test unità:  attività di analisi dinamica che verifica la correttezza del codice
+        \item Test integrazione: verificano il sistema in modo incrementale. Questi test stanno a livello di componente e valutano l'integrazione e il funzionamento di più unità.
+    \end{itemize}
+    \item[] U
+    \begin{itemize}
+        \item UML: Unified Modelling Language. Linguaggio standardizzato utilizzato per modellare i concetti di Ingegneria del Software, come casi d'uso e diagrammi delle classi.
+        \item Unità: è la più piccola quantità di software che conviene verificare da sola
+    \end{itemize}
+    \item[] W
+    \begin{itemize}
+        \item Web App: applicazione la cui fruizione avviene tramite browser.
+        \item Way of Working: letteralmente "modo di lavorare". E' la base di cui si dota il gruppo per lavorare coerentemente e in maniera professionale.
+    \end{itemize}    
+\end{itemize}
+\end{document}
