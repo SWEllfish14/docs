@@ -8,6 +8,7 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{float}
+\usepackage{booktabs} % Per linee orizzontali migliori
 \input{../templates/first_page.tex} 
 \input{../templates/tabella_versioni.tex}
 \input{../templates/styles.tex}
@@ -47,11 +48,6 @@
 \printindex
 \pagebreak
 
-\tableofcontents
-\pagebreak
-
-
-
 \addversione{0.0.0}{25/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Creata struttura di base del documento}
 \addversione{0.0.1}{27/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto diagramma e tabella suddivisione ore}
 \addversione{0.0.2}{28/04/2023}{Davide Porporati, Elena Marchioro, Francesco Naletto}{Jude Vensil Barceros}{Aggiunto resoconto primo sprint}
@@ -65,7 +61,19 @@
 \addversione{0.0.10}{07/07/2023}{Francesco Naletto, Jude Vensil Barceros}{Andrea Veronese}{Aggiunto resoconto undicesimo sprint}
 \addversione{0.1.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Verificato documento}
 \addversione{1.0.0}{17/07/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiornato a versione 1.0.0}
+\addversione{1.0.0}{09/08/2023}{Andrea Veronese}{Davide Porporati, Claudio Giaretta}{Aggiunti preventivi e consuntivo RTB}
+\addversione{1.0.1}{10/08/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiunto resoconto dodicesimo sprint e problematiche}
+\addversione{1.0.2}{17/08/2023}{Claudio Giaretta}{Francesco Naletto}{Aggiunto resoconto tredicesimo sprint e problematiche}
+\addversione{1.0.3}{24/08/2023}{Elena Marchioro}{Francesco Naletto}{Aggiunto resoconto quattordicesimo sprint e problematiche}
+\addversione{1.0.4}{30/08/2023}{Davide Porporati}{Claudio Giaretta}{Aggiunto resoconto quindicesiomo sprint e problematiche}
+\addversione{1.0.5}{07/09/2023}{Claudio Giaretta}{Davide Porporati}{Aggiunto resoconto sedicesimo sprint e problematiche}
+\addversione{1.0.6}{14/09/2023}{Claudio Giaretta}{Davide Porporati}{Aggiunto resoconto diciasettesimo sprint e problematiche}
+\addversione{1.0.7}{15/09/2023}{Francesco Naletto}{Claudio Giaretta}{Aggiunto consuntivo periodo MVP e fatta valutazione rischi}
 \makeversioni
+
+
+\tableofcontents
+\pagebreak
 
 \section{Introduzione}
 Lo scopo di questo documento è quello di fornire un riepilogo del lavoro svolto, del tempo impiegato e dei costi sostenuti, stilato ad intervalli regolari.
@@ -231,12 +239,88 @@ Viene riportata anche la suddivisione delle ore tra i membri preventivata all'in
 		\hline
 	\end{tabular}
 \end{center}
-\subsection{Preventivo a finire}
-Al termine delle attività verrà effettuata un'analisi mirata a capire le motivazioni che abbiano portato ad uno sforamento delle ore e/o dei costi.
-\subsection{Stato d'avanzamento corrente}
-Attualmente il gruppo sta concludendo il POC per dimostrare l'efficacia della soluzione proposta e aggiornando la documentazione. Successivamente verrà contattata l'azienda coinvolta per ottenere un feedback valido.
 
-La documentazione viene aggiornata di pari passo con i progressi effettuati, come testimoniato dalle sottoversioni e dalla tabella delle modifiche effettuate.
+\subsection{Preventivo - Analisi dei requisiti}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 25           & 500                     \\
+		\hline
+		Analista        & 25                            & 61           & 1525                    \\
+		\hline
+		Progettista     & 25                            & 0            & 0                       \\
+		\hline
+		Programmatore   & 15                            & 0            & 0                       \\
+		\hline
+		Verificatore    & 15                            & 22           & 330                     \\
+		\hline
+		\textbf{Totale} &                               & 132          & 3075                    \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsection{Preventivo - Progettazione e codifica POC}
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
+		\hline									
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\									
+		\hline									
+		\hline									
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\									
+		\hline									
+		Responsabile    &	30		&	18		&	420		\\
+		\hline									
+		Amministratore  &	20		&	9		&	180		\\
+		\hline									
+		Analista        &	25		&	0		&	0		\\
+		\hline									
+		Progettista     &	25		&	33		&	825		\\
+		\hline									
+		Programmatore   &	15		&	60		&	1020		\\
+		\hline									
+		Verificatore    &	15		&	24		&	375		\\
+		\hline									
+		\textbf{Totale} &			&	144		&	2820		\\
+		\hline																	
+	\end{tabularx}\\[8pt]										
+	\mbox{}\\
+\end{center}
+
+\subsection{Preventivo - Progettazione e codifica MVP}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 34           & 680                     \\
+		\hline
+		Analista        & 25                            & 31           & 775                     \\
+		\hline
+		Progettista     & 25                            & 82           & 2050                    \\
+		\hline
+		Programmatore   & 15                            & 67           & 1005                    \\
+		\hline
+		Verificatore    & 15                            & 51           & 765                     \\
+		\hline
+		\textbf{Totale} &                               & 265          & 5995                    \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
 
 \section{Metodo di Lavoro}
 Il gruppo ha concordato l'utilizzo del framework Scrum come metodo di lavoro agile.
@@ -311,7 +395,7 @@ Al termine del primo sprint non sono state rilevate particolari problematiche, p
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -337,7 +421,7 @@ Al termine del primo sprint non sono state rilevate particolari problematiche, p
 
 
 \subsection{Sprint 1}
-Qui vengono riportate le informazioni relative al secondo sprint del gruppo. \\
+Qui vengono riportate le informazioni relative alla seconda settimana di sprint del gruppo. \\
 Il secondo ciclo è stato caratterizzato dalla revisione completa delle norme di progetto e dalla revisione degli user case fino ad ora incontrati nell'analisi dei requisiti.\\
 Oltre a ciò, è stato realizzato il template da utilizzare per i diari di bordo.
 
@@ -400,7 +484,7 @@ L'aggiunta degli UML per gli Use Case è stata rimandata al prossimo sprint per 
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -433,7 +517,7 @@ Il terzo ciclo è stato caratterizzato dal perfezionamento dell'analisi dei requ
 
 Caratteristiche:
 \begin{itemize}
-	\item Data inizio: 04/04/2023
+	\item Data inizio: 04/05/2023
 	\item Data fine preventivata: 11/05/2023
 	\item Data fine effettiva: 11/05/2023
 \end{itemize}
@@ -478,7 +562,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 5            & 75                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 34           &                         \\ 800\\
+		\textbf{Totale} &                               & 34           &                         800\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -490,7 +574,7 @@ L'altra problematica riscontrata è inerente alle metriche da utilizzare per val
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -567,7 +651,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 5            & 75                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 27           &                         \\ 625\\
+		\textbf{Totale} &                               & 27           &	 625\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -579,7 +663,7 @@ Le altre difficoltà riscontrate riguardano la valutazione delle metriche e i gr
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -656,7 +740,7 @@ Caratteristiche:
 		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 21           &                         \\ 460\\
+		\textbf{Totale} &                               & 21           &	460\\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -667,7 +751,7 @@ I dubbi riguardanti i casi d'uso e gli uml sono stati discussi e valutati con il
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -753,7 +837,7 @@ Il monte ore settimanale è in deficit in quanto diversi componenti del gruppo h
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -839,7 +923,7 @@ La mancanza di conoscenze delle tecnologie porta via molto tempo all'apprendimen
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -925,7 +1009,7 @@ Il tempo a disposizione
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1010,7 +1094,7 @@ Il poco tempo a disposizione ha rallentato lo sviluppo del poc.
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1025,7 +1109,7 @@ Il poco tempo a disposizione ha rallentato lo sviluppo del poc.
 		\hline
 		Programmatore   & 15                            & 32(+5)       & 75                      \\
 		\hline
-		Verificatore    & 15                            & 33(+1)       & 15                      \\
+		Verificatore    & 15                            & 33(+0)       & 0                      \\
 		\hline
 		\hline
 		\textbf{Totale} &                               & 203          & 4430                    \\
@@ -1090,14 +1174,14 @@ Caratteristiche:
 	\mbox{}\\
 \end{center}
 \subsubsection{Problematiche riscontrate}
-Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter utilizzare in maniera efficace lo sviluppo della parte di CSS e difficoltà interazione tra sistema e API.
+Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter utilizzare in maniera efficace lo sviluppo della parte di CSS.
 
 
 \subsubsection{Resoconto}
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1176,14 +1260,14 @@ Caratteristiche:
 	\mbox{}\\
 \end{center}
 \subsubsection{Problematiche riscontrate}
-Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter utilizzare in maniera efficace lo sviluppo della parte di CSS e difficoltà interazione tra sistema e API.
+Difficoltà nell’utilizzo delle API per interazioni con i lampioni
 
 
 \subsubsection{Resoconto}
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1230,9 +1314,9 @@ Caratteristiche:
 		\hline
 		Piano di progetto        & 1                          \\
 		\hline
-		Piano di qualifica        & 1                          \\
+		Piano di qualifica       & 1                          \\
 		\hline
-		Glossario        & 1                          \\
+		Glossario                & 1                          \\
 		\hline
 		POC (backend e database) & 2                          \\
 		\hline
@@ -1254,11 +1338,11 @@ Caratteristiche:
 		\hline
 		Analista        & 25                            & 0            & 0                       \\
 		\hline
-		Progettista     & 25                            & 10            & 250                      \\
+		Progettista     & 25                            & 10           & 250                     \\
 		\hline
 		Programmatore   & 15                            & 15           & 225                     \\
 		\hline
-		Verificatore    & 15                            & 6           & 90                      \\
+		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\textbf{Totale} &                               & 37           & 715                     \\
 		\hline
@@ -1273,7 +1357,7 @@ Nessun particolare dubbio o difficoltà riscontrate
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
@@ -1284,11 +1368,11 @@ Nessun particolare dubbio o difficoltà riscontrate
 		\hline
 		Analista        & 25                            & 57(+0)       & 0                       \\
 		\hline
-		Progettista     & 25                            & 38(+10)       & 250                     \\
+		Progettista     & 25                            & 38(+10)      & 250                     \\
 		\hline
-		Programmatore   & 15                            & 68(+18)       & 270                     \\
+		Programmatore   & 15                            & 68(+18)      & 270                     \\
 		\hline
-		Verificatore    & 15                            & 48(+9)       & 135                      \\
+		Verificatore    & 15                            & 48(+9)       & 135                     \\
 		\hline
 		\hline
 		\textbf{Totale} &                               & 281          & 5905                    \\
@@ -1299,7 +1383,7 @@ Nessun particolare dubbio o difficoltà riscontrate
 
 \subsection{Sprint 12}
 Qui vengono riportate le informazioni relative alla tredicesima settimana di sprint del gruppo. \\
-In questo ciclo di sprint è stato deciso come procedere per la fase di PB. 
+In questo ciclo di sprint è stato deciso come procedere per la fase di PB.
 Sono inoltre stati rivisti alcuni requisiti e sono stati impostati test di sistema e parte dei test di integrazione.
 Infine è stata iniziata la progettazione del MVP e del file di specifica tecnica \\
 
@@ -1314,16 +1398,16 @@ Caratteristiche:
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}  \\
 		\hline
 		\hline
-		\textbf{Item}            & \textbf{Persone richieste} \\
+		\textbf{Item}         & \textbf{Persone richieste} \\
 		\hline
-		Specifica tecnica        	& 2                          \\
+		Specifica tecnica     & 2                          \\
 		\hline
-		MVP        					& 1           \\
+		MVP                   & 1                          \\
 		\hline
-		Analisi dei requisiti       & 1                          \\
+		Analisi dei requisiti & 1                          \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
@@ -1339,15 +1423,15 @@ Caratteristiche:
 		\hline
 		Responsabile    & 30                            & 2            & 60                      \\
 		\hline
-		Amministratore  & 20                            & 2            & 40                      \\
+		Amministratore  & 20                            & 4            & 80                      \\
 		\hline
-		Analista        & 25                            & 10            & 250                       \\
+		Analista        & 25                            & 10           & 250                     \\
 		\hline
-		Progettista     & 25                            & 22	            & 550                      \\
+		Progettista     & 25                            & 22           & 550                     \\
 		\hline
-		Programmatore   & 15                            & 0           & 0                     \\
+		Programmatore   & 15                            & 0            & 0                       \\
 		\hline
-		Verificatore    & 15                            & 6           & 90                      \\
+		Verificatore    & 15                            & 6            & 90                      \\
 		\hline
 		\textbf{Totale} &                               & 42           & 990                     \\
 		\hline
@@ -1362,27 +1446,646 @@ Difficoltà nella progettazione di architetture e test adatti al progetto
 \begin{center}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|}
 		\hline
-		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                             \\
 		\hline
 		\hline
 		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
 		\hline
 		Responsabile    & 30                            & 41(+2)       & 60                      \\
 		\hline
-		Amministratore  & 20                            & 33(+2)       & 40                      \\
+		Amministratore  & 20                            & 35(+4)       & 80                      \\
 		\hline
-		Analista        & 25                            & 67(+10)       & 250                       \\
+		Analista        & 25                            & 67(+10)      & 250                     \\
 		\hline
-		Progettista     & 25                            & 60(+22)       & 550                     \\
+		Progettista     & 25                            & 60(+22)      & 550                     \\
 		\hline
-		Programmatore   & 15                            & 68(+0)       & 0                     \\
+		Programmatore   & 15                            & 68(+0)       & 0                       \\
 		\hline
 		Verificatore    & 15                            & 54(+6)       & 90                      \\
 		\hline
 		\hline
-		\textbf{Totale} &                               & 323          & 6895                    \\
+		\textbf{Totale} &                               & 325          & 6935                    \\
 		\hline
 	\end{tabularx}\\[8pt]
 	\mbox{}\\
 \end{center}
+
+
+\subsection{Sprint 13}
+Qui vengono riportate le informazioni relative alla quattordicesima settimana di sprint del gruppo. \\
+In questo ciclo di sprint è stato iniziato il documento di specifica tecnica in linea con la progettazione dell'archietettura del MVP.
+Inoltre è stato preparato l'ambiente di test con tutti gli strumenti necessari alla fase di testing.\\
+
+Caratteristiche:
+
+\begin{itemize}
+	\item Data inizio: 10/08/2023
+	\item Data fine preventivata: 17/08/2023
+	\item Data fine effettiva: 17/08/2023
+\end{itemize}
+\subsubsection{Pianificazione}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
+		\hline
+		\hline
+		\textbf{Item}     & \textbf{Persone richieste}    \\
+		\hline
+		Specifica tecnica & 3                             \\
+		\hline
+		MVP               & 2                             \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Preventivo Costi/Ore}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 3            & 90                      \\
+		\hline
+		Amministratore  & 20                            & 3            & 60                      \\
+		\hline
+		Analista        & 25                            & 8            & 200                     \\
+		\hline
+		Progettista     & 25                            & 22           & 550                     \\
+		\hline
+		Programmatore   & 15                            & 10           & 150                     \\
+		\hline
+		Verificatore    & 15                            & 2            & 30                      \\
+		\hline
+		\textbf{Totale} &                               & 48           & 1080                    \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Problematiche riscontrate}
+Difficoltà nella scelta dell'architettura e degli strumenti per i test.
+
+
+\subsubsection{Resoconto}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}} \\
+		\hline
+		Responsabile    & 30 & 44(+3)  & 90          \\
+		\hline
+		Amministratore  & 20 & 40(+5)  & 100         \\
+		\hline
+		Analista        & 25 & 75(+8)  & 200         \\
+		\hline
+		Progettista     & 25 & 84(+24) & 600         \\
+		\hline
+		Programmatore   & 15 & 80(+12) & 180         \\
+		\hline
+		Verificatore    & 15 & 56(+2)  & 30          \\
+		\hline
+		\hline
+		\textbf{Totale} &    & 379     & 8135        \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsection{Sprint 14}
+Qui vengono riportate le informazioni relative alla quindicesima settimana di sprint del gruppo. \\
+In questo ciclo di sprint è stato implementato il back-end e sono stati iniziati i test sul codice prodotto fin'ora.
+Abbiamo inoltre iniziato la progettazione dell'architettura del front-end e riportato quanto fatto nella specifica tecnica.
+
+Caratteristiche:
+
+\begin{itemize}
+	\item Data inizio: 17/08/2023
+	\item Data fine preventivata: 24/08/2023
+	\item Data fine effettiva: 24/08/2023
+\end{itemize}
+\subsubsection{Pianificazione}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
+		\hline
+		\hline
+		\textbf{Item}     & \textbf{Persone richieste}    \\
+		\hline
+		Specifica tecnica & 2                             \\
+		\hline
+		MVP               & 3                             \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Preventivo Costi/Ore}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 3            & 90                      \\
+		\hline
+		Amministratore  & 20                            & 4            & 80                      \\
+		\hline
+		Analista        & 25                            & 0            & 0                       \\
+		\hline
+		Progettista     & 25                            & 14           & 350                     \\
+		\hline
+		Programmatore   & 15                            & 20           & 300                     \\
+		\hline
+		Verificatore    & 15                            & 20           & 300                     \\
+		\hline
+		\textbf{Totale} &                               & 61           & 1120                    \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Problematiche riscontrate}
+Difficoltà nel passaggio dal vecchio back-end al nuovo
+
+
+\subsubsection{Resoconto}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline														
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\														
+		\hline														
+		Responsabile		&		30		&		47(+3)		&		90		\\
+		\hline														
+		Amministratore		&		20		&		44(+4)		&		80		\\
+		\hline														
+		Analista		&		25		&		75(+0)		&		0		\\
+		\hline														
+		Progettista		&		25		&		98(+14)		&		350		\\
+		\hline														
+		Programmatore		&		15		&		107(+27)		&		405		\\
+		\hline														
+		Verificatore		&		15		&		65(+9)		&		135		\\
+		\hline														
+		\hline														
+		\textbf{Totale}		&				&		436		&		9195		\\
+		\hline																																							
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsection{Sprint 15}
+Qui vengono riportate le informazioni relative alla sedicesima settimana di sprint del gruppo. \\
+In questo ciclo di sprint è stato implementato il sistema di gestione dei guasti e completato il front-end del MVP con corrispondenti test di unità.
+Sono inoltre proseguiti i test sul back-end.
+
+Caratteristiche:
+
+\begin{itemize}
+	\item Data inizio: 24/08/2023
+	\item Data fine preventivata: 30/08/2023
+	\item Data fine effettiva: 30/08/2023
+\end{itemize}
+\subsubsection{Pianificazione}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
+		\hline
+		\hline
+		\textbf{Item}     & \textbf{Persone richieste}    \\
+		\hline
+		Specifica tecnica & 2                             \\
+		\hline
+		MVP               & 3                             \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Preventivo Costi/Ore}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 5            & 150                     \\
+		\hline
+		Amministratore  & 20                            & 6            & 120                     \\
+		\hline
+		Analista        & 25                            & 0            & 0                       \\
+		\hline
+		Progettista     & 25                            & 11           & 275                     \\
+		\hline
+		Programmatore   & 15                            & 18           & 270                     \\
+		\hline
+		Verificatore    & 15                            & 14           & 210                     \\
+		\hline
+		\textbf{Totale} &                               & 54           & 1025                    \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Problematiche riscontrate}
+Nessun particolare dubbio o difficoltà
+
+
+\subsubsection{Resoconto}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline														
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\														
+		\hline														
+		Responsabile		&		30		&		52(+5)		&		150		\\
+		\hline														
+		Amministratore		&		20		&		50(+6)		&		120		\\
+		\hline														
+		Analista		&		25		&		75(+0)		&		0		\\
+		\hline														
+		Progettista		&		25		&		109(+11)		&		275		\\
+		\hline														
+		Programmatore		&		15		&		125(+18)		&		270		\\
+		\hline														
+		Verificatore		&		15		&		79(+14)		&		210		\\
+		\hline														
+		\hline														
+		\textbf{Totale}		&				&		490		&		10220		\\
+		\hline														
+																																							
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsection{Sprint 16}
+Qui vengono riportate le informazioni relative alla diciasettesima settimana di sprint del gruppo. \\
+In questo ciclo di sprint è stato iniziato il manuale utente ed è stata fatta una revisione del MVP controllando che tutte le funzionalità implementate soddisfino quanto riportato nell'analisi dei requisiti.
+Inoltre è stata continuata la fase di testing del back end.
+
+Caratteristiche:
+
+\begin{itemize}
+	\item Data inizio: 30/08/2023
+	\item Data fine preventivata: 07/09/2023
+	\item Data fine effettiva: 07/09/2023
+\end{itemize}
+\subsubsection{Pianificazione}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}} \\
+		\hline
+		\hline
+		\textbf{Item}     & \textbf{Persone richieste}    \\
+		\hline
+		Specifica tecnica & 1                             \\
+		\hline
+		Manuale utente    & 1                             \\
+		\hline
+		MVP               & 2                             \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Preventivo Costi/Ore}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 5            & 150                     \\
+		\hline
+		Amministratore  & 20                            & 6            & 120                     \\
+		\hline
+		Analista        & 25                            & 8            & 200                     \\
+		\hline
+		Progettista     & 25                            & 0            & 0                       \\
+		\hline
+		Programmatore   & 15                            & 10           & 150                     \\
+		\hline
+		Verificatore    & 15                            & 18           & 270                     \\
+		\hline
+		\textbf{Totale} &                               & 47           & 890                     \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsubsection{Problematiche riscontrate}
+Nessun particolare dubbio o difficoltà
+
+\subsubsection{Resoconto}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline														
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\														
+		\hline														
+		Responsabile		&		30		&		57(+5)		&		150		\\
+		\hline														
+		Amministratore		&		20		&		56(+6)		&		120		\\
+		\hline														
+		Analista		&		25		&		83(+8)		&		200		\\
+		\hline														
+		Progettista		&		25		&		109(+0)		&		0		\\
+		\hline														
+		Programmatore		&		15		&		135(+10)		&		150		\\
+		\hline														
+		Verificatore		&		15		&		97(+18)		&		270		\\
+		\hline														
+		\textbf{Totale}		&				&		535		&		11110		\\
+		\hline														
+
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsection{Sprint 17}
+Qui vengono riportate le informazioni relative alla diciottesima settimana di sprint del gruppo. \\
+In questo ciclo di sprint sono stati completati e revisionati tutti i documenti e la parte di testing del MVP.
+È stata poi richiesto un incontro con il proponente per mostrare il prodotto finito.
+
+Caratteristiche:
+
+\begin{itemize}
+	\item Data inizio: 07/09/2023
+	\item Data fine preventivata: 14/09/2023
+	\item Data fine effettiva: 14/09/2023
+\end{itemize}
+\subsubsection{Pianificazione}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|c|}{\textbf{Item da realizzare}}     \\
+		\hline
+		\hline
+		\textbf{Item}            & \textbf{Persone richieste} \\
+		\hline
+		Manuale utente        	& 1                          \\
+		\hline
+		Specifica tecnica        	& 2                          \\
+		\hline
+		MVP        					& 1           \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+\subsubsection{Preventivo Costi/Ore}
+\begin{center}											
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
+		\hline									
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\									
+		\hline									
+		\hline									
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\									
+		\hline									
+		Responsabile    &	30		&	6		&	180		\\
+		\hline									
+		Amministratore  &	20		&	3		&	60		\\
+		\hline									
+		Analista        &	25		&	3		&	75		\\
+		\hline									
+		Progettista     &	25		&	11		&	275		\\
+		\hline									
+		Programmatore   &	15		&	0		&	0		\\
+		\hline									
+		Verificatore    &	15		&	12		&	180		\\
+		\hline									
+		\textbf{Totale} &			&	37		&	805		\\
+		\hline									
+	\end{tabularx}\\[8pt]										
+	\mbox{}\\										
+\end{center}											
+\subsubsection{Problematiche riscontrate}
+È stata riscontrata una difficoltà nell'organizzare l'incontro con il proponente per via di impegni lavorativi di quest'ultimo.
+
+\subsubsection{Resoconto}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline														
+		\multicolumn{4}{|c|}{\textbf{Ore effettive}}                                      \\														
+		\hline														
+		Responsabile		&		30		&		63(+6)		&		180		\\
+		\hline														
+		Amministratore		&		20		&		59(+3)		&		60		\\
+		\hline														
+		Analista		&		25		&		86(+3)		&		75		\\
+		\hline														
+		Progettista		&		25		&		120(+11)		&		275		\\
+		\hline														
+		Programmatore		&		15		&		135(+0)		&		0		\\
+		\hline														
+		Verificatore		&		15		&		109(+12)		&		180		\\
+		\hline														
+		\textbf{Totale}		&				&		572		&		11880		\\
+		\hline														
+																																		
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+
+\section{Consuntivo di periodo}
+\subsection{Analisi dei requisiti}
+\subsubsection{Tabella ore/costi}
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline
+		Responsabile    & 30                            & 24           & 720                     \\
+		\hline
+		Amministratore  & 20                            & 22(-3)       & 440(-60)                \\
+		\hline
+		Analista        & 25                            & 57(-4)       & 1425(-100)              \\
+		\hline
+		Progettista     & 25                            & 5(+5)        & 125(+125)               \\
+		\hline
+		Programmatore   & 15                            & 0            & 0                       \\
+		\hline
+		Verificatore    & 15                            & 24(+2)       & 360(+30)                \\
+		\hline
+		\textbf{Totale} &                               & 132          & 3070(-5)                \\
+		\hline
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+
+\subsubsection{Considerazioni}
+L'analisi del problema e l'individuazione dei requisiti ha richiesto leggermente meno tempo di quanto preventivato, per questo motivo è stata risparmiata qualche ora da parte degli analisti e amministratori.
+Il gruppo aveva preventivato inoltre che il progettista non sarebbe entrato in questa fase di progetto, successivamente, però, è stata valutata la necessità di affiancare un progettista durante la fase di analisi per poter valutare ...
+È stato necessario inoltre un leggero incremento delle ore spese dal verificatore dovuto alla grande mole di documenti redatti in questa fase.
+Il costo e le ore hanno comunque soddisfatto le aspettative del gruppo.
+
+\subsection{Progettazione e codifica POC}
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}
+		\hline
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\
+		\hline
+		\hline
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\
+		\hline									
+		Responsabile    &	30		&	15(-3)		&	420(-90)		\\
+		\hline									
+		Amministratore  &	20		&	9		&	180		\\
+		\hline									
+		Analista        &	25		&	0		&	0		\\
+		\hline									
+		Progettista     &	25		&	33		&	825		\\
+		\hline									
+		Programmatore   &	15		&	68(+8)		&	1020(+120)		\\
+		\hline									
+		Verificatore    &	15		&	24		&	360		\\
+		\hline									
+		\textbf{Totale} &			&	149(+5)		&	2805(-30)		\\
+		\hline																														
+	\end{tabularx}\\[8pt]
+	\mbox{}\\
+\end{center}
+	
+\subsubsection{Considerazioni}
+La progettazione del POC è andata secondo quanto previsto dal gruppo, per la parte di codifica, invece, sono state richieste più ore in quanto è stata espressa da alcuni membri del gruppo la volontà di mantenere come base il POC per la fase successiva del progetto. Il gruppo quindi ha deciso di spendere alcune ore in più per rendere il codice facilmente estendibile.
+La suddivisione dei ruoli e delle tasks è stata più facile di quanto preventivato, ciò si è tradotto in una diminuzione delle ore spese dal responsabile.
+Il costo e le ore hanno comunque soddisfatto le aspettative del gruppo 
+
+\subsection{Progettazione e codifica MVP}
+
+\begin{center}
+	\begin{tabularx}{\textwidth}{|X|X|X|X|}										
+		\hline									
+		\multicolumn{4}{|c|}{\textbf{Preventivo ore/costi}}                                      \\									
+		\hline									
+		\hline									
+		\textbf{Ruolo}  & \textbf{Costo orario (\euro)} & \textbf{Ore} & \textbf{Prezzo (\euro)} \\									
+		\hline									
+		Responsabile    &	30		&	24		&	720		\\
+		\hline									
+		Amministratore  &	20		&	28(-6)		&	560(-120)		\\
+		\hline									
+		Analista        &	25		&	29(-2)		&	725(-50)		\\
+		\hline									
+		Progettista     &	25		&	82		&	2050		\\
+		\hline									
+		Programmatore   &	15		&	67		&	1005		\\
+		\hline									
+		Verificatore    &	15		&	61(+10)		&	915(+150)		\\
+		\hline									
+		\textbf{Totale} &			&	291(+2)		&	5975(-20)		\\
+		\hline									
+	\end{tabularx}\\[8pt]										
+	\mbox{}\\
+\end{center}
+
+\subsubsection{Considerazioni}
+La progettazione e la codifica del MVP sono procedute come da preventivo. La verifica ha richiesto diverse ore in più in quanto nel RTB il gruppo non aveva pianificato la fase di testing che quindi ha reso il processo di verifica del prodotto più lento.
+I controlli fatti dall'amministratore hanno inoltre necessitato meno ore di quanto preventivato dal gruppo.
+Il costo e le ore hanno comunque soddisfatto le aspettative del gruppo 
+\section{Valutazione dei Rischi}
+\begin{xltabular}{\linewidth}{|>{\hsize=0.25\hsize}X|X|X|X|}
+
+	\hline
+	\textbf{ID} & \textbf{Descrizione} & \textbf{Mitigazione} & \textbf{Conclusioni} \\
+	\hline
+	\endfirsthead
+	\hline
+	\textbf{ID} & \textbf{Descrizione} & \textbf{Mitigazione} & \textbf{Conclusioni} \\
+	\hline
+	\endhead
+	\hline
+	\endfoot
+
+	\multicolumn{4}{|c|}{\textbf{Sprint 0}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           
+	& -                                                                                               
+	& -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 1}}                                                                                                                                                                                                                                                                                                                                                                       \\ \hline
+	\textbf{RI2} & Problematica nella strutturazione del way of working       
+	& Differenze di approccio dei vari membri del gruppo discusse durante il meeting settimanale                              
+	& Il meeting ha risolto i dubbi e le divergenze sul metodo di lavoro dei vari membri del gruppo, facilitando la stesura del documento \textit{Norme di progetto}   \\ \hline
+	
+	\textbf{RO1} & Sovrapposizione della riunione di termine dello sprint con la consegna del diario di bordo.                                                                 
+	& Anticipato di un giorno l'inizio e il termine degli sprint                                          
+	& L'anticipazione della fine dello sprint ha permesso di svolgere il meeting settimanale senza la fretta di consegnare il diario di bordo                                                                                \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 2}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	\textbf{RR2} & Incomprensione su chi dovessero essere i protagonisti nei casi d'uso.                                                                 
+	& È stata contattata l'azienda per chiedere chiarimenti.                                          
+	& La stesura dei casi d'uso è potuta procedere senza rallentamenti.   \\ \hline
+	\textbf{RTI} & Difficoltà nella scelta delle metriche di qualità da adottare                                                                
+	& Sono state dedicate più ore all'approfondimento e valutazione di metriche soddisfacenti                                          
+	& La stesura delle metriche all'interno del \textit{Piano di qualifica} è proceduta correttamente   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 3}}                                                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           
+	& -                                                                                               & -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 4}  }                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+	\textbf{RR2}& Dubbi sulla realizzazione degli UML                                                                                                   
+	& È stata contattato il professor Cardin per chiedere chiarimenti.                                
+	& L'aiuto del professor Cardin ha sciolto i dubbi e le perplessità dei componenti.                                                                    \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 5}  }                                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+	\textbf{RT2} & Difficoltà di interfacciamento tra i simulatori dei lampioni.                                                                         
+	& Dedicato più tempo ai programmatori per risolvere il problema                           
+	& Lampioni e simulatori sono ora interfacciati correttamente                                                                       \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 6}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RT1}   & Mancanza di conoscenza delle tecnologie da parte di alcuni membri del gruppo rallenta lo sviluppo del POC                                                                                                        
+	& Aumentate le ore di impegno personale nell'apprendimento delle tecnologie e incentivata la comunicazione con chi ha già familiarità con quest'ultime                                                                                               
+	& Migliorate le conoscenze sulle tecnologie usate e la comunicazione con i membri che hanno più esperienza d'uso delle tecnologie                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 7}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI1} & Diminuzione delle ore di lavoro a causa della sessione                                                                                
+	& Le attività sono state equamente distribuite ed organizzate in modo efficace.                   
+	& L'organizzazione delle attività è stata efficace, ma si è verificato uno scostamento rispetto alla tabella di marcia.                        \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 8}   }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI1}   & Mancanza di tempo a disposizione                                                                                                           
+	& Affidato compiti che richiedevano più ore a chi aveva meno impegni, rispettando i ruoli forniti                                                                                           
+	& Il problema è stato leggermente ridotto, ma non risolto.                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 9}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RT1} & Difficoltà nell’apprendere l’utilizzo del framework Bulma.io per poter utilizzare in maniera efficace lo sviluppo della parte di CSS. 
+	& Dedicate più ore ai programmatori per lo studio della tecnologia                                              
+	& Migliorate le conoscenze sul framework                                                      \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 10}   }                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+	\textbf{RT1}  & Difficoltà nell’utilizzo delle API per interazioni con i lampioni                                                                                                          
+	& Eseguito uno studio approfondito sull'utilizzo del API  e comunicato con membri del gruppo che le hanno già utilizzate                                                                                              
+	& Le API messe a disposizione ora si interfacciano correttamente con i lampioni                                                                                                                                                  \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 11}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           
+	& -                                                                                               
+	& -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 12}  }                                                                                                                                                                                                                                                                                                                                                                  \\ \hline
+	\textbf{RT1}   & Difficoltà nella scelta dell'architettura adatta alla soluzione del problema                                                                                                         
+	& Dedicate ore di approfondimento e ripasso alle architetture note e non                                                                                            
+	& È stata decisa l'architettura da implementare per l'MVP                                                                                                                                                 \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 13}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RI2} & Nessun rischio riscontrato                          
+	& - 
+	& - \\ \hline
+	\textbf{RT1} & Nessun rischio riscontrato                          
+	& -
+	& - \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 14}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RT2} & Difficoltà nel passaggio dal vecchio back-end al nuovo                          
+	& Incentivata la comunicazione tra i membri del gruppo che si sono occupati del back end, in modo da facilitarne il passaggio
+	& Il back-end, seppur non concluso, è stato sostituito correttamente a quello vecchio \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 15}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	- & Nessun rischio riscontrato.                          
+	& - 
+	& - \\ \hline	
+	\multicolumn{4}{|c|}{\textbf{Sprint 16}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	-   & Nessun rischio riscontrato.                                                                                                           
+	& -                                                                                               
+	& -                                                                                                                                                   \\ \hline
+	\multicolumn{4}{|c|}{\textbf{Sprint 17}  }                                                                                                                                                                                                                                                                                                                                                                   \\ \hline
+	\textbf{RR3}   & È stata riscontrata una difficoltà nell'organizzare l'incontro con il proponente per via di impegni lavorativi di quest'ultimo.     
+		& È stato sollecitata la necessità di un incontro per mostrare il lavoro fatto, dando massima flessibilità sull'ora di incontro    
+        & È stato fissato l'incontro in data 9/13/2023 alle ore 17:00.                                                                                                                                                 \\
+\end{xltabular}
+
 \end{document}
